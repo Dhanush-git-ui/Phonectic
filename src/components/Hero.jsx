@@ -1,249 +1,59 @@
-import { useState } from 'react'
-import { motion, useScroll, useTransform } from 'framer-motion'
+import { useEffect } from 'react'
+
+const content = `<div class="framer-yz2610" data-framer-name="Navbar Change" id="navbar-change"></div><div class="framer-sqdl7v" data-framer-name="Hero Content"><div class="framer-1cae1md" data-framer-name="Text &amp; CTA"><div class="framer-1785cli" data-framer-name="Heading Wrap"><div class="framer-z7f9fw" data-framer-name="Hero Heading"><div class="framer-nu8ff8" data-framer-component-type="RichTextContainer" data-framer-name="Smarter Finance" style="transform:none"><h1 class="framer-text framer-styles-preset-16hkaiw" data-styles-preset="kXDaQMV3W" dir="auto" style="--framer-text-color:var(--token-a281d3d3-8074-4276-b377-59dd81ca3f41, rgb(56, 26, 201))"><span style="display:inline-block;">Smarter</span> <span style="display:inline-block;">Finance</span></h1></div><div class="framer-ea2r55" data-framer-component-type="RichTextContainer" data-framer-name="Made Simple" style="transform:none"><h1 class="framer-text framer-styles-preset-16hkaiw" data-styles-preset="kXDaQMV3W" dir="auto"><span style="display:inline-block;">Made</span> <span style="display:inline-block;">Simple</span></h1></div></div><div class="ssr-variant hidden-1k8ds7i"><div class="framer-164ob5c" data-framer-component-type="RichTextContainer" data-framer-name="SubHead" style="transform:none"><p class="framer-text framer-styles-preset-1tvfe9n" data-styles-preset="MRCEp2OEt" dir="auto" style="--framer-text-alignment:center"><span style="white-space:nowrap"><span style="display:inline-block;">A</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">c</span><span style="display:inline-block;">o</span><span style="display:inline-block;">m</span><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">e</span><span style="display:inline-block;">t</span><span style="display:inline-block;">e</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">a</span><span style="display:inline-block;">t</span><span style="display:inline-block;">f</span><span style="display:inline-block;">o</span><span style="display:inline-block;">r</span><span style="display:inline-block;">m</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">f</span><span style="display:inline-block;">o</span><span style="display:inline-block;">r</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">m</span><span style="display:inline-block;">a</span><span style="display:inline-block;">n</span><span style="display:inline-block;">a</span><span style="display:inline-block;">g</span><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span><span style="display:inline-block;">g</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">s</span><span style="display:inline-block;">p</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">d</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">p</span><span style="display:inline-block;">a</span><span style="display:inline-block;">y</span><span style="display:inline-block;">m</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">t</span><span style="display:inline-block;">s</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span><span style="display:inline-block;">v</span><span style="display:inline-block;">e</span><span style="display:inline-block;">s</span><span style="display:inline-block;">t</span><span style="display:inline-block;">m</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">t</span><span style="display:inline-block;">s</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">a</span><span style="display:inline-block;">n</span><span style="display:inline-block;">d</span></span> <span style="white-space:unset"><span style="display:inline-block;">f</span><span style="display:inline-block;">o</span><span style="display:inline-block;">r</span><span style="display:inline-block;">e</span><span style="display:inline-block;">c</span><span style="display:inline-block;">a</span><span style="display:inline-block;">s</span><span style="display:inline-block;">t</span><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span><span style="display:inline-block;">g</span><span style="display:inline-block;">—</span><span style="display:inline-block;">a</span><span style="display:inline-block;">l</span><span style="display:inline-block;">l</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">o</span><span style="display:inline-block;">n</span><span style="display:inline-block;">e</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">a</span><span style="display:inline-block;">c</span><span style="display:inline-block;">e</span><span style="display:inline-block;">.</span></span></p></div></div><div class="ssr-variant hidden-72rtr7 hidden-m2it3q"><div class="framer-164ob5c" data-framer-component-type="RichTextContainer" data-framer-name="SubHead" style="transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" dir="auto" style="--framer-text-alignment:center"><span style="white-space:nowrap"><span style="display:inline-block;">A</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">c</span><span style="display:inline-block;">o</span><span style="display:inline-block;">m</span><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">e</span><span style="display:inline-block;">t</span><span style="display:inline-block;">e</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">a</span><span style="display:inline-block;">t</span><span style="display:inline-block;">f</span><span style="display:inline-block;">o</span><span style="display:inline-block;">r</span><span style="display:inline-block;">m</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">f</span><span style="display:inline-block;">o</span><span style="display:inline-block;">r</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">m</span><span style="display:inline-block;">a</span><span style="display:inline-block;">n</span><span style="display:inline-block;">a</span><span style="display:inline-block;">g</span><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span><span style="display:inline-block;">g</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">s</span><span style="display:inline-block;">p</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">d</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">p</span><span style="display:inline-block;">a</span><span style="display:inline-block;">y</span><span style="display:inline-block;">m</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">t</span><span style="display:inline-block;">s</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span><span style="display:inline-block;">v</span><span style="display:inline-block;">e</span><span style="display:inline-block;">s</span><span style="display:inline-block;">t</span><span style="display:inline-block;">m</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">t</span><span style="display:inline-block;">s</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">a</span><span style="display:inline-block;">n</span><span style="display:inline-block;">d</span></span> <span style="white-space:unset"><span style="display:inline-block;">f</span><span style="display:inline-block;">o</span><span style="display:inline-block;">r</span><span style="display:inline-block;">e</span><span style="display:inline-block;">c</span><span style="display:inline-block;">a</span><span style="display:inline-block;">s</span><span style="display:inline-block;">t</span><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span><span style="display:inline-block;">g</span><span style="display:inline-block;">—</span><span style="display:inline-block;">a</span><span style="display:inline-block;">l</span><span style="display:inline-block;">l</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">i</span><span style="display:inline-block;">n</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">o</span><span style="display:inline-block;">n</span><span style="display:inline-block;">e</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">a</span><span style="display:inline-block;">c</span><span style="display:inline-block;">e</span><span style="display:inline-block;">.</span></span></p></div></div></div><div class="framer-3v7xp3" data-framer-name="Button Group"><div class="ssr-variant"><div class="framer-o2z1r1-container" data-framer-appear-id="o2z1r1" style="transform:translateY(50px) scale(0.5)"><!--$--><a class="framer-wUDM8 framer-lq2ef0 framer-v-lq2ef0 framer-1xiloa2" data-framer-name="Primary" data-highlight="true" href="https://framer.com" style="background:linear-gradient(180deg, rgb(109, 85, 226) 0%, rgb(40, 17, 156) 100%);border-bottom-left-radius:22px;border-bottom-right-radius:22px;border-top-left-radius:22px;border-top-right-radius:22px;box-shadow:0px 1px 2px 0px rgba(40, 16, 162, 0.37), 0px 3px 3px 0px rgba(40, 16, 162, 0.32), 0px 8px 5px 0px rgba(40, 16, 162, 0.19), 0px 13px 5px 0px rgba(40, 16, 162, 0.06)" tabindex="0"><div class="framer-l13tx6" data-framer-name="Main" style="background:linear-gradient(180deg, rgb(98, 98, 254) 0%, rgb(56, 26, 201) 100%);background-color:rgba(0, 0, 0, 0);border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-left-radius:20px;border-top-right-radius:20px;box-shadow:inset 0px 1px 1px 0px rgb(255, 255, 255), inset 0px -2px 2px 0px rgb(40, 16, 155), inset 0px 0px 8px 0px rgba(203, 196, 234, 0.5)"><div class="framer-1vtvotg-container"><div class="framer-K5eYu framer-rXNCz framer-SvZjy framer-9mcdme framer-v-b9q4a5" data-framer-name="16"><div class="framer-gf2onz" data-framer-component-type="RichTextContainer" data-framer-name="Get started" style="--extracted-r6o4lv:var(--variable-reference-ute9ElgLN-xnlmJ4ALb);--framer-paragraph-spacing:0px;--variable-reference-ute9ElgLN-xnlmJ4ALb:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ute9ElgLN-xnlmJ4ALb))">Get started</p></div></div></div></div></a><!--/$--></div></div><div class="ssr-variant"><div class="framer-ahily-container" data-framer-appear-id="ahily" id="ahily" style="transform:translateY(50px) scale(0.5)"><!--$--><a class="framer-wUDM8 framer-lq2ef0 framer-v-dmfmax framer-1xiloa2" data-framer-name="Secondary" data-highlight="true" style="background:linear-gradient(180deg, rgb(40, 40, 40) 0%, rgb(6, 6, 6) 100%);border-bottom-left-radius:22px;border-bottom-right-radius:22px;border-top-left-radius:22px;border-top-right-radius:22px;box-shadow:0px 1px 2px 0px rgba(0, 0, 0, 0.37), 0px 3px 3px 0px rgba(0, 0, 0, 0.32), 0px 7px 4px 0px rgba(0, 0, 0, 0.19), 0px 12px 5px 0px rgba(0, 0, 0, 0.06)" tabindex="0"><div class="framer-l13tx6" data-framer-name="Main" style="background:linear-gradient(180deg, rgb(40, 40, 40) 0%, rgb(40, 40, 40) 100%);background-color:rgb(40, 40, 40);border-bottom-left-radius:20px;border-bottom-right-radius:20px;border-top-left-radius:20px;border-top-right-radius:20px;box-shadow:inset 0px 1px 1px 0px rgba(255, 255, 255, 0.8), inset 0px -2px 2px 0px rgb(0, 0, 0)"><div class="framer-1vtvotg-container"><div class="framer-K5eYu framer-rXNCz framer-SvZjy framer-9mcdme framer-v-b9q4a5" data-framer-name="16"><div class="framer-gf2onz" data-framer-component-type="RichTextContainer" data-framer-name="Get started" style="--extracted-r6o4lv:var(--variable-reference-ute9ElgLN-xnlmJ4ALb);--framer-paragraph-spacing:0px;--variable-reference-ute9ElgLN-xnlmJ4ALb:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--variable-reference-ute9ElgLN-xnlmJ4ALb))">Download now</p></div></div></div></div></a><!--/$--></div></div></div></div><div class="framer-1frftx4" data-framer-name="Spacer"></div><div class="ssr-variant"><div class="framer-i27nr0-container"><div class="framer-spMKf framer-16lqyou framer-v-16lqyou" data-framer-name="Variant 1" style="width:100%"><div class="framer-xyf7ed-container" data-framer-name="Logos" name="Logos"><!--$--><section style="display:flex;width:100%;height:100%;max-width:100%;max-height:100%;place-items:center;margin:0;padding:10px;list-style-type:none;text-indent:none;-webkit-mask-image:linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%);mask-image:linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 12.5%, rgba(0, 0, 0, 1) 87.5%, rgba(0, 0, 0, 0) 100%);overflow:hidden"><ul style="display:flex;width:100%;height:100%;max-width:100%;max-height:100%;place-items:center;margin:0;padding:0;list-style-type:none;text-indent:none;gap:52px;position:relative;flex-direction:row;will-change:auto;transform:translateX(-0px)"><li aria-hidden="true"><div class="framer-18iagas" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/2phuXW9stHbgs2KqeS2qJXecQU.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="172"/></div></div></li><li aria-hidden="true"><div class="framer-1evzthi" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/BABkIc0DHDlPXr264luo8fkOPc.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="278"/></div></div></li><li aria-hidden="true"><div class="framer-z6lr3g" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/6OWI5hWP9XNWB6J7P9DwSjCJ1U.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="100"/></div></div></li><li aria-hidden="true"><div class="framer-d5vhsv" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/10sPZOUu5uOWPPKlnTRTifBhL4.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="288"/></div></div></li><li aria-hidden="true"><div class="framer-1052ywg" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/naPlymY0TwrMMRjo2oDY1ZIBc.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="194"/></div></div></li><li aria-hidden="true"><div class="framer-1m4r5me" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/XHYAA3kcuQbAQQetwjd4ZkZcE.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="319"/></div></div></li><li aria-hidden="true"><div class="framer-18iagas" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/2phuXW9stHbgs2KqeS2qJXecQU.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="172"/></div></div></li><li aria-hidden="true"><div class="framer-1evzthi" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/BABkIc0DHDlPXr264luo8fkOPc.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="278"/></div></div></li><li aria-hidden="true"><div class="framer-z6lr3g" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/6OWI5hWP9XNWB6J7P9DwSjCJ1U.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="100"/></div></div></li><li aria-hidden="true"><div class="framer-d5vhsv" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/10sPZOUu5uOWPPKlnTRTifBhL4.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="288"/></div></div></li><li aria-hidden="true"><div class="framer-1052ywg" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/naPlymY0TwrMMRjo2oDY1ZIBc.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="194"/></div></div></li><li aria-hidden="true"><div class="framer-1m4r5me" data-framer-name="Logo" style="flex-shrink:0"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="logo" decoding="async" height="96" src="/assets/XHYAA3kcuQbAQQetwjd4ZkZcE.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="319"/></div></div></li></ul></section><!--/$--></div></div></div></div></div><div class="framer-1vvvbza" data-framer-name="Hero Illustration"><div class="framer-vfhbl3" data-framer-name="Hero Illustration Container"><div class="ssr-variant"><div class="framer-giti9r" data-framer-appear-id="giti9r" data-framer-name="Phone" style="will-change:transform;opacity:1;transform:translateY(108px)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="hero-image" decoding="async" height="2243" sizes="(min-width: 1200px) calc(max(100vw - 160px, 1200px) * 0.4), (min-width: 810px) and (max-width: 1199.98px) calc(max(100vw - 160px, 1200px) * 0.4), (max-width: 809.98px) calc(max(min((100vw - 160px) * 2.75, 1000px), 600px) * 0.4)" src="/assets/z9IXBYMYvb7NP5mQUyhfjrNGNIM.png" srcset="/assets/z9IXBYMYvb7NP5mQUyhfjrNGNIM.png 1002w,/assets/z9IXBYMYvb7NP5mQUyhfjrNGNIM.png 1098w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="1098"/></div></div></div><div class="ssr-variant"><div class="framer-1154f73" data-framer-appear-id="1154f73" data-framer-name="Hero Data Card (Front)" style="will-change:transform;opacity:1;transform:translateX(202px) translateY(-252px) rotate(24deg)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="hero-image" decoding="async" height="456" sizes="(min-width: 1200px) calc(max(100vw - 160px, 1200px) / 4.539), (min-width: 810px) and (max-width: 1199.98px) calc(max(100vw - 160px, 1200px) / 4.539), (max-width: 809.98px) calc(max(min((100vw - 160px) * 2.75, 1000px), 600px) / 4.539)" src="/assets/L9o68QoionLOT0n8qVJq2jR8.png" srcset="/assets/L9o68QoionLOT0n8qVJq2jR8.png 512w,/assets/L9o68QoionLOT0n8qVJq2jR8.png 525w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="525"/></div></div></div><div class="ssr-variant"><div class="framer-8ytohn" data-framer-appear-id="8ytohn" data-framer-name="Hero Data Card (Front)" style="will-change:transform;opacity:1;transform:translateX(-98px) translateY(-80px) rotate(-5deg)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="hero-image" decoding="async" height="84" src="/assets/LLKlVGCKmbBn9ZfaasOGfBKso.png" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="452"/></div></div></div><div class="framer-rbqmm" data-border="true" data-framer-name="Glass" style="will-change:transform;opacity:1;transform:translate(-50%, -50%)"></div><div class="ssr-variant"><div class="framer-14nwv2u" data-framer-appear-id="14nwv2u" data-framer-name="Hero Data Card (Behind)" style="will-change:transform;opacity:1;transform:translate(-50%, -50%) translateX(-221px) translateY(-67px) rotate(-37deg)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="hero-image" decoding="async" height="538" sizes="(min-width: 1200px) calc(max(100vw - 160px, 1200px) * 0.26), (min-width: 810px) and (max-width: 1199.98px) calc(max(100vw - 160px, 1200px) * 0.26), (max-width: 809.98px) calc(max(min((100vw - 160px) * 2.75, 1000px), 600px) * 0.26)" src="/assets/vjfNXT3YtLcFhZPYvUQA52BP4o.png" srcset="/assets/vjfNXT3YtLcFhZPYvUQA52BP4o.png 512w,/assets/vjfNXT3YtLcFhZPYvUQA52BP4o.png 568w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="568"/></div></div></div><div class="ssr-variant"><div class="framer-12og78t" data-framer-appear-id="12og78t" data-framer-name="Hero Data Card (Behind)" style="will-change:transform;opacity:1;transform:translate(-50%, -50%) translateX(218px) translateY(-91px) rotate(-17deg)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="hero-image" decoding="async" height="112" sizes="(min-width: 1200px) calc(max(100vw - 160px, 1200px) * 0.26), (min-width: 810px) and (max-width: 1199.98px) calc(max(100vw - 160px, 1200px) * 0.26), (max-width: 809.98px) calc(max(min((100vw - 160px) * 2.75, 1000px), 600px) * 0.26)" src="/assets/OBaLn3NhNxon0JBcph43NiC8nw.png" srcset="/assets/OBaLn3NhNxon0JBcph43NiC8nw.png 512w,/assets/OBaLn3NhNxon0JBcph43NiC8nw.png 618w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="618"/></div></div></div></div></div><div class="framer-7yy0jx" data-framer-name="Gradient Overlay"><div class="framer-1c9i0wn" data-framer-name="Gradient Image"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="" decoding="async" height="1290" sizes="(min-width: 1200px) max(100vw, 1440px), (min-width: 810px) and (max-width: 1199.98px) max(100vw, 1440px), (max-width: 809.98px) max(100vw, 1440px)" src="/assets/2BOV7PCdHy8KOdzjtUawNXYnaoQ.png" srcset="/assets/2BOV7PCdHy8KOdzjtUawNXYnaoQ.png 512w,/assets/2BOV7PCdHy8KOdzjtUawNXYnaoQ.png 1024w,/assets/2BOV7PCdHy8KOdzjtUawNXYnaoQ.png 2048w,/assets/2BOV7PCdHy8KOdzjtUawNXYnaoQ.png 2880w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:fill" width="2880"/></div></div></div><div class="framer-86uqel" data-framer-name="Hero Background" style="transform:translateX(-50%)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="hero-texture" decoding="async" height="810" sizes="(min-width: 1200px) max(100vw, 1200px), (min-width: 810px) and (max-width: 1199.98px) max(100vw, 1200px), (max-width: 809.98px) max(100vw, 1200px)" src="/assets/YpA3FeRkDtKfdjuRHhZkSgjzA.svg" srcset="/assets/YpA3FeRkDtKfdjuRHhZkSgjzA.svg 512w,/assets/YpA3FeRkDtKfdjuRHhZkSgjzA.svg 1024w,/assets/YpA3FeRkDtKfdjuRHhZkSgjzA.svg 1440w" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:contain" width="1440"/></div></div><div class="framer-1rydgv2" data-framer-name="Bottom"><div class="framer-12on3yb" data-framer-name="Corner Border Bottom"></div><div class="framer-1k9pwao" data-framer-name="Corner Border Middle"></div><div class="framer-jxlrc4" data-framer-name="Corner Border Top"></div></div>`
 
 export default function Hero() {
-  const [mousePos, setMousePos] = useState({ x: 0, y: 0 })
-  const { scrollY } = useScroll()
+  useEffect(() => {
+    const heroSection = document.getElementById('hero')
+    if (!heroSection) return
 
-  const phoneY = useTransform(scrollY, [0, 600], [0, 60])
-  const cardLeftY = useTransform(scrollY, [0, 600], [0, -30])
-  const cardRightY = useTransform(scrollY, [0, 600], [0, -40])
+    const handleMouseMove = (e) => {
+      const { clientX, clientY } = e
+      const { innerWidth, innerHeight } = window
+      const x = (clientX / innerWidth - 0.5) * 20
+      const y = (clientY / innerHeight - 0.5) * 20
+      
+      const phone = heroSection.querySelector('[data-framer-name="Phone"]')
+      if (phone) {
+        phone.style.transform = `translateY(108px) translate3d(${x * 0.5}px, ${y * 0.5}px, 0px)`
+        phone.style.transition = 'transform 0.1s ease-out'
+      }
 
-  const handleMouseMove = (e) => {
-    const { clientX, clientY } = e
-    const { innerWidth, innerHeight } = window
-    const x = (clientX / innerWidth - 0.5) * 15
-    const y = (clientY / innerHeight - 0.5) * 15
-    setMousePos({ x, y })
-  }
+      const cardFront1 = heroSection.querySelector('.framer-1154f73')
+      if (cardFront1) {
+        cardFront1.style.transform = `translateX(202px) translateY(-252px) rotate(24deg) translate3d(${x * 1.2}px, ${y * 1.2}px, 0px)`
+        cardFront1.style.transition = 'transform 0.1s ease-out'
+      }
 
-  const handleMouseLeave = () => {
-    setMousePos({ x: 0, y: 0 })
-  }
+      const cardFront2 = heroSection.querySelector('.framer-8ytohn')
+      if (cardFront2) {
+        cardFront2.style.transform = `translateX(-98px) translateY(-80px) rotate(-5deg) translate3d(${-x * 1.2}px, ${-y * 1.2}px, 0px)`
+        cardFront2.style.transition = 'transform 0.1s ease-out'
+      }
 
-  const logos = [
-    '/assets/2phuXW9stHbgs2KqeS2qJXecQU.png',
-    '/assets/BABkIc0DHDlPXr264luo8fkOPc.png',
-    '/assets/6OWI5hWP9XNWB6J7P9DwSjCJ1U.png',
-    '/assets/10sPZOUu5uOWPPKlnTRTifBhL4.png',
-    '/assets/naPlymY0TwrMMRjo2oDY1ZIBc.png',
-    '/assets/XHYAA3kcuQbAQQetwjd4ZkZcE.png',
-  ]
+      const cardBehind1 = heroSection.querySelector('.framer-14nwv2u')
+      if (cardBehind1) {
+        cardBehind1.style.transform = `translate(-50%, -50%) translateX(-221px) translateY(-67px) rotate(-37deg) translate3d(${-x * 0.8}px, ${-y * 0.8}px, 0px)`
+        cardBehind1.style.transition = 'transform 0.1s ease-out'
+      }
+
+      const cardBehind2 = heroSection.querySelector('.framer-12og78t')
+      if (cardBehind2) {
+        cardBehind2.style.transform = `translate(-50%, -50%) translateX(218px) translateY(-91px) rotate(-17deg) translate3d(${x * 0.8}px, ${y * 0.8}px, 0px)`
+        cardBehind2.style.transition = 'transform 0.1s ease-out'
+      }
+    }
+
+    window.addEventListener('mousemove', handleMouseMove, { passive: true })
+    return () => window.removeEventListener('mousemove', handleMouseMove)
+  }, [])
 
   return (
     <section
-      id="home"
-      onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative w-full min-h-screen pt-28 pb-16 px-4 sm:px-6 md:px-12 flex flex-col items-center justify-between overflow-hidden"
-      style={{
-        background: 'linear-gradient(180deg, #5b71ea 0%, #7e90f6 28%, #b8c4fc 62%, #5869e8 100%)',
-        borderBottomLeftRadius: '56px',
-        borderBottomRightRadius: '56px',
-      }}
-    >
-      {/* Background SVG vector texture & light arcs */}
-      <div className="absolute inset-0 w-full h-full pointer-events-none overflow-hidden opacity-90 mix-blend-screen">
-        <img
-          src="/assets/YpA3FeRkDtKfdjuRHhZkSgjzA.svg"
-          alt="hero-texture"
-          className="w-full h-full object-cover"
-        />
-      </div>
-
-      {/* Ambient background glows */}
-      <div className="absolute top-[10%] left-[25%] w-[450px] h-[450px] bg-[#6d55e2]/30 rounded-full blur-[100px] pointer-events-none" />
-      <div className="absolute top-[15%] right-[20%] w-[400px] h-[400px] bg-[#a855f7]/25 rounded-full blur-[100px] pointer-events-none" />
-
-      {/* ══════════════════════════════════════════════════════════════
-          HERO 3D VISUAL STACK (Phone, Cards, Glass Panels)
-      ══════════════════════════════════════════════════════════════ */}
-      <div className="relative w-full max-w-5xl mx-auto flex items-center justify-center min-h-[420px] sm:min-h-[480px] md:min-h-[540px] my-auto mt-2">
-        
-        {/* Large Rounded Frosted Glass Card (Behind Phone) */}
-        <div className="absolute w-[85%] max-w-[780px] h-[340px] sm:h-[400px] md:h-[440px] rounded-[48px] border border-white/40 bg-white/20 backdrop-blur-2xl shadow-[0_30px_80px_rgba(0,0,0,0.06)] z-0" />
-
-        {/* Behind Left Card: Card details preview */}
-        <motion.div
-          style={{ y: cardLeftY }}
-          animate={{
-            x: mousePos.x * -0.6 - 190,
-            y: mousePos.y * -0.6 - 50,
-            rotate: -35,
-          }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="absolute z-10 w-[180px] sm:w-[220px] md:w-[260px] pointer-events-none hidden sm:block"
-        >
-          <img
-            src="/assets/vjfNXT3YtLcFhZPYvUQA52BP4o.png"
-            alt="Card preview"
-            className="w-full h-auto drop-shadow-2xl"
-          />
-        </motion.div>
-
-        {/* Behind Right Card */}
-        <motion.div
-          style={{ y: cardRightY }}
-          animate={{
-            x: mousePos.x * 0.6 + 190,
-            y: mousePos.y * -0.6 - 60,
-            rotate: -15,
-          }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="absolute z-10 w-[200px] sm:w-[240px] md:w-[280px] pointer-events-none hidden sm:block"
-        >
-          <img
-            src="/assets/OBaLn3NhNxon0JBcph43NiC8nw.png"
-            alt="Card preview"
-            className="w-full h-auto drop-shadow-2xl"
-          />
-        </motion.div>
-
-        {/* Center High-Res 3D iPhone Mockup */}
-        <motion.div
-          style={{ y: phoneY }}
-          animate={{
-            rotateY: mousePos.x * 0.4,
-            rotateX: mousePos.y * -0.4,
-          }}
-          transition={{ duration: 0.4, ease: 'easeOut' }}
-          className="relative z-20 w-[260px] sm:w-[320px] md:w-[370px] lg:w-[410px] drop-shadow-[0_35px_80px_rgba(20,10,80,0.38)]"
-        >
-          <img
-            src="/assets/z9IXBYMYvb7NP5mQUyhfjrNGNIM.png"
-            alt="OneFin Phone Mockup"
-            className="w-full h-auto object-contain select-none pointer-events-none"
-          />
-        </motion.div>
-
-        {/* Front Left Data Card: $27,40K /week + Pay Button */}
-        <motion.div
-          style={{ y: cardLeftY }}
-          animate={{
-            x: mousePos.x * -1.1 - 95,
-            y: mousePos.y * -0.8 + 35,
-            rotate: -6,
-          }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="absolute z-30 w-[180px] sm:w-[220px] md:w-[250px] drop-shadow-[0_20px_40px_rgba(0,0,0,0.18)]"
-        >
-          <img
-            src="/assets/LLKlVGCKmbBn9ZfaasOGfBKso.png"
-            alt="$27,40K / week Pay"
-            className="w-full h-auto select-none pointer-events-none"
-          />
-        </motion.div>
-
-        {/* Front Right Data Card: Total expense $6,850 + Gradient Bar Chart */}
-        <motion.div
-          style={{ y: cardRightY }}
-          animate={{
-            x: mousePos.x * 1.1 + 115,
-            y: mousePos.y * -0.8 - 15,
-            rotate: 22,
-          }}
-          transition={{ duration: 0.3, ease: 'easeOut' }}
-          className="absolute z-30 w-[180px] sm:w-[220px] md:w-[250px] drop-shadow-[0_25px_50px_rgba(0,0,0,0.2)]"
-        >
-          <img
-            src="/assets/L9o68QoionLOT0n8qVJq2jR8.png"
-            alt="Total expense $6,850"
-            className="w-full h-auto select-none pointer-events-none"
-          />
-        </motion.div>
-
-      </div>
-
-      {/* ══════════════════════════════════════════════════════════════
-          HERO HEADLINE, SUBTITLE & CTAs (Matching Image 4)
-      ══════════════════════════════════════════════════════════════ */}
-      <div className="relative z-30 text-center max-w-4xl mx-auto -mt-6 sm:-mt-10 md:-mt-14 w-full">
-        
-        {/* Main Massive Headline */}
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-col items-center"
-        >
-          <h1
-            className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[96px] tracking-[-0.035em] uppercase leading-[0.92]"
-            style={{
-              color: '#381ac9',
-              fontFamily: "'Geist', 'Inter', -apple-system, sans-serif",
-            }}
-          >
-            SMARTER FINANCE
-          </h1>
-          <h1
-            className="font-black text-5xl sm:text-7xl md:text-8xl lg:text-[96px] tracking-[-0.035em] uppercase leading-[0.92] text-[#121214] mt-1"
-            style={{
-              fontFamily: "'Geist', 'Inter', -apple-system, sans-serif",
-            }}
-          >
-            MADE SIMPLE
-          </h1>
-        </motion.div>
-
-        {/* Subtitle */}
-        <motion.p
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.2, ease: [0.16, 1, 0.3, 1] }}
-          className="text-neutral-700 text-sm sm:text-base md:text-lg font-normal max-w-xl mx-auto mt-5 leading-relaxed"
-        >
-          A complete platform for managing spend, payments, investments, and forecasting—all in one place.
-        </motion.p>
-
-        {/* Dual CTA Buttons with Framer Gloss Effects */}
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8, delay: 0.35, ease: [0.16, 1, 0.3, 1] }}
-          className="flex flex-wrap items-center justify-center gap-4 mt-8"
-        >
-          {/* Primary Button */}
-          <a
-            href="#pricing"
-            className="px-8 py-3.5 rounded-full text-white font-bold text-xs tracking-wide shadow-[0_10px_25px_rgba(56,26,201,0.4),inset_0_1px_1px_rgba(255,255,255,0.8),inset_0_-2px_2px_rgb(40,16,155)] transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
-            style={{
-              background: 'linear-gradient(180deg, #6262fe 0%, #381ac9 100%)',
-            }}
-          >
-            Get started
-          </a>
-
-          {/* Secondary Button */}
-          <a
-            href="#features"
-            className="px-8 py-3.5 rounded-full text-white font-bold text-xs tracking-wide shadow-[0_8px_20px_rgba(0,0,0,0.3),inset_0_1px_1px_rgba(255,255,255,0.8),inset_0_-2px_2px_rgb(0,0,0)] transition-all duration-200 hover:scale-105 active:scale-95 cursor-pointer"
-            style={{
-              background: 'linear-gradient(180deg, #282828 0%, #060606 100%)',
-            }}
-          >
-            Download now
-          </a>
-        </motion.div>
-
-        {/* Infinite Scrolling Logoipsum Partner Bar (Matching Image 4) */}
-        <div className="w-full mt-14 overflow-hidden relative">
-          <div className="absolute left-0 top-0 bottom-0 w-24 bg-gradient-to-r from-[#5869e8] to-transparent z-10 pointer-events-none" />
-          <div className="absolute right-0 top-0 bottom-0 w-24 bg-gradient-to-l from-[#5869e8] to-transparent z-10 pointer-events-none" />
-
-          <div className="flex items-center gap-12 sm:gap-16 animate-[marquee_25s_linear_infinite] whitespace-nowrap w-max opacity-90">
-            {[...logos, ...logos, ...logos].map((src, i) => (
-              <div key={i} className="h-7 sm:h-8 flex-shrink-0 flex items-center justify-center">
-                <img
-                  src={src}
-                  alt="Partner logo"
-                  className="h-full w-auto object-contain brightness-0 invert opacity-80 hover:opacity-100 transition-opacity"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
-
-      </div>
-    </section>
+      className="framer-1ibou1o"
+      data-framer-name="Hero"
+      id="hero"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
   )
 }

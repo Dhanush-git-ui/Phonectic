@@ -14,9 +14,21 @@ import Footer from './components/Footer.jsx'
 
 export default function App() {
   return (
-    <div className="min-h-screen bg-[#121214] text-white selection:bg-[#6262fe] selection:text-white font-sans antialiased overflow-x-hidden">
+    <div
+      id="main"
+      className="framer-wfFB2 framer-pef12c"
+      data-layout-template="true"
+      style={{ minHeight: '100vh', width: 'auto' }}
+    >
+      <div className="framer-1amsqkl-container">
+        <div></div>
+      </div>
       <Navbar />
-      <main>
+      <div
+        data-framer-root=""
+        className="framer-Tesak framer-bsC2E framer-qHZEM framer-iDV62 framer-skiHn framer-svtWx framer-zw0SP framer-ID2Ug framer-ZZsPj framer-TZPec framer-XVrSL framer-rXNCz framer-JJ5QF framer-72rtr7"
+        style={{ minHeight: '100vh', width: 'auto', display: 'contents' }}
+      >
         <Hero />
         <Benefits />
         <About />
@@ -27,8 +39,8 @@ export default function App() {
         <Pricing />
         <Blog />
         <FAQ />
-        <CTASection />
-      </main>
+      </div>
+      <CTASection />
       <Footer />
     </div>
   )
