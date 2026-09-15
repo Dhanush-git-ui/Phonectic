@@ -11,8 +11,11 @@ import Blog from './components/Blog.jsx'
 import FAQ from './components/FAQ.jsx'
 import CTASection from './components/CTASection.jsx'
 import Footer from './components/Footer.jsx'
+import { useScrollAnimations } from './utils/scrollAnimations.js'
 
 export default function App() {
+  useScrollAnimations()
+
   return (
     <div
       id="main"

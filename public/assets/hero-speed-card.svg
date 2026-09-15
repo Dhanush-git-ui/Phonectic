@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 452 84" width="452" height="84" fill="none">
+  <defs>
+    <filter id="speedCardShadow" x="0" y="0" width="452" height="84" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="6" stdDeviation="12" flood-color="rgba(15, 23, 42, 0.06)" />
+    </filter>
+  </defs>
+  <!-- Pill Background -->
+  <rect x="4" y="4" width="444" height="76" rx="38" fill="#FFFFFF" filter="url(#speedCardShadow)" />
+  <rect x="4" y="4" width="444" height="76" rx="38" stroke="#F1F5F9" stroke-width="2" />
+
+  <!-- Lightning Icon circle -->
+  <circle cx="46" cy="42" r="22" fill="#EFF6FF"/>
+  <path d="M47 30L38 43H46L45 54L54 41H46L47 30Z" fill="#2563EB" stroke="#1D4ED8" stroke-width="1.5" stroke-linejoin="round"/>
+
+  <!-- Left Text -->
+  <text x="82" y="49" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="26" font-weight="800" letter-spacing="-0.02em">96.8%</text>
+  <text x="175" y="49" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="18" font-weight="500">/speed math</text>
+
+  <!-- Right Pill Action Button -->
+  <rect x="330" y="19" width="98" height="46" rx="23" fill="#0F172A" />
+  <text x="356" y="48" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="16" font-weight="700" letter-spacing="-0.01em">Solve</text>
+</svg>

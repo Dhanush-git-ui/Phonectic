@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 525 456" width="525" height="456" fill="none">
+  <defs>
+    <filter id="cardShadow" x="0" y="0" width="525" height="456" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="rgba(15, 23, 42, 0.08)" />
+    </filter>
+    <linearGradient id="barGradHigh" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+    <linearGradient id="barGradBase" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#BFDBFE"/>
+      <stop offset="100%" stop-color="#93C5FD"/>
+    </linearGradient>
+    <linearGradient id="badgeGrad" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#10B981"/>
+      <stop offset="100%" stop-color="#059669"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card Background -->
+  <rect x="20" y="20" width="485" height="416" rx="44" fill="#FFFFFF" filter="url(#cardShadow)" />
+  <rect x="20" y="20" width="485" height="416" rx="44" stroke="#F1F5F9" stroke-width="2" />
+
+  <!-- Card Header -->
+  <text x="60" y="78" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="22" font-weight="500" letter-spacing="-0.01em">Aptitude Streak</text>
+  
+  <!-- 3 Dots Menu -->
+  <circle cx="435" cy="72" r="4" fill="#64748B" />
+  <circle cx="450" cy="72" r="4" fill="#64748B" />
+  <circle cx="465" cy="72" r="4" fill="#64748B" />
+
+  <!-- Big Metric -->
+  <text x="60" y="146" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="56" font-weight="800" letter-spacing="-0.03em">98.4%</text>
+  
+  <!-- Pill badge -->
+  <rect x="260" y="104" width="102" height="34" rx="17" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+  <text x="276" y="127" fill="#059669" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="16" font-weight="700">+14.2%</text>
+
+  <!-- Chart Bars (8 days problem streaks) -->
+  <!-- Bar 1 -->
+  <rect x="58" y="320" width="36" height="76" rx="18" fill="url(#barGradBase)" />
+  <rect x="58" y="280" width="36" height="48" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 2 -->
+  <rect x="108" y="260" width="36" height="136" rx="18" fill="url(#barGradBase)" />
+  <rect x="108" y="195" width="36" height="75" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 3 -->
+  <rect x="158" y="275" width="36" height="121" rx="18" fill="url(#barGradBase)" />
+  <rect x="158" y="235" width="36" height="50" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 4 -->
+  <rect x="208" y="210" width="36" height="186" rx="18" fill="url(#barGradBase)" />
+  <rect x="208" y="190" width="36" height="36" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 5 -->
+  <rect x="258" y="200" width="36" height="196" rx="18" fill="url(#barGradBase)" />
+  <rect x="258" y="170" width="36" height="42" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 6 -->
+  <rect x="308" y="215" width="36" height="181" rx="18" fill="url(#barGradBase)" />
+  <rect x="308" y="192" width="36" height="35" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 7 -->
+  <rect x="358" y="280" width="36" height="116" rx="18" fill="url(#barGradBase)" />
+  <rect x="358" y="235" width="36" height="55" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 8 -->
+  <rect x="408" y="215" width="36" height="181" rx="18" fill="url(#barGradBase)" />
+  <rect x="408" y="192" width="36" height="35" rx="18" fill="url(#barGradHigh)" />
+
+  <!-- Bar 9 -->
+  <rect x="458" y="270" width="36" height="126" rx="18" fill="url(#barGradBase)" />
+  <rect x="458" y="200" width="36" height="80" rx="18" fill="url(#barGradHigh)" />
+</svg>

@@ -1,27 +1,5 @@
 import { useState, useEffect } from 'react'
 
-const logoMarkSvg = `
-<svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M12.0312 24V16.7612C12.0312 15.5923 12.9788 14.6447 14.1477 14.6447H23.3601C22.9319 17.9459 19.1462 23.4662 12.0312 24Z" fill="white"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M2.71719 19.5896C0.376618 16.7336 -0.405644 13.4333 0.193 9.74078C6.5849 10.7332 11.5028 16.2024 11.6283 22.8424C11.629 22.9781 11.6295 23.1169 11.6299 23.2589C11.6305 23.4963 11.6017 23.7415 11.6017 23.9972C8.21352 23.8777 5.0515 22.4376 2.71719 19.5896Z" fill="url(#paint0_linear_8167_22950)"/>
-<path fill-rule="evenodd" clip-rule="evenodd" d="M23.4691 14.2592C24.0678 10.5667 23.2855 7.26644 20.9449 4.41043C18.6106 1.56235 15.4486 0.122268 12.0604 0.00275803C12.0604 0.131557 12.0531 0.257702 12.0459 0.381519C12.0389 0.503514 12.0319 0.623254 12.0322 0.741055C12.0326 0.883077 12.0331 1.0219 12.0338 1.15762C12.1593 7.79763 17.0772 13.2668 23.4691 14.2592Z" fill="url(#paint1_linear_8167_22950)"/>
-<path d="M9.51438 9.35527C10.6833 9.35527 11.6309 8.40769 11.6309 7.23879L11.6309 0C4.51588 0.533839 0.730181 6.05413 0.301976 9.35527H9.51438Z" fill="white"/>
-<defs>
-<linearGradient id="paint0_linear_8167_22950" x1="0.000128746" y1="9.74078" x2="11.6299" y2="23.9972" gradientUnits="userSpaceOnUse">
-<stop stop-color="white" stop-opacity="0"/>
-<stop offset="1" stop-color="white"/>
-</linearGradient>
-<linearGradient id="paint1_linear_8167_22950" x1="23.662" y1="14.2592" x2="12.0322" y2="0.00275808" gradientUnits="userSpaceOnUse">
-<stop stop-color="white" stop-opacity="0"/>
-<stop offset="1" stop-color="white"/>
-</linearGradient>
-</defs>
-</svg>`
-
-const fullLogoSvg = `
-<svg style="width:100%;height:100%;" viewBox="0 0 193 46">
-  <use href="#svg-1141095958_3042"></use>
-</svg>`
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false)
@@ -68,7 +46,7 @@ export default function Navbar() {
             }}
           >
             {/* Logo */}
-            <div className="framer-153rxup" data-framer-name="Logo Wrap">
+            <div className="framer-153rxup" data-framer-name="Logo Wrap" style={{ overflow: 'visible', width: 'auto' }}>
               <a
                 className="framer-14ood8v framer-sfm8kt"
                 data-framer-name="Nav Logo"
@@ -77,42 +55,73 @@ export default function Navbar() {
                 style={{
                   backgroundColor: isScrolled ? 'rgb(0, 0, 0)' : 'rgba(0, 0, 0, 0)',
                   borderRadius: isScrolled ? '20px' : '0px',
-                  padding: isScrolled ? '8px' : '8px 0px',
+                  padding: isScrolled ? '6px 12px' : '6px 0px',
                   display: 'flex',
                   alignItems: 'center',
                   justifyContent: 'center',
-                  transition: 'all 0.25s ease'
+                  textDecoration: 'none',
+                  transition: 'all 0.25s ease',
+                  overflow: 'visible',
+                  width: 'auto'
                 }}
               >
                 {isScrolled ? (
                   <div
-                    className="framer-191fvz4"
-                    data-framer-name="Logo Mark"
                     style={{
-                      width: 24,
-                      height: 24,
-                      flexShrink: 0,
+                      width: 26,
+                      height: 26,
                       display: 'flex',
                       alignItems: 'center',
-                      justifyContent: 'center'
+                      justifyContent: 'center',
+                      flexShrink: 0
                     }}
-                    dangerouslySetInnerHTML={{ __html: logoMarkSvg }}
-                  />
+                  >
+                    <img
+                      src="/assets/phonectic-logo-transparent.png"
+                      alt="Phonectic"
+                      style={{
+                        height: '24px',
+                        width: 'auto',
+                        display: 'block'
+                      }}
+                    />
+                  </div>
                 ) : (
                   <div
-                    className="framer-162yipg"
-                    data-framer-component-type="SVG"
-                    data-framer-name="Full Logo"
                     style={{
-                      imageRendering: 'pixelated',
-                      flexShrink: 0,
-                      fill: 'rgba(0,0,0,1)',
-                      color: 'rgba(0,0,0,1)',
-                      width: 101,
-                      height: 24
+                      display: 'flex',
+                      alignItems: 'center',
+                      gap: '10px',
+                      height: '100%',
+                      textDecoration: 'none',
+                      whiteSpace: 'nowrap',
+                      width: 'auto'
                     }}
-                    dangerouslySetInnerHTML={{ __html: fullLogoSvg }}
-                  />
+                  >
+                    <img
+                      src="/assets/phonectic-logo-transparent.png"
+                      alt="Phonectic Logo"
+                      style={{
+                        height: '32px',
+                        width: 'auto',
+                        display: 'block',
+                        filter: 'drop-shadow(0 2px 8px rgba(0, 102, 255, 0.45))'
+                      }}
+                    />
+                    <span
+                      style={{
+                        color: '#ffffff',
+                        fontSize: '22px',
+                        fontWeight: 800,
+                        letterSpacing: '-0.02em',
+                        fontFamily: '"Outfit", "Inter", sans-serif',
+                        whiteSpace: 'nowrap',
+                        lineHeight: 1
+                      }}
+                    >
+                      Phonectic
+                    </span>
+                  </div>
                 )}
               </a>
             </div>
@@ -191,7 +200,7 @@ export default function Navbar() {
                 <a
                   className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s"
                   data-framer-name="Default"
-                  href="#about"
+                  href="#benefits"
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     height: '100%',
@@ -223,7 +232,7 @@ export default function Navbar() {
                 <a
                   className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s"
                   data-framer-name="Default"
-                  href="#features"
+                  href="#about"
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     height: '100%',
@@ -319,7 +328,7 @@ export default function Navbar() {
                 <a
                   className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s"
                   data-framer-name="Default"
-                  href="#careers"
+                  href="#faq"
                   style={{
                     backgroundColor: 'rgba(0, 0, 0, 0)',
                     height: '100%',
@@ -353,7 +362,7 @@ export default function Navbar() {
                 className="framer-wUDM8 framer-lq2ef0 framer-v-sjrfo4 framer-1xiloa2"
                 data-framer-name="Teriary"
                 data-highlight="true"
-                href="#contact"
+                href="https://www.phoneticedu.com/auth/login"
                 style={{
                   background: 'linear-gradient(180deg, rgba(224, 224, 224, 0.2) 0%, rgba(224, 224, 224, 0.4) 100%)',
                   borderRadius: '22px',
@@ -421,7 +430,7 @@ export default function Navbar() {
             }}
           >
             {/* Mobile Logo */}
-            <div className="framer-153rxup" data-framer-name="Logo Wrap">
+            <div className="framer-153rxup" data-framer-name="Logo Wrap" style={{ overflow: 'visible', width: 'auto' }}>
               <a
                 className="framer-14ood8v framer-sfm8kt"
                 data-framer-name="Nav Logo"
@@ -429,23 +438,36 @@ export default function Navbar() {
                 style={{
                   backgroundColor: 'rgba(0, 0, 0, 0)',
                   display: 'flex',
-                  alignItems: 'center'
+                  alignItems: 'center',
+                  gap: '8px',
+                  textDecoration: 'none',
+                  overflow: 'visible',
+                  width: 'auto'
                 }}
               >
-                <div
-                  className="framer-162yipg"
-                  data-framer-component-type="SVG"
-                  data-framer-name="Full Logo"
+                <img
+                  src="/assets/phonectic-logo-transparent.png"
+                  alt="Phonectic"
                   style={{
-                    imageRendering: 'pixelated',
-                    flexShrink: 0,
-                    fill: 'rgba(0,0,0,1)',
-                    color: 'rgba(0,0,0,1)',
-                    width: 88,
-                    height: 21
+                    height: '24px',
+                    width: 'auto',
+                    display: 'block',
+                    filter: 'drop-shadow(0 2px 6px rgba(0, 102, 255, 0.35))'
                   }}
-                  dangerouslySetInnerHTML={{ __html: fullLogoSvg }}
                 />
+                <span
+                  style={{
+                    color: '#ffffff',
+                    fontSize: '19px',
+                    fontWeight: 800,
+                    letterSpacing: '-0.02em',
+                    fontFamily: '"Outfit", "Inter", sans-serif',
+                    whiteSpace: 'nowrap',
+                    lineHeight: 1
+                  }}
+                >
+                  Phonectic
+                </span>
               </a>
 
               {/* Hamburger / Close Toggle Button */}
@@ -527,14 +549,14 @@ export default function Navbar() {
                   Home
                 </a>
                 <a
-                  href="#about"
+                  href="#benefits"
                   style={{ color: 'rgba(255, 255, 255, 0.85)', padding: '10px 16px', textDecoration: 'none' }}
                   onClick={() => setMobileOpen(false)}
                 >
                   About
                 </a>
                 <a
-                  href="#features"
+                  href="#about"
                   style={{ color: 'rgba(255, 255, 255, 0.85)', padding: '10px 16px', textDecoration: 'none' }}
                   onClick={() => setMobileOpen(false)}
                 >
@@ -555,14 +577,14 @@ export default function Navbar() {
                   Blog
                 </a>
                 <a
-                  href="#careers"
+                  href="#faq"
                   style={{ color: 'rgba(255, 255, 255, 0.85)', padding: '10px 16px', textDecoration: 'none' }}
                   onClick={() => setMobileOpen(false)}
                 >
                   Careers
                 </a>
                 <a
-                  href="#contact"
+                  href="https://www.phoneticedu.com/auth/login"
                   style={{
                     backgroundColor: '#fff',
                     color: '#121214',

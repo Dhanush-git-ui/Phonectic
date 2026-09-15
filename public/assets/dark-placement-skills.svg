@@ -1,0 +1,85 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1080 1150" width="1080" height="1150" fill="none">
+  <defs>
+    <filter id="skillGlow" x="0" y="0" width="1080" height="1150" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="36" flood-color="rgba(0, 0, 0, 0.08)" />
+    </filter>
+    <linearGradient id="cardOrange" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#FED7AA"/>
+      <stop offset="100%" stop-color="#FB923C"/>
+    </linearGradient>
+    <linearGradient id="cardPurple" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#DDD6FE"/>
+      <stop offset="100%" stop-color="#C084FC"/>
+    </linearGradient>
+    <linearGradient id="cardGreen" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#A7F3D0"/>
+      <stop offset="100%" stop-color="#34D399"/>
+    </linearGradient>
+    <linearGradient id="cardPink" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#FBCFE8"/>
+      <stop offset="100%" stop-color="#F472B6"/>
+    </linearGradient>
+    <linearGradient id="cardBlue" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#BAE6FD"/>
+      <stop offset="100%" stop-color="#38BDF8"/>
+    </linearGradient>
+  </defs>
+
+  <g filter="url(#skillGlow)">
+    <!-- Card 1: Quantitative Aptitude (Top-Left, Orange) -->
+    <g transform="translate(140, 160)">
+      <rect width="360" height="340" rx="44" fill="url(#cardOrange)" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Icon Glass Circle -->
+      <circle cx="280" cy="80" r="40" fill="rgba(255, 255, 255, 0.45)"/>
+      <text x="268" y="92" fill="#7C2D12" font-family="'Courier New', monospace" font-size="34" font-weight="900">∑</text>
+
+      <text x="44" y="220" fill="#7C2D12" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="24" font-weight="600">Quants &amp; Speed</text>
+      <text x="44" y="290" fill="#431407" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="64" font-weight="900">38<tspan font-size="38">%</tspan></text>
+    </g>
+
+    <!-- Card 2: Coding & DSA (Right Tall Card, Purple) -->
+    <g transform="translate(540, 160)">
+      <rect width="380" height="520" rx="44" fill="url(#cardPurple)" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Icon Glass Circle -->
+      <circle cx="300" cy="80" r="40" fill="rgba(255, 255, 255, 0.45)"/>
+      <text x="282" y="90" fill="#4C1D95" font-family="'Courier New', monospace" font-size="30" font-weight="900">&lt;/&gt;</text>
+
+      <text x="48" y="380" fill="#4C1D95" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="28" font-weight="600">Coding &amp; DSA</text>
+      <text x="48" y="460" fill="#2E1065" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="76" font-weight="900">34<tspan font-size="44">%</tspan></text>
+    </g>
+
+    <!-- Card 3: Logical Reasoning (Middle-Left, Green Pill) -->
+    <g transform="translate(140, 540)">
+      <rect width="360" height="140" rx="40" fill="url(#cardGreen)" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Icon -->
+      <circle cx="70" cy="70" r="32" fill="rgba(255, 255, 255, 0.45)"/>
+      <circle cx="70" cy="70" r="14" fill="none" stroke="#064E3B" stroke-width="3"/>
+      <path d="M70 63V77M63 70H77" stroke="#064E3B" stroke-width="3" stroke-linecap="round"/>
+
+      <text x="126" y="58" fill="#064E3B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" font-weight="600">Logical Reasoning</text>
+      <text x="126" y="104" fill="#022C22" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="44" font-weight="900">18<tspan font-size="26">%</tspan></text>
+    </g>
+
+    <!-- Card 4: Verbal Ability (Bottom-Left, Pink Pill) -->
+    <g transform="translate(140, 720)">
+      <rect width="360" height="140" rx="40" fill="url(#cardPink)" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Icon -->
+      <circle cx="70" cy="70" r="32" fill="rgba(255, 255, 255, 0.45)"/>
+      <text x="58" y="80" fill="#831843" font-family="Georgia, serif" font-size="28" font-weight="900">“A”</text>
+
+      <text x="126" y="58" fill="#831843" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" font-weight="600">Verbal English</text>
+      <text x="126" y="104" fill="#500724" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="44" font-weight="900">10<tspan font-size="26">%</tspan></text>
+    </g>
+
+    <!-- Card 5: Mock Interviews (Bottom-Right, Sky Blue Pill) -->
+    <g transform="translate(540, 720)">
+      <rect width="380" height="140" rx="40" fill="url(#cardBlue)" stroke="#FFFFFF" stroke-width="2"/>
+      <!-- Icon -->
+      <circle cx="70" cy="70" r="32" fill="rgba(255, 255, 255, 0.45)"/>
+      <path d="M70 52L75 63L87 64L78 72L81 83L70 77L59 83L62 72L53 64L65 63L70 52Z" fill="#0369A1"/>
+
+      <text x="126" y="58" fill="#0C4A6E" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" font-weight="600">Mock Cleared</text>
+      <text x="126" y="104" fill="#082F49" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="44" font-weight="900">100<tspan font-size="26">%</tspan></text>
+    </g>
+  </g>
+</svg>

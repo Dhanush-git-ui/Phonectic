@@ -6,6 +6,11 @@
 :root {
   --token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd: rgb(18, 18, 20);
   --token-c5ac9015-f2e5-48a7-9317-85dc7ef59171: rgb(255, 255, 255);
+  --token-a281d3d3-8074-4276-b377-59dd81ca3f41: rgb(0, 102, 255);
+  --token-23955bb4-90e4-469f-9f8d-fcd039f71805: rgb(59, 130, 246);
+  --token-6d773f56-d95d-4a89-a168-a96103ce9e32: rgb(186, 230, 253);
+  --token-7effce1a-5558-453f-ac68-5a2441d0f584: rgb(96, 165, 250);
+  --token-ecac82fe-5be8-48ba-8cfe-23af479789cd: rgb(15, 47, 156);
 }
 
 html, body {
@@ -35,7 +40,7 @@ html, body {
   border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #6262fe;
+  background: #3b82f6;
 }
 
 /* Continuous Ticker Marquees */
@@ -71,3 +76,96 @@ html, body {
   transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
 }
 
+/* Transform 3D purple badges and assets to brilliant electric blue */
+.framer-1f3sf0s img,
+.framer-92sp21 img,
+.framer-1yw7i64 img,
+.framer-1ug35de img,
+.framer-egy6gx img {
+  filter: hue-rotate(-50deg) saturate(1.2) !important;
+}
+
+.framer-1rpbdej [data-framer-background-image-wrapper] img {
+  filter: hue-rotate(-50deg) saturate(1.1) !important;
+}
+
+/* ==========================================================================
+   Framer-Grade Scroll Reveals & Scroll-By-Movement Animations
+   ========================================================================== */
+
+.framer-scroll-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.framer-scroll-reveal.is-in-view {
+  opacity: 1 !important;
+  transform: translateY(0) !important;
+}
+
+.framer-reveal-scale {
+  opacity: 0;
+  transform: translateY(35px) scale(0.96);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.framer-reveal-scale.is-in-view {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.framer-reveal-left {
+  opacity: 0;
+  transform: translateX(-45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.framer-reveal-left.is-in-view {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.framer-reveal-right {
+  opacity: 0;
+  transform: translateX(45px);
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.framer-reveal-right.is-in-view {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+/* Stagger delays for child elements */
+.framer-stagger > *:nth-child(1) { transition-delay: 0.05s !important; }
+.framer-stagger > *:nth-child(2) { transition-delay: 0.16s !important; }
+.framer-stagger > *:nth-child(3) { transition-delay: 0.28s !important; }
+.framer-stagger > *:nth-child(4) { transition-delay: 0.40s !important; }
+.framer-stagger > *:nth-child(5) { transition-delay: 0.52s !important; }
+
+/* Parallax element transition smoothing */
+[data-parallax-speed] {
+  will-change: transform;
+}
+
+/* Hide Framer "Get this Template" badge */
+.framer-zrh3ys-container,
+[data-framer-name="Light (Only Text)"] {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+/* Ensure Nav Logo and brand text never get clipped */
+.framer-153rxup,
+.framer-14ood8v,
+.framer-162yipg {
+  width: auto !important;
+  max-width: none !important;
+  overflow: visible !important;
+}

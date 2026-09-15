@@ -1,0 +1,58 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1320 884" width="1320" height="884" fill="none">
+  <defs>
+    <linearGradient id="bgTcs" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="100%" stop-color="#312E81"/>
+    </linearGradient>
+    <linearGradient id="vsCard1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="1320" height="884" rx="64" fill="url(#bgTcs)"/>
+
+  <!-- Comparison Columns -->
+  <!-- TCS NQT Column -->
+  <g transform="translate(140, 140)">
+    <rect width="460" height="540" rx="36" fill="url(#vsCard1)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    <rect x="40" y="40" width="160" height="40" rx="20" fill="#2563EB"/>
+    <text x="65" y="66" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="700">TCS NQT 2026</text>
+
+    <text x="40" y="140" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="28" font-weight="700">Cognitive &amp; Coding</text>
+    <text x="40" y="180" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Numerical Ability: 26 Qs (40 min)</text>
+    <text x="40" y="220" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Reasoning Ability: 30 Qs (50 min)</text>
+    <text x="40" y="260" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Verbal Ability: 24 Qs (30 min)</text>
+    <text x="40" y="300" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Advanced Coding: 2 Qs (90 min)</text>
+
+    <!-- Cutoff Pill -->
+    <rect x="40" y="360" width="380" height="100" rx="24" fill="#0284C7" fill-opacity="0.2" stroke="#0284C7" stroke-width="1.5"/>
+    <text x="70" y="405" fill="#38BDF8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="700">PRIME / DIGITAL CUTOFF</text>
+    <text x="70" y="438" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="24" font-weight="800">85+ Percentile Benchmark</text>
+  </g>
+
+  <!-- VS Badge -->
+  <circle cx="660" cy="410" r="46" fill="#F43F5E"/>
+  <text x="640" y="420" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="28" font-weight="900">VS</text>
+
+  <!-- Accenture Column -->
+  <g transform="translate(720, 140)">
+    <rect width="460" height="540" rx="36" fill="url(#vsCard1)" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
+    <rect x="40" y="40" width="200" height="40" rx="20" fill="#A855F7"/>
+    <text x="65" y="66" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="700">ACCENTURE 2026</text>
+
+    <text x="40" y="140" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="28" font-weight="700">Cognitive &amp; Technical</text>
+    <text x="40" y="180" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Critical Thinking: 18 Qs</text>
+    <text x="40" y="220" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Abstract Reasoning: 15 Qs</text>
+    <text x="40" y="260" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Common App &amp; MS Office: 12 Qs</text>
+    <text x="40" y="300" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="18" font-weight="500">Coding (Mandatory): 2 Qs (45 min)</text>
+
+    <!-- Cutoff Pill -->
+    <rect x="40" y="360" width="380" height="100" rx="24" fill="#9333EA" fill-opacity="0.2" stroke="#9333EA" stroke-width="1.5"/>
+    <text x="70" y="405" fill="#C084FC" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="700">ASE / FSE ROLE CUTOFF</text>
+    <text x="70" y="438" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="24" font-weight="800">Sectional Cutoffs Enabled</text>
+  </g>
+
+  <!-- Title Bottom -->
+  <text x="140" y="770" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="36" font-weight="800" letter-spacing="-0.02em">Complete Exam Pattern &amp; Strategy Breakdown</text>
+</svg>

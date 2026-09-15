@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 568 538" width="568" height="538" fill="none">
+  <defs>
+    <filter id="percentileCardShadow" x="0" y="0" width="568" height="538" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="rgba(15, 23, 42, 0.09)" />
+    </filter>
+    <linearGradient id="cardGrad1" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#2563EB"/>
+    </linearGradient>
+    <linearGradient id="cardGrad2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#6366F1"/>
+      <stop offset="100%" stop-color="#4F46E5"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card Background -->
+  <rect x="24" y="24" width="520" height="490" rx="44" fill="#FFFFFF" filter="url(#percentileCardShadow)" />
+  <rect x="24" y="24" width="520" height="490" rx="44" stroke="#F1F5F9" stroke-width="2" />
+
+  <!-- Header -->
+  <text x="64" y="80" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="24" font-weight="600" letter-spacing="-0.02em">National Percentile</text>
+  <text x="408" y="80" fill="#94A3B8" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="20" font-weight="600">AIR #128</text>
+
+  <!-- Big Number -->
+  <text x="64" y="160" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="64" font-weight="800" letter-spacing="-0.03em">99.2<tspan fill="#64748B" font-weight="500">%</tspan></text>
+
+  <!-- Pill Badge -->
+  <rect x="64" y="186" width="112" height="34" rx="10" fill="#10B981"/>
+  <text x="76" y="209" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="16" font-weight="700">+20.8%</text>
+  <text x="188" y="209" fill="#475569" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="18" font-weight="500">since last mock</text>
+
+  <!-- Placement Sub-Card 1 (Blue) -->
+  <rect x="36" y="248" width="496" height="116" rx="28" fill="url(#cardGrad1)" />
+  <text x="66" y="296" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="22" font-weight="700">TCS NQT &amp; Infosys</text>
+  <text x="66" y="328" fill="#DBEAFE" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="16" font-weight="500">Cognitive &amp; Reasoning Round</text>
+  <!-- Qualified Tag -->
+  <rect x="400" y="280" width="108" height="32" rx="16" fill="rgba(255, 255, 255, 0.25)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+  <text x="418" y="301" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="14" font-weight="700">QUALIFIED</text>
+
+  <!-- Placement Sub-Card 2 (Purple) -->
+  <rect x="36" y="380" width="496" height="116" rx="28" fill="url(#cardGrad2)" />
+  <text x="66" y="428" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="22" font-weight="700">Coding &amp; DSA Assessment</text>
+  <text x="66" y="460" fill="#E0E7FF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="16" font-weight="500">Speed: 42s/problem · Accuracy: 98%</text>
+  <!-- Score Tag -->
+  <rect x="400" y="412" width="108" height="32" rx="16" fill="rgba(255, 255, 255, 0.25)" stroke="rgba(255, 255, 255, 0.4)" stroke-width="1"/>
+  <text x="424" y="433" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', 'Geist', sans-serif" font-size="14" font-weight="700">100 / 100</text>
+</svg>
