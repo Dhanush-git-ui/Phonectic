@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 60" fill="none">
+  <g transform="translate(18, 12)">
+    <path d="M12 4 C18 4 22 8 22 14 C22 20 16 26 8 30 C18 28 26 22 28 14 C28 6 20 2 12 4 Z" fill="#0070AD"/>
+    <circle cx="10" cy="18" r="4" fill="#0070AD"/>
+  </g>
+  <text x="125" y="34" dominant-baseline="middle" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', -apple-system, sans-serif" font-weight="800" font-size="22" letter-spacing="0.5">Capgemini</text>
+</svg>

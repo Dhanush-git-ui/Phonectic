@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad_engine-hackerrank" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#081D14" />
+      <stop offset="100%" stop-color="#0F3826" />
+    </linearGradient>
+    <radialGradient id="glow_engine-hackerrank" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00EA64" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00EA64" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#grad_engine-hackerrank)" stroke="#00EA64" stroke-width="1.5" stroke-opacity="0.4"/>
+  <circle cx="50" cy="50" r="42" fill="url(#glow_engine-hackerrank)"/>
+  <rect x="36" y="32" width="28" height="28" rx="6" stroke="#00EA64" stroke-width="2.5" fill="none"/><text x="50" y="52" text-anchor="middle" fill="#00EA64" font-family="'Inter', sans-serif" font-weight="900" font-size="20">H</text><text x="50" y="72" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="8" letter-spacing="1">HRANK</text>
+</svg>

@@ -1,0 +1,75 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 532 440" width="532" height="440" fill="none">
+  <defs>
+    <linearGradient id="code_bg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#0E121A"/>
+      <stop offset="100%" stop-color="#141B26"/>
+    </linearGradient>
+    <linearGradient id="code_card" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#182232" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0F1622" stop-opacity="0.9"/>
+    </linearGradient>
+    <linearGradient id="btn_green" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#00EA64"/>
+      <stop offset="100%" stop-color="#00B34D"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Card Frame -->
+  <rect width="532" height="440" rx="32" fill="url(#code_bg)"/>
+  <rect x="1.5" y="1.5" width="529" height="437" rx="30.5" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.5"/>
+
+  <!-- Code Window Header -->
+  <rect x="24" y="24" width="484" height="40" rx="12" fill="#161F2E"/>
+  <circle cx="48" cy="44" r="6" fill="#FF5F56"/>
+  <circle cx="68" cy="44" r="6" fill="#FFBD2E"/>
+  <circle cx="88" cy="44" r="6" fill="#27C93F"/>
+  <text x="266" y="49" text-anchor="middle" fill="#8B949E" font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="600">solution.cpp — DSA Hard</text>
+  
+  <!-- Runtime Badge in Header -->
+  <rect x="420" y="32" width="76" height="24" rx="6" fill="#00EA64" fill-opacity="0.15"/>
+  <text x="458" y="48" text-anchor="middle" fill="#00EA64" font-family="'JetBrains Mono', monospace" font-size="11" font-weight="700">0ms • 100%</text>
+
+  <!-- Code Editor Body -->
+  <rect x="24" y="76" width="484" height="230" rx="16" fill="url(#code_card)" stroke="#FFFFFF" stroke-opacity="0.05"/>
+  
+  <!-- Code Lines -->
+  <g font-family="'JetBrains Mono', 'Fira Code', monospace" font-size="12" font-weight="500">
+    <!-- Line numbers -->
+    <text x="44" y="108" fill="#4B5563">1</text>
+    <text x="44" y="132" fill="#4B5563">2</text>
+    <text x="44" y="156" fill="#4B5563">3</text>
+    <text x="44" y="180" fill="#4B5563">4</text>
+    <text x="44" y="204" fill="#4B5563">5</text>
+    <text x="44" y="228" fill="#4B5563">6</text>
+    <text x="44" y="252" fill="#4B5563">7</text>
+    <text x="44" y="276" fill="#4B5563">8</text>
+
+    <!-- Syntax Highlighted Code -->
+    <text x="76" y="108"><tspan fill="#FF7B72">int</tspan> <tspan fill="#79C0FF">maxProfit</tspan><tspan fill="#E6EDF3">(</tspan><tspan fill="#FFA657">vector</tspan><tspan fill="#E6EDF3">&lt;</tspan><tspan fill="#FF7B72">int</tspan><tspan fill="#E6EDF3">&gt;&amp; prices) {</tspan></text>
+    <text x="76" y="132"><tspan fill="#E6EDF3">    </tspan><tspan fill="#FF7B72">int</tspan> <tspan fill="#E6EDF3">minPrice = INT_MAX, maxP = </tspan><tspan fill="#79C0FF">0</tspan><tspan fill="#E6EDF3">;</tspan></text>
+    <text x="76" y="156"><tspan fill="#E6EDF3">    </tspan><tspan fill="#FF7B72">for</tspan> <tspan fill="#E6EDF3">(</tspan><tspan fill="#FF7B72">int</tspan> <tspan fill="#E6EDF3">p : prices) {</tspan></text>
+    <text x="76" y="180"><tspan fill="#E6EDF3">        minPrice = </tspan><tspan fill="#D2A8FF">min</tspan><tspan fill="#E6EDF3">(minPrice, p);</tspan></text>
+    <text x="76" y="204"><tspan fill="#E6EDF3">        maxP = </tspan><tspan fill="#D2A8FF">max</tspan><tspan fill="#E6EDF3">(maxP, p - minPrice);</tspan></text>
+    <text x="76" y="228"><tspan fill="#E6EDF3">    }</tspan></text>
+    <text x="76" y="252"><tspan fill="#E6EDF3">    </tspan><tspan fill="#FF7B72">return</tspan> <tspan fill="#E6EDF3">maxP;</tspan></text>
+    <text x="76" y="276"><tspan fill="#E6EDF3">}</tspan></text>
+  </g>
+
+  <!-- Execution Result Card -->
+  <rect x="24" y="322" width="484" height="96" rx="16" fill="#13231B" stroke="#00EA64" stroke-opacity="0.3"/>
+  <circle cx="56" cy="354" r="16" fill="#00EA64" fill-opacity="0.2"/>
+  <path d="M50 354 L54 358 L63 349" stroke="#00EA64" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+  
+  <text x="84" y="352" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="16">Accepted • Passed 48/48 Test Cases</text>
+  <text x="84" y="374" fill="#8B949E" font-family="'Inter', sans-serif" font-weight="500" font-size="13">Runtime: <tspan fill="#00EA64" font-weight="600">2 ms (faster than 98.4%)</tspan> | Memory: <tspan fill="#E6EDF3">14.1 MB</tspan></text>
+
+  <!-- Company Tags -->
+  <g transform="translate(84, 388)">
+    <rect x="0" y="0" width="80" height="20" rx="5" fill="#FFFFFF" fill-opacity="0.08"/>
+    <text x="40" y="14" text-anchor="middle" fill="#C9D1D9" font-family="'Inter', sans-serif" font-size="10" font-weight="600">TCS Digital</text>
+    <rect x="88" y="0" width="96" height="20" rx="5" fill="#FFFFFF" fill-opacity="0.08"/>
+    <text x="136" y="14" text-anchor="middle" fill="#C9D1D9" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Infosys SP (9 LPA)</text>
+    <rect x="192" y="0" width="84" height="20" rx="5" fill="#FFFFFF" fill-opacity="0.08"/>
+    <text x="234" y="14" text-anchor="middle" fill="#C9D1D9" font-family="'Inter', sans-serif" font-size="10" font-weight="600">Accenture Adv</text>
+  </g>
+</svg>

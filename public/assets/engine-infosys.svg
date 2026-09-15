@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad_engine-infosys" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#002B49" />
+      <stop offset="100%" stop-color="#005A9C" />
+    </linearGradient>
+    <radialGradient id="glow_engine-infosys" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00A3E0" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00A3E0" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#grad_engine-infosys)" stroke="#00A3E0" stroke-width="1.5" stroke-opacity="0.4"/>
+  <circle cx="50" cy="50" r="42" fill="url(#glow_engine-infosys)"/>
+  <text x="50" y="47" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16" letter-spacing="1">Infosys</text><rect x="35" y="56" width="30" height="4" rx="2" fill="#00A3E0"/>
+</svg>

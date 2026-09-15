@@ -1,0 +1,15 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
+  <defs>
+    <linearGradient id="grad_engine-elitmus" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#101B2B" />
+      <stop offset="100%" stop-color="#193354" />
+    </linearGradient>
+    <radialGradient id="glow_engine-elitmus" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#00D26A" stop-opacity="0.25"/>
+      <stop offset="100%" stop-color="#00D26A" stop-opacity="0"/>
+    </radialGradient>
+  </defs>
+  <circle cx="50" cy="50" r="48" fill="url(#grad_engine-elitmus)" stroke="#00D26A" stroke-width="1.5" stroke-opacity="0.4"/>
+  <circle cx="50" cy="50" r="42" fill="url(#glow_engine-elitmus)"/>
+  <text x="50" y="47" text-anchor="middle" fill="#00D26A" font-family="'Inter', sans-serif" font-weight="900" font-size="24">pH</text><text x="50" y="65" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="8" letter-spacing="1">eLITMUS</text>
+</svg>
