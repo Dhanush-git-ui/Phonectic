@@ -1,72 +1,1172 @@
-const content = `<div class="framer-5g4qhl" data-framer-name="Container"><div class="framer-12rkqfl" data-framer-name="Header"><div class="framer-1wfmo0x" data-framer-name="Heading &amp; Title"><div class="framer-tkejc2" data-framer-name="Title"><div class="framer-4dpsnc" data-framer-name="Number" style="transform:rotate(-17deg)"><div class="framer-jrrcgf" data-framer-component-type="RichTextContainer" data-framer-name="01" style="transform:none"><p class="framer-text framer-styles-preset-10gosz4" data-styles-preset="gsZKPt0ge" dir="auto" style="--framer-text-color:var(--token-cd0e4b39-d412-4786-8464-f96703fa50b9, rgb(82, 82, 82))">01</p></div></div><div class="framer-bvdbru" data-framer-name="Name" style="transform:rotate(9deg)"><div class="framer-1o16ean" data-framer-component-type="RichTextContainer" data-framer-name="benefits" style="transform:none"><p class="framer-text framer-styles-preset-10gosz4" data-styles-preset="gsZKPt0ge" dir="auto" style="--framer-text-color:var(--token-c6def8b1-53e1-4b6e-88c6-f76095f3377b, rgb(217, 217, 217))">PROGRAMS</p></div></div></div><div class="ssr-variant hidden-1k8ds7i"><div class="framer-2oyutz" data-framer-component-type="RichTextContainer" data-framer-name="Heading" style="transform:none"><h2 class="framer-text framer-styles-preset-1c9qbxs" data-styles-preset="Tn59MLvQJ" dir="auto" style="--framer-text-alignment:center"><span style="white-space:nowrap"><span style="display:inline-block;">P</span><span style="display:inline-block;">l</span><span style="display:inline-block;">a</span><span style="display:inline-block;">c</span><span style="display:inline-block;">e</span><span style="display:inline-block;">m</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">t</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">R</span><span style="display:inline-block;">e</span><span style="display:inline-block;">a</span><span style="display:inline-block;">d</span><span style="display:inline-block;">y</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">S</span><span style="display:inline-block;">i</span><span style="display:inline-block;">m</span><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">i</span><span style="display:inline-block;">f</span><span style="display:inline-block;">i</span><span style="display:inline-block;">e</span><span style="display:inline-block;">d</span><span style="display:inline-block;">.</span></span></h2></div></div><div class="ssr-variant hidden-72rtr7 hidden-m2it3q"><div class="framer-2oyutz" data-framer-component-type="RichTextContainer" data-framer-name="Heading" style="transform:none"><h3 class="framer-text framer-styles-preset-ol5e0v" data-styles-preset="yopWj3I1S" dir="auto" style="--framer-text-alignment:center"><span style="white-space:nowrap"><span style="display:inline-block;">P</span><span style="display:inline-block;">l</span><span style="display:inline-block;">a</span><span style="display:inline-block;">c</span><span style="display:inline-block;">e</span><span style="display:inline-block;">m</span><span style="display:inline-block;">e</span><span style="display:inline-block;">n</span><span style="display:inline-block;">t</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">R</span><span style="display:inline-block;">e</span><span style="display:inline-block;">a</span><span style="display:inline-block;">d</span><span style="display:inline-block;">y</span><span style="display:inline-block;">,</span></span> <span style="white-space:nowrap"><span style="display:inline-block;">S</span><span style="display:inline-block;">i</span><span style="display:inline-block;">m</span><span style="display:inline-block;">p</span><span style="display:inline-block;">l</span><span style="display:inline-block;">i</span><span style="display:inline-block;">f</span><span style="display:inline-block;">i</span><span style="display:inline-block;">e</span><span style="display:inline-block;">d</span><span style="display:inline-block;">.</span></span></h3></div></div></div><div class="framer-how8uj" data-framer-component-type="RichTextContainer" data-framer-name="SubHead" style="transform:none"><p class="framer-text framer-styles-preset-aploos" data-styles-preset="N1pattSQ4" dir="auto" style="--framer-text-alignment:center">Our ecosystem unifies quantitative aptitude, reasoning, technical coding, and mock interviews — giving you the speed, clarity, and confidence to ace every recruitment drive.</p></div></div><div class="framer-1wtybz4" data-framer-name="Benefit Wrap"><div class="framer-1mv5rbj" data-framer-name="Benefit Card 1" style="will-change:transform;transform:scale(0.5)"><div class="framer-xt3pyg" data-framer-name="Benefit Image"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="aptitude-topic-breakdown" decoding="async" height="440" loading="lazy" src="/assets/benefit-aptitude-donut.svg" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:contain" width="532"/></div></div><div class="framer-1fcswsm" data-framer-component-type="RichTextContainer" data-framer-name="Simplify your spend" style="transform:none"><p class="framer-text framer-styles-preset-1tvfe9n" data-styles-preset="MRCEp2OEt" dir="auto" style="--framer-text-alignment:center">Aptitude Mastery</p></div></div><div class="framer-1sksgda" data-framer-name="Benefit Card 2" style="will-change:transform;transform:scale(0.5)"><div class="framer-3fodo7" data-framer-component-type="RichTextContainer" data-framer-name="Get smart financial action" style="transform:none"><p class="framer-text framer-styles-preset-1tvfe9n" data-styles-preset="MRCEp2OEt" dir="auto" style="--framer-text-alignment:center">Technical &amp; DSA Coding</p></div><div class="framer-c8ss1a" data-framer-name="Benefit Image"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="Technical and DSA Coding" decoding="async" height="440" loading="lazy" sizes="(min-width: 1200px) 266px, (min-width: 810px) and (max-width: 1199.98px) 266px, (max-width: 809.98px) 266px" src="/assets/benefit-coding-dsa.svg"  style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="532"/></div></div></div><div class="ssr-variant"><div class="framer-jrka9z" data-framer-name="Benefit Card 3" style="will-change:transform;transform:scale(0.5)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="Campus Placements Track Record" decoding="async" height="720" loading="lazy" sizes="(min-width: 1200px) max((min(100vw - 96px, 1344px) - 24px) / 4, 1px), (max-width: 809.98px) min(100vw - 32px, 1344px), (min-width: 810px) and (max-width: 1199.98px) max((min(100vw - 48px, 1344px) - 8px) / 2, 50px)" src="/assets/benefit-placements-grid.svg"  style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:cover" width="660"/></div><div class="framer-1oosdwm" data-framer-name="Benefit Content"><div class="framer-1u2vrr1" data-framer-component-type="RichTextContainer" data-framer-name="$1,802.00" style="transform:none"><p class="framer-text" dir="auto" style='--font-selector:R0Y7R2Vpc3QtNzAw;--framer-font-family:"Geist", "Geist Placeholder", sans-serif;--framer-font-size:48px;--framer-font-weight:700;--framer-line-height:100%;--framer-text-alignment:center;--framer-text-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255))'>1,000<span class="framer-text" style="--framer-text-color:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8))">+</span></p></div><div class="framer-1pxplbd" data-framer-name="Tag"><div _constraints="[object Object]" aria-hidden="true" class="framer-1t94xpy" data-framer-component-type="SVG" data-framer-name="Icon" parentsize="0" rotation="0" shadows="" style="image-rendering:pixelated;flex-shrink:0;fill:var(--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd, rgb(18, 18, 20));color:var(--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd, rgb(18, 18, 20))"><div class="svgContainer" style="width:100%;height:100%;aspect-ratio:inherit"><svg style="width:100%;height:100%;" viewbox="0 0 24 24"><use href="#svg1817349111_628"></use></svg></div></div><div class="framer-1jy42np" data-framer-component-type="RichTextContainer" data-framer-name="+ 24%" style="transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" dir="auto" style="--framer-text-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255))">PLACED</p></div></div></div><div class="framer-15mo8zw" data-framer-component-type="RichTextContainer" data-framer-name="Growth your wealth" style="transform:none"><p class="framer-text framer-styles-preset-1tvfe9n" data-styles-preset="MRCEp2OEt" dir="auto" style="--framer-text-alignment:center;--framer-text-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255))">Proven Placements</p></div></div></div><div class="framer-e4ixht" data-framer-name="Benefit Card 4" style="will-change:transform;transform:scale(0.5)"><div class="framer-oeac3q" data-framer-component-type="RichTextContainer" data-framer-name="Secureevery step" style="transform:none"><p class="framer-text framer-styles-preset-1tvfe9n" data-styles-preset="MRCEp2OEt" dir="auto" style="--framer-text-alignment:center">Interview<br class="framer-text"/>Ready</p></div><div class="framer-1x3r20g" data-framer-name="Benefit Image" style="transform:translateX(-50%)"><div data-framer-background-image-wrapper="true" style="position:absolute;border-radius:inherit;corner-shape:inherit;top:0;right:0;bottom:0;left:0"><img alt="Interview Readiness Verification" decoding="async" height="551" loading="lazy" src="/assets/benefit-interview-pass.svg" style="display:block;width:100%;height:100%;border-radius:inherit;corner-shape:inherit;object-position:center;object-fit:contain" width="480"/></div></div></div></div></div>`
-
-import { useEffect } from 'react'
+import { useState } from 'react'
 
 export default function Benefits() {
-  useEffect(() => {
-    const section = document.getElementById('benefit')
-    if (!section) return
+	return (
+		<section
+			id="benefit"
+			className="programs-section"
+			style={{
+				position: 'relative',
+				width: '100%',
+				background: '#ffffff',
+				padding: '90px 24px 100px',
+				overflow: 'hidden',
+			}}
+		>
+			<div
+				style={{
+					maxWidth: '1280px',
+					margin: '0 auto',
+				}}
+			>
+				{/* 1. Header with Angled Badge */}
+				<div style={{ textAlign: 'center', marginBottom: '60px' }}>
+					<div
+						style={{
+							display: 'inline-flex',
+							alignItems: 'center',
+							gap: '6px',
+							marginBottom: '20px',
+						}}
+					>
+						<span
+							style={{
+								display: 'inline-block',
+								padding: '4px 10px',
+								background: '#f1f5f9',
+								color: '#64748b',
+								fontSize: '12px',
+								fontWeight: 700,
+								borderRadius: '8px',
+								transform: 'rotate(-14deg)',
+								border: '1px solid #e2e8f0',
+								boxShadow: '0 2px 4px rgba(0,0,0,0.04)',
+							}}
+						>
+							01
+						</span>
+						<span
+							style={{
+								display: 'inline-block',
+								padding: '4px 12px',
+								background: '#1e293b',
+								color: '#ffffff',
+								fontSize: '11px',
+								fontWeight: 800,
+								letterSpacing: '0.08em',
+								borderRadius: '9999px',
+								transform: 'rotate(8deg)',
+								boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+							}}
+						>
+							PROGRAMS
+						</span>
+					</div>
 
-    const cards = [
-      section.querySelector('.framer-1mv5rbj'),
-      section.querySelector('.framer-1sksgda'),
-      section.querySelector('.framer-jrka9z'),
-      section.querySelector('.framer-e4ixht')
-    ].filter(Boolean)
+					<h2
+						style={{
+							fontFamily: "'Anton', sans-serif",
+							fontSize: 'clamp(36px, 5vw, 64px)',
+							lineHeight: 1.05,
+							fontWeight: 900,
+							letterSpacing: '-0.01em',
+							color: '#0f172a',
+							textTransform: 'uppercase',
+							margin: '0 0 16px',
+						}}
+					>
+						EVERYTHING PLACEMENT. UNIFIED.
+					</h2>
 
-    cards.forEach((card, idx) => {
-      card.style.opacity = '0'
-      card.style.transform = 'translateY(40px) scale(0.92)'
-      card.style.transition = `opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 0.12}s, transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) ${idx * 0.12}s`
-    })
+					<p
+						style={{
+							fontFamily: "'Plus Jakarta Sans', sans-serif",
+							fontSize: 'clamp(14px, 1.2vw, 16px)',
+							lineHeight: 1.6,
+							color: '#475569',
+							maxWidth: '680px',
+							margin: '0 auto',
+						}}
+					>
+						Our ecosystem unifies quantitative aptitude, reasoning, technical coding, and mock
+						interviews — giving you the speed, clarity, and confidence to ace every recruitment drive.
+					</p>
+				</div>
 
-    let isRevealed = false
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          isRevealed = true
-          cards.forEach(card => {
-            card.style.opacity = '1'
-            card.style.transform = 'translateY(0) scale(1)'
-          })
-          observer.disconnect()
-        }
-      })
-    }, { threshold: 0.15 })
+				{/* 2. Horizontal 4-Card Connected Roadmap */}
+				<div style={{ position: 'relative', width: '100%', marginBottom: '80px' }}>
+					{/* Top Blue Connecting Weaving Curve (Desktop & Tablet) */}
+					<div
+						className="programs-connecting-curve-wrap"
+						style={{
+							position: 'absolute',
+							top: '-20px',
+							left: '0',
+							width: '100%',
+							height: '60px',
+							pointerEvents: 'none',
+							zIndex: 1,
+						}}
+					>
+						<svg
+							viewBox="0 0 1200 60"
+							fill="none"
+							xmlns="http://www.w3.org/2000/svg"
+							style={{ width: '100%', height: '100%', overflow: 'visible' }}
+							preserveAspectRatio="none"
+						>
+							{/* Soft Glow Path */}
+							<path
+								d="M 140 26 C 210 -15, 330 65, 440 26 C 510 -15, 630 65, 740 26 C 810 -15, 930 65, 1060 26"
+								stroke="#93c5fd"
+								strokeWidth="4"
+								strokeLinecap="round"
+								opacity="0.4"
+							/>
+							{/* Crisp Core Blue Path */}
+							<path
+								d="M 140 26 C 210 -15, 330 65, 440 26 C 510 -15, 630 65, 740 26 C 810 -15, 930 65, 1060 26"
+								stroke="#2563eb"
+								strokeWidth="2"
+								strokeLinecap="round"
+								strokeDasharray="6 4"
+							/>
+							{/* Glowing Node Dots */}
+							<circle cx="140" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
+							<circle cx="440" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
+							<circle cx="740" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
+							<circle cx="1060" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
+						</svg>
+					</div>
 
-    observer.observe(section)
+					{/* 4 Cards Grid */}
+					<div
+						className="programs-cards-grid"
+						style={{
+							display: 'grid',
+							gridTemplateColumns: 'repeat(4, 1fr)',
+							gap: '20px',
+							position: 'relative',
+							zIndex: 2,
+						}}
+					>
+						{/* CARD 1: Aptitude Mastery */}
+						<div
+							className="program-card"
+							style={{
+								background: '#ffffff',
+								border: '1px solid #e2e8f0',
+								borderRadius: '26px',
+								padding: '24px',
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
+								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+							}}
+						>
+							<div>
+								{/* Header */}
+								<div
+									style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+										marginBottom: '14px',
+									}}
+								>
+									<span
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											letterSpacing: '0.08em',
+											color: '#2563eb',
+											textTransform: 'uppercase',
+										}}
+									>
+										01 / PREPARE
+									</span>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2">
+										<path d="M18 20V10M12 20V4M6 20v-6" strokeLinecap="round" />
+									</svg>
+								</div>
 
-    // Subtle scroll-by-movement parallax once revealed
-    const handleScroll = () => {
-      if (!isRevealed) return
-      const rect = section.getBoundingClientRect()
-      const winHeight = window.innerHeight
-      if (rect.top < winHeight && rect.bottom > 0) {
-        const progress = (winHeight - rect.top) / (winHeight + rect.height) - 0.5
-        cards.forEach((card, idx) => {
-          const dir = idx % 2 === 0 ? -1 : 1
-          const floatY = progress * 18 * dir
-          card.style.transform = `translateY(${floatY}px) scale(1)`
-          card.style.transition = 'transform 0.1s ease-out'
-        })
-      }
-    }
+								<h3
+									style={{
+										fontFamily: "'Plus Jakarta Sans', sans-serif",
+										fontSize: '20px',
+										fontWeight: 800,
+										color: '#0f172a',
+										margin: '0 0 4px',
+									}}
+								>
+									Aptitude Mastery
+								</h3>
+								<p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 22px' }}>
+									Quantitative. Logical. Verbal.
+								</p>
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
+								{/* Circular Donut Gauge & 3 Progress Bars */}
+								<div
+									style={{
+										display: 'flex',
+										alignItems: 'center',
+										gap: '16px',
+										marginBottom: '24px',
+										background: '#f8fafc',
+										padding: '16px 14px',
+										borderRadius: '18px',
+										border: '1px solid #f1f5f9',
+									}}
+								>
+									{/* Donut Gauge */}
+									<div
+										style={{
+											position: 'relative',
+											width: '84px',
+											height: '84px',
+											flexShrink: 0,
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'center',
+										}}
+									>
+										<svg width="84" height="84" viewBox="0 0 84 84">
+											<circle cx="42" cy="42" r="34" stroke="#e2e8f0" strokeWidth="8" fill="none" />
+											<circle
+												cx="42"
+												cy="42"
+												r="34"
+												stroke="url(#blueGaugeGrad)"
+												strokeWidth="8"
+												strokeDasharray="213"
+												strokeDashoffset="24"
+												strokeLinecap="round"
+												fill="none"
+												transform="rotate(-90 42 42)"
+											/>
+											<defs>
+												<linearGradient id="blueGaugeGrad" x1="0" y1="0" x2="1" y2="1">
+													<stop offset="0%" stopColor="#38bdf8" />
+													<stop offset="100%" stopColor="#2563eb" />
+												</linearGradient>
+											</defs>
+										</svg>
+										<div style={{ position: 'absolute', textAlign: 'center' }}>
+											<div
+												style={{
+													fontFamily: "'Plus Jakarta Sans', sans-serif",
+													fontSize: '18px',
+													fontWeight: 800,
+													color: '#0f172a',
+													lineHeight: 1,
+												}}
+											>
+												99.4
+											</div>
+											<div style={{ fontSize: '10px', color: '#64748b', fontWeight: 600 }}>%ile</div>
+										</div>
+									</div>
 
-    return () => {
-      observer.disconnect()
-      window.removeEventListener('scroll', handleScroll)
-    }
-  }, [])
+									{/* 3 Horizontal Progress Bars */}
+									<div style={{ flex: 1, display: 'flex', flexDirection: 'column', gap: '8px' }}>
+										{/* Quant */}
+										<div>
+											<div
+												style={{
+													display: 'flex',
+													justifyContent: 'space-between',
+													fontSize: '11px',
+													fontWeight: 700,
+													color: '#334155',
+													marginBottom: '3px',
+												}}
+											>
+												<span>Quant</span>
+												<span style={{ color: '#2563eb' }}>98%</span>
+											</div>
+											<div style={{ width: '100%', height: '5px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
+												<div style={{ width: '98%', height: '100%', background: '#2563eb', borderRadius: '999px' }} />
+											</div>
+										</div>
+										{/* Logical */}
+										<div>
+											<div
+												style={{
+													display: 'flex',
+													justifyContent: 'space-between',
+													fontSize: '11px',
+													fontWeight: 700,
+													color: '#334155',
+													marginBottom: '3px',
+												}}
+											>
+												<span>Logical</span>
+												<span style={{ color: '#38bdf8' }}>94%</span>
+											</div>
+											<div style={{ width: '100%', height: '5px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
+												<div style={{ width: '94%', height: '100%', background: '#0284c7', borderRadius: '999px' }} />
+											</div>
+										</div>
+										{/* Verbal */}
+										<div>
+											<div
+												style={{
+													display: 'flex',
+													justifyContent: 'space-between',
+													fontSize: '11px',
+													fontWeight: 700,
+													color: '#334155',
+													marginBottom: '3px',
+												}}
+											>
+												<span>Verbal</span>
+												<span style={{ color: '#6366f1' }}>91%</span>
+											</div>
+											<div style={{ width: '100%', height: '5px', background: '#e2e8f0', borderRadius: '999px', overflow: 'hidden' }}>
+												<div style={{ width: '91%', height: '100%', background: '#6366f1', borderRadius: '999px' }} />
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
 
-  return (
-    <section
-      className="framer-132tyoq"
-      data-framer-name="Benefits"
-      id="benefit"
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
-  )
+							{/* Bottom Action Pill */}
+							<a
+								href="https://www.phoneticedu.com/auth/login"
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'space-between',
+									padding: '10px 14px',
+									background: '#ffffff',
+									border: '1px solid #e2e8f0',
+									borderRadius: '14px',
+									textDecoration: 'none',
+									transition: 'background 0.2s, border-color 0.2s',
+								}}
+							>
+								<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+									<div
+										style={{
+											width: '28px',
+											height: '28px',
+											borderRadius: '8px',
+											background: '#eff6ff',
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'center',
+										}}
+									>
+										<svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2">
+											<path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20M4 19.5A2.5 2.5 0 0 0 6.5 22H20V2H6.5A2.5 2.5 0 0 0 4 4.5v15z" />
+										</svg>
+									</div>
+									<div>
+										<div style={{ fontSize: '12px', fontWeight: 800, color: '#0f172a', lineHeight: 1.2 }}>
+											Personalized Practice
+										</div>
+										<div style={{ fontSize: '10px', color: '#64748b' }}>Adaptive tests tailored to you</div>
+									</div>
+								</div>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#94a3b8" strokeWidth="2.5">
+									<path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+							</a>
+						</div>
+
+						{/* CARD 2: Technical & DSA Coding */}
+						<div
+							className="program-card"
+							style={{
+								background: '#ffffff',
+								border: '1px solid #e2e8f0',
+								borderRadius: '26px',
+								padding: '24px',
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
+								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+							}}
+						>
+							<div>
+								{/* Header */}
+								<div
+									style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+										marginBottom: '14px',
+									}}
+								>
+									<span
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											letterSpacing: '0.08em',
+											color: '#2563eb',
+											textTransform: 'uppercase',
+										}}
+									>
+										02 / BUILD
+									</span>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2">
+										<path d="M16 18l6-6-6-6M8 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+								</div>
+
+								<h3
+									style={{
+										fontFamily: "'Plus Jakarta Sans', sans-serif",
+										fontSize: '20px',
+										fontWeight: 800,
+										color: '#0f172a',
+										margin: '0 0 4px',
+									}}
+								>
+									Technical & DSA Coding
+								</h3>
+								<p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 16px' }}>Practice. Code. Master.</p>
+
+								{/* Dark Code Editor Mockup */}
+								<div
+									style={{
+										background: '#0d1117',
+										borderRadius: '16px',
+										padding: '12px 14px',
+										marginBottom: '20px',
+										boxShadow: 'inset 0 1px 0 rgba(255,255,255,0.1)',
+									}}
+								>
+									{/* Top Window Bar */}
+									<div
+										style={{
+											display: 'flex',
+											justifyContent: 'space-between',
+											alignItems: 'center',
+											borderBottom: '1px solid rgba(255,255,255,0.08)',
+											paddingBottom: '8px',
+											marginBottom: '10px',
+										}}
+									>
+										<div style={{ display: 'flex', gap: '5px' }}>
+											<span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#ef4444' }} />
+											<span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#f59e0b' }} />
+											<span style={{ width: '8px', height: '8px', borderRadius: '50%', background: '#10b981' }} />
+										</div>
+										<span style={{ fontSize: '10px', color: '#94a3b8', fontFamily: "'Fira Code', monospace" }}>
+											solution.cpp
+										</span>
+										<span
+											style={{
+												fontSize: '9px',
+												background: 'rgba(59,130,246,0.2)',
+												color: '#60a5fa',
+												padding: '2px 6px',
+												borderRadius: '4px',
+												fontFamily: 'monospace',
+											}}
+										>
+											C++ ▾
+										</span>
+									</div>
+
+									{/* Code Snippet */}
+									<pre
+										style={{
+											margin: 0,
+											fontFamily: "'Fira Code', monospace",
+											fontSize: '10px',
+											lineHeight: 1.45,
+											color: '#e2e8f0',
+											overflow: 'hidden',
+										}}
+									>
+										<code>
+											<span style={{ color: '#64748b' }}>1 </span>
+											<span style={{ color: '#f43f5e' }}>vector</span>
+											<span style={{ color: '#38bdf8' }}>&lt;int&gt; </span>
+											<span style={{ color: '#a78bfa' }}>twoSum</span>(
+											<span style={{ color: '#f43f5e' }}>vector</span>
+											<span style={{ color: '#38bdf8' }}>&lt;int&gt;</span>&amp; nums,
+											{'\n'}
+											<span style={{ color: '#64748b' }}>2 </span>
+											{'   '}
+											<span style={{ color: '#f43f5e' }}>int </span>target) &#123;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>3 </span>
+											{'   '}unordered_map&lt;int, int&gt; mp;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>4 </span>
+											{'   '}
+											<span style={{ color: '#f43f5e' }}>for </span>(
+											<span style={{ color: '#f43f5e' }}>int </span>i = 0; i &lt; nums.size(); i++) &#123;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>5 </span>
+											{'     '}
+											<span style={{ color: '#f43f5e' }}>int </span>comp = target - nums[i];
+											{'\n'}
+											<span style={{ color: '#64748b' }}>6 </span>
+											{'     '}
+											<span style={{ color: '#f43f5e' }}>if </span>(mp.count(comp))
+											<span style={{ color: '#38bdf8' }}> return </span>&#123;mp[comp], i&#125;;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>7 </span>
+											{'     '}mp[nums[i]] = i;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>8 </span>
+											{'   '}&#125;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>9 </span>
+											{'   '}
+											<span style={{ color: '#38bdf8' }}>return </span>&#123;&#125;;
+											{'\n'}
+											<span style={{ color: '#64748b' }}>10</span>&#125;
+										</code>
+									</pre>
+								</div>
+							</div>
+
+							{/* Bottom Action Pill */}
+							<a
+								href="https://www.phoneticedu.com/auth/login"
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'space-between',
+									padding: '10px 14px',
+									background: '#ecfdf5',
+									border: '1px solid #a7f3d0',
+									borderRadius: '14px',
+									textDecoration: 'none',
+									transition: 'background 0.2s',
+								}}
+							>
+								<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+									<span
+										style={{
+											width: '20px',
+											height: '20px',
+											borderRadius: '50%',
+											background: '#10b981',
+											color: '#ffffff',
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'center',
+											fontSize: '11px',
+											fontWeight: 800,
+										}}
+									>
+										✓
+									</span>
+									<div>
+										<div style={{ fontSize: '11px', fontWeight: 800, color: '#065f46', lineHeight: 1.2 }}>
+											All Test Cases Passed
+										</div>
+										<div style={{ fontSize: '9.5px', color: '#047857' }}>Runtime: 12 ms | Memory: 10.4 MB</div>
+									</div>
+								</div>
+								<svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="#059669" strokeWidth="2.5">
+									<path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
+								</svg>
+							</a>
+						</div>
+
+						{/* CARD 3: Proven Placements (FEATURED DARK OBSIDIAN CARD) */}
+						<div
+							className="program-card program-card-featured"
+							style={{
+								background: 'radial-gradient(ellipse at 50% 0%, #1e3a8a 0%, #090d16 100%)',
+								border: '1.5px solid rgba(59, 130, 246, 0.45)',
+								borderRadius: '26px',
+								padding: '24px',
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+								boxShadow:
+									'0 20px 45px -10px rgba(37, 99, 235, 0.35), 0 0 0 1px rgba(255,255,255,0.08) inset',
+								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								position: 'relative',
+								overflow: 'hidden',
+							}}
+						>
+							<div>
+								{/* Header */}
+								<div
+									style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+										marginBottom: '14px',
+									}}
+								>
+									<span
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											letterSpacing: '0.08em',
+											color: '#38bdf8',
+											textTransform: 'uppercase',
+										}}
+									>
+										03 / PROVE
+									</span>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2">
+										<path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" />
+									</svg>
+								</div>
+
+								<h3
+									style={{
+										fontFamily: "'Plus Jakarta Sans', sans-serif",
+										fontSize: '20px',
+										fontWeight: 800,
+										color: '#ffffff',
+										margin: '0 0 4px',
+									}}
+								>
+									Proven Placements
+								</h3>
+								<p style={{ fontSize: '13px', color: '#94a3b8', margin: '0 0 20px' }}>
+									Real outcomes. Real opportunities.
+								</p>
+
+								{/* 2 Big Metrics */}
+								<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '18px' }}>
+									<div>
+										<div
+											style={{
+												fontFamily: "'Anton', sans-serif",
+												fontSize: '28px',
+												color: '#ffffff',
+												lineHeight: 1,
+											}}
+										>
+											1,000+
+										</div>
+										<div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '4px' }}>Students Placed</div>
+									</div>
+									<div>
+										<div
+											style={{
+												fontFamily: "'Anton', sans-serif",
+												fontSize: '28px',
+												color: '#38bdf8',
+												lineHeight: 1,
+											}}
+										>
+											94.8%
+										</div>
+										<div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '4px' }}>Placement Ratio</div>
+									</div>
+								</div>
+
+								{/* Glowing Area Chart with Floating Badge */}
+								<div style={{ position: 'relative', height: '70px', marginBottom: '16px' }}>
+									<svg
+										viewBox="0 0 240 70"
+										fill="none"
+										xmlns="http://www.w3.org/2000/svg"
+										style={{ width: '100%', height: '100%' }}
+										preserveAspectRatio="none"
+									>
+										<defs>
+											<linearGradient id="areaChartGrad" x1="0" y1="0" x2="0" y2="1">
+												<stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
+												<stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
+											</linearGradient>
+										</defs>
+										<path
+											d="M0 60 Q 40 55, 70 42 T 140 28 T 190 22 T 240 10 L 240 70 L 0 70 Z"
+											fill="url(#areaChartGrad)"
+										/>
+										<path
+											d="M0 60 Q 40 55, 70 42 T 140 28 T 190 22 T 240 10"
+											stroke="#38bdf8"
+											strokeWidth="2.5"
+											strokeLinecap="round"
+										/>
+									</svg>
+
+									{/* Floating Pill Badge */}
+									<div
+										style={{
+											position: 'absolute',
+											top: '12px',
+											right: '40px',
+											background: '#1d4ed8',
+											color: '#ffffff',
+											fontSize: '10px',
+											fontWeight: 700,
+											padding: '3px 8px',
+											borderRadius: '999px',
+											display: 'inline-flex',
+											alignItems: 'center',
+											gap: '4px',
+											boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+										}}
+									>
+										<span>↑ +18.4%</span>
+										<span style={{ opacity: 0.8, fontSize: '9px' }}>YoY Growth</span>
+									</div>
+								</div>
+							</div>
+
+							{/* Bottom Recruiters Row */}
+							<div
+								style={{
+									borderTop: '1px solid rgba(255,255,255,0.1)',
+									paddingTop: '12px',
+								}}
+							>
+								<div
+									style={{
+										fontSize: '10px',
+										color: '#64748b',
+										textTransform: 'uppercase',
+										letterSpacing: '0.06em',
+										fontWeight: 700,
+										marginBottom: '8px',
+									}}
+								>
+									Top Recruiters
+								</div>
+								<div
+									style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+										opacity: 0.88,
+									}}
+								>
+									<span style={{ color: '#ffffff', fontWeight: 800, fontSize: '13px', letterSpacing: '1px' }}>
+										tcs
+									</span>
+									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>Infosys</span>
+									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>&gt;accenture</span>
+									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>Capgemini</span>
+								</div>
+							</div>
+						</div>
+
+						{/* CARD 4: Interview Ready */}
+						<div
+							className="program-card"
+							style={{
+								background: '#ffffff',
+								border: '1px solid #e2e8f0',
+								borderRadius: '26px',
+								padding: '24px',
+								display: 'flex',
+								flexDirection: 'column',
+								justifyContent: 'space-between',
+								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
+								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+							}}
+						>
+							<div>
+								{/* Header */}
+								<div
+									style={{
+										display: 'flex',
+										justifyContent: 'space-between',
+										alignItems: 'center',
+										marginBottom: '14px',
+									}}
+								>
+									<span
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											letterSpacing: '0.08em',
+											color: '#2563eb',
+											textTransform: 'uppercase',
+										}}
+									>
+										04 / PERFORM
+									</span>
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2">
+										<path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+										<circle cx="9" cy="7" r="4" />
+										<path d="M23 21v-2a4 4 0 0 0-3-3.87M16 3.13a4 4 0 0 1 0 7.75" />
+									</svg>
+								</div>
+
+								<h3
+									style={{
+										fontFamily: "'Plus Jakarta Sans', sans-serif",
+										fontSize: '20px',
+										fontWeight: 800,
+										color: '#0f172a',
+										margin: '0 0 4px',
+									}}
+								>
+									Interview Ready
+								</h3>
+								<p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 16px' }}>Be confident. Be ready.</p>
+
+								{/* 4 Interactive Prep Tracks */}
+								<div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '18px' }}>
+									{/* Track 1: Mock Interviews */}
+									<a
+										href="https://www.phoneticedu.com/auth/login"
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'space-between',
+											padding: '8px 10px',
+											borderRadius: '12px',
+											background: '#f8fafc',
+											border: '1px solid #f1f5f9',
+											textDecoration: 'none',
+											transition: 'background 0.2s',
+										}}
+									>
+										<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+											<span
+												style={{
+													width: '26px',
+													height: '26px',
+													borderRadius: '8px',
+													background: '#eff6ff',
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center',
+													fontSize: '12px',
+												}}
+											>
+												🛡️
+											</span>
+											<div>
+												<div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0f172a', lineHeight: 1.1 }}>
+													Mock Interviews
+												</div>
+												<div style={{ fontSize: '9.5px', color: '#64748b' }}>AI + Expert Feedback</div>
+											</div>
+										</div>
+										<span style={{ color: '#94a3b8', fontSize: '12px' }}>›</span>
+									</a>
+
+									{/* Track 2: Technical Rounds */}
+									<a
+										href="https://www.phoneticedu.com/auth/login"
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'space-between',
+											padding: '8px 10px',
+											borderRadius: '12px',
+											background: '#f8fafc',
+											border: '1px solid #f1f5f9',
+											textDecoration: 'none',
+											transition: 'background 0.2s',
+										}}
+									>
+										<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+											<span
+												style={{
+													width: '26px',
+													height: '26px',
+													borderRadius: '8px',
+													background: '#f0fdfa',
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center',
+													fontSize: '12px',
+												}}
+											>
+												💬
+											</span>
+											<div>
+												<div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0f172a', lineHeight: 1.1 }}>
+													Technical Rounds
+												</div>
+												<div style={{ fontSize: '9.5px', color: '#64748b' }}>Company specific prep</div>
+											</div>
+										</div>
+										<span style={{ color: '#94a3b8', fontSize: '12px' }}>›</span>
+									</a>
+
+									{/* Track 3: HR & Behavioral */}
+									<a
+										href="https://www.phoneticedu.com/auth/login"
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'space-between',
+											padding: '8px 10px',
+											borderRadius: '12px',
+											background: '#f8fafc',
+											border: '1px solid #f1f5f9',
+											textDecoration: 'none',
+											transition: 'background 0.2s',
+										}}
+									>
+										<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+											<span
+												style={{
+													width: '26px',
+													height: '26px',
+													borderRadius: '8px',
+													background: '#fff7ed',
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center',
+													fontSize: '12px',
+												}}
+											>
+												👥
+											</span>
+											<div>
+												<div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0f172a', lineHeight: 1.1 }}>
+													HR & Behavioral
+												</div>
+												<div style={{ fontSize: '9.5px', color: '#64748b' }}>Real interview simulations</div>
+											</div>
+										</div>
+										<span style={{ color: '#94a3b8', fontSize: '12px' }}>›</span>
+									</a>
+
+									{/* Track 4: Communication */}
+									<a
+										href="https://www.phoneticedu.com/auth/login"
+										style={{
+											display: 'flex',
+											alignItems: 'center',
+											justifyContent: 'space-between',
+											padding: '8px 10px',
+											borderRadius: '12px',
+											background: '#f8fafc',
+											border: '1px solid #f1f5f9',
+											textDecoration: 'none',
+											transition: 'background 0.2s',
+										}}
+									>
+										<div style={{ display: 'flex', alignItems: 'center', gap: '10px' }}>
+											<span
+												style={{
+													width: '26px',
+													height: '26px',
+													borderRadius: '8px',
+													background: '#eff6ff',
+													display: 'flex',
+													alignItems: 'center',
+													justifyContent: 'center',
+													fontSize: '12px',
+												}}
+											>
+												🎯
+											</span>
+											<div>
+												<div style={{ fontSize: '11.5px', fontWeight: 800, color: '#0f172a', lineHeight: 1.1 }}>
+													Communication
+												</div>
+												<div style={{ fontSize: '9.5px', color: '#64748b' }}>Build your confidence</div>
+											</div>
+										</div>
+										<span style={{ color: '#94a3b8', fontSize: '12px' }}>›</span>
+									</a>
+								</div>
+							</div>
+
+							{/* Bottom Avatar Stack */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'space-between',
+									borderTop: '1px solid #f1f5f9',
+									paddingTop: '12px',
+								}}
+							>
+								<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+									<div style={{ display: 'flex', marginLeft: '6px' }}>
+										<span
+											style={{
+												width: '22px',
+												height: '22px',
+												borderRadius: '50%',
+												background: '#3b82f6',
+												color: '#ffffff',
+												fontSize: '9px',
+												fontWeight: 700,
+												display: 'inline-flex',
+												alignItems: 'center',
+												justifyContent: 'center',
+												border: '1.5px solid #ffffff',
+												marginLeft: '-6px',
+											}}
+										>
+											S
+										</span>
+										<span
+											style={{
+												width: '22px',
+												height: '22px',
+												borderRadius: '50%',
+												background: '#10b981',
+												color: '#ffffff',
+												fontSize: '9px',
+												fontWeight: 700,
+												display: 'inline-flex',
+												alignItems: 'center',
+												justifyContent: 'center',
+												border: '1.5px solid #ffffff',
+												marginLeft: '-6px',
+											}}
+										>
+											A
+										</span>
+										<span
+											style={{
+												width: '22px',
+												height: '22px',
+												borderRadius: '50%',
+												background: '#f59e0b',
+												color: '#ffffff',
+												fontSize: '9px',
+												fontWeight: 700,
+												display: 'inline-flex',
+												alignItems: 'center',
+												justifyContent: 'center',
+												border: '1.5px solid #ffffff',
+												marginLeft: '-6px',
+											}}
+										>
+											R
+										</span>
+									</div>
+									<span style={{ fontSize: '10.5px', fontWeight: 700, color: '#334155' }}>
+										Join 10,000+ learners
+									</span>
+								</div>
+								<span style={{ color: '#94a3b8', fontSize: '12px' }}>›</span>
+							</div>
+						</div>
+					</div>
+				</div>
+
+				{/* 3. Bottom Timeline Stepper */}
+				<div
+					className="programs-bottom-stepper"
+					style={{
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'space-between',
+						borderTop: '1px solid #e2e8f0',
+						paddingTop: '24px',
+						flexWrap: 'wrap',
+						gap: '20px',
+					}}
+				>
+					{/* Left Category Label */}
+					<div style={{ flexShrink: 0 }}>
+						<div style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#94a3b8' }}>
+							ONE ECOSYSTEM
+						</div>
+						<div style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#94a3b8' }}>
+							FOUR STAGES
+						</div>
+					</div>
+
+					{/* 4 Center Connected Steps */}
+					<div
+						style={{
+							display: 'flex',
+							alignItems: 'center',
+							gap: '28px',
+							flex: 1,
+							maxWidth: '820px',
+							justifyContent: 'space-around',
+							flexWrap: 'wrap',
+						}}
+					>
+						{/* Step 1 */}
+						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+							<span
+								style={{
+									width: '10px',
+									height: '10px',
+									borderRadius: '50%',
+									background: '#2563eb',
+									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+								}}
+							/>
+							<div>
+								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
+									PREPARE
+								</div>
+								<div style={{ fontSize: '10px', color: '#64748b' }}>Build your basics</div>
+							</div>
+						</div>
+
+						{/* Step 2 */}
+						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+							<span
+								style={{
+									width: '10px',
+									height: '10px',
+									borderRadius: '50%',
+									background: '#2563eb',
+									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+								}}
+							/>
+							<div>
+								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
+									BUILD
+								</div>
+								<div style={{ fontSize: '10px', color: '#64748b' }}>Sharpen your skills</div>
+							</div>
+						</div>
+
+						{/* Step 3 */}
+						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+							<span
+								style={{
+									width: '10px',
+									height: '10px',
+									borderRadius: '50%',
+									background: '#2563eb',
+									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+								}}
+							/>
+							<div>
+								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
+									PROVE
+								</div>
+								<div style={{ fontSize: '10px', color: '#64748b' }}>Get placed</div>
+							</div>
+						</div>
+
+						{/* Step 4 */}
+						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
+							<span
+								style={{
+									width: '10px',
+									height: '10px',
+									borderRadius: '50%',
+									background: '#2563eb',
+									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+								}}
+							/>
+							<div>
+								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
+									PERFORM
+								</div>
+								<div style={{ fontSize: '10px', color: '#64748b' }}>Excel in your career</div>
+							</div>
+						</div>
+					</div>
+
+					{/* Right Label */}
+					<div style={{ flexShrink: 0, textAlign: 'right' }}>
+						<div style={{ fontSize: '11px', fontWeight: 800, letterSpacing: '0.08em', color: '#94a3b8' }}>
+							MORE THAN PREPARATION
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+	)
 }
-

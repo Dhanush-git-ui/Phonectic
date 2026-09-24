@@ -1,71 +1,81 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 480 551" width="480" height="551" fill="none">
   <defs>
-    <filter id="shieldShadow" x="0" y="0" width="480" height="551" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
-      <feDropShadow dx="0" dy="20" stdDeviation="30" flood-color="rgba(15, 23, 42, 0.12)" />
+    <filter id="cardShadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="16" stdDeviation="24" flood-color="rgba(15, 23, 42, 0.18)" />
     </filter>
-    <linearGradient id="shieldBg" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#0A192F"/>
-      <stop offset="100%" stop-color="#1E3A8A"/>
+    <linearGradient id="shieldGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E293B"/>
+      <stop offset="100%" stop-color="#0F172A"/>
     </linearGradient>
   </defs>
 
-  <!-- Top Shield Floating Badge -->
-  <g transform="translate(195, 30)">
-    <path d="M45 10C65 10 90 2 90 2V45C90 70 55 90 45 95C35 90 0 70 0 45V2C0 2 25 10 45 10Z" fill="#0F172A"/>
+  <!-- Top Floating Verification Shield -->
+  <g transform="translate(195, 20)">
+    <path d="M45 8C65 8 90 0 90 0V45C90 70 55 90 45 95C35 90 0 70 0 45V0C0 0 25 8 45 8Z" fill="url(#shieldGrad)"/>
+    <path d="M45 8C65 8 90 0 90 0V45C90 70 55 90 45 95C35 90 0 70 0 45V0C0 0 25 8 45 8Z" stroke="rgba(255,255,255,0.15)" stroke-width="2"/>
     <!-- Checkmark inside shield -->
-    <path d="M28 46L40 58L64 34" stroke="#38BDF8" stroke-width="7" stroke-linecap="round" stroke-linejoin="round"/>
+    <path d="M28 46L40 58L64 34" stroke="#38BDF8" stroke-width="6" stroke-linecap="round" stroke-linejoin="round"/>
   </g>
 
   <!-- Dark Top Rounded Card Header -->
-  <g filter="url(#shieldShadow)">
-    <rect x="36" y="160" width="408" height="360" rx="36" fill="#0A192F"/>
+  <g filter="url(#cardShadow)">
+    <rect x="36" y="140" width="408" height="380" rx="36" fill="#0F172A"/>
 
     <!-- Header Content -->
-    <g transform="translate(64, 185)">
+    <g transform="translate(64, 165)">
       <!-- Phonectic Icon -->
-      <rect x="0" y="2" width="36" height="36" rx="10" fill="#2563EB"/>
-      <text x="10" y="27" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, sans-serif" font-size="22" font-weight="900">P</text>
+      <rect x="0" y="2" width="38" height="38" rx="12" fill="#2563EB"/>
+      <text x="12" y="29" fill="#FFFFFF" font-family="'Outfit', 'Inter', sans-serif" font-size="24" font-weight="900">P</text>
       
-      <text x="48" y="27" fill="#FFFFFF" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="20" font-weight="700">Interview Ready</text>
+      <text x="50" y="26" fill="#FFFFFF" font-family="'Inter', sans-serif" font-size="19" font-weight="800">Interview Ready Pass</text>
+      <text x="50" y="40" fill="#94A3B8" font-family="'Inter', sans-serif" font-size="11" font-weight="600">PLACEMENT VERIFIED • 2026</text>
       
-      <!-- Chevron -->
-      <path d="M320 20L328 28L336 20" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round"/>
+      <!-- Chevron / Arrow -->
+      <path d="M316 20L324 28L332 20" stroke="#94A3B8" stroke-width="2.5" stroke-linecap="round"/>
     </g>
 
-    <!-- Inner White Card -->
-    <rect x="36" y="235" width="408" height="285" rx="36" fill="#FFFFFF"/>
+    <!-- Inner Crisp White Assessment Card -->
+    <rect x="36" y="220" width="408" height="300" rx="32" fill="#FFFFFF"/>
     
-    <text x="64" y="280" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="22" font-weight="700">Placement Assessment</text>
-    <text x="64" y="306" fill="#64748B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="15" font-weight="500">Readiness Score: 98/100</text>
+    <text x="64" y="260" fill="#0F172A" font-family="'Inter', sans-serif" font-size="20" font-weight="800">Candidate Placement Report</text>
+    <text x="64" y="282" fill="#64748B" font-family="'Inter', sans-serif" font-size="13" font-weight="600">Readiness Score: <tspan fill="#2563EB" font-weight="800">98 / 100 • TOP 1%</tspan></text>
 
     <!-- Verified Pill -->
-    <rect x="310" y="270" width="94" height="32" rx="16" fill="#EFF6FF" stroke="#BFDBFE" stroke-width="1.5"/>
-    <text x="328" y="291" fill="#2563EB" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="14" font-weight="700">Verified ✓</text>
+    <rect x="306" y="250" width="102" height="32" rx="16" fill="#ECFDF5" stroke="#A7F3D0" stroke-width="1.5"/>
+    <text x="328" y="271" fill="#059669" font-family="'Inter', sans-serif" font-size="13" font-weight="800">Verified ✓</text>
 
-    <line x1="64" y1="334" x2="416" y2="334" stroke="#F1F5F9" stroke-width="1.5"/>
+    <line x1="64" y1="304" x2="416" y2="304" stroke="#F1F5F9" stroke-width="1.5"/>
 
-    <!-- Row 1: Aptitude & Speed Math -->
-    <g transform="translate(64, 350)">
-      <circle cx="20" cy="20" r="18" fill="#F0FDF4"/>
-      <path d="M14 20L18 24L26 16" stroke="#16A34A" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="50" y="26" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600">Speed Math &amp; Quants</text>
-      <text x="270" y="26" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="700">99.2 %ile</text>
+    <!-- Metric Row 1: Aptitude & Speed Math -->
+    <g transform="translate(64, 318)">
+      <circle cx="18" cy="18" r="16" fill="#EFF6FF"/>
+      <path d="M12 18L16 22L24 14" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="44" y="23" fill="#1E293B" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">Speed Math &amp; Quants</text>
+      <text x="270" y="23" fill="#0F172A" font-family="'Inter', sans-serif" font-size="15" font-weight="800">99.4 %ile</text>
     </g>
 
-    <!-- Row 2: Mock Interview & HR -->
-    <g transform="translate(64, 410)">
-      <circle cx="20" cy="20" r="18" fill="#EFF6FF"/>
-      <circle cx="20" cy="20" r="8" fill="none" stroke="#2563EB" stroke-width="2.5"/>
-      <text x="50" y="26" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600">Technical Interview</text>
-      <text x="270" y="26" fill="#059669" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="700">Grade: A+</text>
+    <!-- Metric Row 2: Technical Interview Round -->
+    <g transform="translate(64, 370)">
+      <circle cx="18" cy="18" r="16" fill="#F0FDF4"/>
+      <circle cx="18" cy="18" r="7" fill="none" stroke="#16A34A" stroke-width="2.5"/>
+      <text x="44" y="23" fill="#1E293B" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">Technical Interview</text>
+      <text x="270" y="23" fill="#059669" font-family="'Inter', sans-serif" font-size="15" font-weight="800">Grade: A+</text>
     </g>
 
-    <!-- Row 3: Technical Coding -->
-    <g transform="translate(64, 470)">
-      <circle cx="20" cy="20" r="18" fill="#FAF5FF"/>
-      <path d="M15 16L11 20L15 24M25 16L29 20L25 24" stroke="#9333EA" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
-      <text x="50" y="26" fill="#1E293B" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="600">DSA &amp; System Coding</text>
-      <text x="270" y="26" fill="#0F172A" font-family="-apple-system, BlinkMacSystemFont, 'Inter', sans-serif" font-size="16" font-weight="700">100 / 100</text>
+    <!-- Metric Row 3: Coding & DSA Verification -->
+    <g transform="translate(64, 422)">
+      <circle cx="18" cy="18" r="16" fill="#FAF5FF"/>
+      <path d="M13 14L9 18L13 22M23 14L27 18L23 22" stroke="#2563EB" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+      <text x="44" y="23" fill="#1E293B" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">DSA &amp; System Coding</text>
+      <text x="270" y="23" fill="#0F172A" font-family="'Inter', sans-serif" font-size="15" font-weight="800">100 / 100</text>
+    </g>
+
+    <!-- Metric Row 4: HR & Behavioral Round -->
+    <g transform="translate(64, 474)">
+      <circle cx="18" cy="18" r="16" fill="#FFFBEB"/>
+      <circle cx="18" cy="18" r="4" fill="#D97706"/>
+      <text x="44" y="23" fill="#1E293B" font-family="'Inter', sans-serif" font-size="14.5" font-weight="700">HR Mock Assessment</text>
+      <text x="270" y="23" fill="#D97706" font-family="'Inter', sans-serif" font-size="15" font-weight="800">10 / 10</text>
     </g>
   </g>
 </svg>

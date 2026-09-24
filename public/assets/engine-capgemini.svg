@@ -1,15 +1,8 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" width="100" height="100">
-  <defs>
-    <linearGradient id="grad_engine-capgemini" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#002E4C" />
-      <stop offset="100%" stop-color="#0070AD" />
-    </linearGradient>
-    <radialGradient id="glow_engine-capgemini" cx="50%" cy="50%" r="50%">
-      <stop offset="0%" stop-color="#23D2E2" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#23D2E2" stop-opacity="0"/>
-    </radialGradient>
-  </defs>
-  <circle cx="50" cy="50" r="48" fill="url(#grad_engine-capgemini)" stroke="#23D2E2" stroke-width="1.5" stroke-opacity="0.4"/>
-  <circle cx="50" cy="50" r="42" fill="url(#glow_engine-capgemini)"/>
-  <circle cx="50" cy="42" r="14" fill="#0070AD"/><path d="M44 42 L56 42 M50 36 L50 48" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round"/><text x="50" y="68" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="9" letter-spacing="1.5">GAME</text>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 120" width="100%" height="100%">
+  <g transform="translate(60, 42)">
+    <!-- Authentic Capgemini Blue Ace of Spade -->
+    <path d="M0-26C-16-7-22 5-10 13c7 5 10-1 10-1s3 6 10 1c12-8 6-20-10-39z" fill="#0070AD"/>
+    <path d="M-4 13h8l2 9h-12z" fill="#0070AD"/>
+  </g>
+  <text x="60" y="92" text-anchor="middle" fill="#0070AD" font-family="'Inter', sans-serif" font-weight="800" font-size="14" letter-spacing="-0.2">Capgemini</text>
 </svg>

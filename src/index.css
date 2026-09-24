@@ -4,76 +4,100 @@
 @import "./styles/framer-main.css";
 
 :root {
-  --token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd: rgb(18, 18, 20);
-  --token-c5ac9015-f2e5-48a7-9317-85dc7ef59171: rgb(255, 255, 255);
-  --token-a281d3d3-8074-4276-b377-59dd81ca3f41: rgb(0, 102, 255);
-  --token-23955bb4-90e4-469f-9f8d-fcd039f71805: rgb(59, 130, 246);
-  --token-6d773f56-d95d-4a89-a168-a96103ce9e32: rgb(186, 230, 253);
-  --token-7effce1a-5558-453f-ac68-5a2441d0f584: rgb(96, 165, 250);
-  --token-ecac82fe-5be8-48ba-8cfe-23af479789cd: rgb(15, 47, 156);
+	--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd: rgb(18, 18, 20);
+	--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171: rgb(255, 255, 255);
+	--token-a281d3d3-8074-4276-b377-59dd81ca3f41: rgb(0, 102, 255);
+	--token-23955bb4-90e4-469f-9f8d-fcd039f71805: rgb(59, 130, 246);
+	--token-6d773f56-d95d-4a89-a168-a96103ce9e32: rgb(186, 230, 253);
+	--token-7effce1a-5558-453f-ac68-5a2441d0f584: rgb(96, 165, 250);
+	--token-ecac82fe-5be8-48ba-8cfe-23af479789cd: rgb(15, 47, 156);
 }
 
-html, body {
-  margin: 0;
-  padding: 0;
-  background: var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));
-  color: var(--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd, rgb(18, 18, 20));
-  font-family: 'Geist', 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+html,
+body {
+	margin: 0;
+	padding: 0;
+	background: var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));
+	color: var(--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd, rgb(18, 18, 20));
+	font-family: "Geist", "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 #root {
-  min-height: 100vh;
-  width: 100%;
+	min-height: 100vh;
+	width: 100%;
 }
 
 /* Custom Scrollbar */
 ::-webkit-scrollbar {
-  width: 8px;
+	width: 8px;
 }
 ::-webkit-scrollbar-track {
-  background: #121214;
+	background: #121214;
 }
 ::-webkit-scrollbar-thumb {
-  background: #292929;
-  border-radius: 4px;
+	background: #292929;
+	border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb:hover {
-  background: #3b82f6;
+	background: #3b82f6;
 }
 
-/* Continuous Ticker Marquees */
-.framer-xyf7ed-container ul {
-  display: flex !important;
-  width: max-content !important;
-  animation: framerTickerScroll 22s linear infinite !important;
-}
-
-.framer-xyf7ed-container ul:hover {
-  animation-play-state: paused !important;
-}
-
+/* Continuous Ticker Marquees with pause on hover */
+.framer-xyf7ed-container ul,
 .framer-1u2twl6-container ul,
 .framer-9wv82x-container ul,
-.framer-4xf9q9-container ul {
-  display: flex !important;
-  width: max-content !important;
-  animation: framerTickerScroll 32s linear infinite !important;
+.framer-4xf9q9-container ul,
+.framer-dg8em3-container ul {
+	display: flex;
+	width: max-content;
+	animation: framerTickerScroll 28s linear infinite;
+	will-change: transform;
+}
+
+.framer-xyf7ed-container:hover ul,
+.framer-1u2twl6-container:hover ul,
+.framer-9wv82x-container:hover ul,
+.framer-4xf9q9-container:hover ul,
+.framer-dg8em3-container:hover ul {
+	animation-play-state: paused;
 }
 
 @keyframes framerTickerScroll {
-  0% {
-    transform: translateX(0);
-  }
-  100% {
-    transform: translateX(-50%);
-  }
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
 }
 
-/* Pricing Toggle Smooth Transition */
-.framer-NQIh8 .framer-1sbawf7 {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1) !important;
+/* Reverse Ticker for Testimonials 2nd row */
+.framer-ticker-reverse ul {
+	animation: framerTickerScrollReverse 30s linear infinite;
+}
+.framer-ticker-reverse:hover ul {
+	animation-play-state: paused;
+}
+@keyframes framerTickerScrollReverse {
+	0% {
+		transform: translateX(-50%);
+	}
+	100% {
+		transform: translateX(0);
+	}
+}
+
+/* Edge Masking for all Marquees */
+.marquee-masked,
+.framer-xyf7ed-container section,
+.framer-1u2twl6-container section,
+.framer-9wv82x-container section,
+.framer-4xf9q9-container section,
+.framer-dg8em3-container section {
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
+	mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%);
 }
 
 /* Transform 3D purple badges and assets to brilliant electric blue */
@@ -82,11 +106,540 @@ html, body {
 .framer-1yw7i64 img,
 .framer-1ug35de img,
 .framer-egy6gx img {
-  filter: hue-rotate(-50deg) saturate(1.2) !important;
+	filter: hue-rotate(-50deg) saturate(1.2);
 }
 
 .framer-1rpbdej [data-framer-background-image-wrapper] img {
-  filter: hue-rotate(-50deg) saturate(1.1) !important;
+	filter: hue-rotate(-50deg) saturate(1.1);
+}
+
+/* ==========================================================================
+   1. Navigation Bar Animations
+   ========================================================================== */
+.nav-dot-pulse {
+	animation: navDotBreathe 2.4s ease-in-out infinite;
+}
+@keyframes navDotBreathe {
+	0%,
+	100% {
+		transform: scale(1);
+		opacity: 0.9;
+		box-shadow: 0 0 0 0 rgba(255, 255, 255, 0.4);
+	}
+	50% {
+		transform: scale(1.35);
+		opacity: 1;
+		box-shadow: 0 0 8px 2px rgba(255, 255, 255, 0.8);
+	}
+}
+
+.nav-link-item {
+	color: rgba(255, 255, 255, 0.7);
+	transition:
+		color 200ms ease-out,
+		background-color 200ms ease-out,
+		transform 200ms ease-out;
+}
+.nav-link-item:hover {
+	color: #ffffff;
+}
+
+.nav-contact-btn {
+	transition:
+		transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+		filter 0.25s ease,
+		box-shadow 0.25s ease;
+	cursor: pointer;
+}
+.nav-contact-btn:hover {
+	transform: scale(1.035);
+	filter: brightness(1.12);
+	box-shadow:
+		0 12px 24px -4px rgba(0, 102, 255, 0.25),
+		0 4px 8px -2px rgba(0, 0, 0, 0.2);
+}
+.nav-contact-btn:active {
+	transform: scale(0.97);
+	transition: transform 0.08s ease;
+}
+
+/* ==========================================================================
+   2. Hero Section Animations
+   ========================================================================== */
+/* Ambient Phone Bob Loop */
+@keyframes heroPhoneBob {
+	0%,
+	100% {
+		transform: translateY(0px);
+	}
+	50% {
+		transform: translateY(-8px);
+	}
+}
+
+.hero-phone-bob {
+	animation: heroPhoneBob 5s ease-in-out infinite;
+	will-change: transform;
+}
+
+/* Floating Cards Ambient Out-of-phase Cycles */
+@keyframes heroCardFloat1 {
+	0%,
+	100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-9px) rotate(1.2deg);
+	}
+}
+
+@keyframes heroCardFloat2 {
+	0%,
+	100% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	50% {
+		transform: translateY(-7px) rotate(-1.5deg);
+	}
+}
+
+.hero-card-float-1 {
+	animation: heroCardFloat1 4.5s ease-in-out infinite;
+}
+
+.hero-card-float-2 {
+	animation: heroCardFloat2 5.5s ease-in-out infinite;
+}
+
+/* Ambient Radial Glow Breathing */
+@keyframes heroGlowBreathe {
+	0%,
+	100% {
+		opacity: 0.6;
+		transform: scale(1);
+	}
+	50% {
+		opacity: 0.88;
+		transform: scale(1.12);
+	}
+}
+
+.hero-glow-breathing {
+	animation: heroGlowBreathe 6s ease-in-out infinite;
+	will-change: transform, opacity;
+}
+
+/* Hero Button Micro-Interactions */
+.hero-btn-primary {
+	transition:
+		transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.25s ease,
+		filter 0.25s ease;
+}
+.hero-btn-primary:hover {
+	transform: scale(1.03) translateY(-1px);
+	filter: brightness(1.1);
+	box-shadow:
+		0 14px 28px -4px rgba(0, 102, 255, 0.4),
+		inset 0 0 12px 2px rgba(191, 219, 254, 0.7);
+}
+.hero-btn-primary:active {
+	transform: scale(0.96);
+	transition: transform 0.08s ease;
+}
+
+.hero-btn-secondary {
+	transition:
+		transform 0.25s ease,
+		border-color 0.25s ease,
+		box-shadow 0.25s ease;
+}
+.hero-btn-secondary:hover {
+	transform: translateY(-2px);
+	box-shadow:
+		0 8px 20px rgba(0, 0, 0, 0.3),
+		inset 0 0 0 1px rgba(255, 255, 255, 0.6);
+}
+
+/* ==========================================================================
+   4. Section 01: Benefits & Bento Grid Interactions
+   ========================================================================== */
+.bento-card-interactive {
+	transition:
+		transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+		box-shadow 0.35s ease,
+		border-color 0.35s ease;
+	will-change: transform, box-shadow;
+	position: relative;
+}
+.bento-card-interactive::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	border: 2px solid transparent;
+	pointer-events: none;
+	transition:
+		border-color 0.35s ease,
+		opacity 0.35s ease;
+	opacity: 0;
+	box-shadow: inset 0 0 20px rgba(0, 102, 255, 0.15);
+}
+.bento-card-interactive:hover {
+	transform: translateY(-6px);
+	box-shadow:
+		0 20px 35px -8px rgba(0, 102, 255, 0.18),
+		0 8px 16px -4px rgba(0, 0, 0, 0.1);
+}
+.bento-card-interactive:hover::after {
+	border-color: rgba(59, 130, 246, 0.6);
+	opacity: 1;
+}
+
+/* Mini scale-up for internal charts and metric cards on card hover */
+.bento-card-interactive:hover .bento-mockup-inner,
+.bento-card-interactive:hover [data-framer-name="Benefit Image"] img,
+.bento-card-interactive:hover .framer-1oosdwm {
+	transform: scale(1.03);
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.bento-mockup-inner,
+[data-framer-name="Benefit Image"] img,
+.framer-1oosdwm {
+	transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   6. Section 02: Key Features Tab Switching & List Item Hover
+   ========================================================================== */
+.feature-list-item {
+	transition:
+		background-color 0.25s ease,
+		transform 0.25s ease;
+	cursor: pointer;
+	border-radius: 20px;
+}
+.feature-list-item:hover {
+	background-color: rgba(255, 255, 255, 0.08);
+	transform: translateX(4px);
+}
+.feature-list-item:hover .framer-xtmfu3 {
+	transform: scale(1.1) rotate(4deg);
+	transition: transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.feature-list-item .framer-xtmfu3 {
+	transition: transform 0.25s ease;
+}
+
+/* Feature 1 List Items & Premium 3D Icon Presentation */
+.framer-btjjzy .framer-THpZs {
+	transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+	cursor: pointer;
+}
+.framer-btjjzy .framer-THpZs:hover {
+	background-color: rgba(255, 255, 255, 0.05) !important;
+	transform: translateX(4px);
+}
+.framer-btjjzy .framer-xtmfu3 {
+	width: 48px !important;
+	height: 48px !important;
+	min-width: 48px !important;
+	min-height: 48px !important;
+	border-radius: 14px !important;
+	overflow: hidden !important;
+	padding: 0 !important;
+	background: #fdfbf7 !important;
+	border: 1.5px solid rgba(255, 255, 255, 0.18) !important;
+	box-shadow: 
+		0 4px 16px rgba(0, 0, 0, 0.4),
+		0 0 0 1px rgba(255, 255, 255, 0.06),
+		inset 0 1px 1px rgba(255, 255, 255, 0.8) !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	position: relative !important;
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, border-color 0.3s ease !important;
+}
+.framer-btjjzy .framer-vn7b6m {
+	width: 100% !important;
+	height: 100% !important;
+	position: relative !important;
+	border-radius: inherit !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+.framer-btjjzy .framer-vn7b6m img {
+	width: 100% !important;
+	height: 100% !important;
+	object-fit: cover !important;
+	border-radius: inherit !important;
+	transform: scale(1.06);
+	transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) !important;
+}
+.framer-btjjzy .framer-THpZs:hover .framer-xtmfu3 {
+	transform: scale(1.1) rotate(3deg);
+	border-color: rgba(96, 165, 250, 0.75) !important;
+	box-shadow: 
+		0 0 20px rgba(59, 130, 246, 0.4),
+		0 8px 24px rgba(0, 0, 0, 0.5),
+		inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+.framer-btjjzy .framer-THpZs:hover .framer-vn7b6m img {
+	transform: scale(1.16);
+}
+.framer-btjjzy .framer-THpZs.framer-v-gtti5x .framer-xtmfu3 {
+	border-color: rgba(96, 165, 250, 0.9) !important;
+	box-shadow: 
+		0 0 22px rgba(59, 130, 246, 0.5),
+		0 6px 20px rgba(0, 0, 0, 0.45),
+		inset 0 1px 1px rgba(255, 255, 255, 0.9) !important;
+}
+
+/* Active tab gliding pill transition */
+.feature-active-indicator {
+	position: absolute;
+	inset: 0;
+	background-color: rgba(37, 99, 235, 0.15);
+	border: 1px solid rgba(59, 130, 246, 0.4);
+	border-radius: 24px;
+	pointer-events: none;
+	transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* ==========================================================================
+   7. Section 03 & 04: Integrations & Testimonials Interactions
+   ========================================================================== */
+@keyframes integrationFloatX {
+	0%,
+	100% {
+		transform: translateX(0px) translateY(0px);
+	}
+	50% {
+		transform: translateX(6px) translateY(-4px);
+	}
+}
+
+@keyframes integrationFloatY {
+	0%,
+	100% {
+		transform: translateX(0px) translateY(0px);
+	}
+	50% {
+		transform: translateX(-4px) translateY(8px);
+	}
+}
+
+.integration-icon-floating-x {
+	animation: integrationFloatX 4.8s ease-in-out infinite;
+}
+.integration-icon-floating-y {
+	animation: integrationFloatY 5.4s ease-in-out infinite;
+}
+
+.integration-icon-wrapper {
+	transition:
+		transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.3s ease,
+		filter 0.3s ease;
+	cursor: pointer;
+}
+.integration-icon-wrapper:hover {
+	transform: scale(1.12) translateY(-4px);
+	box-shadow: 0 14px 28px -4px rgba(0, 102, 255, 0.35);
+	filter: brightness(1.08);
+	z-index: 20;
+}
+
+.testimonial-card-interactive {
+	transition:
+		transform 0.35s cubic-bezier(0.16, 1, 0.3, 1),
+		box-shadow 0.35s ease,
+		filter 0.35s ease;
+	cursor: grab;
+}
+.testimonial-card-interactive:hover {
+	transform: translateY(-8px) scale(1.02);
+	box-shadow: 0 24px 48px -12px rgba(0, 0, 0, 0.15);
+	z-index: 10;
+}
+
+/* ==========================================================================
+   8. Section 05: Pricing Plans Interactions
+   ========================================================================== */
+.pricing-card-interactive {
+	transition:
+		transform 0.4s cubic-bezier(0.16, 1, 0.3, 1),
+		box-shadow 0.4s ease,
+		border-color 0.4s ease;
+	position: relative;
+}
+.pricing-card-interactive:hover {
+	transform: translateY(-8px);
+	box-shadow:
+		0 28px 56px -14px rgba(0, 102, 255, 0.22),
+		0 10px 24px -4px rgba(0, 0, 0, 0.1);
+	border-color: rgba(59, 130, 246, 0.8);
+}
+.pricing-card-interactive:hover .framer-wUDM8 {
+	background: linear-gradient(180deg, rgb(59, 130, 246) 0%, rgb(0, 102, 255) 100%);
+	box-shadow: 0 8px 20px rgba(0, 102, 255, 0.4);
+}
+.pricing-card-interactive:hover .framer-wUDM8 p {
+	color: #ffffff;
+}
+
+/* Most Popular Badge Continuous Shimmer */
+@keyframes badgeBorderShimmer {
+	0% {
+		background-position: 0% 50%;
+	}
+	50% {
+		background-position: 100% 50%;
+	}
+	100% {
+		background-position: 0% 50%;
+	}
+}
+.most-popular-shimmer {
+	background: linear-gradient(90deg, #93c5fd, #3b82f6, #93c5fd, #60a5fa);
+	background-size: 200% 200%;
+	animation: badgeBorderShimmer 3s ease infinite;
+	box-shadow: 0 0 12px rgba(59, 130, 246, 0.45);
+}
+
+/* Price Number Morph */
+.price-number-roll {
+	display: inline-block;
+	transition:
+		opacity 0.2s ease,
+		transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.price-number-changing {
+	opacity: 0;
+	transform: translateY(-6px);
+}
+
+/* ==========================================================================
+   9. Section 06: Blog Cards Interactions
+   ========================================================================== */
+.blog-card-interactive {
+	cursor: pointer;
+}
+.blog-card-interactive .framer-10xcjgg,
+.blog-card-interactive .framer-14cfce5,
+.blog-card-interactive [data-framer-name="Image Wrap"] {
+	overflow: hidden;
+	border-radius: inherit;
+}
+.blog-card-interactive img {
+	transition: transform 400ms cubic-bezier(0.25, 1, 0.5, 1);
+	will-change: transform;
+}
+.blog-card-interactive:hover img {
+	transform: scale(1.06);
+}
+
+.blog-card-interactive .framer-1xagkjm p,
+.blog-card-interactive .framer-c5677f p {
+	transition: color 250ms ease;
+}
+.blog-card-interactive:hover .framer-1xagkjm p,
+.blog-card-interactive:hover .framer-c5677f p {
+	color: rgb(0, 102, 255);
+}
+
+.blog-card-interactive:hover .framer-1eu28a2,
+.blog-card-interactive:hover [data-framer-name="Icon"] {
+	transform: translateY(-50%) translateX(4px);
+	transition: transform 250ms ease;
+}
+.blog-card-interactive .framer-1eu28a2,
+.blog-card-interactive [data-framer-name="Icon"] {
+	transition: transform 250ms ease;
+}
+
+/* ==========================================================================
+   10. Section 07: FAQ Accordion Animations
+   ========================================================================== */
+.faq-accordion-item {
+	transition:
+		background-color 0.3s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.2s ease;
+}
+.faq-icon-rotator {
+	transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+.faq-answer-collapse {
+	transition:
+		height 0.38s cubic-bezier(0.16, 1, 0.3, 1),
+		opacity 0.3s ease;
+	overflow: hidden;
+}
+
+/* ==========================================================================
+   11. Bottom CTA & Footer Interactions
+   ========================================================================== */
+.app-store-badge {
+	transition:
+		transform 0.25s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.25s ease;
+	cursor: pointer;
+}
+.app-store-badge:hover {
+	transform: translateY(-3px) scale(1.03);
+	box-shadow: 0 12px 24px rgba(0, 0, 0, 0.35);
+}
+.app-store-badge:active {
+	transform: scale(0.97);
+}
+
+.footer-link-interactive {
+	color: rgba(255, 255, 255, 0.65);
+	transition:
+		color 150ms ease,
+		transform 150ms ease;
+	display: inline-block;
+	text-decoration: none;
+}
+.footer-link-interactive:hover {
+	color: #ffffff;
+	transform: translateX(2px);
+}
+
+/* "Get this Template" Floating Pill (Bottom Right) */
+.floating-template-pill {
+	position: fixed;
+	bottom: 24px;
+	right: 24px;
+	z-index: 9999;
+	display: flex;
+	align-items: center;
+	gap: 8px;
+	padding: 10px 18px;
+	background: rgba(18, 18, 20, 0.88);
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+	border: 1px solid rgba(255, 255, 255, 0.15);
+	border-radius: 999px;
+	box-shadow:
+		0 10px 30px rgba(0, 0, 0, 0.35),
+		0 2px 6px rgba(0, 102, 255, 0.2);
+	color: #ffffff;
+	font-size: 13px;
+	font-weight: 600;
+	text-decoration: none;
+	cursor: pointer;
+	transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.floating-template-pill:hover {
+	transform: translateY(-2px) scale(1.04);
+	background: rgba(26, 26, 32, 0.95);
+	border-color: rgba(59, 130, 246, 0.6);
+	box-shadow:
+		0 16px 36px rgba(0, 102, 255, 0.35),
+		0 4px 10px rgba(0, 0, 0, 0.4);
+	filter: brightness(1.1);
 }
 
 /* ==========================================================================
@@ -94,78 +647,485 @@ html, body {
    ========================================================================== */
 
 .framer-scroll-reveal {
-  opacity: 0;
-  transform: translateY(40px);
-  transition: opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1), transform 0.8s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: opacity, transform;
+	opacity: 0;
+	transform: translateY(40px);
+	transition:
+		opacity 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: opacity, transform;
 }
 
 .framer-scroll-reveal.is-in-view {
-  opacity: 1 !important;
-  transform: translateY(0) !important;
+	opacity: 1;
+	transform: translateY(0);
 }
 
 .framer-reveal-scale {
-  opacity: 0;
-  transform: translateY(35px) scale(0.96);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: opacity, transform;
+	opacity: 0;
+	transform: translateY(35px) scale(0.96);
+	transition:
+		opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.85s cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: opacity, transform;
 }
 
 .framer-reveal-scale.is-in-view {
-  opacity: 1 !important;
-  transform: translateY(0) scale(1) !important;
+	opacity: 1;
+	transform: translateY(0) scale(1);
 }
-
-.framer-reveal-left {
-  opacity: 0;
-  transform: translateX(-45px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: opacity, transform;
-}
-
-.framer-reveal-left.is-in-view {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
-
-.framer-reveal-right {
-  opacity: 0;
-  transform: translateX(45px);
-  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
-  will-change: opacity, transform;
-}
-
-.framer-reveal-right.is-in-view {
-  opacity: 1 !important;
-  transform: translateX(0) !important;
-}
-
-/* Stagger delays for child elements */
-.framer-stagger > *:nth-child(1) { transition-delay: 0.05s !important; }
-.framer-stagger > *:nth-child(2) { transition-delay: 0.16s !important; }
-.framer-stagger > *:nth-child(3) { transition-delay: 0.28s !important; }
-.framer-stagger > *:nth-child(4) { transition-delay: 0.40s !important; }
-.framer-stagger > *:nth-child(5) { transition-delay: 0.52s !important; }
 
 /* Parallax element transition smoothing */
 [data-parallax-speed] {
-  will-change: transform;
-}
-
-/* Hide Framer "Get this Template" badge */
-.framer-zrh3ys-container,
-[data-framer-name="Light (Only Text)"] {
-  display: none !important;
-  visibility: hidden !important;
-  pointer-events: none !important;
+	will-change: transform;
 }
 
 /* Ensure Nav Logo and brand text never get clipped */
 .framer-153rxup,
 .framer-14ood8v,
 .framer-162yipg {
-  width: auto !important;
-  max-width: none !important;
-  overflow: visible !important;
+	width: auto;
+	max-width: none;
+	overflow: visible;
 }
+
+/* Responsive Navbar Visibility: Desktop vs Mobile */
+@media (min-width: 1024px) {
+	.nav-mobile-wrapper {
+		display: none !important;
+	}
+	.nav-desktop-wrapper {
+		display: contents !important;
+	}
+}
+
+@media (max-width: 1023.98px) {
+	.nav-desktop-wrapper {
+		display: none !important;
+	}
+	.nav-mobile-wrapper {
+		display: contents !important;
+	}
+}
+
+/* ==========================================================================
+   MarqueeStats Sticky Note Cards Behavior & Positioning Fix
+   ========================================================================== */
+
+/* Pass pointer events through decorative glowing container wrapper to sticky cards */
+.framer-83IYI .framer-16c4gkf {
+	pointer-events: none;
+}
+
+/* Extended scroll runway so sticky note cards stay pinned on the page */
+.framer-83IYI .framer-11aqw1k {
+	padding: 0 0 750px !important;
+}
+
+/* Desktop & Tablet Sticky Card Stacking:
+   Offset top to comfortably clear the floating navbar (bottom at 84px) */
+.framer-83IYI .framer-1g1up0j-container {
+	position: sticky !important;
+	top: 120px !important;
+	z-index: 10 !important;
+}
+
+.framer-83IYI .framer-4nwo3y-container {
+	position: sticky !important;
+	top: 145px !important;
+	z-index: 11 !important;
+}
+
+.framer-83IYI .framer-13w1hln-container {
+	position: sticky !important;
+	top: 130px !important;
+	z-index: 12 !important;
+}
+
+/* Realistic tactile sticky note card shadows, elevation & hover feel */
+.framer-83IYI .framer-1g1up0j-container > div,
+.framer-83IYI .framer-4nwo3y-container > div,
+.framer-83IYI .framer-13w1hln-container > div {
+	box-shadow:
+		0 20px 45px -12px rgba(15, 23, 42, 0.18),
+		0 8px 18px -6px rgba(15, 23, 42, 0.1),
+		0 0 0 1px rgba(255, 255, 255, 0.85) inset !important;
+	transition:
+		transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
+		box-shadow 0.35s ease !important;
+	cursor: default;
+}
+
+.framer-83IYI .framer-1g1up0j-container > div:hover,
+.framer-83IYI .framer-4nwo3y-container > div:hover,
+.framer-83IYI .framer-13w1hln-container > div:hover {
+	box-shadow:
+		0 28px 55px -12px rgba(15, 23, 42, 0.26),
+		0 12px 24px -6px rgba(15, 23, 42, 0.14),
+		0 0 0 1px rgba(255, 255, 255, 0.95) inset !important;
+}
+
+@media (max-width: 809.98px) {
+	.framer-83IYI.framer-v-1tw61hp .framer-11aqw1k {
+		padding: 0 0 350px !important;
+	}
+	.framer-83IYI.framer-v-1tw61hp .framer-1g1up0j-container {
+		top: 90px !important;
+	}
+	.framer-83IYI.framer-v-1tw61hp .framer-4nwo3y-container {
+		top: 110px !important;
+	}
+	.framer-83IYI.framer-v-1tw61hp .framer-13w1hln-container {
+		top: 100px !important;
+	}
+}
+
+/* Hero Bottom Gradient - Strictly Pure White and Blue (Zero Purple/Magenta) */
+.framer-Tesak .framer-7yy0jx {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 20%, #1d4ed8 100%) !important;
+}
+
+/* Integrations Section: Official Company Logo Cards in Semicircular Arc */
+.framer-ztC2N .framer-O0DTd {
+	background: #ffffff !important;
+	border: 1px solid rgba(0, 102, 255, 0.14) !important;
+	box-shadow:
+		0 14px 30px -6px rgba(15, 23, 42, 0.14),
+		0 4px 12px -2px rgba(15, 23, 42, 0.06),
+		0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+	border-radius: 46px !important;
+	overflow: hidden !important;
+}
+
+.framer-ztC2N .framer-1j4yj0n {
+	background: #ffffff !important;
+	border-radius: 42px !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.framer-ztC2N .framer-1spjtfg {
+	width: 100% !important;
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.framer-ztC2N .framer-1spjtfg img {
+	object-fit: contain !important;
+	padding: 16px !important;
+	box-sizing: border-box !important;
+	width: 100% !important;
+	height: 100% !important;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05)) !important;
+}
+
+/* CTA Section Phone Coin Badge Override */
+.framer-bpnHt .framer-1u7j4fm {
+	mix-blend-mode: normal !important;
+	z-index: 10 !important;
+	width: 25% !important;
+	height: auto !important;
+	aspect-ratio: 1 !important;
+	position: absolute !important;
+	left: 50% !important;
+	bottom: auto !important;
+	top: 52% !important;
+	transform: translate(-50%, -50%) !important;
+	filter: drop-shadow(0 15px 30px rgba(0, 50, 160, 0.35)) !important;
+}
+
+.framer-bpnHt .framer-1u7j4fm img {
+	object-fit: contain !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Hero Premier Institutions College Ticker */
+.hero-college-ticker-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 18px;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 9999px;
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	margin: 0 auto 20px;
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+}
+
+.hero-college-ticker-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #38bdf8;
+	box-shadow: 0 0 10px #38bdf8, 0 0 18px #38bdf8;
+	animation: heroDotPulse 2s infinite ease-in-out;
+}
+
+@keyframes heroDotPulse {
+	0%, 100% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* College Logo Cards in Hero Ticker - Clean Monochrome Floating Logos */
+.framer-spMKf .framer-xyf7ed-container {
+	height: 56px !important;
+	width: 100% !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container section {
+	padding: 0 !important;
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	overflow: hidden !important;
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
+	mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container ul {
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	gap: 56px !important;
+	animation: framerTickerScroll 36s linear infinite !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container:hover ul {
+	animation-play-state: paused !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container ul li {
+	flex-shrink: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.framer-spMKf .framer-18iagas {
+	aspect-ratio: unset !important;
+	width: 220px !important;
+	height: 48px !important;
+	position: relative !important;
+	flex-shrink: 0 !important;
+	cursor: pointer !important;
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	opacity: 0.85 !important;
+	transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease !important;
+}
+
+.framer-spMKf .framer-18iagas:hover {
+	opacity: 1 !important;
+	transform: translateY(-2px) scale(1.04) !important;
+	filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.8)) !important;
+}
+
+.framer-spMKf .framer-18iagas img {
+	width: 260px !important;
+	height: 62px !important;
+	object-fit: contain !important;
+	border-radius: 14px !important;
+}
+
+/* Hero Text Prominence & Non-Fading on Scroll */
+.framer-Tesak .framer-1cae1md {
+	position: relative !important;
+	z-index: 20 !important;
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+.framer-Tesak .framer-z7f9fw h1 {
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+.framer-Tesak .framer-nu8ff8 h1 {
+	color: #0066FF !important;
+	background: linear-gradient(135deg, #0052CC 0%, #0066FF 50%, #2563EB 100%) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	filter: drop-shadow(0 2px 8px rgba(0, 102, 255, 0.2)) !important;
+}
+
+.framer-Tesak .framer-ea2r55 h1 {
+	color: #0B132B !important;
+	-webkit-text-fill-color: #0B132B !important;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08)) !important;
+}
+
+.framer-Tesak .framer-164ob5c p {
+	color: #1E293B !important;
+	font-weight: 500 !important;
+	line-height: 1.6 !important;
+	text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Section Badges: Electric Blue Theme (Zero Purple) */
+.framer-61kz3b,
+.framer-1xek3h4,
+.framer-bvdbru {
+	border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+.framer-61kz3b p,
+.framer-1xek3h4 p,
+.framer-bvdbru p {
+	color: #2563EB !important;
+}
+
+/* Feature 1 list active state blue glow */
+.framer-THpZs.framer-v-gtti5x[data-framer-name="Active"] {
+	background-color: rgba(59, 130, 246, 0.15) !important;
+	border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+/* ============================================================ */
+/* HERO SECTION: Floating Cards, Phone & Monochrome Marquee     */
+/* ============================================================ */
+.hero-floating-card {
+	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+.hero-floating-card:hover {
+	box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+}
+
+@keyframes monoTickerScroll {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
+.hero-monochrome-marquee-track {
+	animation: monoTickerScroll 36s linear infinite;
+	will-change: transform;
+}
+
+.hero-monochrome-marquee-wrap:hover .hero-monochrome-marquee-track {
+	animation-play-state: paused;
+}
+
+.hero-mono-logo {
+	opacity: 0.82;
+	transition: opacity 0.25s ease, transform 0.25s ease, filter 0.25s ease;
+	cursor: pointer;
+	flex-shrink: 0;
+}
+
+.hero-mono-logo:hover {
+	opacity: 1;
+	transform: scale(1.08);
+	filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.6));
+}
+
+@media (max-width: 1024px) {
+	.hero-stage-container {
+		min-height: 520px !important;
+		transform: scale(0.85);
+		transform-origin: center center;
+	}
+	.hero-card-1 {
+		left: 10px !important;
+		top: 20px !important;
+	}
+	.hero-card-3 {
+		right: 10px !important;
+		top: 20px !important;
+	}
+}
+
+@media (max-width: 768px) {
+	.hero-stage-container {
+		min-height: 480px !important;
+		transform: scale(0.68);
+		transform-origin: center center;
+	}
+	.hero-card-1, .hero-card-3 {
+		width: 250px !important;
+	}
+}
+
+@media (max-width: 540px) {
+	.hero-stage-container {
+		transform: scale(0.55);
+		margin-bottom: -60px !important;
+	}
+}
+
+/* ============================================================ */
+/* PROGRAMS SECTION: 4-Card Connected Roadmap & Timeline        */
+/* ============================================================ */
+.program-card {
+	transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.3s ease;
+}
+
+.program-card:hover {
+	transform: translateY(-6px);
+	box-shadow: 0 20px 45px -10px rgba(15, 23, 42, 0.12), 0 0 0 1px rgba(37, 99, 235, 0.2) inset !important;
+}
+
+.program-card-featured:hover {
+	transform: translateY(-6px) scale(1.02);
+	box-shadow: 0 25px 60px -10px rgba(37, 99, 235, 0.5), 0 0 0 1.5px rgba(56, 189, 248, 0.7) inset !important;
+}
+
+@media (max-width: 1100px) {
+	.programs-cards-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+		gap: 24px !important;
+	}
+	.programs-connecting-curve-wrap {
+		display: none !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.programs-cards-grid {
+		grid-template-columns: 1fr !important;
+	}
+	.programs-bottom-stepper {
+		flex-direction: column !important;
+		align-items: flex-start !important;
+	}
+}
+
+/* ============================================================ */
+/* FAQ ACCORDION: Speech-Bubble Vibrant Cards                   */
+/* ============================================================ */
+.faq-expanded-bubble {
+	animation: faqBubbleOpen 0.4s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes faqBubbleOpen {
+	from {
+		opacity: 0.8;
+		transform: scale(0.98) translateY(10px);
+	}
+	to {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+@media (max-width: 768px) {
+	.faq-expanded-bubble {
+		padding: 30px 20px !important;
+		border-radius: 26px !important;
+	}
+}
+
+
+

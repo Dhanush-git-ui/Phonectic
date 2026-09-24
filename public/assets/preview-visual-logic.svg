@@ -1,0 +1,119 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 520" width="100%" height="100%">
+  <defs>
+    <linearGradient id="vlBg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#0d0a18"/>
+      <stop offset="50%" stop-color="#090814"/>
+      <stop offset="100%" stop-color="#07060f"/>
+    </linearGradient>
+    <filter id="vlGlow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="16" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <rect width="800" height="520" rx="28" fill="url(#vlBg)" stroke="rgba(168, 85, 247, 0.25)" stroke-width="1.5"/>
+  <circle cx="160" cy="120" r="120" fill="#8b5cf6" opacity="0.14" filter="url(#vlGlow)"/>
+  <circle cx="680" cy="400" r="140" fill="#6366f1" opacity="0.12" filter="url(#vlGlow)"/>
+
+  <!-- Top Bar -->
+  <g transform="translate(32, 28)">
+    <circle cx="8" cy="12" r="5" fill="#a855f7" opacity="0.8"/>
+    <circle cx="24" cy="12" r="5" fill="#6366f1" opacity="0.8"/>
+    <circle cx="40" cy="12" r="5" fill="#06b6d4" opacity="0.8"/>
+    <text x="64" y="16" fill="#c084fc" font-family="'DM Mono', monospace" font-size="12" font-weight="700" letter-spacing="1">SPATIAL REASONING LAB // PATTERN MATRIX</text>
+    
+    <rect x="580" y="-4" width="156" height="32" rx="12" fill="rgba(0,0,0,0.5)" stroke="rgba(168,85,247,0.3)"/>
+    <circle cx="596" cy="12" r="4" fill="#a855f7"/>
+    <text x="608" y="16" fill="#94a3b8" font-family="sans-serif" font-size="10" font-weight="700">LEVEL</text>
+    <text x="664" y="17" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="14" font-weight="800">04 / 10</text>
+  </g>
+  <line x1="32" y1="72" x2="768" y2="72" stroke="rgba(255,255,255,0.08)"/>
+
+  <!-- Rule & Benchmark -->
+  <g transform="translate(32, 94)">
+    <rect x="0" y="0" width="84" height="22" rx="6" fill="rgba(168,85,247,0.15)" stroke="rgba(168,85,247,0.3)"/>
+    <text x="8" y="15" fill="#d8b4fe" font-family="'DM Mono', monospace" font-size="10" font-weight="700">RULE MATRIX</text>
+    <text x="96" y="16" fill="#cbd5e1" font-family="sans-serif" font-size="12" font-weight="500">Rotational symmetry &amp; segment count (+2 per step)</text>
+    
+    <rect x="606" y="0" width="130" height="24" rx="12" fill="rgba(99,102,241,0.15)" stroke="rgba(99,102,241,0.3)"/>
+    <text x="618" y="16" fill="#a5b4fc" font-family="sans-serif" font-size="11" font-weight="800">⚡ 98.2% Match</text>
+  </g>
+
+  <!-- 3x3 Puzzle Grid -->
+  <g transform="translate(250, 134)">
+    <rect x="-10" y="-10" width="320" height="210" rx="18" fill="rgba(0,0,0,0.4)" stroke="rgba(168,85,247,0.2)"/>
+    
+    <!-- Row 1 -->
+    <rect x="0" y="0" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="45" cy="30" r="16" stroke="#c084fc" stroke-width="2" fill="none"/>
+    <path d="M45 30 L45 14 A16 16 0 0 1 61 30 Z" fill="#c084fc" opacity="0.4"/>
+
+    <rect x="105" y="0" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="150" cy="30" r="16" stroke="#c084fc" stroke-width="2" fill="none"/>
+    <path d="M150 30 L166 30 A16 16 0 0 1 150 46 Z" fill="#c084fc" opacity="0.5"/>
+
+    <rect x="210" y="0" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <circle cx="255" cy="30" r="16" stroke="#c084fc" stroke-width="2" fill="none"/>
+    <path d="M255 30 L255 46 A16 16 0 0 1 239 30 Z" fill="#c084fc" opacity="0.6"/>
+
+    <!-- Row 2 -->
+    <rect x="0" y="66" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <polygon points="45,76 56,83 56,97 45,104 34,97 34,83" stroke="#a5b4fc" stroke-width="2" fill="none"/>
+    <circle cx="45" cy="90" r="3" fill="#a5b4fc"/>
+
+    <rect x="105" y="66" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <polygon points="150,76 161,83 161,97 150,104 139,97 139,83" stroke="#a5b4fc" stroke-width="2" fill="none"/>
+    <circle cx="145" cy="90" r="2.5" fill="#a5b4fc"/><circle cx="155" cy="90" r="2.5" fill="#a5b4fc"/>
+
+    <rect x="210" y="66" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <polygon points="255,76 266,83 266,97 255,104 244,97 244,83" stroke="#a5b4fc" stroke-width="2" fill="none"/>
+    <circle cx="255" cy="84" r="2.5" fill="#a5b4fc"/><circle cx="249" cy="94" r="2.5" fill="#a5b4fc"/><circle cx="261" cy="94" r="2.5" fill="#a5b4fc"/>
+
+    <!-- Row 3 -->
+    <rect x="0" y="132" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="35" y="152" width="20" height="20" rx="3" stroke="#f0abfc" stroke-width="2" fill="none" transform="rotate(45 45 162)"/>
+
+    <rect x="105" y="132" width="90" height="60" rx="10" fill="rgba(255,255,255,0.03)" stroke="rgba(255,255,255,0.08)"/>
+    <rect x="140" y="152" width="20" height="20" rx="3" stroke="#f0abfc" stroke-width="2" fill="none" transform="rotate(45 150 162)"/>
+    <line x1="150" y1="151" x2="150" y2="173" stroke="#f0abfc" stroke-width="2"/>
+
+    <!-- Slot 9: Missing Piece Slot -->
+    <rect x="210" y="132" width="90" height="60" rx="10" fill="rgba(168,85,247,0.2)" stroke="#a855f7" stroke-width="2" stroke-dasharray="4 4"/>
+    <text x="255" y="168" text-anchor="middle" fill="#e9d5ff" font-family="'Bebas Neue', sans-serif" font-size="28" font-weight="900">?</text>
+    <text x="255" y="184" text-anchor="middle" fill="#c084fc" font-family="sans-serif" font-size="8" font-weight="700">MISSING PIECE</text>
+  </g>
+
+  <!-- Candidate Selection -->
+  <g transform="translate(180, 350)">
+    <text x="0" y="24" fill="#94a3b8" font-family="'DM Mono', monospace" font-size="11" font-weight="700">SELECT CANDIDATE:</text>
+    <rect x="150" y="2" width="60" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="180" y="25" text-anchor="middle" fill="#cbd5e1" font-size="12" font-weight="700">A</text>
+
+    <rect x="220" y="2" width="60" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="250" y="25" text-anchor="middle" fill="#cbd5e1" font-size="12" font-weight="700">B</text>
+
+    <!-- Candidate C (Selected) -->
+    <rect x="290" y="2" width="90" height="36" rx="8" fill="rgba(168,85,247,0.25)" stroke="#a855f7" stroke-width="2"/>
+    <text x="325" y="25" text-anchor="middle" fill="#ffffff" font-size="12" font-weight="800">C <tspan fill="#34d399">✓</tspan></text>
+
+    <rect x="390" y="2" width="60" height="36" rx="8" fill="rgba(255,255,255,0.04)" stroke="rgba(255,255,255,0.08)"/>
+    <text x="420" y="25" text-anchor="middle" fill="#cbd5e1" font-size="12" font-weight="700">D</text>
+  </g>
+
+  <!-- Bottom Telemetry Strip -->
+  <line x1="32" y1="406" x2="768" y2="406" stroke="rgba(255,255,255,0.08)"/>
+  <g transform="translate(32, 426)">
+    <text x="0" y="16" fill="#64748b" font-family="'DM Mono', monospace" font-size="10" font-weight="700">DEDUCTIVE IQ INDEX</text>
+    <text x="0" y="38" fill="#c084fc" font-family="'JetBrains Mono', monospace" font-size="18" font-weight="800">138 SCORE</text>
+
+    <!-- Small Progress Dots -->
+    <text x="368" y="16" text-anchor="middle" fill="#64748b" font-family="'DM Mono', monospace" font-size="10" font-weight="700">DRILL PROGRESS</text>
+    <circle cx="338" cy="32" r="4" fill="#a855f7"/><circle cx="350" cy="32" r="4" fill="#a855f7"/>
+    <circle cx="362" cy="32" r="4" fill="#a855f7"/><circle cx="374" cy="32" r="4" fill="#a855f7"/>
+    <circle cx="386" cy="32" r="4" fill="rgba(255,255,255,0.2)"/><circle cx="398" cy="32" r="4" fill="rgba(255,255,255,0.2)"/>
+
+    <text x="736" y="16" text-anchor="end" fill="#64748b" font-family="'DM Mono', monospace" font-size="10" font-weight="700">SPEED: 4.8s (PEER AVG 14s)</text>
+    <rect x="626" y="26" width="110" height="6" rx="3" fill="rgba(255,255,255,0.1)"/>
+    <rect x="626" y="26" width="96" height="6" rx="3" fill="#a855f7"/>
+  </g>
+</svg>

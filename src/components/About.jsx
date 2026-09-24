@@ -3,65 +3,68 @@ const content = `<div class="ssr-variant hidden-1k8ds7i hidden-m2it3q"><div clas
 import { useEffect } from 'react'
 
 export default function About() {
-  useEffect(() => {
-    const section = document.getElementById('about')
-    if (!section) return
+	useEffect(() => {
+		const section = document.getElementById('about')
+		if (!section) return
 
-    const words = section.querySelectorAll('.framer-cp6dd4-container .framer-vbwbkt p')
-    if (!words.length) return
+		const words = section.querySelectorAll('.framer-cp6dd4-container .framer-vbwbkt p')
+		if (!words.length) return
 
-    const handleScroll = () => {
-      const rect = section.getBoundingClientRect()
-      const totalScroll = section.offsetHeight - window.innerHeight
-      if (totalScroll <= 0) return
+		const handleScroll = () => {
+			const rect = section.getBoundingClientRect()
+			const winH = window.innerHeight
+			// Calculate progress as section travels through viewport
+			const start = winH * 0.8
+			const end = winH * 0.2
+			const totalRange = rect.height + (start - end)
+			const current = start - rect.top
+			const progress = Math.max(0, Math.min(1, current / totalRange))
 
-      const currentScroll = -rect.top
-      const progress = Math.max(0, Math.min(1, currentScroll / totalScroll))
+			words.forEach((w, idx) => {
+				const threshold = idx / words.length
+				if (progress >= threshold) {
+					w.style.color = 'rgb(18, 18, 20)'
+					w.style.opacity = '1'
+					w.style.transition = 'color 0.2s ease, opacity 0.2s ease'
+				} else {
+					w.style.color = 'rgb(180, 180, 185)'
+					w.style.opacity = '0.35'
+					w.style.transition = 'color 0.2s ease, opacity 0.2s ease'
+				}
+			})
 
-      words.forEach((w, idx) => {
-        const threshold = idx / words.length
-        if (progress >= threshold) {
-          w.style.color = 'rgb(18, 18, 20)'
-          w.style.transition = 'color 0.15s ease'
-        } else {
-          w.style.color = 'rgb(205, 205, 207)'
-          w.style.transition = 'color 0.15s ease'
-        }
-      })
+			// Floating 3D badges scroll-by-movement parallax
+			const badgeClasses = [
+				{ sel: '.framer-1f3sf0s', yFactor: -45, rot: 5 },
+				{ sel: '.framer-92sp21', yFactor: 55, rot: -8 },
+				{ sel: '.framer-1yw7i64', yFactor: -35, rot: 6 },
+				{ sel: '.framer-1ug35de', yFactor: 40, rot: -5 },
+				{ sel: '.framer-egy6gx', yFactor: -50, rot: 10 },
+			]
 
-      // Floating 3D badges scroll-by-movement parallax
-      const badgeClasses = [
-        { sel: '.framer-1f3sf0s', yFactor: -45, rot: 5 },
-        { sel: '.framer-92sp21', yFactor: 55, rot: -8 },
-        { sel: '.framer-1yw7i64', yFactor: -35, rot: 6 },
-        { sel: '.framer-1ug35de', yFactor: 40, rot: -5 },
-        { sel: '.framer-egy6gx', yFactor: -50, rot: 10 }
-      ]
+			badgeClasses.forEach(({ sel, yFactor, rot }) => {
+				const iconEl = section.querySelector(sel)
+				const badgeBox = iconEl ? iconEl.closest('.framer-1m6a92e') || iconEl.parentElement : null
+				if (badgeBox) {
+					const shiftY = (progress - 0.5) * yFactor
+					const shiftRot = (progress - 0.5) * rot
+					badgeBox.style.transform = `translate3d(0, ${shiftY}px, 0) rotate(${shiftRot}deg)`
+					badgeBox.style.transition = 'transform 0.1s ease-out'
+				}
+			})
+		}
 
-      badgeClasses.forEach(({ sel, yFactor, rot }) => {
-        const iconEl = section.querySelector(sel)
-        const badgeBox = iconEl ? (iconEl.closest('.framer-1m6a92e') || iconEl.parentElement) : null
-        if (badgeBox) {
-          const shiftY = (progress - 0.5) * yFactor
-          const shiftRot = (progress - 0.5) * rot
-          badgeBox.style.transform = `translate3d(0, ${shiftY}px, 0) rotate(${shiftRot}deg)`
-          badgeBox.style.transition = 'transform 0.1s ease-out'
-        }
-      })
-    }
+		window.addEventListener('scroll', handleScroll, { passive: true })
+		handleScroll()
+		return () => window.removeEventListener('scroll', handleScroll)
+	}, [])
 
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    handleScroll()
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
-
-  return (
-    <section
-      className="framer-1ml1jmc"
-      id="about"
-      data-framer-name="About"
-      dangerouslySetInnerHTML={{ __html: content }}
-    />
-  )
+	return (
+		<section
+			className="framer-1ml1jmc"
+			id="about"
+			data-framer-name="About"
+			dangerouslySetInnerHTML={{ __html: content }}
+		/>
+	)
 }
-

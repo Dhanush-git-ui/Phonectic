@@ -1,85 +1,85 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 660 720" width="660" height="720" fill="none">
   <defs>
     <linearGradient id="grid_bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0B0D13"/>
-      <stop offset="100%" stop-color="#141824"/>
+      <stop offset="0%" stop-color="#090D16"/>
+      <stop offset="100%" stop-color="#111827"/>
     </linearGradient>
     <linearGradient id="card_glow" x1="0%" y1="0%" x2="100%" y2="100%">
-      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.8"/>
-      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.8"/>
+      <stop offset="0%" stop-color="#1E293B" stop-opacity="0.9"/>
+      <stop offset="100%" stop-color="#0F172A" stop-opacity="0.95"/>
     </linearGradient>
-    <radialGradient id="offer_burst" cx="50%" cy="30%" r="60%">
-      <stop offset="0%" stop-color="#3B82F6" stop-opacity="0.25"/>
-      <stop offset="100%" stop-color="#0B0D13" stop-opacity="0"/>
+    <radialGradient id="center_radial" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="#2563EB" stop-opacity="0.3"/>
+      <stop offset="100%" stop-color="#000000" stop-opacity="0"/>
     </radialGradient>
   </defs>
 
-  <!-- Background -->
+  <!-- Background Base -->
   <rect width="660" height="720" rx="36" fill="url(#grid_bg)"/>
-  <rect width="660" height="720" fill="url(#offer_burst)"/>
-  <rect x="1.5" y="1.5" width="657" height="717" rx="34.5" stroke="#FFFFFF" stroke-opacity="0.08" stroke-width="1.5"/>
+  <rect width="660" height="720" fill="url(#center_radial)"/>
+  <rect x="1" y="1" width="658" height="718" rx="35" stroke="rgba(255, 255, 255, 0.12)" stroke-width="1.5"/>
 
-  <!-- Subtle Grid Lines -->
-  <g stroke="#FFFFFF" stroke-opacity="0.04" stroke-width="1">
-    <line x1="0" y1="120" x2="660" y2="120"/>
-    <line x1="0" y1="240" x2="660" y2="240"/>
-    <line x1="0" y1="360" x2="660" y2="360"/>
-    <line x1="0" y1="480" x2="660" y2="480"/>
-    <line x1="0" y1="600" x2="660" y2="600"/>
-    <line x1="165" y1="0" x2="165" y2="720"/>
-    <line x1="330" y1="0" x2="330" y2="720"/>
-    <line x1="495" y1="0" x2="495" y2="720"/>
+  <!-- Subtle Blueprint Grid -->
+  <g stroke="rgba(255, 255, 255, 0.04)" stroke-width="1">
+    <line x1="0" y1="140" x2="660" y2="140"/>
+    <line x1="0" y1="280" x2="660" y2="280"/>
+    <line x1="0" y1="420" x2="660" y2="420"/>
+    <line x1="0" y1="560" x2="660" y2="560"/>
+    <line x1="220" y1="0" x2="220" y2="720"/>
+    <line x1="440" y1="0" x2="440" y2="720"/>
   </g>
 
-  <!-- Live Recruiter Offers Floating Cards -->
   <!-- Card 1: TCS Prime Offer -->
-  <g transform="translate(48, 60)">
-    <rect width="260" height="96" rx="20" fill="url(#card_glow)" stroke="#38BDF8" stroke-opacity="0.3" stroke-width="1.5"/>
-    <circle cx="36" cy="38" r="16" fill="#38BDF8" fill-opacity="0.15"/>
-    <text x="36" y="43" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="900" font-size="12">TCS</text>
-    <text x="64" y="36" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="15">TCS Prime / Digital</text>
-    <text x="64" y="54" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="500" font-size="12">CTC: 9.0 LPA Offer Letter</text>
-    <rect x="24" y="68" width="88" height="18" rx="5" fill="#10B981" fill-opacity="0.2"/>
-    <text x="68" y="81" text-anchor="middle" fill="#10B981" font-family="'Inter', sans-serif" font-weight="700" font-size="10">SELECTED • 2026</text>
+  <g transform="translate(36, 46)">
+    <rect width="280" height="106" rx="22" fill="url(#card_glow)" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="38" cy="40" r="18" fill="rgba(56, 189, 248, 0.15)"/>
+    <text x="38" y="46" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="900" font-size="13">TCS</text>
+    <text x="68" y="38" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16">TCS Prime / Digital</text>
+    <text x="68" y="58" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="600" font-size="13">CTC: <tspan fill="#34D399" font-weight="700">₹ 9.0 LPA</tspan> Offer</text>
+    <rect x="22" y="74" width="102" height="20" rx="6" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="73" y="88" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5">SELECTED • 2026</text>
   </g>
 
   <!-- Card 2: Infosys Specialist -->
-  <g transform="translate(340, 90)">
-    <rect width="270" height="96" rx="20" fill="url(#card_glow)" stroke="#818CF8" stroke-opacity="0.3" stroke-width="1.5"/>
-    <circle cx="36" cy="38" r="16" fill="#818CF8" fill-opacity="0.15"/>
-    <text x="36" y="43" text-anchor="middle" fill="#818CF8" font-family="'Inter', sans-serif" font-weight="900" font-size="12">INF</text>
-    <text x="64" y="36" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="15">Infosys Specialist Prog.</text>
-    <text x="64" y="54" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="500" font-size="12">CTC: 9.5 LPA Verified</text>
-    <rect x="24" y="68" width="94" height="18" rx="5" fill="#10B981" fill-opacity="0.2"/>
-    <text x="71" y="81" text-anchor="middle" fill="#10B981" font-family="'Inter', sans-serif" font-weight="700" font-size="10">ROUND 3 CLEARED</text>
+  <g transform="translate(344, 46)">
+    <rect width="280" height="106" rx="22" fill="url(#card_glow)" stroke="#818CF8" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="38" cy="40" r="18" fill="rgba(129, 140, 248, 0.15)"/>
+    <text x="38" y="46" text-anchor="middle" fill="#818CF8" font-family="'Inter', sans-serif" font-weight="900" font-size="13">INF</text>
+    <text x="68" y="38" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16">Infosys Specialist</text>
+    <text x="68" y="58" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="600" font-size="13">CTC: <tspan fill="#34D399" font-weight="700">₹ 9.5 LPA</tspan> Verified</text>
+    <rect x="22" y="74" width="112" height="20" rx="6" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="78" y="88" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5">OFFER RELEASED</text>
   </g>
 
   <!-- Card 3: Capgemini Excellence -->
-  <g transform="translate(48, 180)">
-    <rect width="260" height="96" rx="20" fill="url(#card_glow)" stroke="#0070AD" stroke-opacity="0.4" stroke-width="1.5"/>
-    <circle cx="36" cy="38" r="16" fill="#0070AD" fill-opacity="0.2"/>
-    <text x="36" y="43" text-anchor="middle" fill="#00C9FF" font-family="'Inter', sans-serif" font-weight="900" font-size="12">CAP</text>
-    <text x="64" y="36" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="15">Capgemini Senior Analyst</text>
-    <text x="64" y="54" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="500" font-size="12">CTC: 7.5 LPA Package</text>
-    <rect x="24" y="68" width="102" height="18" rx="5" fill="#10B981" fill-opacity="0.2"/>
-    <text x="75" y="81" text-anchor="middle" fill="#10B981" font-family="'Inter', sans-serif" font-weight="700" font-size="10">GAME TEST: 100%</text>
+  <g transform="translate(36, 172)">
+    <rect width="280" height="106" rx="22" fill="url(#card_glow)" stroke="#0284C7" stroke-opacity="0.4" stroke-width="1.5"/>
+    <circle cx="38" cy="40" r="18" fill="rgba(2, 132, 199, 0.2)"/>
+    <text x="38" y="46" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="900" font-size="13">CAP</text>
+    <text x="68" y="38" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16">Capgemini Senior</text>
+    <text x="68" y="58" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="600" font-size="13">CTC: <tspan fill="#34D399" font-weight="700">₹ 7.5 LPA</tspan> Package</text>
+    <rect x="22" y="74" width="118" height="20" rx="6" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="81" y="88" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5">GAME TEST: 100%</text>
   </g>
 
-  <!-- Card 4: Accenture Advance Tech -->
-  <g transform="translate(340, 210)">
-    <rect width="270" height="96" rx="20" fill="url(#card_glow)" stroke="#A855F7" stroke-opacity="0.3" stroke-width="1.5"/>
-    <circle cx="36" cy="38" r="16" fill="#A855F7" fill-opacity="0.2"/>
-    <text x="36" y="43" text-anchor="middle" fill="#C084FC" font-family="'Inter', sans-serif" font-weight="900" font-size="14">&gt;</text>
-    <text x="64" y="36" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="700" font-size="15">Accenture ASE / FSE</text>
-    <text x="64" y="54" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="500" font-size="12">CTC: 6.5 - 11.5 LPA</text>
-    <rect x="24" y="68" width="90" height="18" rx="5" fill="#10B981" fill-opacity="0.2"/>
-    <text x="69" y="81" text-anchor="middle" fill="#10B981" font-family="'Inter', sans-serif" font-weight="700" font-size="10">OFFER DISPATCHED</text>
+  <!-- Card 4: Accenture Advance -->
+  <g transform="translate(344, 172)">
+    <rect width="280" height="106" rx="22" fill="url(#card_glow)" stroke="#38BDF8" stroke-opacity="0.35" stroke-width="1.5"/>
+    <circle cx="38" cy="40" r="18" fill="rgba(168, 85, 247, 0.2)"/>
+    <text x="38" y="47" text-anchor="middle" fill="#60A5FA" font-family="'Inter', sans-serif" font-weight="900" font-size="16">&gt;</text>
+    <text x="68" y="38" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="16">Accenture Adv ASE</text>
+    <text x="68" y="58" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="600" font-size="13">CTC: <tspan fill="#34D399" font-weight="700">₹ 11.5 LPA</tspan> Max</text>
+    <rect x="22" y="74" width="118" height="20" rx="6" fill="rgba(16, 185, 129, 0.2)"/>
+    <text x="81" y="88" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="700" font-size="10.5">DRIVE CLEARED</text>
   </g>
 
-  <!-- Central Highlight Badge -->
-  <g transform="translate(130, 340)">
-    <rect width="400" height="110" rx="24" fill="#0E1726" stroke="#FFFFFF" stroke-opacity="0.12" stroke-width="1.5"/>
-    <text x="200" y="42" text-anchor="middle" fill="#94A3B8" font-family="'Inter', sans-serif" font-weight="600" font-size="12" letter-spacing="2">ANNUAL CAMPUS DRIVES</text>
-    <text x="200" y="78" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="800" font-size="34">94.8% Placement Ratio</text>
+  <!-- Massive Central Placement Ratio Seal -->
+  <g transform="translate(90, 316)">
+    <rect width="480" height="136" rx="28" fill="#0B1322" stroke="rgba(255, 255, 255, 0.16)" stroke-width="2"/>
+    <rect x="2" y="2" width="476" height="132" rx="26" fill="rgba(37, 99, 235, 0.1)"/>
+    
+    <text x="240" y="44" text-anchor="middle" fill="#38BDF8" font-family="'Inter', sans-serif" font-weight="800" font-size="13" letter-spacing="2.5">ANNUAL CAMPUS DRIVES</text>
+    <text x="240" y="86" text-anchor="middle" fill="#FFFFFF" font-family="'Inter', sans-serif" font-weight="900" font-size="38" letter-spacing="-1">94.8% Placement Ratio</text>
+    <text x="240" y="114" text-anchor="middle" fill="#34D399" font-family="'Inter', sans-serif" font-weight="700" font-size="14">1,000+ Students Placed • 50+ Top Hiring Partners</text>
   </g>
 </svg>

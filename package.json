@@ -6,7 +6,10 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "biome check ./src",
+    "lint:fix": "biome check --write ./src",
+    "format": "biome format --write ./src"
   },
   "dependencies": {
     "clsx": "^2.1.1",
@@ -17,6 +20,11 @@
     "tailwind-merge": "^3.0.1"
   },
   "devDependencies": {
+    "@biomejs/biome": "^2.5.14",
+    "@repobuddy/biome": "^2.4.0",
+    "@repobuddy/jest": "^7.0.0",
+    "@repobuddy/typescript": "^2.2.0",
+    "@repobuddy/vitest": "^2.3.0",
     "@tailwindcss/vite": "^4.0.9",
     "@types/react": "^18.3.18",
     "@types/react-dom": "^18.3.5",

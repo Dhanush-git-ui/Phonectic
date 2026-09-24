@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Outfit:wght@900&display=swap" rel="stylesheet">
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 5376px;
+    height: 1267px;
+    background: transparent;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+  }
+  .wrap {
+    width: 5376px;
+    height: 1267px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 100px;
+  }
+  .wordmark {
+    font-family: 'Outfit', sans-serif;
+    font-size: 1050px;
+    font-weight: 900;
+    color: #FFFFFF;
+    letter-spacing: -0.04em;
+    line-height: 1;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transform: translateY(15px);
+  }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <!-- Iconic Circular Emblem matching OneFin's dimensions & metallic quadrant gradients -->
+    <svg width="1160" height="1160" viewBox="0 0 1160 1160" fill="none" style="flex-shrink: 0;">
+      <defs>
+        <!-- 4 metallic quadrant gradients -->
+        <linearGradient id="q1" x1="0" y1="0" x2="1" y2="1">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#222222"/>
+        </linearGradient>
+        <linearGradient id="q2" x1="1" y1="0" x2="0" y2="1">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#333333"/>
+        </linearGradient>
+        <linearGradient id="q3" x1="0" y1="1" x2="1" y2="0">
+          <stop offset="0%" stop-color="#FFFFFF"/>
+          <stop offset="100%" stop-color="#2a2a2a"/>
+        </linearGradient>
+      </defs>
+      
+      <!-- Quadrants (radius 580) -->
+      <!-- Top-left -->
+      <path d="M 580 0 A 580 580 0 0 0 0 580 C 200 580 380 400 580 380 Z" fill="url(#q1)"/>
+      <!-- Top-right -->
+      <path d="M 1160 580 A 580 580 0 0 0 580 0 C 580 200 760 380 780 580 Z" fill="url(#q2)"/>
+      <!-- Bottom-left -->
+      <path d="M 0 580 A 580 580 0 0 0 580 1160 C 580 960 400 780 380 580 Z" fill="url(#q2)"/>
+      <!-- Bottom-right -->
+      <path d="M 580 1160 A 580 580 0 0 0 1160 580 C 960 580 780 760 580 780 Z" fill="url(#q1)"/>
+      
+      <!-- Central Stylized Geometric 'P' Star Cutout -->
+      <g transform="translate(190, 190) scale(0.67)">
+        <!-- Precision stylized P in pure white -->
+        <path d="M 320 160 H 660 C 820 160 920 260 920 420 C 920 580 820 680 660 680 H 480 V 1000 H 320 V 160 Z M 480 320 V 520 H 640 C 720 520 760 480 760 420 C 760 360 720 320 640 320 H 480 Z" fill="#FFFFFF"/>
+        <!-- Star aperture in P loop -->
+        <path d="M 640 380 Q 640 420 680 420 Q 640 420 640 460 Q 640 420 600 420 Q 640 420 640 380 Z" fill="#0c0d10"/>
+      </g>
+    </svg>
+
+    <!-- Wordmark PHONECTIC -->
+    <div class="wordmark">PHONECTIC</div>
+  </div>
+</body>
+</html>
