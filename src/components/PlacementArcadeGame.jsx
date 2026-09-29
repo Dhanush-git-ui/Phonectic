@@ -100,7 +100,7 @@ const QUESTION_BANK = [
 	},
 ]
 
-// CTC tiers based on score with rich visual styling tokens
+// Placement tiers based on benchmark score
 const TIERS = [
 	{
 		min: 0,
@@ -109,37 +109,33 @@ const TIERS = [
 		tag: 'Foundation',
 		badge: 'Tier-3 Cleared',
 		color: '#94a3b8',
-		glow: 'rgba(148, 163, 184, 0.25)',
 		companies: 'Mass Recruiters',
 	},
 	{
 		min: 600,
 		title: 'Ninja Dev',
-		ctc: '₹4.5 - 6.0 LPA',
+		ctc: '₹4.5 – 6.0 LPA',
 		tag: 'TCS / Wipro',
 		badge: 'Standard OA Cleared',
 		color: '#60a5fa',
-		glow: 'rgba(96, 165, 250, 0.3)',
 		companies: 'TCS · Infosys',
 	},
 	{
 		min: 1400,
 		title: 'Digital Specialist',
-		ctc: '₹9.0 - 12.0 LPA',
+		ctc: '₹9.0 – 12.0 LPA',
 		tag: 'Accenture Prime',
 		badge: 'High-Package Offer',
 		color: '#38bdf8',
-		glow: 'rgba(56, 189, 248, 0.35)',
 		companies: 'Cognizant · Capgemini',
 	},
 	{
 		min: 2400,
 		title: 'Prime SDE-1',
-		ctc: '₹18.0 - 22.0 LPA',
+		ctc: '₹18.0 – 22.0 LPA',
 		tag: 'Product Tier-1',
 		badge: 'Tier-1 Product Offer',
 		color: '#34d399',
-		glow: 'rgba(52, 211, 153, 0.4)',
 		companies: 'Amazon · Oracle',
 	},
 	{
@@ -147,10 +143,9 @@ const TIERS = [
 		title: 'Super-Dream FAANG',
 		ctc: '₹28.0+ LPA CTC',
 		tag: 'National Ranker',
-		badge: 'National Ranker 🏆',
+		badge: 'National Ranker',
 		color: '#fbbf24',
-		glow: 'rgba(251, 191, 36, 0.45)',
-		companies: 'Google · Microsoft 👑',
+		companies: 'Google · Microsoft',
 	},
 ]
 
@@ -163,7 +158,7 @@ export default function PlacementArcadeGame() {
 	const [timeLeft, setTimeLeft] = useState(30)
 	const [highScore, setHighScore] = useState(0)
 	const [selectedOption, setSelectedOption] = useState(null)
-	const [feedback, setFeedback] = useState(null) // { correct: bool, text: string }
+	const [feedback, setFeedback] = useState(null)
 	const [soundEnabled, setSoundEnabled] = useState(true)
 	const [questions, setQuestions] = useState(QUESTION_BANK)
 
@@ -181,7 +176,7 @@ export default function PlacementArcadeGame() {
 		}
 	}, [])
 
-	// Web Audio Synth for crisp arcade sound effects
+	// Web Audio Synth for subtle, refined sound feedback
 	const playSound = useCallback(
 		(type) => {
 			if (!soundEnabled) return
@@ -200,52 +195,52 @@ export default function PlacementArcadeGame() {
 					const osc = ctx.createOscillator()
 					const gain = ctx.createGain()
 					osc.type = 'sine'
-					const baseFreq = 523.25 + Math.min(streak * 40, 400)
+					const baseFreq = 523.25 + Math.min(streak * 30, 300)
 					osc.frequency.setValueAtTime(baseFreq, now)
-					osc.frequency.exponentialRampToValueAtTime(baseFreq * 1.5, now + 0.15)
-					gain.gain.setValueAtTime(0.15, now)
+					osc.frequency.exponentialRampToValueAtTime(baseFreq * 1.35, now + 0.12)
+					gain.gain.setValueAtTime(0.12, now)
+					gain.gain.exponentialRampToValueAtTime(0.001, now + 0.2)
+					osc.connect(gain)
+					gain.connect(ctx.destination)
+					osc.start(now)
+					osc.stop(now + 0.2)
+				} else if (type === 'wrong') {
+					const osc = ctx.createOscillator()
+					const gain = ctx.createGain()
+					osc.type = 'triangle'
+					osc.frequency.setValueAtTime(180, now)
+					osc.frequency.exponentialRampToValueAtTime(100, now + 0.15)
+					gain.gain.setValueAtTime(0.12, now)
+					gain.gain.exponentialRampToValueAtTime(0.001, now + 0.18)
+					osc.connect(gain)
+					gain.connect(ctx.destination)
+					osc.start(now)
+					osc.stop(now + 0.18)
+				} else if (type === 'start') {
+					const osc = ctx.createOscillator()
+					const gain = ctx.createGain()
+					osc.type = 'sine'
+					osc.frequency.setValueAtTime(320, now)
+					osc.frequency.exponentialRampToValueAtTime(640, now + 0.2)
+					gain.gain.setValueAtTime(0.12, now)
 					gain.gain.exponentialRampToValueAtTime(0.001, now + 0.25)
 					osc.connect(gain)
 					gain.connect(ctx.destination)
 					osc.start(now)
 					osc.stop(now + 0.25)
-				} else if (type === 'wrong') {
-					const osc = ctx.createOscillator()
-					const gain = ctx.createGain()
-					osc.type = 'sawtooth'
-					osc.frequency.setValueAtTime(160, now)
-					osc.frequency.exponentialRampToValueAtTime(80, now + 0.2)
-					gain.gain.setValueAtTime(0.18, now)
-					gain.gain.exponentialRampToValueAtTime(0.001, now + 0.22)
-					osc.connect(gain)
-					gain.connect(ctx.destination)
-					osc.start(now)
-					osc.stop(now + 0.22)
-				} else if (type === 'start') {
-					const osc = ctx.createOscillator()
-					const gain = ctx.createGain()
-					osc.type = 'triangle'
-					osc.frequency.setValueAtTime(220, now)
-					osc.frequency.exponentialRampToValueAtTime(880, now + 0.3)
-					gain.gain.setValueAtTime(0.2, now)
-					gain.gain.exponentialRampToValueAtTime(0.001, now + 0.35)
-					osc.connect(gain)
-					gain.connect(ctx.destination)
-					osc.start(now)
-					osc.stop(now + 0.35)
 				} else if (type === 'gameover') {
-					const freqs = [392, 523.25, 659.25, 783.99]
+					const freqs = [440, 554.37, 659.25]
 					freqs.forEach((f, i) => {
 						const osc = ctx.createOscillator()
 						const gain = ctx.createGain()
 						osc.type = 'sine'
 						osc.frequency.setValueAtTime(f, now + i * 0.08)
-						gain.gain.setValueAtTime(0.12, now + i * 0.08)
-						gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.4)
+						gain.gain.setValueAtTime(0.1, now + i * 0.08)
+						gain.gain.exponentialRampToValueAtTime(0.001, now + i * 0.08 + 0.35)
 						osc.connect(gain)
 						gain.connect(ctx.destination)
 						osc.start(now + i * 0.08)
-						osc.stop(now + i * 0.08 + 0.4)
+						osc.stop(now + i * 0.08 + 0.35)
 					})
 				}
 			} catch {
@@ -315,37 +310,34 @@ export default function PlacementArcadeGame() {
 			setStreak(newStreak)
 			setMaxStreak((prev) => Math.max(prev, newStreak))
 
-			// Multiplier logic: 1x, 2x (>=2), 3x (>=4), 5x (>=6)
 			const multiplier = newStreak >= 6 ? 5 : newStreak >= 4 ? 3 : newStreak >= 2 ? 2 : 1
 			const points = 100 * multiplier
 			setScore((s) => s + points)
 
-			// Time bonus: +2 seconds for correct answers
 			setTimeLeft((t) => Math.min(t + 2, 45))
 
 			setFeedback({
 				correct: true,
-				text: `+${points} PTS! ${multiplier > 1 ? `(${multiplier}x COMBO!)` : ''} +2s`,
+				text: `+${points} pts · +2s ${multiplier > 1 ? `(${multiplier}x streak)` : ''}`,
 			})
 			playSound('correct')
 		} else {
 			setStreak(0)
 			setFeedback({
 				correct: false,
-				text: 'MISSED! STREAK RESET',
+				text: 'Streak reset',
 			})
 			playSound('wrong')
 		}
 
-		// Proceed to next question after tactile delay
 		setTimeout(() => {
 			setSelectedOption(null)
 			setFeedback(null)
 			setCurrentIdx((prev) => (prev + 1) % questions.length)
-		}, 550)
+		}, 500)
 	}
 
-	// Keyboard shortcut listener
+	// Keyboard shortcut listener (1, 2, 3, 4 or A, B, C, D)
 	useEffect(() => {
 		const handleKeyDown = (e) => {
 			if (gameState !== 'PLAYING') return
@@ -365,7 +357,7 @@ export default function PlacementArcadeGame() {
 		return () => window.removeEventListener('keydown', handleKeyDown)
 	}, [gameState, currentIdx, selectedOption])
 
-	// Confetti particle celebration effect on game over
+	// Subtle celebratory confetti on completion
 	useEffect(() => {
 		if (gameState === 'GAMEOVER' && canvasRef.current) {
 			const canvas = canvasRef.current
@@ -374,13 +366,13 @@ export default function PlacementArcadeGame() {
 			canvas.width = canvas.parentElement.clientWidth
 			canvas.height = canvas.parentElement.clientHeight
 
-			const particles = Array.from({ length: 80 }, () => ({
+			const particles = Array.from({ length: 45 }, () => ({
 				x: Math.random() * canvas.width,
-				y: Math.random() * canvas.height * 0.5,
-				vx: (Math.random() - 0.5) * 6,
-				vy: Math.random() * 4 + 2,
-				color: ['#38bdf8', '#2563eb', '#34d399', '#f43f5e', '#fbbf24', '#a855f7'][Math.floor(Math.random() * 6)],
-				size: Math.random() * 6 + 4,
+				y: Math.random() * canvas.height * 0.4,
+				vx: (Math.random() - 0.5) * 3,
+				vy: Math.random() * 2.5 + 1.5,
+				color: ['#3b82f6', '#60a5fa', '#93c5fd', '#34d399', '#fbbf24'][Math.floor(Math.random() * 5)],
+				size: Math.random() * 4 + 3,
 				rot: Math.random() * 360,
 			}))
 
@@ -389,7 +381,7 @@ export default function PlacementArcadeGame() {
 				particles.forEach((p) => {
 					p.x += p.vx
 					p.y += p.vy
-					p.rot += 4
+					p.rot += 2
 					ctx.save()
 					ctx.translate(p.x, p.y)
 					ctx.rotate((p.rot * Math.PI) / 180)
@@ -422,344 +414,297 @@ export default function PlacementArcadeGame() {
 			className="placement-arcade-wrapper"
 			style={{
 				width: '100%',
-				maxWidth: 1140,
+				maxWidth: 1040,
 				margin: '0 auto',
 				position: 'relative',
-				borderRadius: 36,
-				background:
-					'radial-gradient(120% 120% at 50% -10%, rgba(37, 99, 235, 0.28) 0%, rgba(13, 20, 38, 0.98) 45%, rgba(7, 10, 20, 0.99) 100%)',
-				border: '1px solid rgba(255, 255, 255, 0.12)',
-				boxShadow:
-					'0 0 0 1px rgba(56, 189, 248, 0.22), 0 35px 80px -20px rgba(0, 0, 0, 0.85), 0 0 60px -15px rgba(37, 99, 235, 0.35)',
+				borderRadius: 24,
+				background: 'linear-gradient(180deg, #0e1526 0%, #090e1a 100%)',
+				border: '1px solid rgba(255, 255, 255, 0.08)',
+				boxShadow: '0 24px 60px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
 				overflow: 'hidden',
 				color: '#ffffff',
 				fontFamily: '"Plus Jakarta Sans", "Inter", -apple-system, BlinkMacSystemFont, sans-serif',
-				backdropFilter: 'blur(20px)',
 			}}
 		>
-			{/* Ambient Glowing Cyber Grid & Light Beams */}
+			{/* Subtle, soft top light reflection */}
 			<div
 				style={{
 					position: 'absolute',
 					top: 0,
-					left: 0,
-					right: 0,
-					height: '100%',
-					backgroundImage:
-						'radial-gradient(rgba(59, 130, 246, 0.12) 1px, transparent 1px), radial-gradient(rgba(14, 165, 233, 0.08) 1px, transparent 1px)',
-					backgroundSize: '28px 28px, 56px 56px',
-					backgroundPosition: '0 0, 14px 14px',
-					pointerEvents: 'none',
-					opacity: 0.65,
-				}}
-			/>
-			<div
-				style={{
-					position: 'absolute',
-					top: -120,
 					left: '50%',
 					transform: 'translateX(-50%)',
-					width: 500,
-					height: 240,
-					background: 'radial-gradient(ellipse, rgba(56, 189, 248, 0.35) 0%, rgba(37, 99, 235, 0.15) 50%, transparent 80%)',
-					filter: 'blur(35px)',
+					width: 520,
+					height: 120,
+					background: 'radial-gradient(ellipse at top, rgba(59, 130, 246, 0.12) 0%, transparent 70%)',
 					pointerEvents: 'none',
 				}}
 			/>
 
-			{/* Top Arcade Marquee Bar / Telemetry Header */}
+			{/* Refined Header Bar */}
 			<div
 				style={{
 					display: 'flex',
 					alignItems: 'center',
 					justifyContent: 'space-between',
-					padding: '16px 28px',
-					borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-					backgroundColor: 'rgba(10, 15, 29, 0.82)',
-					backdropFilter: 'blur(16px)',
+					padding: '14px 24px',
+					borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+					backgroundColor: 'rgba(10, 15, 29, 0.65)',
 					position: 'relative',
 					zIndex: 2,
 				}}
 			>
-				{/* Left: Brand Lockup & Status */}
-				<div style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-					<div style={{ position: 'relative', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
-						<div
-							style={{
-								width: 10,
-								height: 10,
-								borderRadius: '50%',
-								backgroundColor: gameState === 'PLAYING' ? '#10b981' : '#38bdf8',
-								boxShadow: gameState === 'PLAYING' ? '0 0 14px #10b981' : '0 0 12px #38bdf8',
-							}}
-						/>
-						<div
-							style={{
-								position: 'absolute',
-								width: 20,
-								height: 20,
-								borderRadius: '50%',
-								border: `1px solid ${gameState === 'PLAYING' ? '#10b981' : '#38bdf8'}`,
-								opacity: 0.5,
-								animation: 'pulse 2s infinite ease-out',
-							}}
-						/>
-					</div>
-
-					<div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-						<span
-							style={{
-								fontSize: 13,
-								fontWeight: 800,
-								letterSpacing: '0.08em',
-								background: 'linear-gradient(90deg, #ffffff 0%, #93c5fd 100%)',
-								WebkitBackgroundClip: 'text',
-								WebkitTextFillColor: 'transparent',
-							}}
-						>
-							PHONECTIC ARENA
-						</span>
-						<span
-							style={{
-								fontSize: 10,
-								fontWeight: 700,
-								color: '#38bdf8',
-								backgroundColor: 'rgba(56, 189, 248, 0.12)',
-								border: '1px solid rgba(56, 189, 248, 0.25)',
-								padding: '2px 8px',
-								borderRadius: 10,
-								letterSpacing: '0.04em',
-							}}
-						>
-							v2.4 LIVE
-						</span>
-					</div>
+				{/* Left: Brand Identity */}
+				<div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+					<span
+						style={{
+							width: 7,
+							height: 7,
+							borderRadius: '50%',
+							backgroundColor: gameState === 'PLAYING' ? '#10b981' : '#3b82f6',
+							boxShadow: gameState === 'PLAYING' ? '0 0 8px #10b981' : '0 0 8px #3b82f6',
+							display: 'inline-block',
+						}}
+					/>
+					<span
+						style={{
+							fontSize: 12.5,
+							fontWeight: 700,
+							letterSpacing: '0.06em',
+							color: '#f8fafc',
+							textTransform: 'uppercase',
+						}}
+					>
+						Phonectic Arena
+					</span>
+					<span
+						style={{
+							fontSize: 11,
+							fontWeight: 600,
+							color: '#94a3b8',
+							backgroundColor: 'rgba(255, 255, 255, 0.04)',
+							border: '1px solid rgba(255, 255, 255, 0.08)',
+							padding: '1.5px 8px',
+							borderRadius: 12,
+						}}
+					>
+						OA Benchmark
+					</span>
 				</div>
 
-				{/* Center: Live Benchmark Telemetry (Hidden on narrow screens) */}
+				{/* Center: Clean Telemetry (Hidden on mobile) */}
 				<div
 					className="hidden-on-mobile"
 					style={{
-						fontSize: 11,
-						fontWeight: 700,
+						fontSize: 11.5,
+						fontWeight: 500,
 						color: '#64748b',
-						letterSpacing: '0.06em',
 						display: 'flex',
 						alignItems: 'center',
-						gap: 12,
+						gap: 10,
 					}}
 				>
-					<span>
-						DIFFICULTY: <strong style={{ color: '#38bdf8' }}>ADAPTIVE OA</strong>
-					</span>
-					<span>•</span>
-					<span>
-						ACTIVE CANDIDATES: <strong style={{ color: '#10b981' }}>4,820+</strong>
-					</span>
+					<span>Adaptive Campus Assessment</span>
+					<span style={{ opacity: 0.4 }}>•</span>
+					<span>30-Second Sprint</span>
 				</div>
 
-				{/* Right: High Score & Sound Toggle */}
-				<div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
+				{/* Right: Personal Best & Sound Control */}
+				<div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
 					<div
 						style={{
-							fontSize: 12,
-							fontWeight: 800,
-							color: '#fbbf24',
-							background: 'linear-gradient(135deg, rgba(245, 158, 11, 0.18) 0%, rgba(217, 119, 6, 0.08) 100%)',
-							border: '1px solid rgba(245, 158, 11, 0.35)',
-							padding: '5px 14px',
-							borderRadius: 20,
-							letterSpacing: '0.02em',
+							fontSize: 11.5,
+							fontWeight: 600,
+							color: '#cbd5e1',
+							backgroundColor: 'rgba(255, 255, 255, 0.04)',
+							border: '1px solid rgba(255, 255, 255, 0.08)',
+							padding: '4px 12px',
+							borderRadius: 16,
 							display: 'flex',
 							alignItems: 'center',
-							gap: 6,
-							boxShadow: '0 2px 10px rgba(245, 158, 11, 0.15)',
+							gap: 5,
 						}}
 					>
-						<span>★</span> BEST: {highScore} PTS
+						<span>Best:</span>
+						<strong style={{ color: '#38bdf8', fontWeight: 700 }}>{highScore} pts</strong>
 					</div>
 
 					<button
 						type="button"
 						onClick={() => setSoundEnabled(!soundEnabled)}
 						style={{
-							background: 'rgba(255, 255, 255, 0.06)',
-							border: '1px solid rgba(255, 255, 255, 0.12)',
-							color: soundEnabled ? '#e2e8f0' : '#64748b',
-							borderRadius: 18,
-							padding: '6px 12px',
-							fontSize: 11.5,
-							fontWeight: 700,
+							background: 'rgba(255, 255, 255, 0.04)',
+							border: '1px solid rgba(255, 255, 255, 0.08)',
+							color: soundEnabled ? '#cbd5e1' : '#64748b',
+							borderRadius: 16,
+							padding: '4px 10px',
+							fontSize: 11,
+							fontWeight: 600,
 							cursor: 'pointer',
 							display: 'flex',
 							alignItems: 'center',
 							gap: 5,
 							transition: 'all 0.2s ease',
 						}}
-						title={soundEnabled ? 'Mute Sound' : 'Enable Sound'}
+						title={soundEnabled ? 'Mute sound' : 'Enable sound'}
 					>
-						{soundEnabled ? '🔊 SFX' : '🔇 MUTED'}
+						{soundEnabled ? (
+							<>
+								<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+									<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+									<path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+									<path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+								</svg>
+								<span>SFX</span>
+							</>
+						) : (
+							<>
+								<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
+									<polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+									<line x1="23" y1="9" x2="17" y2="15"></line>
+									<line x1="17" y1="9" x2="23" y2="15"></line>
+								</svg>
+								<span>Muted</span>
+							</>
+						)}
 					</button>
 				</div>
 			</div>
 
-			{/* Main Game Screen Stage */}
-			<div style={{ padding: '40px 32px', minHeight: 460, position: 'relative', zIndex: 2 }}>
+			{/* Main Content Stage */}
+			<div style={{ padding: '36px 28px', minHeight: 430, position: 'relative', zIndex: 2 }}>
 				{/* ================= STATE 1: IDLE / START SCREEN ================= */}
 				{gameState === 'IDLE' && (
-					<div style={{ textAlign: 'center', maxWidth: 840, margin: '0 auto' }}>
-						{/* Dual-Tone Cyber Kicker */}
+					<div style={{ textAlign: 'center', maxWidth: 820, margin: '0 auto' }}>
+						{/* Clean Section Tag */}
 						<div
 							style={{
 								display: 'inline-flex',
 								alignItems: 'center',
-								gap: 8,
-								padding: '7px 20px',
-								borderRadius: 24,
-								background: 'linear-gradient(90deg, rgba(37, 99, 235, 0.25) 0%, rgba(6, 182, 212, 0.25) 100%)',
-								border: '1px solid rgba(56, 189, 248, 0.45)',
-								boxShadow: '0 4px 20px rgba(37, 99, 235, 0.25), inset 0 1px 0 rgba(255, 255, 255, 0.2)',
-								color: '#38bdf8',
-								fontSize: 12.5,
-								fontWeight: 800,
-								letterSpacing: '0.07em',
-								marginBottom: 20,
+								gap: 6,
+								padding: '4px 14px',
+								borderRadius: 20,
+								backgroundColor: 'rgba(59, 130, 246, 0.08)',
+								border: '1px solid rgba(59, 130, 246, 0.22)',
+								color: '#60a5fa',
+								fontSize: 11.5,
+								fontWeight: 700,
+								letterSpacing: '0.04em',
 								textTransform: 'uppercase',
+								marginBottom: 16,
 							}}
 						>
-							<span style={{ color: '#fbbf24' }}>⚡</span> RAPID-FIRE CAMPUS OA SIMULATOR
+							30-Second Speed Benchmark
 						</div>
 
-						{/* Headline: High-Contrast & Impactful */}
+						{/* Confident, High-legibility Headline */}
 						<h3
 							style={{
-								fontSize: 'clamp(32px, 4.5vw, 48px)',
-								fontWeight: 900,
-								margin: '0 0 14px 0',
-								letterSpacing: '-0.03em',
-								lineHeight: 1.12,
+								fontSize: 'clamp(28px, 3.8vw, 42px)',
+								fontWeight: 800,
+								color: '#ffffff',
+								margin: '0 0 12px 0',
+								letterSpacing: '-0.025em',
+								lineHeight: 1.15,
 							}}
 						>
 							Test Your Speed.{' '}
-							<span
-								style={{
-									background: 'linear-gradient(90deg, #38bdf8 0%, #60a5fa 40%, #818cf8 80%, #c084fc 100%)',
-									WebkitBackgroundClip: 'text',
-									WebkitTextFillColor: 'transparent',
-								}}
-							>
-								Unlock Tier-1 Offers.
-							</span>
+							<span style={{ color: '#3b82f6' }}>Unlock Tier-1 Offers.</span>
 						</h3>
 
 						{/* Subtitle */}
 						<p
 							style={{
 								color: '#94a3b8',
-								fontSize: 'clamp(14px, 1.8vw, 16.5px)',
+								fontSize: 'clamp(14px, 1.5vw, 15px)',
 								lineHeight: 1.6,
-								maxWidth: 620,
-								margin: '0 auto 36px',
-								fontWeight: 500,
+								maxWidth: 580,
+								margin: '0 auto 30px',
+								fontWeight: 400,
 							}}
 						>
-							Solve calibrated <strong style={{ color: '#ffffff' }}>Speed Math</strong>,{' '}
-							<strong style={{ color: '#ffffff' }}>Number Series</strong>, and{' '}
-							<strong style={{ color: '#ffffff' }}>Bug Spotter</strong> questions in 30 seconds. Build streaks to earn +2s
-							time bonus &amp; unlock your verified CTC tier certificate!
+							Solve calibrated Quant, Logic, and Bug Spotter questions in 30 seconds.
+							Build streaks for bonus time and discover your verified placement tier.
 						</p>
 
-						{/* 5 Rich, Premium Tier Cards Grid */}
+						{/* Clean Progressive Tier Track */}
 						<div
 							style={{
 								display: 'grid',
 								gridTemplateColumns: 'repeat(auto-fit, minmax(140px, 1fr))',
-								gap: 14,
-								marginBottom: 36,
+								gap: 10,
+								marginBottom: 32,
 							}}
 						>
 							{TIERS.map((tier, idx) => (
 								<div
 									key={idx}
-									className="tier-card-interactive"
 									style={{
-										background: 'linear-gradient(155deg, rgba(255, 255, 255, 0.05) 0%, rgba(255, 255, 255, 0.01) 100%)',
-										border: `1.5px solid ${tier.color}44`,
-										borderRadius: 20,
+										backgroundColor: 'rgba(255, 255, 255, 0.02)',
+										border: '1px solid rgba(255, 255, 255, 0.07)',
+										borderRadius: 16,
 										padding: '16px 12px 14px',
 										textAlign: 'center',
-										position: 'relative',
-										overflow: 'hidden',
-										boxShadow: `0 8px 24px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)`,
-										transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+										transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
 										cursor: 'default',
+										position: 'relative',
 									}}
 									onMouseEnter={(e) => {
-										e.currentTarget.style.transform = 'translateY(-4px)'
-										e.currentTarget.style.borderColor = tier.color
-										e.currentTarget.style.boxShadow = `0 14px 30px -8px ${tier.glow}, 0 0 20px ${tier.color}33, inset 0 1px 0 rgba(255, 255, 255, 0.2)`
+										e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.05)'
+										e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.18)'
+										e.currentTarget.style.transform = 'translateY(-2px)'
 									}}
 									onMouseLeave={(e) => {
+										e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.02)'
+										e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.07)'
 										e.currentTarget.style.transform = 'translateY(0)'
-										e.currentTarget.style.borderColor = `${tier.color}44`
-										e.currentTarget.style.boxShadow =
-											'0 8px 24px -6px rgba(0, 0, 0, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.1)'
 									}}
 								>
-									{/* Top ambient color dot & Points pill */}
+									{/* Score Threshold */}
 									<div
 										style={{
-											display: 'inline-flex',
-											alignItems: 'center',
-											gap: 5,
-											backgroundColor: `${tier.color}18`,
-											border: `1px solid ${tier.color}44`,
-											padding: '3px 9px',
-											borderRadius: 12,
 											fontSize: 10.5,
-											fontWeight: 800,
-											color: tier.color,
-											letterSpacing: '0.03em',
-											marginBottom: 8,
+											fontWeight: 700,
+											color: '#64748b',
+											fontFamily: 'monospace',
+											letterSpacing: '0.04em',
+											marginBottom: 6,
 										}}
 									>
-										<span style={{ width: 5, height: 5, borderRadius: '50%', backgroundColor: tier.color }} />
-										{tier.min}+ PTS
+										{tier.min === 0 ? 'START' : `${tier.min}+ PTS`}
 									</div>
 
 									{/* Tier Title */}
 									<div
 										style={{
 											color: '#ffffff',
-											fontSize: 14,
-											fontWeight: 800,
-											margin: '0 0 6px 0',
+											fontSize: 13.5,
+											fontWeight: 700,
+											margin: '0 0 4px 0',
 											letterSpacing: '-0.01em',
 										}}
 									>
 										{tier.title}
 									</div>
 
-									{/* CTC Package */}
+									{/* Package */}
 									<div
 										style={{
-											fontSize: 12.5,
-											fontWeight: 800,
-											color: tier.color,
-											letterSpacing: '-0.01em',
+											fontSize: 12,
+											fontWeight: 600,
+											color: '#60a5fa',
 											marginBottom: 6,
 										}}
 									>
 										{tier.ctc}
 									</div>
 
-									{/* Recruiter / Track Tag */}
+									{/* Company Targets */}
 									<div
 										style={{
-											fontSize: 10,
-											fontWeight: 600,
+											fontSize: 10.5,
+											fontWeight: 500,
 											color: '#64748b',
-											borderTop: '1px solid rgba(255, 255, 255, 0.06)',
+											borderTop: '1px solid rgba(255, 255, 255, 0.05)',
 											paddingTop: 6,
 										}}
 									>
@@ -769,54 +714,120 @@ export default function PlacementArcadeGame() {
 							))}
 						</div>
 
-						{/* Launch CTA Button */}
+						{/* Launch Action */}
 						<div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 12 }}>
 							<button
 								type="button"
 								onClick={startGame}
 								style={{
-									background: 'linear-gradient(135deg, #2563eb 0%, #06b6d4 50%, #3b82f6 100%)',
+									background: 'linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%)',
 									color: '#ffffff',
-									border: 'none',
-									borderRadius: 26,
-									padding: '18px 46px',
-									fontSize: 18,
-									fontWeight: 900,
+									border: '1px solid rgba(255, 255, 255, 0.15)',
+									borderRadius: 24,
+									padding: '14px 38px',
+									fontSize: 15,
+									fontWeight: 700,
 									cursor: 'pointer',
-									boxShadow:
-										'0 0 35px rgba(37, 99, 235, 0.6), 0 12px 30px rgba(6, 182, 212, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.45)',
-									transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
 									display: 'inline-flex',
 									alignItems: 'center',
-									gap: 10,
-									letterSpacing: '0.02em',
+									gap: 9,
+									letterSpacing: '0.01em',
+									boxShadow:
+										'0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -4px rgba(29, 78, 216, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25)',
+									transition: 'all 0.2s cubic-bezier(0.16, 1, 0.3, 1)',
 								}}
 								onMouseEnter={(e) => {
-									e.currentTarget.style.transform = 'translateY(-2px) scale(1.03)'
+									e.currentTarget.style.transform = 'translateY(-1px)'
 									e.currentTarget.style.boxShadow =
-										'0 0 45px rgba(37, 99, 235, 0.75), 0 16px 36px rgba(6, 182, 212, 0.5), inset 0 1px 0 rgba(255, 255, 255, 0.55)'
+										'0 2px 4px rgba(0, 0, 0, 0.2), 0 12px 30px -4px rgba(29, 78, 216, 0.55), inset 0 1px 0 rgba(255, 255, 255, 0.35)'
 								}}
 								onMouseLeave={(e) => {
-									e.currentTarget.style.transform = 'translateY(0) scale(1)'
+									e.currentTarget.style.transform = 'translateY(0)'
 									e.currentTarget.style.boxShadow =
-										'0 0 35px rgba(37, 99, 235, 0.6), 0 12px 30px rgba(6, 182, 212, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.45)'
+										'0 1px 2px rgba(0, 0, 0, 0.2), 0 8px 24px -4px rgba(29, 78, 216, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.25)'
 								}}
 							>
-								<span>⚡</span> LAUNCH 30s OA BLITZ ➔
+								<span>Start 30s Assessment</span>
+								<svg
+									width="15"
+									height="15"
+									viewBox="0 0 24 24"
+									fill="none"
+									stroke="currentColor"
+									strokeWidth="2.5"
+									strokeLinecap="round"
+									strokeLinejoin="round"
+								>
+									<line x1="5" y1="12" x2="19" y2="12"></line>
+									<polyline points="12 5 19 12 12 19"></polyline>
+								</svg>
 							</button>
 
+							{/* Minimal Keyboard Shortcut Indicator */}
 							<div
 								style={{
-									fontSize: 12,
-									fontWeight: 600,
-									color: '#64748b',
 									display: 'flex',
 									alignItems: 'center',
-									gap: 6,
+									gap: 5,
+									fontSize: 11.5,
+									color: '#64748b',
+									marginTop: 4,
 								}}
 							>
-								<span>⌨️</span> Keyboard shortcuts <strong style={{ color: '#94a3b8' }}>1, 2, 3, 4</strong> (or{' '}
-								<strong style={{ color: '#94a3b8' }}>A, B, C, D</strong>) supported on desktop
+								<span>Keys</span>
+								<kbd
+									style={{
+										backgroundColor: 'rgba(255, 255, 255, 0.06)',
+										border: '1px solid rgba(255, 255, 255, 0.1)',
+										borderRadius: 4,
+										padding: '1px 5px',
+										fontSize: 10,
+										fontFamily: 'monospace',
+										color: '#cbd5e1',
+									}}
+								>
+									1
+								</kbd>
+								<kbd
+									style={{
+										backgroundColor: 'rgba(255, 255, 255, 0.06)',
+										border: '1px solid rgba(255, 255, 255, 0.1)',
+										borderRadius: 4,
+										padding: '1px 5px',
+										fontSize: 10,
+										fontFamily: 'monospace',
+										color: '#cbd5e1',
+									}}
+								>
+									2
+								</kbd>
+								<kbd
+									style={{
+										backgroundColor: 'rgba(255, 255, 255, 0.06)',
+										border: '1px solid rgba(255, 255, 255, 0.1)',
+										borderRadius: 4,
+										padding: '1px 5px',
+										fontSize: 10,
+										fontFamily: 'monospace',
+										color: '#cbd5e1',
+									}}
+								>
+									3
+								</kbd>
+								<kbd
+									style={{
+										backgroundColor: 'rgba(255, 255, 255, 0.06)',
+										border: '1px solid rgba(255, 255, 255, 0.1)',
+										borderRadius: 4,
+										padding: '1px 5px',
+										fontSize: 10,
+										fontFamily: 'monospace',
+										color: '#cbd5e1',
+									}}
+								>
+									4
+								</kbd>
+								<span>(or A, B, C, D) supported</span>
 							</div>
 						</div>
 					</div>
@@ -824,68 +835,68 @@ export default function PlacementArcadeGame() {
 
 				{/* ================= STATE 2: ACTIVE GAMEPLAY ================= */}
 				{gameState === 'PLAYING' && (
-					<div style={{ maxWidth: 840, margin: '0 auto' }}>
-						{/* Active Gameplay HUD */}
+					<div style={{ maxWidth: 760, margin: '0 auto' }}>
+						{/* Clean HUD Status Bar */}
 						<div
 							style={{
-								display: 'grid',
-								gridTemplateColumns: '1fr auto 1fr',
+								display: 'flex',
 								alignItems: 'center',
-								gap: 16,
-								marginBottom: 20,
-								background: 'rgba(15, 23, 42, 0.6)',
-								border: '1px solid rgba(255, 255, 255, 0.08)',
-								borderRadius: 24,
-								padding: '16px 24px',
+								justifyContent: 'space-between',
+								marginBottom: 16,
+								padding: '12px 18px',
+								backgroundColor: 'rgba(255, 255, 255, 0.02)',
+								border: '1px solid rgba(255, 255, 255, 0.06)',
+								borderRadius: 16,
 							}}
 						>
 							{/* Current Score & Unlocked Tier */}
-							<div>
-								<div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 800, letterSpacing: '0.06em' }}>
-									CURRENT SCORE
+							<div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
+								<div>
+									<div style={{ fontSize: 10.5, color: '#64748b', fontWeight: 700, letterSpacing: '0.04em' }}>
+										SCORE
+									</div>
+									<div style={{ fontSize: 22, fontWeight: 800, color: '#ffffff', lineHeight: 1.1 }}>
+										{score}
+									</div>
 								</div>
-								<div style={{ fontSize: 34, fontWeight: 900, color: '#ffffff', lineHeight: 1.1 }}>
-									{score}{' '}
-									<span
-										style={{
-											fontSize: 13,
-											color: unlockedTier.color,
-											fontWeight: 800,
-											backgroundColor: `${unlockedTier.color}1a`,
-											border: `1px solid ${unlockedTier.color}44`,
-											padding: '2px 8px',
-											borderRadius: 10,
-											marginLeft: 6,
-										}}
-									>
-										{unlockedTier.title}
-									</span>
-								</div>
+								<span
+									style={{
+										fontSize: 11,
+										color: '#60a5fa',
+										fontWeight: 600,
+										backgroundColor: 'rgba(59, 130, 246, 0.1)',
+										border: '1px solid rgba(59, 130, 246, 0.2)',
+										padding: '2px 8px',
+										borderRadius: 10,
+									}}
+								>
+									{unlockedTier.title}
+								</span>
 							</div>
 
-							{/* Center: Radial Pulsing Timer */}
+							{/* Center: Clean Countdown Timer */}
 							<div style={{ textAlign: 'center' }}>
 								<div
 									style={{
 										display: 'inline-flex',
 										alignItems: 'center',
-										justifyContent: 'center',
-										width: 76,
-										height: 76,
-										borderRadius: '50%',
-										backgroundColor: timeLeft <= 5 ? 'rgba(239, 68, 68, 0.2)' : 'rgba(37, 99, 235, 0.2)',
-										border: `3px solid ${timeLeft <= 5 ? '#ef4444' : '#38bdf8'}`,
-										boxShadow:
-											timeLeft <= 5 ? '0 0 25px rgba(239, 68, 68, 0.6)' : '0 0 20px rgba(56, 189, 248, 0.45)',
-										transition: 'all 0.3s ease',
+										gap: 6,
+										backgroundColor: timeLeft <= 5 ? 'rgba(239, 68, 68, 0.12)' : 'rgba(255, 255, 255, 0.04)',
+										border: `1px solid ${timeLeft <= 5 ? 'rgba(239, 68, 68, 0.35)' : 'rgba(255, 255, 255, 0.08)'}`,
+										padding: '5px 14px',
+										borderRadius: 20,
+										transition: 'all 0.2s ease',
 									}}
 								>
+									<span style={{ fontSize: 11, fontWeight: 600, color: timeLeft <= 5 ? '#f87171' : '#94a3b8' }}>
+										Time:
+									</span>
 									<span
 										style={{
-											fontSize: 28,
-											fontWeight: 900,
+											fontSize: 15,
+											fontWeight: 800,
 											color: timeLeft <= 5 ? '#ef4444' : '#ffffff',
-											fontFamily: '"JetBrains Mono", monospace',
+											fontFamily: 'monospace',
 										}}
 									>
 										{timeLeft}s
@@ -893,42 +904,42 @@ export default function PlacementArcadeGame() {
 								</div>
 							</div>
 
-							{/* Right: Streak & Multiplier */}
+							{/* Right: Streak */}
 							<div style={{ textAlign: 'right' }}>
-								<div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 800, letterSpacing: '0.06em' }}>
-									STREAK FRENZY
+								<div style={{ fontSize: 10.5, color: '#64748b', fontWeight: 700, letterSpacing: '0.04em' }}>
+									STREAK
 								</div>
-								<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 8 }}>
+								<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'flex-end', gap: 6 }}>
 									{comboMultiplier > 1 && (
 										<span
 											style={{
-												backgroundColor: '#ef4444',
-												color: '#fff',
-												fontSize: 11,
-												fontWeight: 900,
-												padding: '3px 8px',
-												borderRadius: 10,
-												boxShadow: '0 0 12px rgba(239, 68, 68, 0.5)',
+												backgroundColor: 'rgba(59, 130, 246, 0.15)',
+												color: '#93c5fd',
+												fontSize: 10,
+												fontWeight: 700,
+												padding: '1px 6px',
+												borderRadius: 8,
+												border: '1px solid rgba(59, 130, 246, 0.3)',
 											}}
 										>
-											{comboMultiplier}x COMBO
+											{comboMultiplier}x
 										</span>
 									)}
-									<span style={{ fontSize: 26, fontWeight: 900, color: '#fbbf24' }}>
-										{streak > 0 ? `${streak}x 🔥` : '0x'}
+									<span style={{ fontSize: 18, fontWeight: 800, color: streak > 0 ? '#38bdf8' : '#64748b' }}>
+										{streak}x
 									</span>
 								</div>
 							</div>
 						</div>
 
-						{/* Progress countdown bar */}
+						{/* Subtle Timer Bar */}
 						<div
 							style={{
 								width: '100%',
-								height: 7,
-								backgroundColor: 'rgba(255, 255, 255, 0.08)',
-								borderRadius: 4,
-								marginBottom: 24,
+								height: 3,
+								backgroundColor: 'rgba(255, 255, 255, 0.05)',
+								borderRadius: 2,
+								marginBottom: 18,
 								overflow: 'hidden',
 							}}
 						>
@@ -936,12 +947,8 @@ export default function PlacementArcadeGame() {
 								style={{
 									height: '100%',
 									width: `${Math.min((timeLeft / 30) * 100, 100)}%`,
-									background:
-										timeLeft <= 5
-											? 'linear-gradient(90deg, #ef4444, #dc2626)'
-											: 'linear-gradient(90deg, #38bdf8, #2563eb)',
+									backgroundColor: timeLeft <= 5 ? '#ef4444' : '#3b82f6',
 									transition: 'width 0.3s ease, background-color 0.3s ease',
-									boxShadow: timeLeft <= 5 ? '0 0 10px #ef4444' : '0 0 10px #38bdf8',
 								}}
 							/>
 						</div>
@@ -949,76 +956,81 @@ export default function PlacementArcadeGame() {
 						{/* Question Card */}
 						<div
 							style={{
-								backgroundColor: 'rgba(15, 23, 42, 0.85)',
-								border: '1.5px solid rgba(59, 130, 246, 0.3)',
-								borderRadius: 26,
-								padding: '28px 30px',
-								marginBottom: 20,
+								backgroundColor: 'rgba(255, 255, 255, 0.025)',
+								border: '1px solid rgba(255, 255, 255, 0.08)',
+								borderRadius: 20,
+								padding: '24px 26px',
+								marginBottom: 16,
 								position: 'relative',
-								boxShadow: '0 12px 36px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.1)',
 							}}
 						>
-							<div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
+							<div
+								style={{
+									display: 'flex',
+									justifyContent: 'space-between',
+									alignItems: 'center',
+									marginBottom: 12,
+								}}
+							>
 								<div style={{ display: 'flex', gap: 8 }}>
 									<span
 										style={{
-											fontSize: 11,
-											fontWeight: 800,
-											color: '#38bdf8',
-											backgroundColor: 'rgba(56, 189, 248, 0.14)',
-											border: '1px solid rgba(56, 189, 248, 0.3)',
-											padding: '4px 10px',
-											borderRadius: 12,
+											fontSize: 10.5,
+											fontWeight: 700,
+											color: '#94a3b8',
+											backgroundColor: 'rgba(255, 255, 255, 0.04)',
+											border: '1px solid rgba(255, 255, 255, 0.08)',
+											padding: '3px 9px',
+											borderRadius: 8,
 										}}
 									>
 										{currentQ.category}
 									</span>
 									<span
 										style={{
-											fontSize: 11,
-											fontWeight: 800,
-											color: '#fbbf24',
-											backgroundColor: 'rgba(245, 158, 11, 0.14)',
-											border: '1px solid rgba(245, 158, 11, 0.3)',
-											padding: '4px 10px',
-											borderRadius: 12,
+											fontSize: 10.5,
+											fontWeight: 700,
+											color: '#60a5fa',
+											backgroundColor: 'rgba(59, 130, 246, 0.08)',
+											border: '1px solid rgba(59, 130, 246, 0.2)',
+											padding: '3px 9px',
+											borderRadius: 8,
 										}}
 									>
 										{currentQ.company}
 									</span>
 								</div>
-								<span style={{ fontSize: 12, color: '#94a3b8', fontWeight: 700 }}>
-									QUESTION #{currentIdx + 1}
+								<span style={{ fontSize: 11, color: '#64748b', fontWeight: 600 }}>
+									Q{currentIdx + 1} of {questions.length}
 								</span>
 							</div>
 
 							<h4
 								style={{
-									fontSize: 'clamp(18px, 2.2vw, 23px)',
-									fontWeight: 800,
-									margin: '0 0 8px 0',
-									lineHeight: 1.4,
-									letterSpacing: '-0.01em',
+									fontSize: 'clamp(16px, 2vw, 20px)',
+									fontWeight: 700,
+									margin: '0',
+									lineHeight: 1.45,
 									color: '#ffffff',
 								}}
 							>
 								{currentQ.q}
 							</h4>
 
+							{/* Feedback Notification */}
 							{feedback && (
 								<div
 									style={{
 										position: 'absolute',
-										top: 18,
-										right: 28,
-										fontSize: 14,
-										fontWeight: 900,
-										color: feedback.correct ? '#34d399' : '#ef4444',
-										animation: 'pulse 0.3s ease',
-										backgroundColor: feedback.correct ? 'rgba(52, 211, 153, 0.15)' : 'rgba(239, 68, 68, 0.15)',
-										border: `1px solid ${feedback.correct ? '#34d399' : '#ef4444'}`,
-										padding: '4px 12px',
-										borderRadius: 12,
+										top: 16,
+										right: 20,
+										fontSize: 12,
+										fontWeight: 700,
+										color: feedback.correct ? '#34d399' : '#f87171',
+										backgroundColor: feedback.correct ? 'rgba(52, 211, 153, 0.1)' : 'rgba(239, 68, 68, 0.1)',
+										border: `1px solid ${feedback.correct ? 'rgba(52, 211, 153, 0.25)' : 'rgba(239, 68, 68, 0.25)'}`,
+										padding: '3px 10px',
+										borderRadius: 10,
 									}}
 								>
 									{feedback.text}
@@ -1026,27 +1038,27 @@ export default function PlacementArcadeGame() {
 							)}
 						</div>
 
-						{/* 4 Interactive Option Buttons */}
+						{/* 4 Clean Options Grid */}
 						<div
 							style={{
 								display: 'grid',
-								gridTemplateColumns: 'repeat(auto-fit, minmax(260px, 1fr))',
-								gap: 14,
+								gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))',
+								gap: 10,
 							}}
 						>
 							{currentQ.options.map((option, idx) => {
-								let btnBg = 'rgba(255, 255, 255, 0.04)'
-								let btnBorder = 'rgba(255, 255, 255, 0.12)'
+								let btnBg = 'rgba(255, 255, 255, 0.02)'
+								let btnBorder = 'rgba(255, 255, 255, 0.07)'
 								let btnText = '#e2e8f0'
 
 								if (selectedOption !== null) {
 									if (idx === currentQ.correct) {
-										btnBg = 'rgba(16, 185, 129, 0.25)'
-										btnBorder = '#10b981'
+										btnBg = 'rgba(16, 185, 129, 0.12)'
+										btnBorder = 'rgba(16, 185, 129, 0.4)'
 										btnText = '#34d399'
 									} else if (idx === selectedOption) {
-										btnBg = 'rgba(239, 68, 68, 0.25)'
-										btnBorder = '#ef4444'
+										btnBg = 'rgba(239, 68, 68, 0.12)'
+										btnBorder = 'rgba(239, 68, 68, 0.4)'
 										btnText = '#f87171'
 									}
 								}
@@ -1059,50 +1071,47 @@ export default function PlacementArcadeGame() {
 										disabled={selectedOption !== null}
 										style={{
 											backgroundColor: btnBg,
-											border: `1.5px solid ${btnBorder}`,
-											borderRadius: 18,
-											padding: '16px 20px',
+											border: `1px solid ${btnBorder}`,
+											borderRadius: 14,
+											padding: '14px 18px',
 											color: btnText,
-											fontSize: 15,
-											fontWeight: 700,
+											fontSize: 14,
+											fontWeight: 600,
 											cursor: selectedOption !== null ? 'default' : 'pointer',
 											display: 'flex',
 											alignItems: 'center',
-											justifyContent: 'flex-start',
 											gap: 12,
 											textAlign: 'left',
-											transition: 'all 0.18s ease',
-											boxShadow: '0 4px 14px rgba(0, 0, 0, 0.2)',
+											transition: 'all 0.15s ease',
 										}}
 										onMouseEnter={(e) => {
 											if (selectedOption === null) {
-												e.currentTarget.style.backgroundColor = 'rgba(37, 99, 235, 0.15)'
-												e.currentTarget.style.borderColor = '#38bdf8'
-												e.currentTarget.style.transform = 'translateY(-2px)'
+												e.currentTarget.style.backgroundColor = 'rgba(255, 255, 255, 0.06)'
+												e.currentTarget.style.borderColor = 'rgba(255, 255, 255, 0.16)'
 											}
 										}}
 										onMouseLeave={(e) => {
 											if (selectedOption === null) {
 												e.currentTarget.style.backgroundColor = btnBg
 												e.currentTarget.style.borderColor = btnBorder
-												e.currentTarget.style.transform = 'translateY(0)'
 											}
 										}}
 									>
 										<span
 											style={{
-												width: 28,
-												height: 28,
-												borderRadius: 8,
-												backgroundColor: 'rgba(255, 255, 255, 0.08)',
-												border: '1px solid rgba(255, 255, 255, 0.12)',
+												width: 24,
+												height: 24,
+												borderRadius: 6,
+												backgroundColor: 'rgba(255, 255, 255, 0.05)',
+												border: '1px solid rgba(255, 255, 255, 0.08)',
 												display: 'flex',
 												alignItems: 'center',
 												justifyContent: 'center',
-												fontSize: 12,
-												fontWeight: 800,
+												fontSize: 11,
+												fontWeight: 700,
 												color: '#94a3b8',
 												flexShrink: 0,
+												fontFamily: 'monospace',
 											}}
 										>
 											{['A', 'B', 'C', 'D'][idx]}
@@ -1115,9 +1124,9 @@ export default function PlacementArcadeGame() {
 					</div>
 				)}
 
-				{/* ================= STATE 3: GAME OVER / OFFER LETTER CERTIFICATE ================= */}
+				{/* ================= STATE 3: GAME OVER / REPORT ================= */}
 				{gameState === 'GAMEOVER' && (
-					<div style={{ textAlign: 'center', maxWidth: 680, margin: '0 auto', position: 'relative' }}>
+					<div style={{ textAlign: 'center', maxWidth: 620, margin: '0 auto', position: 'relative' }}>
 						<canvas
 							ref={canvasRef}
 							style={{
@@ -1136,44 +1145,42 @@ export default function PlacementArcadeGame() {
 								style={{
 									display: 'inline-flex',
 									alignItems: 'center',
-									gap: 8,
-									padding: '7px 20px',
-									borderRadius: 24,
-									backgroundColor: 'rgba(16, 185, 129, 0.18)',
-									border: '1px solid rgba(16, 185, 129, 0.35)',
+									gap: 6,
+									padding: '4px 14px',
+									borderRadius: 20,
+									backgroundColor: 'rgba(16, 185, 129, 0.1)',
+									border: '1px solid rgba(16, 185, 129, 0.25)',
 									color: '#34d399',
-									fontSize: 13,
-									fontWeight: 800,
-									marginBottom: 16,
+									fontSize: 11.5,
+									fontWeight: 700,
+									textTransform: 'uppercase',
+									marginBottom: 14,
 								}}
 							>
-								<span>🎉</span> 30s CAMPUS OA DRILL COMPLETE!
+								Assessment Complete
 							</div>
 
 							<h3
 								style={{
-									fontSize: 'clamp(28px, 3.8vw, 40px)',
-									fontWeight: 900,
-									margin: '0 0 10px 0',
+									fontSize: 'clamp(26px, 3.2vw, 36px)',
+									fontWeight: 800,
+									margin: '0 0 8px 0',
 									color: '#ffffff',
 									letterSpacing: '-0.02em',
 								}}
 							>
-								Offer Letter Tier Unlocked!
+								Placement Tier Unlocked
 							</h3>
 
-							{/* Certified Placement Report Card */}
+							{/* Clean Executive Assessment Report */}
 							<div
 								style={{
-									backgroundColor: 'rgba(13, 20, 38, 0.95)',
-									border: `2px solid ${unlockedTier.color}`,
-									borderRadius: 28,
-									padding: '28px',
-									margin: '24px 0',
-									boxShadow: `0 0 40px ${unlockedTier.glow}, 0 20px 50px rgba(0, 0, 0, 0.6)`,
+									backgroundColor: 'rgba(255, 255, 255, 0.025)',
+									border: '1px solid rgba(255, 255, 255, 0.08)',
+									borderRadius: 20,
+									padding: '24px',
+									margin: '20px 0',
 									textAlign: 'left',
-									position: 'relative',
-									overflow: 'hidden',
 								}}
 							>
 								<div
@@ -1181,22 +1188,21 @@ export default function PlacementArcadeGame() {
 										display: 'flex',
 										justifyContent: 'space-between',
 										alignItems: 'center',
-										marginBottom: 20,
-										borderBottom: '1px solid rgba(255, 255, 255, 0.08)',
-										paddingBottom: 16,
+										marginBottom: 18,
+										borderBottom: '1px solid rgba(255, 255, 255, 0.06)',
+										paddingBottom: 14,
 									}}
 								>
 									<div>
-										<span style={{ fontSize: 11, fontWeight: 800, color: '#94a3b8', letterSpacing: '0.08em' }}>
-											PHONECTIC CANDIDATE BENCHMARK
+										<span style={{ fontSize: 10.5, fontWeight: 700, color: '#64748b', letterSpacing: '0.04em' }}>
+											VERIFIED ASSESSMENT
 										</span>
 										<h4
 											style={{
-												fontSize: 24,
-												fontWeight: 900,
+												fontSize: 22,
+												fontWeight: 800,
 												color: '#ffffff',
-												margin: '4px 0 0 0',
-												letterSpacing: '-0.01em',
+												margin: '3px 0 0 0',
 											}}
 										>
 											{unlockedTier.title}
@@ -1204,99 +1210,104 @@ export default function PlacementArcadeGame() {
 									</div>
 									<div
 										style={{
-											backgroundColor: `${unlockedTier.color}22`,
-											color: unlockedTier.color,
-											border: `1.5px solid ${unlockedTier.color}`,
-											padding: '6px 16px',
-											borderRadius: 16,
-											fontSize: 13,
-											fontWeight: 800,
-											boxShadow: `0 0 16px ${unlockedTier.glow}`,
+											backgroundColor: 'rgba(59, 130, 246, 0.1)',
+											color: '#60a5fa',
+											border: '1px solid rgba(59, 130, 246, 0.22)',
+											padding: '4px 12px',
+											borderRadius: 12,
+											fontSize: 12,
+											fontWeight: 700,
 										}}
 									>
 										{unlockedTier.badge}
 									</div>
 								</div>
 
+								{/* Metrics Grid */}
 								<div
 									style={{
-										backgroundColor: 'rgba(255, 255, 255, 0.04)',
-										border: '1px solid rgba(255, 255, 255, 0.08)',
-										borderRadius: 18,
-										padding: '18px',
+										backgroundColor: 'rgba(255, 255, 255, 0.02)',
+										border: '1px solid rgba(255, 255, 255, 0.05)',
+										borderRadius: 14,
+										padding: '16px',
 										display: 'grid',
 										gridTemplateColumns: 'repeat(3, 1fr)',
-										gap: 12,
+										gap: 10,
 										textAlign: 'center',
-										marginBottom: 18,
+										marginBottom: 16,
 									}}
 								>
 									<div>
-										<div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 700, marginBottom: 4 }}>FINAL SCORE</div>
-										<div style={{ fontSize: 24, fontWeight: 900, color: '#ffffff' }}>{score}</div>
+										<div style={{ fontSize: 10.5, color: '#64748b', fontWeight: 600, marginBottom: 4 }}>
+											FINAL SCORE
+										</div>
+										<div style={{ fontSize: 22, fontWeight: 800, color: '#ffffff' }}>{score}</div>
 									</div>
 									<div>
-										<div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 700, marginBottom: 4 }}>MAX STREAK</div>
-										<div style={{ fontSize: 24, fontWeight: 900, color: '#fbbf24' }}>{maxStreak}x 🔥</div>
+										<div style={{ fontSize: 10.5, color: '#64748b', fontWeight: 600, marginBottom: 4 }}>
+											MAX STREAK
+										</div>
+										<div style={{ fontSize: 22, fontWeight: 800, color: '#38bdf8' }}>{maxStreak}x</div>
 									</div>
 									<div>
-										<div style={{ fontSize: 11, color: '#94a3b8', fontWeight: 700, marginBottom: 4 }}>QUALIFIED CTC</div>
-										<div style={{ fontSize: 20, fontWeight: 900, color: unlockedTier.color }}>{unlockedTier.ctc}</div>
+										<div style={{ fontSize: 10.5, color: '#64748b', fontWeight: 600, marginBottom: 4 }}>
+											QUALIFIED CTC
+										</div>
+										<div style={{ fontSize: 18, fontWeight: 800, color: '#60a5fa' }}>{unlockedTier.ctc}</div>
 									</div>
 								</div>
 
 								<div
 									style={{
-										fontSize: 12,
-										color: '#94a3b8',
+										fontSize: 11.5,
+										color: '#64748b',
 										display: 'flex',
 										alignItems: 'center',
 										justifyContent: 'space-between',
 									}}
 								>
-									<span style={{ display: 'flex', alignItems: 'center', gap: 6 }}>
-										<span style={{ color: '#10b981', fontWeight: 800 }}>✔</span> Verified against TCS Prime, Infosys,
-										Amazon &amp; Google OA standards
-									</span>
-									<span style={{ color: '#38bdf8', fontWeight: 700 }}>Percentile: Top 3%</span>
+									<span>Calibrated against TCS Prime, Amazon &amp; Google OA benchmarks.</span>
+									<span style={{ color: '#38bdf8', fontWeight: 600 }}>Top 5% Pan-India</span>
 								</div>
 							</div>
 
 							{/* Actions */}
-							<div style={{ display: 'flex', gap: 14, justifyContent: 'center' }}>
+							<div style={{ display: 'flex', gap: 12, justifyContent: 'center' }}>
 								<button
 									type="button"
 									onClick={startGame}
 									style={{
-										background: 'linear-gradient(135deg, #2563eb 0%, #06b6d4 100%)',
+										background: 'linear-gradient(180deg, #2563eb 0%, #1d4ed8 100%)',
 										color: '#ffffff',
-										border: 'none',
-										borderRadius: 22,
-										padding: '16px 36px',
-										fontSize: 16,
-										fontWeight: 800,
+										border: '1px solid rgba(255, 255, 255, 0.15)',
+										borderRadius: 20,
+										padding: '13px 30px',
+										fontSize: 14.5,
+										fontWeight: 700,
 										cursor: 'pointer',
-										boxShadow: '0 8px 24px rgba(37, 99, 235, 0.45)',
+										boxShadow: '0 4px 18px rgba(29, 78, 216, 0.35)',
+										transition: 'all 0.2s ease',
 									}}
 								>
-									⚡ PLAY AGAIN
+									Retake Benchmark
 								</button>
 								<a
 									href="#pricing"
 									style={{
-										backgroundColor: 'rgba(255, 255, 255, 0.08)',
+										backgroundColor: 'rgba(255, 255, 255, 0.04)',
 										color: '#ffffff',
-										border: '1px solid rgba(255, 255, 255, 0.2)',
-										borderRadius: 22,
-										padding: '16px 30px',
-										fontSize: 16,
-										fontWeight: 700,
+										border: '1px solid rgba(255, 255, 255, 0.12)',
+										borderRadius: 20,
+										padding: '13px 26px',
+										fontSize: 14.5,
+										fontWeight: 600,
 										textDecoration: 'none',
 										display: 'inline-flex',
 										alignItems: 'center',
+										transition: 'all 0.2s ease',
 									}}
 								>
-									Join Full Program →
+									Explore Full Program →
 								</a>
 							</div>
 						</div>

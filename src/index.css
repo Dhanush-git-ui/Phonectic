@@ -46,9 +46,6 @@ body {
 
 /* Continuous Ticker Marquees with pause on hover */
 .framer-xyf7ed-container ul,
-.framer-1u2twl6-container ul,
-.framer-9wv82x-container ul,
-.framer-4xf9q9-container ul,
 .framer-dg8em3-container ul {
 	display: flex;
 	width: max-content;
@@ -57,11 +54,25 @@ body {
 }
 
 .framer-xyf7ed-container:hover ul,
-.framer-1u2twl6-container:hover ul,
-.framer-9wv82x-container:hover ul,
-.framer-4xf9q9-container:hover ul,
 .framer-dg8em3-container:hover ul {
 	animation-play-state: paused;
+}
+
+/* MarqueeStats Text Ticker (Speed ~100px/s matching s.mp4) */
+.framer-1u2twl6-container ul,
+.framer-9wv82x-container ul,
+.framer-4xf9q9-container ul {
+	display: flex !important;
+	width: max-content !important;
+	max-width: none !important;
+	animation: framerTickerScroll 96s linear infinite !important;
+	will-change: transform;
+}
+
+.framer-1u2twl6-container:hover ul,
+.framer-9wv82x-container:hover ul,
+.framer-4xf9q9-container:hover ul {
+	animation-play-state: paused !important;
 }
 
 @keyframes framerTickerScroll {
@@ -262,6 +273,34 @@ body {
 }
 
 /* ==========================================================================
+   3. Section: About Floating Badges Ambient Motion & Micro-Interactions
+   ========================================================================== */
+.framer-1ddlfoc .framer-FQGL5 {
+	transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.3s ease, filter 0.3s ease;
+	cursor: pointer;
+}
+.framer-1ddlfoc .framer-1n80uf5-container .framer-FQGL5 {
+	animation: heroCardFloat1 4.2s ease-in-out infinite;
+}
+.framer-1ddlfoc .framer-1o4kyau-container .framer-FQGL5 {
+	animation: heroCardFloat2 5.1s ease-in-out infinite 0.5s;
+}
+.framer-1ddlfoc .framer-117kp59-container .framer-FQGL5 {
+	animation: heroCardFloat1 4.7s ease-in-out infinite 1s;
+}
+.framer-1ddlfoc .framer-i0ip7v-container .framer-FQGL5 {
+	animation: heroCardFloat2 5.5s ease-in-out infinite 1.5s;
+}
+.framer-1ddlfoc .framer-afieow-container .framer-FQGL5 {
+	animation: heroCardFloat1 4.4s ease-in-out infinite 0.8s;
+}
+.framer-1ddlfoc .framer-FQGL5:hover {
+	transform: scale(1.15) !important;
+	filter: brightness(1.15);
+	box-shadow: 0 12px 28px rgba(59, 130, 246, 0.4), inset 0 0 10px rgba(255, 255, 255, 0.4) !important;
+}
+
+/* ==========================================================================
    4. Section 01: Benefits & Bento Grid Interactions
    ========================================================================== */
 .bento-card-interactive {
@@ -405,6 +444,42 @@ body {
 	border-radius: 24px;
 	pointer-events: none;
 	transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes tabPreviewEntry {
+	0% {
+		opacity: 0;
+		transform: scale(0.96) translateY(6px);
+	}
+	100% {
+		opacity: 1;
+		transform: scale(1) translateY(0);
+	}
+}
+
+.tab-preview-animate {
+	animation: tabPreviewEntry 0.35s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.tab-desc-wrapper {
+	display: grid;
+	grid-template-rows: 0fr;
+	transition: grid-template-rows 0.35s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+	opacity: 0;
+}
+
+.tab-desc-wrapper.active {
+	grid-template-rows: 1fr;
+	opacity: 1;
+}
+
+.tab-desc-inner {
+	overflow: hidden;
 }
 
 /* ==========================================================================
@@ -660,6 +735,30 @@ body {
 	transform: translateY(0);
 }
 
+/* Critical heading visibility guard: ensure all section headings are always visible */
+[data-framer-name="Heading"],
+[data-framer-name="Heading"] h1,
+[data-framer-name="Heading"] h2,
+[data-framer-name="Heading"] h3,
+[data-framer-name="Heading & Title"] h1,
+[data-framer-name="Heading & Title"] h2,
+[data-framer-name="Heading & Title"] h3 {
+	opacity: 1 !important;
+	visibility: visible !important;
+}
+
+[data-framer-name="Header"].framer-scroll-reveal {
+	opacity: 0;
+	transform: translateY(30px);
+	transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: opacity, transform;
+}
+
+[data-framer-name="Header"].framer-scroll-reveal.is-in-view {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
 .framer-reveal-scale {
 	opacity: 0;
 	transform: translateY(35px) scale(0.96);
@@ -708,37 +807,148 @@ body {
 }
 
 /* ==========================================================================
-   MarqueeStats Sticky Note Cards Behavior & Positioning Fix
+   MarqueeStats Sticky Note Cards Behavior & Positioning (OneFin Exact Spec)
    ========================================================================== */
 
-/* Pass pointer events through decorative glowing container wrapper to sticky cards */
+/* The Section: extended scroll runway so ticker, capsule and cards stick in sequence */
+.framer-83IYI.framer-1huufdb {
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	width: 100% !important;
+	position: relative !important;
+	overflow: visible !important;
+	height: auto !important;
+	min-height: 360vh !important;
+	background-color: #ffffff !important;
+	border-bottom-left-radius: 120px !important;
+	border-bottom-right-radius: 120px !important;
+}
+
+/* Layer 1: Background giant text ticker: stays sticky at top: 0 */
+.framer-83IYI .framer-1h23ioo {
+	height: 100vh !important;
+	width: 100% !important;
+	position: sticky !important;
+	top: 0px !important;
+	z-index: 1 !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: center !important;
+	overflow: visible !important;
+	pointer-events: none !important;
+}
+
+/* Layer 2: Glowing blue capsule pillow: sticky at top: 0 in middle */
 .framer-83IYI .framer-16c4gkf {
-	pointer-events: none;
+	height: 100vh !important;
+	width: 50% !important;
+	max-width: 720px !important;
+	margin: 0 auto !important;
+	position: sticky !important;
+	top: 0px !important;
+	z-index: 2 !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: center !important;
+	pointer-events: none !important;
+	overflow: visible !important;
 }
 
-/* Extended scroll runway so sticky note cards stay pinned on the page */
+.framer-83IYI .framer-1qhvodn {
+	width: 100% !important;
+	max-width: 720px !important;
+	height: 480px !important;
+	position: relative !important;
+	border-radius: 80px !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	background: radial-gradient(circle at 50% 35%, rgba(219, 234, 254, 0.95) 0%, rgba(147, 197, 253, 0.85) 50%, rgba(96, 165, 250, 0.95) 100%) !important;
+	box-shadow: 0 25px 60px -10px rgba(59, 130, 246, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.95), inset 0 -2px 6px rgba(37, 99, 235, 0.25) !important;
+	border: 2px solid rgba(255, 255, 255, 0.9) !important;
+}
+
+.framer-83IYI .framer-1fgt91c {
+	position: absolute !important;
+	inset: 0 !important;
+	width: 100% !important;
+	height: 100% !important;
+	border-radius: 80px !important;
+	z-index: 2 !important;
+}
+
+/* Layer 3: Cards wrapper: normal flow below capsule, containing sticky cards */
 .framer-83IYI .framer-11aqw1k {
-	padding: 0 0 750px !important;
+	width: 100% !important;
+	height: auto !important;
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	z-index: 10 !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	justify-content: flex-start !important;
+	overflow: visible !important;
+	padding-bottom: 50vh !important;
+	pointer-events: auto !important;
 }
 
-/* Desktop & Tablet Sticky Card Stacking:
-   Offset top to comfortably clear the floating navbar (bottom at 84px) */
+.framer-83IYI .framer-1swdjcm {
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+	width: 100% !important;
+	max-width: 468px !important;
+	height: auto !important;
+	position: relative !important;
+	overflow: visible !important;
+	gap: 0 !important;
+}
+
+/* 3 Sequential Sticky Cards stacking over the glowing blue capsule */
+
+/* Card 1: 01 / 1,000+ Students Placed */
 .framer-83IYI .framer-1g1up0j-container {
 	position: sticky !important;
-	top: 120px !important;
-	z-index: 10 !important;
+	top: calc(50vh - 160px) !important;
+	width: 100% !important;
+	max-width: 468px !important;
+	height: 320px !important;
+	z-index: 11 !important;
+	margin: 0 auto !important;
+	transform: rotate(-3deg);
+	will-change: transform;
 }
 
+/* Card 2: 02 / 90%+ Placement Success — enters after Card 1 sticks */
 .framer-83IYI .framer-4nwo3y-container {
 	position: sticky !important;
-	top: 145px !important;
-	z-index: 11 !important;
+	top: calc(50vh - 145px) !important;
+	width: 100% !important;
+	max-width: 468px !important;
+	height: 320px !important;
+	z-index: 12 !important;
+	margin: 55vh auto 0 !important;
+	transform: rotate(6deg);
+	will-change: transform;
 }
 
+/* Card 3: 03 / 50+ Hiring Partners — enters after Card 2 sticks */
 .framer-83IYI .framer-13w1hln-container {
 	position: sticky !important;
-	top: 130px !important;
-	z-index: 12 !important;
+	top: calc(50vh - 155px) !important;
+	width: 100% !important;
+	max-width: 468px !important;
+	height: 320px !important;
+	z-index: 13 !important;
+	margin: 55vh auto 0 !important;
+	transform: rotate(-7deg);
+	will-change: transform;
 }
 
 /* Realistic tactile sticky note card shadows, elevation & hover feel */
@@ -746,36 +956,55 @@ body {
 .framer-83IYI .framer-4nwo3y-container > div,
 .framer-83IYI .framer-13w1hln-container > div {
 	box-shadow:
-		0 20px 45px -12px rgba(15, 23, 42, 0.18),
-		0 8px 18px -6px rgba(15, 23, 42, 0.1),
-		0 0 0 1px rgba(255, 255, 255, 0.85) inset !important;
+		0 20px 45px -12px rgba(15, 23, 42, 0.22),
+		0 8px 18px -6px rgba(15, 23, 42, 0.12),
+		0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
 	transition:
 		transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1),
 		box-shadow 0.35s ease !important;
-	cursor: default;
+	cursor: pointer;
 }
 
 .framer-83IYI .framer-1g1up0j-container > div:hover,
 .framer-83IYI .framer-4nwo3y-container > div:hover,
 .framer-83IYI .framer-13w1hln-container > div:hover {
 	box-shadow:
-		0 28px 55px -12px rgba(15, 23, 42, 0.26),
-		0 12px 24px -6px rgba(15, 23, 42, 0.14),
-		0 0 0 1px rgba(255, 255, 255, 0.95) inset !important;
+		0 28px 60px -12px rgba(15, 23, 42, 0.30),
+		0 14px 24px -6px rgba(15, 23, 42, 0.16),
+		0 0 0 1px rgba(255, 255, 255, 0.98) inset !important;
+}
+
+/* Tablet & Mobile responsive */
+@media (max-width: 1199.98px) {
+	.framer-83IYI .framer-16c4gkf {
+		width: 70% !important;
+	}
 }
 
 @media (max-width: 809.98px) {
-	.framer-83IYI.framer-v-1tw61hp .framer-11aqw1k {
-		padding: 0 0 350px !important;
+	.framer-83IYI.framer-1huufdb {
+		min-height: 240vh !important;
 	}
-	.framer-83IYI.framer-v-1tw61hp .framer-1g1up0j-container {
-		top: 90px !important;
+	.framer-83IYI .framer-16c4gkf {
+		width: 92% !important;
 	}
-	.framer-83IYI.framer-v-1tw61hp .framer-4nwo3y-container {
-		top: 110px !important;
+	.framer-83IYI .framer-1qhvodn {
+		border-radius: 48px !important;
+		height: 380px !important;
 	}
-	.framer-83IYI.framer-v-1tw61hp .framer-13w1hln-container {
-		top: 100px !important;
+	.framer-83IYI .framer-1swdjcm {
+		width: 92% !important;
+	}
+	.framer-83IYI .framer-1g1up0j-container {
+		top: calc(50vh - 130px) !important;
+	}
+	.framer-83IYI .framer-4nwo3y-container {
+		top: calc(50vh - 115px) !important;
+		margin: 40vh auto 0 !important;
+	}
+	.framer-83IYI .framer-13w1hln-container {
+		top: calc(50vh - 125px) !important;
+		margin: 40vh auto 0 !important;
 	}
 }
 
@@ -1000,6 +1229,15 @@ body {
 	box-shadow: 0 25px 60px rgba(15, 23, 42, 0.25), 0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
 }
 
+@keyframes heroMarquee {
+	0% {
+		transform: translateX(0);
+	}
+	100% {
+		transform: translateX(-50%);
+	}
+}
+
 @keyframes monoTickerScroll {
 	0% {
 		transform: translateX(0);
@@ -1127,5 +1365,582 @@ body {
 	}
 }
 
+/* ==========================================================================
+   ONEFIN-STYLE ADVANCED ANIMATIONS
+   ========================================================================== */
+
+/* ── Scroll Progress Bar shimmer ── */
+@keyframes shimmerProgress {
+	0%   { background-position: 0%   50%; }
+	100% { background-position: 200% 50%; }
+}
+
+/* ── Ripple click effect on CTAs ── */
+@keyframes rippleEffect {
+	from { transform: scale(0);   opacity: 1; }
+	to   { transform: scale(40);  opacity: 0; }
+}
+
+/* ── Stagger child reveals ──
+   Children get opacity/transform 0 initially; .stagger-in-view triggers per-child delay */
+.stagger-child {
+	opacity: 0;
+	transform: translateY(32px);
+	transition:
+		opacity  0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--stagger-delay, 0ms),
+		transform 0.7s cubic-bezier(0.16, 1, 0.3, 1) var(--stagger-delay, 0ms);
+	will-change: opacity, transform;
+}
+.stagger-child.stagger-in-view {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+/* ── Framer-Left Reveal ── */
+.framer-reveal-left {
+	opacity: 0;
+	transform: translateX(-40px);
+	transition:
+		opacity  0.8s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: opacity, transform;
+}
+.framer-reveal-left.is-in-view {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* ── Framer-Right Reveal ── */
+.framer-reveal-right {
+	opacity: 0;
+	transform: translateX(40px);
+	transition:
+		opacity  0.8s cubic-bezier(0.16, 1, 0.3, 1),
+		transform 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+	will-change: opacity, transform;
+}
+.framer-reveal-right.is-in-view {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+/* ── Subtle ambient gradient blob animation (hero / CTA backgrounds) ── */
+@keyframes blobDrift {
+	0%, 100% { transform: translate(0,   0)   scale(1);    }
+	33%       { transform: translate(30px, -20px) scale(1.06); }
+	66%       { transform: translate(-20px, 15px) scale(0.96); }
+}
+.bg-blob-animate {
+	animation: blobDrift 12s ease-in-out infinite;
+	will-change: transform;
+}
+
+/* ── Section badge pill pulse ── */
+@keyframes badgePulseRing {
+	0%   { box-shadow: 0 0 0 0 rgba(59,130,246,0.4); }
+	70%  { box-shadow: 0 0 0 8px rgba(59,130,246,0);  }
+	100% { box-shadow: 0 0 0 0 rgba(59,130,246,0);    }
+}
+.badge-pulse {
+	animation: badgePulseRing 2.5s ease-out infinite;
+}
+
+/* ── Navbar scroll transition (already done via JS, this adds the slide-down) ── */
+@keyframes navSlideDown {
+	from { transform: translateX(-50%) translateY(-100%); opacity: 0; }
+	to   { transform: translateX(-50%) translateY(0);     opacity: 1; }
+}
+.framer-1ukj2tp-container {
+	animation: navSlideDown 0.6s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* ── Card 3D tilt shimmer overlay ── */
+.tilt-shine {
+	pointer-events: none;
+	position: absolute;
+	inset: 0;
+	border-radius: inherit;
+	z-index: 5;
+	transition: background 0.15s ease;
+}
+
+/* ── Hero cards entrance: fade + float up on load ── */
+@keyframes heroCardEntrance {
+	from { opacity: 0; transform: translateY(20px) scale(0.97); }
+	to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+.hero-card-entrance {
+	animation: heroCardEntrance 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+.hero-card-entrance:nth-child(1) { animation-delay: 0.2s; }
+.hero-card-entrance:nth-child(2) { animation-delay: 0.35s; }
+.hero-card-entrance:nth-child(3) { animation-delay: 0.5s; }
+.hero-card-entrance:nth-child(4) { animation-delay: 0.65s; }
+
+/* ── Section reveal: scale up from slight blur ── */
+@keyframes sectionRevealBlur {
+	from { opacity: 0; filter: blur(4px); transform: translateY(20px) scale(0.99); }
+	to   { opacity: 1; filter: blur(0);   transform: translateY(0)    scale(1);    }
+}
+.section-reveal-blur {
+	opacity: 0;
+}
+.section-reveal-blur.is-in-view {
+	animation: sectionRevealBlur 0.9s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* ── Number counter: subtle spring on complete ── */
+@keyframes counterSpring {
+	0%   { transform: scale(1);    }
+	40%  { transform: scale(1.06); }
+	100% { transform: scale(1);    }
+}
+[data-counted="true"] {
+	animation: counterSpring 0.4s cubic-bezier(0.34, 1.56, 0.64, 1) 1.8s both;
+}
+
+/* ── Testimonial card: drag-cursor affordance ── */
+.testimonial-card-interactive {
+	cursor: grab;
+	user-select: none;
+}
+.testimonial-card-interactive:active {
+	cursor: grabbing;
+}
+
+/* ── Smooth focus ring for a11y ── */
+:focus-visible {
+	outline: 2px solid #3b82f6;
+	outline-offset: 3px;
+	border-radius: 6px;
+}
+
+/* ── Smooth Image load fade-in ── */
+img {
+	transition: opacity 0.3s ease;
+}
+img[data-loaded] {
+	opacity: 1 !important;
+}
+
+/* ── Floating orb glow (decorative bg elements) ── */
+@keyframes orbFloat {
+	0%, 100% { transform: translateY(0px)   scale(1);    opacity: 0.6; }
+	50%       { transform: translateY(-18px) scale(1.08); opacity: 0.8; }
+}
+.bg-orb-float {
+	animation: orbFloat 8s ease-in-out infinite;
+	will-change: transform, opacity;
+}
+
+/* ── CTA bottom section: "glow pulse" on the card ── */
+@keyframes ctaGlowPulse {
+	0%, 100% { box-shadow: 0 0 40px rgba(0,102,255,0.15); }
+	50%       { box-shadow: 0 0 80px rgba(0,102,255,0.30); }
+}
+.cta-glow-pulse {
+	animation: ctaGlowPulse 4s ease-in-out infinite;
+}
+
+/* ── Interactive link underline draw-in ── */
+.link-underline {
+	position: relative;
+	text-decoration: none;
+}
+.link-underline::after {
+	content: '';
+	position: absolute;
+	bottom: -2px;
+	left: 0;
+	width: 0;
+	height: 1.5px;
+	background: currentColor;
+	transition: width 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.link-underline:hover::after {
+	width: 100%;
+}
+
+/* ── Reveal-Left / Right for directional section entries ──
+   Apply these classes manually to elements you want directional reveals on */
+[data-reveal="left"]  { opacity: 0; transform: translateX(-30px); }
+[data-reveal="right"] { opacity: 0; transform: translateX(30px);  }
+[data-reveal="up"]    { opacity: 0; transform: translateY(30px);  }
+[data-reveal="scale"] { opacity: 0; transform: scale(0.93);        }
+[data-reveal].is-in-view {
+	opacity: 1;
+	transform: none;
+	transition: opacity 0.8s cubic-bezier(0.16,1,0.3,1), transform 0.8s cubic-bezier(0.16,1,0.3,1);
+}
+
+
+
+/* DarkFeatures: opaque background blocks the ticker from showing through */
+#darkfeatures,
+.framer-18ug3rd-section {
+	position: relative !important;
+	z-index: 20 !important;
+	background-color: #121214 !important;
+	width: 100% !important;
+}
+
+/* ─────────────────────────────────────────────────────────────────────────────
+   CTA Section Typography & Parallax Reveal
+   ───────────────────────────────────────────────────────────────────────────── */
+
+/* CTA Section Sticky Scroll Pin */
+@media (min-width: 810px) {
+	#cta,
+	.framer-14eznka-container#cta {
+		position: relative !important;
+		height: 220vh !important;
+		width: 100% !important;
+		flex: none !important;
+	}
+
+	#cta section.framer-bpnHt,
+	#cta .framer-bpnHt.framer-cl5rnq {
+		position: sticky !important;
+		top: 0 !important;
+		height: 100vh !important;
+		width: 100% !important;
+		overflow: hidden !important;
+	}
+}
+
+/* Unclip inner CTA wrappers so large sliding text isn't cut off */
+#cta .framer-1e0pwqt,
+#cta .framer-1fgev8h,
+#cta .framer-1ffnixg {
+	overflow: visible !important;
+	height: 100% !important;
+	width: 100% !important;
+}
+
+/* Widen the text column so full words fit and add vertical gap between lines */
+#cta .framer-mo4q0l {
+	overflow: visible !important;
+	pointer-events: none !important;
+	width: max-content !important;
+	gap: 12px !important;
+	position: absolute !important;
+	top: 50% !important;
+	left: 50% !important;
+	transform: translate(-50%, -50%) !important;
+	z-index: 2 !important;
+}
+
+#cta .framer-l5zhei,
+#cta .framer-1ge4eqe,
+#cta .framer-1cc3myi {
+	overflow: visible !important;
+	will-change: transform !important;
+	width: max-content !important;
+}
+
+#cta .framer-l5zhei h1,
+#cta .framer-1ge4eqe h1,
+#cta .framer-1cc3myi h1 {
+	font-size: clamp(52px, 8vw, 128px) !important;
+	letter-spacing: -0.05em !important;
+	line-height: 1 !important;
+	white-space: nowrap !important;
+	overflow: visible !important;
+	margin: 0 !important;
+}
+
+/* Hero Bottom Gradient - Strictly Pure White and Blue (Zero Purple/Magenta) */
+.framer-Tesak .framer-7yy0jx {
+	background: linear-gradient(180deg, rgba(255, 255, 255, 0) 0%, #ffffff 20%, #1d4ed8 100%) !important;
+}
+
+/* Integrations Section: Official Company Logo Cards in Semicircular Arc */
+.framer-ztC2N .framer-O0DTd {
+	background: #ffffff !important;
+	border: 1px solid rgba(0, 102, 255, 0.14) !important;
+	box-shadow:
+		0 14px 30px -6px rgba(15, 23, 42, 0.14),
+		0 4px 12px -2px rgba(15, 23, 42, 0.06),
+		0 0 0 1px rgba(255, 255, 255, 0.9) inset !important;
+	border-radius: 46px !important;
+	overflow: hidden !important;
+}
+
+.framer-ztC2N .framer-1j4yj0n {
+	background: #ffffff !important;
+	border-radius: 42px !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+.framer-ztC2N .framer-1spjtfg {
+	width: 100% !important;
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.framer-ztC2N .framer-1spjtfg img {
+	object-fit: contain !important;
+	padding: 16px !important;
+	box-sizing: border-box !important;
+	width: 100% !important;
+	height: 100% !important;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.05)) !important;
+}
+
+/* CTA Section Phone Coin Badge Override */
+.framer-bpnHt .framer-1u7j4fm {
+	mix-blend-mode: normal !important;
+	z-index: 10 !important;
+	width: 25% !important;
+	height: auto !important;
+	aspect-ratio: 1 !important;
+	position: absolute !important;
+	left: 50% !important;
+	bottom: auto !important;
+	top: 52% !important;
+	transform: translate(-50%, -50%) !important;
+	filter: drop-shadow(0 15px 30px rgba(0, 50, 160, 0.35)) !important;
+}
+
+.framer-bpnHt .framer-1u7j4fm img {
+	object-fit: contain !important;
+	width: 100% !important;
+	height: 100% !important;
+}
+
+/* Hero Premier Institutions College Ticker */
+.hero-college-ticker-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 8px;
+	padding: 6px 18px;
+	background: rgba(255, 255, 255, 0.12);
+	border: 1px solid rgba(255, 255, 255, 0.28);
+	border-radius: 9999px;
+	color: rgba(255, 255, 255, 0.95);
+	font-size: 11px;
+	font-weight: 700;
+	letter-spacing: 0.09em;
+	text-transform: uppercase;
+	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
+	margin: 0 auto 20px;
+	backdrop-filter: blur(16px);
+	-webkit-backdrop-filter: blur(16px);
+}
+
+.hero-college-ticker-dot {
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background-color: #38bdf8;
+	box-shadow: 0 0 10px #38bdf8, 0 0 18px #38bdf8;
+	animation: heroDotPulse 2s infinite ease-in-out;
+}
+
+@keyframes heroDotPulse {
+	0%, 100% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.4; transform: scale(0.8); }
+}
+
+/* College Logo Cards in Hero Ticker - Clean Monochrome Floating Logos */
+.framer-spMKf .framer-xyf7ed-container {
+	height: 56px !important;
+	width: 100% !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container section {
+	padding: 0 !important;
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	overflow: hidden !important;
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
+	mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container ul {
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	gap: 56px !important;
+	animation: framerTickerScroll 36s linear infinite !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container:hover ul {
+	animation-play-state: paused !important;
+}
+
+.framer-spMKf .framer-xyf7ed-container ul li {
+	flex-shrink: 0 !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+}
+
+.framer-spMKf .framer-18iagas {
+	aspect-ratio: unset !important;
+	width: 220px !important;
+	height: 48px !important;
+	position: relative !important;
+	flex-shrink: 0 !important;
+	cursor: pointer !important;
+	background: transparent !important;
+	border: none !important;
+	box-shadow: none !important;
+	opacity: 0.85 !important;
+	transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease !important;
+}
+
+.framer-spMKf .framer-18iagas:hover {
+	opacity: 1 !important;
+	transform: translateY(-2px) scale(1.04) !important;
+	filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.8)) !important;
+}
+
+.framer-spMKf .framer-18iagas img {
+	width: 260px !important;
+	height: 62px !important;
+	object-fit: contain !important;
+	border-radius: 14px !important;
+}
+
+/* Hero Text Prominence & Non-Fading on Scroll */
+.framer-Tesak .framer-1cae1md {
+	position: relative !important;
+	z-index: 20 !important;
+	opacity: 1 !important;
+	transform: none !important;
+}
+
+.framer-Tesak .framer-z7f9fw h1 {
+	text-rendering: optimizeLegibility !important;
+	-webkit-font-smoothing: antialiased !important;
+}
+
+.framer-Tesak .framer-nu8ff8 h1 {
+	color: #0066FF !important;
+	background: linear-gradient(135deg, #0052CC 0%, #0066FF 50%, #2563EB 100%) !important;
+	-webkit-background-clip: text !important;
+	-webkit-text-fill-color: transparent !important;
+	filter: drop-shadow(0 2px 8px rgba(0, 102, 255, 0.2)) !important;
+}
+
+.framer-Tesak .framer-ea2r55 h1 {
+	color: #0B132B !important;
+	-webkit-text-fill-color: #0B132B !important;
+	filter: drop-shadow(0 2px 4px rgba(0, 0, 0, 0.08)) !important;
+}
+
+.framer-Tesak .framer-164ob5c p {
+	color: #1E293B !important;
+	font-weight: 500 !important;
+	line-height: 1.6 !important;
+	text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+}
+
+/* Section Badges: Electric Blue Theme (Zero Purple) */
+.framer-61kz3b,
+.framer-1xek3h4,
+.framer-bvdbru {
+	border-color: rgba(59, 130, 246, 0.4) !important;
+}
+
+.framer-61kz3b p,
+.framer-1xek3h4 p,
+.framer-bvdbru p {
+	color: #2563EB !important;
+}
+
+/* Feature 1 list active state blue glow */
+.framer-THpZs.framer-v-gtti5x[data-framer-name="Active"] {
+	background-color: rgba(59, 130, 246, 0.15) !important;
+	border: 1px solid rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Testimonials Sticky Scroll Pinning & White Background Canvas */
+.testimonials-scroll-track {
+	width: 100%;
+	height: 240vh;
+	position: relative;
+	background-color: #ffffff !important;
+	margin-bottom: 0 !important;
+}
+
+.testimonials-sticky-container {
+	position: sticky !important;
+	top: 0 !important;
+	width: 100% !important;
+	height: 100vh !important;
+	z-index: 5 !important;
+	background-color: #ffffff !important;
+}
+
+.testimonials-sticky-container .framer-1nvuwej-container {
+	width: 100% !important;
+	height: 100% !important;
+	display: flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	background-color: #ffffff !important;
+}
+
+/* Enlarge desktop black testimonial container for clean text visibility without overflowing */
+@media (min-width: 1025px) {
+	.testimonials-sticky-container .framer-i1pQu.framer-1m63sx3 {
+		width: min(1560px, 96vw) !important;
+		height: min(800px, calc(100vh - 40px)) !important;
+		padding: 12px 20px !important;
+		display: flex !important;
+		align-items: center !important;
+		justify-content: center !important;
+	}
+
+	.testimonials-sticky-container .framer-gnrgmb {
+		width: 100% !important;
+		height: 100% !important;
+		min-height: min(700px, calc(100vh - 50px)) !important;
+		max-height: min(800px, calc(100vh - 40px)) !important;
+		border-radius: min(64px, 5vw) !important;
+	}
+
+	.testimonials-sticky-container .framer-1cypbs7 {
+		gap: clamp(16px, 3vh, 48px) !important;
+	}
+
+	.testimonials-sticky-container .framer-1j99ufo,
+	.testimonials-sticky-container .framer-6idmd8,
+	.testimonials-sticky-container .framer-18hgfpp,
+	.testimonials-sticky-container .framer-1q8094n,
+	.testimonials-sticky-container .framer-1k18mro {
+		width: clamp(260px, 19vw, 290px) !important;
+		padding: 20px 22px !important;
+		gap: 18px !important;
+	}
+}
+
+/* Generous separation distance before Pricing with clean white background */
+.framer-Tesak .framer-13e87qe {
+	padding-top: 140px !important;
+	background-color: #ffffff !important;
+}
+
+@media (max-width: 1024px) {
+	.testimonials-scroll-track {
+		height: auto !important;
+		margin-bottom: 0 !important;
+	}
+	.testimonials-sticky-container {
+		position: relative !important;
+		top: auto !important;
+		height: auto !important;
+	}
+	.testimonials-sticky-container .framer-1nvuwej-container {
+		height: auto !important;
+		display: block !important;
+	}
+}
 
 

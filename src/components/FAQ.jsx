@@ -1,802 +1,99 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
+
+const content = `<div class="framer-k6rhkw" data-border="true" data-framer-name="Container"><div class="framer-1hpf12c" data-framer-name="FAQs Content"><div class="framer-spbmfz" data-framer-name="Header"><div class="framer-1mrhwwa" data-framer-name="Heading &amp; Title"><div class="framer-g01zzu" data-framer-name="Title"><div class="framer-19m1e6x" data-framer-name="Number" style="transform:rotate(-20deg)"><div class="framer-sxkxpi" data-framer-component-type="RichTextContainer" data-framer-name="06" style="transform:none"><p class="framer-text framer-styles-preset-10gosz4" data-styles-preset="gsZKPt0ge" dir="auto" style="--framer-text-color:var(--token-cd0e4b39-d412-4786-8464-f96703fa50b9, rgb(82, 82, 82))">06</p></div></div><div class="framer-63k42l" data-framer-name="Name" style="transform:rotate(12deg)"><div class="framer-4wf0t5" data-framer-component-type="RichTextContainer" data-framer-name="faqs" style="transform:none"><p class="framer-text framer-styles-preset-10gosz4" data-styles-preset="gsZKPt0ge" dir="auto" style="--framer-text-color:var(--token-c6def8b1-53e1-4b6e-88c6-f76095f3377b, rgb(217, 217, 217))">FAQs</p></div></div></div><div class="ssr-variant hidden-1k8ds7i"><div class="framer-db7dji" data-framer-component-type="RichTextContainer" data-framer-name="Heading" style="transform:none"><h2 class="framer-text framer-styles-preset-1c9qbxs" data-styles-preset="Tn59MLvQJ" dir="auto" style="--framer-text-alignment:center;--framer-text-color:rgb(255, 255, 255);color:rgb(255, 255, 255);opacity:1;">Got questions?<br class="framer-text"/>We’ve got clear answers.</h2></div></div><div class="ssr-variant hidden-72rtr7 hidden-m2it3q"><div class="framer-db7dji" data-framer-component-type="RichTextContainer" data-framer-name="Heading" style="transform:none"><h3 class="framer-text framer-styles-preset-ol5e0v" data-styles-preset="yopWj3I1S" dir="auto" style="--framer-text-alignment:center;--framer-text-color:rgb(255, 255, 255);color:rgb(255, 255, 255);opacity:1;">Got questions?<br class="framer-text"/>We’ve got clear answers.</h3></div></div></div></div><div class="ssr-variant hidden-1k8ds7i"><div class="framer-xb13mt-container" data-framer-name="FAQs List" name="FAQs List"><div class="framer-xVZzo framer-1fsq0nf framer-v-1j0epqs" data-framer-name="Variant 1" name="FAQs List" style="width:100%"><div class="framer-3hh0w9-container" style="transform:translateX(-50%)"><!--$--><div></div><!--/$--></div><div class="framer-13w6xvk-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-kj25cf" data-framer-name="Desktop - Active" data-highlight="true" style="background-color:rgba(37, 99, 235, 0.1);width:100%;border-bottom-left-radius:40px;border-bottom-right-radius:40px;border-top-left-radius:40px;border-top-right-radius:40px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-v1217o" data-framer-name="Number" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-1oo7w6f" data-framer-component-type="RichTextContainer" data-framer-name="1" style="justify-content:center;--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-alignment:center">1</p></div></div><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-ps3cvy" data-styles-preset="IGOfvmM1K" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">How does PhoneticEdu's gamified learning method work?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-a281d3d3-8074-4276-b377-59dd81ca3f41, rgb(0, 102, 255));border-bottom-left-radius:16px;border-bottom-right-radius:16px;border-top-left-radius:16px;border-top-right-radius:16px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:none"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">Unlike traditional passive lectures, PhoneticEdu turns quantitative and logical aptitude into timed challenges, speed drills, and brain teasers. This builds muscle memory, increases mental calculation speed, and helps you crack rounds under intense exam timers.</p></div></div></div></div><div class="framer-1dm4kjm-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-8knmgh" data-framer-name="Desktop - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:40px;border-bottom-right-radius:40px;border-top-left-radius:40px;border-top-right-radius:40px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-v1217o" data-framer-name="Number" style="background-color:rgba(0, 0, 0, 0.2);border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-1oo7w6f" data-framer-component-type="RichTextContainer" data-framer-name="1" style="justify-content:center;--framer-paragraph-spacing:0px;--extracted-r6o4lv:var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6));transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6)))">2</p></div></div><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-ps3cvy" data-styles-preset="IGOfvmM1K" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">Which company recruitment patterns are covered?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:16px;border-bottom-right-radius:16px;border-top-left-radius:16px;border-top-right-radius:16px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">We provide targeted preparation for Capgemini (Game-based Aptitude), TCS NQT, Accenture (Cognitive Assessment), Infosys, Wipro, Cognizant, and major off-campus recruitment drives.</p></div></div></div></div><div class="framer-jl1kly-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-8knmgh" data-framer-name="Desktop - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:40px;border-bottom-right-radius:40px;border-top-left-radius:40px;border-top-right-radius:40px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-v1217o" data-framer-name="Number" style="background-color:rgba(0, 0, 0, 0.2);border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-1oo7w6f" data-framer-component-type="RichTextContainer" data-framer-name="1" style="justify-content:center;--framer-paragraph-spacing:0px;--extracted-r6o4lv:var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6));transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6)))">3</p></div></div><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-ps3cvy" data-styles-preset="IGOfvmM1K" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">Are non-CS and degree students eligible for these programs?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:16px;border-bottom-right-radius:16px;border-top-left-radius:16px;border-top-right-radius:16px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">Absolutely! PhoneticEdu programs are specifically structured from foundational scratch. We train engineering (B.Tech all branches), MCA, and degree students with step-by-step guidance.</p></div></div></div></div><div class="framer-13xtp1-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-8knmgh" data-framer-name="Desktop - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:40px;border-bottom-right-radius:40px;border-top-left-radius:40px;border-top-right-radius:40px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-v1217o" data-framer-name="Number" style="background-color:rgba(0, 0, 0, 0.2);border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-1oo7w6f" data-framer-component-type="RichTextContainer" data-framer-name="1" style="justify-content:center;--framer-paragraph-spacing:0px;--extracted-r6o4lv:var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6));transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6)))">4</p></div></div><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-ps3cvy" data-styles-preset="IGOfvmM1K" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">How are 1-on-1 mock interviews and mentorship conducted?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:16px;border-bottom-right-radius:16px;border-top-left-radius:16px;border-top-right-radius:16px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">Mentorship sessions and mock interviews are conducted live with founder Santhosh Kumar Ananta and senior mentors, including detailed feedback on technical drills, body language, and resume screening.</p></div></div></div></div><div class="framer-1m3yw4r-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-8knmgh" data-framer-name="Desktop - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:40px;border-bottom-right-radius:40px;border-top-left-radius:40px;border-top-right-radius:40px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-v1217o" data-framer-name="Number" style="background-color:rgba(0, 0, 0, 0.2);border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-1oo7w6f" data-framer-component-type="RichTextContainer" data-framer-name="1" style="justify-content:center;--framer-paragraph-spacing:0px;--extracted-r6o4lv:var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6));transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-alignment:center;--framer-text-color:var(--extracted-r6o4lv, var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6)))">5</p></div></div><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-ps3cvy" data-styles-preset="IGOfvmM1K" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">Where is PhoneticEdu located and can I access it anywhere?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:16px;border-bottom-right-radius:16px;border-top-left-radius:16px;border-top-right-radius:16px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">PhoneticEdu is headquartered in Hyderabad, Telangana, India. All courses, mock tests, and game zone practice modules are accessible 24/7 online from any laptop, tablet, or smartphone.</p></div></div></div></div></div></div></div><div class="ssr-variant hidden-72rtr7 hidden-m2it3q"><div class="framer-xb13mt-container" data-framer-name="FAQs List" name="FAQs List"><div class="framer-xVZzo framer-1fsq0nf framer-v-1j0epqs" data-framer-name="Variant 1" name="FAQs List" style="width:100%"><div class="framer-3hh0w9-container" style="transform:translateX(-50%)"><!--$--><div></div><!--/$--></div><div class="framer-13w6xvk-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-1eekr2q" data-framer-name="Mobile - Active" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">How does PhoneticEdu's gamified learning method work?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-a281d3d3-8074-4276-b377-59dd81ca3f41, rgb(0, 102, 255));border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:none"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-h963pm" data-styles-preset="v2MTH97Hm" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">Unlike traditional passive lectures, PhoneticEdu turns quantitative and logical aptitude into timed challenges, speed drills, and brain teasers. This builds muscle memory, increases mental calculation speed, and helps you crack rounds under intense exam timers.</p></div></div></div></div><div class="framer-1dm4kjm-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-1senyho" data-framer-name="Mobile - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">Which company recruitment patterns are covered?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-h963pm" data-styles-preset="v2MTH97Hm" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">We provide targeted preparation for Capgemini (Game-based Aptitude), TCS NQT, Accenture (Cognitive Assessment), Infosys, Wipro, Cognizant, and major off-campus recruitment drives.</p></div></div></div></div><div class="framer-jl1kly-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-1senyho" data-framer-name="Mobile - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">Are non-CS and degree students eligible for these programs?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-h963pm" data-styles-preset="v2MTH97Hm" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">Absolutely! PhoneticEdu programs are specifically structured from foundational scratch. We train engineering (B.Tech all branches), MCA, and degree students with step-by-step guidance.</p></div></div></div></div><div class="framer-13xtp1-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-1senyho" data-framer-name="Mobile - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">How are 1-on-1 mock interviews and mentorship conducted?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-h963pm" data-styles-preset="v2MTH97Hm" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">Mentorship sessions and mock interviews are conducted live with founder Santhosh Kumar Ananta and senior mentors, including detailed feedback on technical drills, body language, and resume screening.</p></div></div></div></div><div class="framer-1m3yw4r-container"><div class="framer-eLgIX framer-SvZjy framer-TZPec framer-iDV62 framer-XVrSL framer-kj25cf framer-v-1senyho" data-framer-name="Mobile - Default" data-highlight="true" style="background-color:rgba(0, 0, 0, 0);width:100%;border-bottom-left-radius:0px;border-bottom-right-radius:0px;border-top-left-radius:0px;border-top-right-radius:0px" tabindex="0"><div class="framer-6gkzte" data-framer-name="Question Wrap"><div class="framer-csw7tj" data-framer-name="Question"><div class="framer-kg7wsu" data-framer-component-type="RichTextContainer" data-framer-name="How does PhoneticEdu's gamified learning method work?" style="justify-content:center;--extracted-r6o4lv:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-1rgoota" data-styles-preset="nl5egLyzz" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255)))">Where is PhoneticEdu located and can I access it anywhere?</p></div></div><div class="framer-6paxum" data-framer-name="Icon Wrap" style="background-color:var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05));border-bottom-left-radius:12px;border-bottom-right-radius:12px;border-top-left-radius:12px;border-top-right-radius:12px"><div class="framer-xif6h8" data-framer-name="Icon"><div class="framer-57ayfl" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px"></div><div class="framer-n08bpq" style="background-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255));border-bottom-left-radius:145px;border-bottom-right-radius:145px;border-top-left-radius:145px;border-top-right-radius:145px;transform:rotate(90deg)"></div></div></div></div><div class="framer-11jd2sk" data-framer-name="Answer Wrap"><div class="framer-p0olho" data-framer-component-type="RichTextContainer" data-framer-name="It’s simple — choose “Connect Account” from your dashboard, select your bank or card provider, and log in securely. We support thousands of banks and wallets worldwide through trusted API connections." style="justify-content:center;--extracted-r6o4lv:var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8));--framer-paragraph-spacing:0px;transform:none"><p class="framer-text framer-styles-preset-h963pm" data-styles-preset="v2MTH97Hm" style="--framer-text-color:var(--extracted-r6o4lv, var(--token-a5cbaa21-8a90-448d-9f57-e1d1b61de1a6, rgba(255, 255, 255, 0.8)))">PhoneticEdu is headquartered in Hyderabad, Telangana, India. All courses, mock tests, and game zone practice modules are accessible 24/7 online from any laptop, tablet, or smartphone.</p></div></div></div></div></div></div></div></div><div class="framer-kcx9d2" data-framer-name="Caption"><div class="ssr-variant hidden-1k8ds7i"><div class="framer-1wql7al" data-framer-component-type="RichTextContainer" data-framer-name="Heading" style="justify-content:center;transform:none"><p class="framer-text framer-styles-preset-7plm1o" data-styles-preset="hikDcI6M_" dir="auto" style="--framer-text-alignment:center;--framer-text-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255))">Still have more questions?</p></div></div><div class="ssr-variant hidden-72rtr7 hidden-m2it3q"><div class="framer-1wql7al" data-framer-component-type="RichTextContainer" data-framer-name="Heading" style="justify-content:center;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" dir="auto" style="--framer-text-alignment:center;--framer-text-color:var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255))">Still have more questions?</p></div></div><div class="ssr-variant hidden-1k8ds7i"><div class="framer-1204r2s" data-framer-component-type="RichTextContainer" data-framer-name="SubHead" style="justify-content:center;transform:none"><p class="framer-text framer-styles-preset-aploos" data-styles-preset="N1pattSQ4" dir="auto" style="--framer-text-alignment:center;--framer-text-color:var(--token-12f4edd8-8915-49d1-9672-60e774531cdb, rgb(143, 143, 143))">If you have more questions, <!--$--><a class="framer-text framer-styles-preset-1oc9lnr" data-framer-page-link-current="true" data-styles-preset="Qcblj_jf2" href="./"><span class="framer-text" style="--framer-text-color:var(--token-23955bb4-90e4-469f-9f8d-fcd039f71805, rgb(59, 130, 246))">contact us</span></a><!--/$--> so we can help.</p></div></div><div class="ssr-variant hidden-72rtr7 hidden-m2it3q"><div class="framer-1204r2s" data-framer-component-type="RichTextContainer" data-framer-name="SubHead" style="justify-content:center;transform:none"><p class="framer-text framer-styles-preset-yctu3a" data-styles-preset="dLJsxXALZ" dir="auto" style="--framer-text-alignment:center;--framer-text-color:var(--token-12f4edd8-8915-49d1-9672-60e774531cdb, rgb(143, 143, 143))">If you have more questions, <!--$--><a class="framer-text framer-styles-preset-1oc9lnr" data-framer-page-link-current="true" data-styles-preset="Qcblj_jf2" href="./"><span class="framer-text" style="--framer-text-color:var(--token-23955bb4-90e4-469f-9f8d-fcd039f71805, rgb(59, 130, 246))">contact us</span></a><!--/$--> so we can help.</p></div></div></div></div>`
 
 export default function FAQ() {
-	const [openIndex, setOpenIndex] = useState(0)
+  const [activeIndex, setActiveIndex] = useState(0)
 
-	const faqData = [
-		{
-			id: 1,
-			num: '1.',
-			title: 'UNDERSTANDING YOUR BUSINESS & FOUNDATIONS',
-			shortDesc:
-				'We begin by getting to know your baseline skills across speed math, logical agility, and quantitative aptitude. By understanding your challenges, goals, and target companies, we lay the foundation.',
-			bgColor: '#ff7600',
-			textColor: '#ffffff',
-			btnBg: '#ffffff',
-			btnColor: '#0f172a',
-			subcards: [
-				{
-					title: 'Strategy',
-					subtitle: 'Duration: 3 Weeks',
-					pills: [
-						{ text: 'Speed Math', bg: '#d9f99d', color: '#365314' },
-						{ text: 'Goals', bg: '#fed7aa', color: '#9a3412' },
-						{ text: 'Ideation', bg: '#fecaca', color: '#991b1b' },
-						{ text: 'Research', bg: '#a7f3d0', color: '#065f46' },
-					],
-					desc: 'Diagnostic benchmarking across 12 aptitude modules to build rapid mental math instincts and calculation velocity.',
-				},
-				{
-					title: 'Discovery',
-					subtitle: 'Duration: 2 Weeks',
-					pills: [
-						{ text: 'User Interviews', bg: '#bfdbfe', color: '#1e40af' },
-						{ text: 'Target', bg: '#1e293b', color: '#ffffff' },
-						{ text: 'Flow Chart', bg: '#ddd6fe', color: '#5b21b6' },
-						{ text: 'Preliminary', bg: '#fecdd3', color: '#9f1239' },
-					],
-					desc: 'Identify weak-area patterns, time-per-question anomalies, and cognitive bottlenecks with targeted practice sprints.',
-				},
-				{
-					title: 'Solution',
-					subtitle: 'Duration: 4 Weeks',
-					pills: [
-						{ text: 'Design Materials', bg: '#0f172a', color: '#ffffff' },
-						{ text: 'Copywriting', bg: '#bef264', color: '#365314' },
-						{ text: 'Target', bg: '#fdba74', color: '#9a3412' },
-						{ text: 'Contents', bg: '#c4b5fd', color: '#5b21b6' },
-					],
-					desc: 'Deploy comprehensive company-simulated mock exams with live national ranking percentiles and leaderboard streaks.',
-				},
-			],
-		},
-		{
-			id: 2,
-			num: '2.',
-			title: 'STRATEGIC PLANNING AND CREATIVE EXECUTION',
-			shortDesc:
-				'We start by understanding your brand, industry, and audience, ensuring we address your challenges, define goals, and highlight your unique value through reverse-engineered hiring patterns.',
-			bgColor: '#d2f826',
-			textColor: '#0f172a',
-			btnBg: '#0f172a',
-			btnColor: '#ffffff',
-			type: 'swatch_and_typography',
-			subcards: [
-				{
-					type: 'palette',
-					headerTag: 'Marketing Material Design',
-					pageTag: 'Page 05',
-					title: 'Color Pallete',
-					desc: 'At Revento, we believe that colors speak louder than words.',
-					swatches: [
-						{ code: '#56DC3A', bg: '#56dc3a' },
-						{ code: '#643GF6', bg: '#818cf8' },
-						{ code: '#DFG89K', bg: '#facc15' },
-						{ code: '#JS9653', bg: '#10b981' },
-					],
-				},
-				{
-					type: 'typography',
-					headerTag: 'Typography',
-					title: 'Typography That Amplifies',
-					bigAa: 'Aa',
-					primary: 'Anton',
-					secondary: 'DM Sans',
-					charset: '1234567890',
-				},
-				{
-					type: 'card_preview',
-					headerTag: 'Marketing Posts',
-					desc: 'Engaging Designs That Drive Social Media Success',
-					previewCard: {
-						user: 'Revento',
-						handle: '@revento_hq',
-						badge: 'Verified',
-						stats: '14.2k Shares · 98% Match',
-					},
-				},
-			],
-		},
-		{
-			id: 3,
-			num: '3.',
-			title: 'COLLABORATION AND OPTIMIZATION',
-			shortDesc:
-				'Our process begins with a deep dive into your brand, industry, and audience to uncover challenges, define goals, and craft tailored solutions with 1-on-1 expert mentor evaluations.',
-			bgColor: '#ff4732',
-			textColor: '#ffffff',
-			btnBg: '#ffffff',
-			btnColor: '#0f172a',
-			type: 'sticky_notes',
-			subcards: [
-				{
-					type: 'sprint_check',
-					badge: '1-3 Sprints',
-					time: '2.30 hrs',
-					heading: 'Discovery and Strategy Development and Conduct market research',
-					body: 'Identify target audience segments and key value propositions. Develop a comprehensive marketing strategy.',
-				},
-				{
-					type: 'stickies',
-					title: 'Note Taking Session',
-					subtitle: 'Notes for Marketing Research',
-					notes: [
-						{ text: 'Identify who your ideal customers are by analyzing demographics', bg: '#fef08a', color: '#854d0e' },
-						{ text: 'Analyze competitor positioning & differentiation', bg: '#99f6e4', color: '#115e59' },
-						{ text: 'Prioritize high-impact speed math heuristics', bg: '#fde047', color: '#854d0e' },
-						{ text: 'Validate problem statement with live code', bg: '#bef264', color: '#3f6212' },
-					],
-				},
-				{
-					type: 'sprint_check',
-					badge: '3-5 Sprints',
-					time: '4.00 hrs',
-					heading: 'Discovery and Strategy Development',
-					body: 'Identify target audience segments and key value propositions. Develop a comprehensive marketing strategy.',
-				},
-			],
-		},
-		{
-			id: 4,
-			num: '4.',
-			title: 'DELIVERING AND REPORTING RESULTS',
-			shortDesc:
-				'We learn your brand, industry, and audience to identify challenges, align goals, and establish the groundwork for delivering impactful strategies across all engineering and degree backgrounds.',
-			bgColor: '#2563eb',
-			textColor: '#ffffff',
-			btnBg: '#ffffff',
-			btnColor: '#0f172a',
-			subcards: [
-				{
-					title: 'Engineering All Branches',
-					subtitle: 'CSE · ECE · EEE · Mech · Civil',
-					pills: [
-						{ text: 'Quant Edge', bg: '#dbeafe', color: '#1e40af' },
-						{ text: 'Core to Tech', bg: '#fef3c7', color: '#92400e' },
-						{ text: 'Logic Mastery', bg: '#d1fae5', color: '#065f46' },
-					],
-					desc: 'Non-programming students transition effortlessly with visual logic paradigms and step-by-step problem sets.',
-				},
-				{
-					title: 'Degree & MCA Tracks',
-					subtitle: 'BCA · B.Sc · MCA · B.Com',
-					pills: [
-						{ text: 'TCS Smart', bg: '#ede9fe', color: '#5b21b6' },
-						{ text: 'Wipro WILP', bg: '#ffedd5', color: '#9a3412' },
-						{ text: 'Cognizant GenC', bg: '#fee2e2', color: '#991b1b' },
-					],
-					desc: 'Dedicated syllabus tailored specifically for recruitment drives catering to 3-year degree and MCA candidates.',
-				},
-				{
-					title: 'Placement Verification',
-					subtitle: 'End-to-End Clearance',
-					pills: [
-						{ text: 'Resume ATS', bg: '#f1f5f9', color: '#0f172a' },
-						{ text: 'HR Mock', bg: '#fce7f3', color: '#9d174d' },
-						{ text: 'Offer Letter', bg: '#dcfce7', color: '#166534' },
-					],
-					desc: 'Comprehensive offer guidance, compensation negotiation advice, and final background verification prep.',
-				},
-			],
-		},
-	]
+  useEffect(() => {
+    const faqSection = document.querySelector('.framer-193gfb')
+    if (!faqSection) return
 
-	return (
-		<section
-			id="faq"
-			style={{
-				position: 'relative',
-				width: '100%',
-				background: '#ffffff',
-				padding: '90px 24px 110px',
-				overflow: 'hidden',
-			}}
-		>
-			<div
-				style={{
-					maxWidth: '1240px',
-					margin: '0 auto',
-				}}
-			>
-				{/* Section Header */}
-				<div style={{ marginBottom: '50px' }}>
-					<span
-						style={{
-							fontFamily: "'Plus Jakarta Sans', sans-serif",
-							fontSize: '13px',
-							fontWeight: 800,
-							letterSpacing: '0.12em',
-							color: '#ff4732',
-							textTransform: 'uppercase',
-							display: 'block',
-							marginBottom: '10px',
-						}}
-					>
-						HOW WE WORK
-					</span>
-					<h2
-						style={{
-							fontFamily: "'Anton', sans-serif",
-							fontSize: 'clamp(40px, 6vw, 76px)',
-							lineHeight: 1.0,
-							fontWeight: 900,
-							letterSpacing: '-0.02em',
-							color: '#0f172a',
-							textTransform: 'uppercase',
-							margin: 0,
-						}}
-					>
-						OUR WORKING METHOD
-					</h2>
-				</div>
+    // Find all FAQ item wrappers (.framer-eLgIX)
+    const items = faqSection.querySelectorAll('.framer-eLgIX')
+    items.forEach((item, idx) => {
+      item.style.cursor = 'pointer'
+      const questionWrap = item.querySelector('.framer-6gkzte') || item
+      questionWrap.onclick = (e) => {
+        e.preventDefault()
+        e.stopPropagation()
+        // idx % 5 because desktop and mobile list each have 5 items
+        const itemIndex = idx % 5
+        setActiveIndex(prev => prev === itemIndex ? -1 : itemIndex)
+      }
+    })
+  }, [])
 
-				{/* Accordion Stack */}
-				<div style={{ display: 'flex', flexDirection: 'column', gap: '24px' }}>
-					{faqData.map((item, index) => {
-						const isOpen = openIndex === index
+  useEffect(() => {
+    const faqSection = document.querySelector('.framer-193gfb')
+    if (!faqSection) return
 
-						if (!isOpen) {
-							// ==========================================
-							// COLLAPSED ROW (Matches Images 3, 4, 5)
-							// ==========================================
-							return (
-								<div
-									key={item.id}
-									onClick={() => setOpenIndex(index)}
-									style={{
-										display: 'flex',
-										alignItems: 'center',
-										justifyContent: 'space-between',
-										padding: '32px 10px',
-										borderTop: '1px solid #e2e8f0',
-										cursor: 'pointer',
-										transition: 'background 0.2s',
-										gap: '24px',
-										flexWrap: 'wrap',
-									}}
-								>
-									{/* Left Number & Title */}
-									<div style={{ display: 'flex', alignItems: 'center', gap: '24px', flex: '1 1 360px' }}>
-										<span
-											style={{
-												fontFamily: "'Anton', sans-serif",
-												fontSize: 'clamp(48px, 5.5vw, 68px)',
-												fontWeight: 900,
-												color: '#0f172a',
-												lineHeight: 1,
-											}}
-										>
-											{item.num}
-										</span>
-										<h3
-											style={{
-												fontFamily: "'Anton', sans-serif",
-												fontSize: 'clamp(22px, 2.5vw, 32px)',
-												fontWeight: 900,
-												color: '#0f172a',
-												letterSpacing: '-0.01em',
-												textTransform: 'uppercase',
-												margin: 0,
-												lineHeight: 1.1,
-											}}
-										>
-											{item.title}
-										</h3>
-									</div>
+    const items = faqSection.querySelectorAll('.framer-eLgIX')
+    items.forEach((item, idx) => {
+      const itemIndex = idx % 5
+      const isOpen = itemIndex === activeIndex
 
-									{/* Right Short Excerpt */}
-									<p
-										style={{
-											flex: '1 1 420px',
-											fontFamily: "'Plus Jakarta Sans', sans-serif",
-											fontSize: '14.5px',
-											lineHeight: 1.55,
-											color: '#475569',
-											margin: 0,
-										}}
-									>
-										{item.shortDesc}
-									</p>
+      const isMobile = item.classList.contains('framer-v-1eekr2q') || item.classList.contains('framer-v-1senyho')
 
-									{/* Circular Down Button */}
-									<button
-										type="button"
-										aria-label="Expand section"
-										style={{
-											width: '52px',
-											height: '52px',
-											borderRadius: '50%',
-											background: '#0f172a',
-											color: '#ffffff',
-											border: 'none',
-											display: 'flex',
-											alignItems: 'center',
-											justifyContent: 'center',
-											cursor: 'pointer',
-											flexShrink: 0,
-											boxShadow: '0 4px 14px rgba(15,23,42,0.15)',
-											transition: 'transform 0.2s',
-										}}
-									>
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#ffffff" strokeWidth="3">
-											<path d="M6 9l6 6 6-6" strokeLinecap="round" strokeLinejoin="round" />
-										</svg>
-									</button>
-								</div>
-							)
-						}
+      const numberBadge = item.querySelector('.framer-v1217o')
+      const numberText = item.querySelector('.framer-1oo7w6f p')
+      const iconWrap = item.querySelector('.framer-6paxum')
+      const plusLine = item.querySelector('.framer-n08bpq')
+      const answerWrap = item.querySelector('.framer-11jd2sk')
 
-						// ==========================================
-						// EXPANDED VIBRANT CARD (Matches Images 3, 4, 5)
-						// ==========================================
-						return (
-							<div
-								key={item.id}
-								className="faq-expanded-bubble"
-								style={{
-									position: 'relative',
-									background: item.bgColor,
-									borderRadius: '36px',
-									padding: '44px 40px 48px',
-									boxShadow: '0 20px 50px rgba(0,0,0,0.12)',
-									transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
-									overflow: 'visible',
-								}}
-							>
-								{/* Stylized Speech-Bubble Notches */}
-								{/* Top Right Triangular Peak */}
-								<div
-									style={{
-										position: 'absolute',
-										top: '-16px',
-										right: '180px',
-										width: 0,
-										height: 0,
-										borderLeft: '18px solid transparent',
-										borderRight: '18px solid transparent',
-										borderBottom: `18px solid ${item.bgColor}`,
-										pointerEvents: 'none',
-									}}
-								/>
-								{/* Left Side Bubble Contour Notch */}
-								<div
-									style={{
-										position: 'absolute',
-										top: '50%',
-										left: '-14px',
-										transform: 'translateY(-50%)',
-										width: '18px',
-										height: '42px',
-										borderRadius: '12px 0 0 12px',
-										background: item.bgColor,
-										pointerEvents: 'none',
-									}}
-								/>
+      if (isOpen) {
+        if (isMobile) {
+          item.classList.remove('framer-v-1senyho')
+          item.classList.add('framer-v-1eekr2q')
+        } else {
+          item.classList.remove('framer-v-8knmgh')
+          item.classList.add('framer-v-kj25cf')
+          item.style.backgroundColor = 'rgba(37, 99, 235, 0.1)'
+        }
+        item.setAttribute('data-framer-name', isMobile ? 'Mobile - Active' : 'Desktop - Active')
 
-								{/* Top Header Row */}
-								<div
-									style={{
-										display: 'flex',
-										alignItems: 'flex-start',
-										justifyContent: 'space-between',
-										marginBottom: '40px',
-										gap: '24px',
-										flexWrap: 'wrap',
-									}}
-								>
-									{/* Number & Title */}
-									<div style={{ display: 'flex', alignItems: 'flex-start', gap: '20px', flex: '1 1 360px' }}>
-										<span
-											style={{
-												fontFamily: "'Anton', sans-serif",
-												fontSize: 'clamp(54px, 6vw, 76px)',
-												fontWeight: 900,
-												color: item.textColor,
-												lineHeight: 0.95,
-											}}
-										>
-											{item.num}
-										</span>
-										<h3
-											style={{
-												fontFamily: "'Anton', sans-serif",
-												fontSize: 'clamp(24px, 2.8vw, 38px)',
-												fontWeight: 900,
-												color: item.textColor,
-												letterSpacing: '-0.01em',
-												textTransform: 'uppercase',
-												margin: 0,
-												lineHeight: 1.05,
-											}}
-										>
-											{item.title}
-										</h3>
-									</div>
+        if (numberBadge) numberBadge.style.backgroundColor = 'var(--token-c5ac9015-f2e5-48a7-9317-85dc7ef59171, rgb(255, 255, 255))'
+        if (numberText) numberText.style.setProperty('--framer-text-color', 'var(--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd, rgb(18, 18, 20))')
+        if (iconWrap) iconWrap.style.backgroundColor = 'var(--token-a281d3d3-8074-4276-b377-59dd81ca3f41, rgb(0, 102, 255))'
+        if (plusLine) plusLine.style.transform = 'rotate(0deg)'
+        if (answerWrap) {
+          answerWrap.style.height = 'auto'
+          answerWrap.style.maxHeight = '500px'
+          answerWrap.style.opacity = '1'
+          answerWrap.style.overflow = 'visible'
+          answerWrap.style.transition = 'all 0.3s ease'
+        }
+      } else {
+        if (isMobile) {
+          item.classList.remove('framer-v-1eekr2q')
+          item.classList.add('framer-v-1senyho')
+        } else {
+          item.classList.remove('framer-v-kj25cf')
+          item.classList.add('framer-v-8knmgh')
+          item.style.backgroundColor = 'rgba(0, 0, 0, 0)'
+        }
+        item.setAttribute('data-framer-name', isMobile ? 'Mobile - Default' : 'Desktop - Default')
 
-									{/* Description Text */}
-									<p
-										style={{
-											flex: '1 1 380px',
-											fontFamily: "'Plus Jakarta Sans', sans-serif",
-											fontSize: '15px',
-											lineHeight: 1.55,
-											color: item.textColor,
-											opacity: 0.95,
-											margin: 0,
-										}}
-									>
-										{item.shortDesc}
-									</p>
+        if (numberBadge) numberBadge.style.backgroundColor = 'rgba(0, 0, 0, 0.2)'
+        if (numberText) numberText.style.setProperty('--framer-text-color', 'var(--token-a51281f6-4d58-44a6-97b5-322a6de2e5c7, rgba(255, 255, 255, 0.6))')
+        if (iconWrap) iconWrap.style.backgroundColor = 'var(--token-0c674456-205e-433a-90bd-3ad9ec6a6680, rgba(255, 255, 255, 0.05))'
+        if (plusLine) plusLine.style.transform = 'rotate(90deg)'
+        if (answerWrap) {
+          answerWrap.style.height = '1px'
+          answerWrap.style.maxHeight = '0px'
+          answerWrap.style.opacity = '0'
+          answerWrap.style.overflow = 'hidden'
+          answerWrap.style.transition = 'all 0.3s ease'
+        }
+      }
+    })
+  }, [activeIndex])
 
-									{/* Circular Up Button */}
-									<button
-										type="button"
-										onClick={() => setOpenIndex(-1)}
-										aria-label="Collapse section"
-										style={{
-											width: '52px',
-											height: '52px',
-											borderRadius: '50%',
-											background: item.btnBg,
-											color: item.btnColor,
-											border: 'none',
-											display: 'flex',
-											alignItems: 'center',
-											justifyContent: 'center',
-											cursor: 'pointer',
-											flexShrink: 0,
-											boxShadow: '0 4px 14px rgba(0,0,0,0.18)',
-											transition: 'transform 0.2s',
-										}}
-									>
-										<svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke={item.btnColor} strokeWidth="3">
-											<path d="M18 15l-6-6-6 6" strokeLinecap="round" strokeLinejoin="round" />
-										</svg>
-									</button>
-								</div>
-
-								{/* ======================================================== */}
-								{/* 3 NESTED WHITE SUBCARDS (Matches Images 3, 4, 5)        */}
-								{/* ======================================================== */}
-								<div
-									style={{
-										display: 'grid',
-										gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))',
-										gap: '20px',
-									}}
-								>
-									{/* ITEM 2: SWATCHES & TYPOGRAPHY SPECIMEN (Matches Image 3) */}
-									{item.type === 'swatch_and_typography' ? (
-										<>
-											{/* Subcard 1: Palette */}
-											<div
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '24px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-													display: 'flex',
-													flexDirection: 'column',
-													justifyContent: 'space-between',
-												}}
-											>
-												<div>
-													<div style={{ display: 'flex', justifyContent: 'space-between', fontSize: '11px', color: '#64748b', fontWeight: 600, marginBottom: '12px' }}>
-														<span>Marketing Material Design</span>
-														<span>Page 05</span>
-													</div>
-													<h4 style={{ fontSize: '16px', fontWeight: 800, margin: '0 0 6px' }}>Color Pallete</h4>
-													<p style={{ fontSize: '12.5px', color: '#475569', lineHeight: 1.4, margin: '0 0 16px' }}>
-														At Revento, we believe that colors speak louder than words.
-													</p>
-												</div>
-												{/* 4 Swatches */}
-												<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-													{item.subcards[0].swatches.map((sw, idx) => (
-														<div
-															key={idx}
-															style={{
-																background: sw.bg,
-																height: '54px',
-																borderRadius: '12px',
-																display: 'flex',
-																alignItems: 'flex-end',
-																padding: '6px 8px',
-															}}
-														>
-															<span style={{ fontSize: '10px', fontWeight: 800, color: '#ffffff', textShadow: '0 1px 2px rgba(0,0,0,0.4)' }}>
-																{sw.code}
-															</span>
-														</div>
-													))}
-												</div>
-											</div>
-
-											{/* Subcard 2: Typography */}
-											<div
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '24px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-												}}
-											>
-												<div style={{ fontSize: '11px', color: '#64748b', fontWeight: 600, marginBottom: '6px' }}>
-													Typography
-												</div>
-												<h4 style={{ fontSize: '16px', fontWeight: 800, margin: '0 0 12px' }}>
-													Typography That Amplifies
-												</h4>
-												<div
-													style={{
-														fontFamily: "'Anton', sans-serif",
-														fontSize: '72px',
-														lineHeight: 1,
-														color: '#0f172a',
-														marginBottom: '10px',
-													}}
-												>
-													Aa
-												</div>
-												<div style={{ fontSize: '12px', color: '#64748b', marginBottom: '2px' }}>Primary font</div>
-												<div style={{ fontFamily: "'Anton', sans-serif", fontSize: '18px', fontWeight: 900, marginBottom: '8px' }}>
-													Anton
-												</div>
-												<div style={{ fontSize: '12px', color: '#64748b', marginBottom: '2px' }}>Secondary font</div>
-												<div style={{ fontSize: '14px', fontWeight: 800, marginBottom: '6px' }}>DM Sans</div>
-												<div style={{ fontSize: '11px', color: '#94a3b8', letterSpacing: '2px' }}>1234567890</div>
-											</div>
-
-											{/* Subcard 3: Card preview */}
-											<div
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '24px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-													display: 'flex',
-													flexDirection: 'column',
-													justifyContent: 'space-between',
-												}}
-											>
-												<div>
-													<div style={{ fontSize: '11px', color: '#64748b', fontWeight: 600, marginBottom: '4px' }}>
-														Marketing Posts
-													</div>
-													<h4 style={{ fontSize: '15px', fontWeight: 800, margin: '0 0 14px' }}>
-														Engaging Designs That Drive Social Media Success
-													</h4>
-												</div>
-												{/* Mock Social Card */}
-												<div
-													style={{
-														background: '#f8fafc',
-														borderRadius: '16px',
-														border: '1px solid #e2e8f0',
-														padding: '14px',
-													}}
-												>
-													<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: '8px' }}>
-														<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-															<div style={{ width: '24px', height: '24px', borderRadius: '50%', background: '#6366f1' }} />
-															<span style={{ fontSize: '12px', fontWeight: 800 }}>Revento</span>
-														</div>
-														<span style={{ color: '#94a3b8', fontSize: '12px' }}>•••</span>
-													</div>
-													<div
-														style={{
-															height: '75px',
-															borderRadius: '10px',
-															background: 'linear-gradient(135deg, #dbeafe 0%, #e0e7ff 100%)',
-															display: 'flex',
-															alignItems: 'center',
-															justifyContent: 'center',
-															color: '#3b82f6',
-															fontSize: '11px',
-															fontWeight: 700,
-														}}
-													>
-														Social Post Canvas
-													</div>
-												</div>
-											</div>
-										</>
-									) : item.type === 'sticky_notes' ? (
-										// ==========================================
-										// ITEM 3: STICKY NOTES GRID (Matches Image 4)
-										// ==========================================
-										<>
-											{/* Subcard 1: 1-3 Sprints */}
-											<div
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '24px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-													display: 'flex',
-													flexDirection: 'column',
-													justifyContent: 'space-between',
-												}}
-											>
-												<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-													<span
-														style={{
-															width: '32px',
-															height: '32px',
-															borderRadius: '50%',
-															background: '#a855f7',
-															color: '#ffffff',
-															display: 'flex',
-															alignItems: 'center',
-															justifyContent: 'center',
-															fontWeight: 800,
-															fontSize: '14px',
-														}}
-													>
-														✓
-													</span>
-													<div>
-														<span style={{ fontSize: '14px', fontWeight: 800 }}>1-3 Sprints</span>
-														<span style={{ fontSize: '12px', color: '#64748b', marginLeft: '6px' }}>2.30 hrs</span>
-													</div>
-												</div>
-												<h4 style={{ fontSize: '15px', fontWeight: 800, lineHeight: 1.3, margin: '0 0 10px' }}>
-													Discovery and Strategy Development and Conduct market research
-												</h4>
-												<p style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
-													Identify target audience segments and key value propositions. Develop a comprehensive marketing strategy.
-												</p>
-											</div>
-
-											{/* Subcard 2: Post-It / Sticky Notes Grid */}
-											<div
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '22px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-												}}
-											>
-												<div style={{ fontSize: '13px', fontWeight: 800, marginBottom: '2px' }}>
-													Note Taking Session
-												</div>
-												<div style={{ fontSize: '11px', color: '#64748b', marginBottom: '14px' }}>
-													Notes for Marketing Research
-												</div>
-												{/* 4 Colored Stickies */}
-												<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '8px' }}>
-													{item.subcards[1].notes.map((note, idx) => (
-														<div
-															key={idx}
-															style={{
-																background: note.bg,
-																color: note.color,
-																padding: '10px',
-																borderRadius: '10px',
-																fontSize: '10px',
-																fontWeight: 700,
-																lineHeight: 1.35,
-																boxShadow: '0 2px 6px rgba(0,0,0,0.06)',
-															}}
-														>
-															{note.text}
-														</div>
-													))}
-												</div>
-											</div>
-
-											{/* Subcard 3: 3-5 Sprints */}
-											<div
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '24px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-													display: 'flex',
-													flexDirection: 'column',
-													justifyContent: 'space-between',
-												}}
-											>
-												<div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '16px' }}>
-													<span
-														style={{
-															width: '32px',
-															height: '32px',
-															borderRadius: '50%',
-															background: '#a855f7',
-															color: '#ffffff',
-															display: 'flex',
-															alignItems: 'center',
-															justifyContent: 'center',
-															fontWeight: 800,
-															fontSize: '14px',
-														}}
-													>
-														✓
-													</span>
-													<span style={{ fontSize: '14px', fontWeight: 800 }}>3-5 Sprints</span>
-												</div>
-												<h4 style={{ fontSize: '15px', fontWeight: 800, lineHeight: 1.3, margin: '0 0 10px' }}>
-													Discovery and Strategy Development
-												</h4>
-												<p style={{ fontSize: '13px', color: '#64748b', lineHeight: 1.45, margin: 0 }}>
-													Identify target audience segments and key value propositions. Develop a comprehensive marketing strategy.
-												</p>
-											</div>
-										</>
-									) : (
-										// ==========================================
-										// ITEM 1 & 4: PILL TAGS CARDS (Matches Image 5)
-										// ==========================================
-										item.subcards.map((sub, idx) => (
-											<div
-												key={idx}
-												style={{
-													background: '#ffffff',
-													borderRadius: '24px',
-													padding: '24px',
-													color: '#0f172a',
-													boxShadow: '0 10px 25px rgba(0,0,0,0.06)',
-													display: 'flex',
-													flexDirection: 'column',
-													justifyContent: 'space-between',
-													minHeight: '220px',
-												}}
-											>
-												<div>
-													<div style={{ textAlign: 'center', marginBottom: '14px' }}>
-														<h4 style={{ fontSize: '17px', fontWeight: 800, margin: '0 0 2px' }}>
-															{sub.title}
-														</h4>
-														<div style={{ fontSize: '11.5px', color: '#64748b' }}>{sub.subtitle}</div>
-													</div>
-
-													{/* Pill Tag Cloud */}
-													<div
-														style={{
-															display: 'flex',
-															flexWrap: 'wrap',
-															gap: '6px',
-															justifyContent: 'center',
-															marginBottom: '16px',
-														}}
-													>
-														{sub.pills.map((pill, pIdx) => (
-															<span
-																key={pIdx}
-																style={{
-																	background: pill.bg,
-																	color: pill.color,
-																	padding: '4px 12px',
-																	borderRadius: '999px',
-																	fontSize: '11px',
-																	fontWeight: 800,
-																}}
-															>
-																{pill.text}
-															</span>
-														))}
-													</div>
-												</div>
-
-												<p style={{ fontSize: '12.5px', color: '#475569', lineHeight: 1.45, margin: 0, textAlign: 'center' }}>
-													{sub.desc}
-												</p>
-											</div>
-										))
-									)}
-								</div>
-							</div>
-						)
-					})}
-				</div>
-			</div>
-		</section>
-	)
+  return (
+    <section
+      className="framer-193gfb"
+      data-framer-name="FAQs"
+      dangerouslySetInnerHTML={{ __html: content }}
+    />
+  )
 }

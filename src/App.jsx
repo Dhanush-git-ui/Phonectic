@@ -1,10 +1,8 @@
 import About from './components/About.jsx'
 import Benefits from './components/Benefits.jsx'
-import Blog from './components/Blog.jsx'
 import CTASection from './components/CTASection.jsx'
 import DarkFeatures from './components/DarkFeatures.jsx'
 import FAQ from './components/FAQ.jsx'
-import FloatingTemplatePill from './components/FloatingTemplatePill.jsx'
 import Footer from './components/Footer.jsx'
 import Hero from './components/Hero.jsx'
 import Integrations from './components/Integrations.jsx'
@@ -41,12 +39,10 @@ export default function App() {
 				<Integrations />
 				<Testimonials />
 				<Pricing />
-				<Blog />
 				<FAQ />
 			</div>
 			<CTASection />
 			<Footer />
-			<FloatingTemplatePill />
 		</div>
 	)
 }

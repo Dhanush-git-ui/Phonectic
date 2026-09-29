@@ -1,0 +1,1070 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/Navbar.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=119d0352"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=119d0352"; const useEffect = __vite__cjsImport3_react["useEffect"]; const useState = __vite__cjsImport3_react["useState"];
+export default function Navbar() {
+  _s();
+  const [isScrolled, setIsScrolled] = useState(false);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      setIsScrolled(window.scrollY > 50);
+    };
+    window.addEventListener("scroll", handleScroll, { passive: true });
+    handleScroll();
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+  return /* @__PURE__ */ jsxDEV(
+    "div",
+    {
+      className: "framer-1ukj2tp-container",
+      "data-framer-appear-id": "1ukj2tp",
+      "data-framer-layout-hint-center-x": "true",
+      style: {
+        opacity: 1,
+        transform: "translateX(-50%) translateY(0px)",
+        position: "fixed",
+        top: 0,
+        left: "50%",
+        zIndex: 100,
+        transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)"
+      },
+      children: [
+        /* @__PURE__ */ jsxDEV("div", { className: "ssr-variant hidden-us4kh5 hidden-mzntmf nav-desktop-wrapper", children: /* @__PURE__ */ jsxDEV(
+          "nav",
+          {
+            className: `framer-e7ewR framer-15o89ul ${isScrolled ? "framer-v-1k1mnqh" : "framer-v-15o89ul"}`,
+            "data-framer-name": isScrolled ? "Desktop - On Scroll" : "Desktop - Primary",
+            style: {
+              width: "100%",
+              transition: "background-color 0.3s ease, backdrop-filter 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease"
+            },
+            children: /* @__PURE__ */ jsxDEV(
+              "div",
+              {
+                className: "framer-ketp50",
+                "data-framer-name": "Nav Layout",
+                style: {
+                  backdropFilter: isScrolled ? "blur(20px)" : "none",
+                  WebkitBackdropFilter: isScrolled ? "blur(20px)" : "none",
+                  backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.96)" : "rgba(0, 0, 0, 0)",
+                  border: isScrolled ? "1px solid rgba(0, 0, 0, 0.08)" : "1px solid transparent",
+                  borderRadius: isScrolled ? "24px" : "0px",
+                  padding: isScrolled ? "6px 20px" : "10px 0px",
+                  boxShadow: isScrolled ? "0 10px 30px -10px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04)" : "none",
+                  transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)"
+                },
+                children: [
+                  /* @__PURE__ */ jsxDEV("div", { className: "framer-153rxup", "data-framer-name": "Logo Wrap", style: { overflow: "visible", width: "auto" }, children: /* @__PURE__ */ jsxDEV(
+                    "a",
+                    {
+                      className: "framer-14ood8v framer-sfm8kt",
+                      "data-framer-name": "Nav Logo",
+                      "data-framer-page-link-current": "true",
+                      href: "/",
+                      style: {
+                        backgroundColor: "rgba(0, 0, 0, 0)",
+                        borderRadius: "20px",
+                        padding: "6px 0px",
+                        display: "flex",
+                        alignItems: "center",
+                        justifyContent: "center",
+                        textDecoration: "none",
+                        transition: "all 0.25s ease",
+                        overflow: "visible",
+                        width: "auto"
+                      },
+                      children: /* @__PURE__ */ jsxDEV(
+                        "div",
+                        {
+                          style: {
+                            display: "flex",
+                            alignItems: "center",
+                            gap: "10px",
+                            height: "100%",
+                            textDecoration: "none",
+                            whiteSpace: "nowrap",
+                            width: "auto"
+                          },
+                          children: [
+                            /* @__PURE__ */ jsxDEV(
+                              "img",
+                              {
+                                src: "/assets/phonectic-logo-transparent.png",
+                                alt: "Phonectic Logo",
+                                style: {
+                                  height: isScrolled ? "28px" : "32px",
+                                  width: "auto",
+                                  display: "block",
+                                  filter: isScrolled ? "none" : "drop-shadow(0 2px 8px rgba(0, 102, 255, 0.45))",
+                                  transition: "height 0.25s ease"
+                                }
+                              },
+                              void 0,
+                              false,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 108,
+                                columnNumber: 10
+                              },
+                              this
+                            ),
+                            /* @__PURE__ */ jsxDEV(
+                              "span",
+                              {
+                                style: {
+                                  color: isScrolled ? "#0f172a" : "#ffffff",
+                                  fontSize: isScrolled ? "20px" : "22px",
+                                  fontWeight: 800,
+                                  letterSpacing: "-0.02em",
+                                  fontFamily: '"Outfit", "Inter", sans-serif',
+                                  whiteSpace: "nowrap",
+                                  lineHeight: 1,
+                                  transition: "color 0.25s ease, font-size 0.25s ease"
+                                },
+                                children: "Phonectic"
+                              },
+                              void 0,
+                              false,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 119,
+                                columnNumber: 10
+                              },
+                              this
+                            )
+                          ]
+                        },
+                        void 0,
+                        true,
+                        {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 97,
+                          columnNumber: 9
+                        },
+                        this
+                      )
+                    },
+                    void 0,
+                    false,
+                    {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                      lineNumber: 79,
+                      columnNumber: 8
+                    },
+                    this
+                  ) }, void 0, false, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                    lineNumber: 78,
+                    columnNumber: 7
+                  }, this),
+                  /* @__PURE__ */ jsxDEV(
+                    "div",
+                    {
+                      className: "framer-1k6wfnj",
+                      "data-framer-name": "Nav menu",
+                      style: {
+                        backdropFilter: "blur(24px)",
+                        backgroundColor: isScrolled ? "rgba(0, 0, 0, 0.05)" : "rgba(0, 0, 0, 0.15)",
+                        border: isScrolled ? "1px solid rgba(0, 0, 0, 0.06)" : "none",
+                        WebkitBackdropFilter: "blur(24px)",
+                        borderRadius: "20px",
+                        transform: isScrolled ? "none" : "translate(-50%, -50%)",
+                        position: isScrolled ? "relative" : "absolute",
+                        left: isScrolled ? "unset" : "50%",
+                        top: isScrolled ? "unset" : "50%",
+                        display: "flex",
+                        alignItems: "center",
+                        gap: 4,
+                        padding: "4px",
+                        boxShadow: isScrolled ? "none" : "0 8px 32px 0 rgba(0, 0, 0, 0.08)",
+                        transition: "all 0.3s cubic-bezier(0.16, 1, 0.3, 1)"
+                      },
+                      children: [
+                        /* @__PURE__ */ jsxDEV("div", { className: "framer-11e3t92-container", "data-framer-name": "Navlink", children: /* @__PURE__ */ jsxDEV(
+                          "a",
+                          {
+                            className: "framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-15fiiky framer-19g2h9s nav-link-item",
+                            "data-framer-name": "Active",
+                            "data-framer-page-link-current": "true",
+                            href: "/",
+                            style: {
+                              backgroundColor: isScrolled ? "#0f172a" : "rgba(255, 255, 255, 0.2)",
+                              height: "100%",
+                              borderRadius: "16px",
+                              display: "flex",
+                              alignItems: "center",
+                              gap: 6,
+                              padding: "8px 16px",
+                              textDecoration: "none",
+                              transition: "all 0.25s ease"
+                            },
+                            children: [
+                              /* @__PURE__ */ jsxDEV(
+                                "div",
+                                {
+                                  className: "framer-zb3h4b nav-dot-pulse",
+                                  "data-framer-name": "dot",
+                                  style: {
+                                    backgroundColor: isScrolled ? "#38bdf8" : "rgb(255, 255, 255)",
+                                    borderRadius: "999px",
+                                    width: 6,
+                                    height: 6
+                                  }
+                                },
+                                void 0,
+                                false,
+                                {
+                                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                  lineNumber: 178,
+                                  columnNumber: 10
+                                },
+                                this
+                              ),
+                              /* @__PURE__ */ jsxDEV(
+                                "div",
+                                {
+                                  className: "framer-17agl2j",
+                                  "data-framer-component-type": "RichTextContainer",
+                                  "data-framer-name": "About",
+                                  children: /* @__PURE__ */ jsxDEV(
+                                    "p",
+                                    {
+                                      className: "framer-text framer-styles-preset-yctu3a",
+                                      "data-styles-preset": "dLJsxXALZ",
+                                      style: {
+                                        margin: 0,
+                                        color: "#ffffff",
+                                        fontWeight: 600,
+                                        fontSize: 14
+                                      },
+                                      children: "Home"
+                                    },
+                                    void 0,
+                                    false,
+                                    {
+                                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                      lineNumber: 193,
+                                      columnNumber: 11
+                                    },
+                                    this
+                                  )
+                                },
+                                void 0,
+                                false,
+                                {
+                                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                  lineNumber: 188,
+                                  columnNumber: 10
+                                },
+                                this
+                              )
+                            ]
+                          },
+                          void 0,
+                          true,
+                          {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 161,
+                            columnNumber: 9
+                          },
+                          this
+                        ) }, void 0, false, {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 160,
+                          columnNumber: 8
+                        }, this),
+                        /* @__PURE__ */ jsxDEV("div", { className: "framer-9ump65-container", "data-framer-name": "Navlink", children: /* @__PURE__ */ jsxDEV(
+                          "a",
+                          {
+                            className: "framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item",
+                            "data-framer-name": "Default",
+                            href: "#benefit",
+                            style: {
+                              backgroundColor: "rgba(0, 0, 0, 0)",
+                              height: "100%",
+                              borderRadius: "16px",
+                              display: "flex",
+                              alignItems: "center",
+                              padding: "8px 16px",
+                              textDecoration: "none"
+                            },
+                            children: /* @__PURE__ */ jsxDEV("div", { className: "framer-17agl2j", "data-framer-component-type": "RichTextContainer", children: /* @__PURE__ */ jsxDEV(
+                              "p",
+                              {
+                                className: "framer-text framer-styles-preset-yctu3a",
+                                "data-styles-preset": "dLJsxXALZ",
+                                style: {
+                                  margin: 0,
+                                  color: isScrolled ? "#334155" : "#ffffff",
+                                  fontSize: 14,
+                                  fontWeight: isScrolled ? 500 : 400,
+                                  transition: "color 0.25s ease"
+                                },
+                                children: "About"
+                              },
+                              void 0,
+                              false,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 226,
+                                columnNumber: 11
+                              },
+                              this
+                            ) }, void 0, false, {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 225,
+                              columnNumber: 10
+                            }, this)
+                          },
+                          void 0,
+                          false,
+                          {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 211,
+                            columnNumber: 9
+                          },
+                          this
+                        ) }, void 0, false, {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 210,
+                          columnNumber: 8
+                        }, this),
+                        /* @__PURE__ */ jsxDEV("div", { className: "framer-forzzi-container", children: /* @__PURE__ */ jsxDEV(
+                          "a",
+                          {
+                            className: "framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item",
+                            "data-framer-name": "Default",
+                            href: "#about",
+                            style: {
+                              backgroundColor: "rgba(0, 0, 0, 0)",
+                              height: "100%",
+                              borderRadius: "16px",
+                              display: "flex",
+                              alignItems: "center",
+                              padding: "8px 16px",
+                              textDecoration: "none"
+                            },
+                            children: /* @__PURE__ */ jsxDEV("div", { className: "framer-17agl2j", "data-framer-component-type": "RichTextContainer", children: /* @__PURE__ */ jsxDEV(
+                              "p",
+                              {
+                                className: "framer-text framer-styles-preset-yctu3a",
+                                "data-styles-preset": "dLJsxXALZ",
+                                style: {
+                                  margin: 0,
+                                  color: isScrolled ? "#334155" : "#ffffff",
+                                  fontSize: 14,
+                                  fontWeight: isScrolled ? 500 : 400,
+                                  transition: "color 0.25s ease"
+                                },
+                                children: "Feature"
+                              },
+                              void 0,
+                              false,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 260,
+                                columnNumber: 11
+                              },
+                              this
+                            ) }, void 0, false, {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 259,
+                              columnNumber: 10
+                            }, this)
+                          },
+                          void 0,
+                          false,
+                          {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 245,
+                            columnNumber: 9
+                          },
+                          this
+                        ) }, void 0, false, {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 244,
+                          columnNumber: 8
+                        }, this),
+                        /* @__PURE__ */ jsxDEV("div", { className: "framer-1baj7k4-container", children: /* @__PURE__ */ jsxDEV(
+                          "a",
+                          {
+                            className: "framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item",
+                            "data-framer-name": "Default",
+                            href: "#pricing",
+                            style: {
+                              backgroundColor: "rgba(0, 0, 0, 0)",
+                              height: "100%",
+                              borderRadius: "16px",
+                              display: "flex",
+                              alignItems: "center",
+                              padding: "8px 16px",
+                              textDecoration: "none"
+                            },
+                            children: /* @__PURE__ */ jsxDEV("div", { className: "framer-17agl2j", "data-framer-component-type": "RichTextContainer", children: /* @__PURE__ */ jsxDEV(
+                              "p",
+                              {
+                                className: "framer-text framer-styles-preset-yctu3a",
+                                "data-styles-preset": "dLJsxXALZ",
+                                style: {
+                                  margin: 0,
+                                  color: isScrolled ? "#334155" : "#ffffff",
+                                  fontSize: 14,
+                                  fontWeight: isScrolled ? 500 : 400,
+                                  transition: "color 0.25s ease"
+                                },
+                                children: "Pricing"
+                              },
+                              void 0,
+                              false,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 294,
+                                columnNumber: 11
+                              },
+                              this
+                            ) }, void 0, false, {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 293,
+                              columnNumber: 10
+                            }, this)
+                          },
+                          void 0,
+                          false,
+                          {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 279,
+                            columnNumber: 9
+                          },
+                          this
+                        ) }, void 0, false, {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 278,
+                          columnNumber: 8
+                        }, this),
+                        /* @__PURE__ */ jsxDEV("div", { className: "framer-1sfmy0-container", children: /* @__PURE__ */ jsxDEV(
+                          "a",
+                          {
+                            className: "framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item",
+                            "data-framer-name": "Default",
+                            href: "#faq",
+                            style: {
+                              backgroundColor: "rgba(0, 0, 0, 0)",
+                              height: "100%",
+                              borderRadius: "16px",
+                              display: "flex",
+                              alignItems: "center",
+                              padding: "8px 16px",
+                              textDecoration: "none"
+                            },
+                            children: /* @__PURE__ */ jsxDEV("div", { className: "framer-17agl2j", "data-framer-component-type": "RichTextContainer", children: /* @__PURE__ */ jsxDEV(
+                              "p",
+                              {
+                                className: "framer-text framer-styles-preset-yctu3a",
+                                "data-styles-preset": "dLJsxXALZ",
+                                style: {
+                                  margin: 0,
+                                  color: isScrolled ? "#334155" : "#ffffff",
+                                  fontSize: 14,
+                                  fontWeight: isScrolled ? 500 : 400,
+                                  transition: "color 0.25s ease"
+                                },
+                                children: "Careers"
+                              },
+                              void 0,
+                              false,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 329,
+                                columnNumber: 11
+                              },
+                              this
+                            ) }, void 0, false, {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 328,
+                              columnNumber: 10
+                            }, this)
+                          },
+                          void 0,
+                          false,
+                          {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 314,
+                            columnNumber: 9
+                          },
+                          this
+                        ) }, void 0, false, {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 313,
+                          columnNumber: 8
+                        }, this)
+                      ]
+                    },
+                    void 0,
+                    true,
+                    {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                      lineNumber: 138,
+                      columnNumber: 7
+                    },
+                    this
+                  ),
+                  /* @__PURE__ */ jsxDEV("div", { className: "framer-1qrocwq-container", children: /* @__PURE__ */ jsxDEV(
+                    "a",
+                    {
+                      className: "framer-wUDM8 framer-lq2ef0 framer-v-sjrfo4 framer-1xiloa2 nav-contact-btn",
+                      "data-framer-name": "Teriary",
+                      "data-highlight": "true",
+                      href: "https://www.phoneticedu.com/auth/login",
+                      style: {
+                        background: isScrolled ? "none" : "linear-gradient(180deg, rgba(224, 224, 224, 0.2) 0%, rgba(224, 224, 224, 0.4) 100%)",
+                        borderRadius: "22px",
+                        boxShadow: isScrolled ? "0 4px 14px rgba(15, 23, 42, 0.15)" : "none",
+                        display: "block",
+                        textDecoration: "none",
+                        transition: "all 0.25s ease"
+                      },
+                      children: /* @__PURE__ */ jsxDEV(
+                        "div",
+                        {
+                          className: "framer-l13tx6",
+                          "data-framer-name": "Main",
+                          style: {
+                            background: isScrolled ? "linear-gradient(135deg, #0f172a 0%, #1e293b 100%)" : "linear-gradient(180deg, rgb(255, 255, 255) 0%, rgb(255, 255, 255) 100%)",
+                            backgroundColor: isScrolled ? "#0f172a" : "rgb(255, 255, 255)",
+                            borderRadius: "20px",
+                            boxShadow: isScrolled ? "none" : "inset 0px -2px 1px 0px rgba(15, 23, 42, 0.25)",
+                            padding: "8px 20px",
+                            transition: "all 0.25s ease"
+                          },
+                          children: /* @__PURE__ */ jsxDEV("div", { className: "framer-1vtvotg-container", children: /* @__PURE__ */ jsxDEV("div", { className: "framer-K5eYu framer-rXNCz framer-SvZjy framer-9mcdme framer-v-b9q4a5", children: /* @__PURE__ */ jsxDEV("div", { className: "framer-gf2onz", "data-framer-component-type": "RichTextContainer", children: /* @__PURE__ */ jsxDEV(
+                            "p",
+                            {
+                              className: "framer-text framer-styles-preset-1rgoota",
+                              "data-styles-preset": "nl5egLyzz",
+                              style: {
+                                margin: 0,
+                                color: isScrolled ? "#ffffff" : "rgb(33, 33, 36)",
+                                fontWeight: 700,
+                                fontSize: 14,
+                                transition: "color 0.25s ease"
+                              },
+                              children: "Contact us"
+                            },
+                            void 0,
+                            false,
+                            {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 382,
+                              columnNumber: 13
+                            },
+                            this
+                          ) }, void 0, false, {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 381,
+                            columnNumber: 12
+                          }, this) }, void 0, false, {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 380,
+                            columnNumber: 11
+                          }, this) }, void 0, false, {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 379,
+                            columnNumber: 10
+                          }, this)
+                        },
+                        void 0,
+                        false,
+                        {
+                          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                          lineNumber: 365,
+                          columnNumber: 9
+                        },
+                        this
+                      )
+                    },
+                    void 0,
+                    false,
+                    {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                      lineNumber: 349,
+                      columnNumber: 8
+                    },
+                    this
+                  ) }, void 0, false, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                    lineNumber: 348,
+                    columnNumber: 7
+                  }, this)
+                ]
+              },
+              void 0,
+              true,
+              {
+                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                lineNumber: 61,
+                columnNumber: 6
+              },
+              this
+            )
+          },
+          void 0,
+          false,
+          {
+            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+            lineNumber: 52,
+            columnNumber: 5
+          },
+          this
+        ) }, void 0, false, {
+          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+          lineNumber: 51,
+          columnNumber: 4
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "ssr-variant hidden-pef12c nav-mobile-wrapper", children: /* @__PURE__ */ jsxDEV(
+          "nav",
+          {
+            className: `framer-e7ewR framer-15o89ul ${mobileOpen ? "framer-v-kx5ue2" : "framer-v-1ntxijd"}`,
+            "data-framer-name": mobileOpen ? "Mobile - Open" : "Mobile - Close",
+            style: { width: "100%", transition: "all 0.3s ease" },
+            children: [
+              /* @__PURE__ */ jsxDEV(
+                "div",
+                {
+                  className: "framer-ketp50",
+                  "data-framer-name": "Nav Layout",
+                  style: {
+                    backdropFilter: "blur(24px)",
+                    backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.96)" : "rgba(0, 0, 0, 0.2)",
+                    WebkitBackdropFilter: "blur(24px)",
+                    border: isScrolled ? "1px solid rgba(0, 0, 0, 0.08)" : "none",
+                    boxShadow: isScrolled ? "0 8px 24px -6px rgba(0, 0, 0, 0.1)" : "none",
+                    borderRadius: "20px",
+                    display: "flex",
+                    alignItems: "center",
+                    justifyContent: "space-between",
+                    padding: "12px 16px",
+                    width: "100%",
+                    transition: "all 0.25s ease"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxDEV("div", { className: "framer-153rxup", "data-framer-name": "Logo Wrap", style: { overflow: "visible", width: "auto" }, children: /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        className: "framer-14ood8v framer-sfm8kt",
+                        "data-framer-name": "Nav Logo",
+                        href: "/",
+                        style: {
+                          backgroundColor: "rgba(0, 0, 0, 0)",
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "8px",
+                          textDecoration: "none",
+                          overflow: "visible",
+                          width: "auto"
+                        },
+                        children: [
+                          /* @__PURE__ */ jsxDEV(
+                            "img",
+                            {
+                              src: "/assets/phonectic-logo-transparent.png",
+                              alt: "Phonectic",
+                              style: {
+                                height: "24px",
+                                width: "auto",
+                                display: "block",
+                                filter: isScrolled ? "none" : "drop-shadow(0 2px 6px rgba(0, 102, 255, 0.35))"
+                              }
+                            },
+                            void 0,
+                            false,
+                            {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 446,
+                              columnNumber: 9
+                            },
+                            this
+                          ),
+                          /* @__PURE__ */ jsxDEV(
+                            "span",
+                            {
+                              style: {
+                                color: isScrolled ? "#0f172a" : "#ffffff",
+                                fontSize: "19px",
+                                fontWeight: 800,
+                                letterSpacing: "-0.02em",
+                                fontFamily: '"Outfit", "Inter", sans-serif',
+                                whiteSpace: "nowrap",
+                                lineHeight: 1,
+                                transition: "color 0.25s ease"
+                              },
+                              children: "Phonectic"
+                            },
+                            void 0,
+                            false,
+                            {
+                              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                              lineNumber: 456,
+                              columnNumber: 9
+                            },
+                            this
+                          )
+                        ]
+                      },
+                      void 0,
+                      true,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 432,
+                        columnNumber: 8
+                      },
+                      this
+                    ) }, void 0, false, {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                      lineNumber: 431,
+                      columnNumber: 7
+                    }, this),
+                    /* @__PURE__ */ jsxDEV(
+                      "div",
+                      {
+                        className: "framer-ad7xu3-container",
+                        onClick: () => setMobileOpen(!mobileOpen),
+                        style: { cursor: "pointer" },
+                        children: /* @__PURE__ */ jsxDEV(
+                          "div",
+                          {
+                            className: "framer-78iO7 framer-7uygxq framer-v-7uygxq",
+                            "data-framer-name": "Close",
+                            style: {
+                              backgroundColor: isScrolled ? "#0f172a" : "rgb(255, 255, 255)",
+                              borderRadius: "12px",
+                              width: 36,
+                              height: 36,
+                              display: "flex",
+                              alignItems: "center",
+                              justifyContent: "center",
+                              transition: "background-color 0.25s ease"
+                            },
+                            children: /* @__PURE__ */ jsxDEV(
+                              "div",
+                              {
+                                className: "framer-w0by0h",
+                                "data-framer-name": "Icon",
+                                style: { position: "relative", width: 16, height: 16 },
+                                children: [
+                                  /* @__PURE__ */ jsxDEV(
+                                    "div",
+                                    {
+                                      className: "framer-kcrfy9",
+                                      "data-framer-name": "Line",
+                                      style: {
+                                        backgroundColor: isScrolled ? "#ffffff" : "rgb(18, 18, 20)",
+                                        borderRadius: "999px",
+                                        width: 16,
+                                        height: 2,
+                                        position: "absolute",
+                                        top: mobileOpen ? 7 : 4,
+                                        transform: mobileOpen ? "rotate(45deg)" : "none",
+                                        transition: "transform 0.25s ease, top 0.25s ease, background-color 0.25s ease"
+                                      }
+                                    },
+                                    void 0,
+                                    false,
+                                    {
+                                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                      lineNumber: 498,
+                                      columnNumber: 10
+                                    },
+                                    this
+                                  ),
+                                  /* @__PURE__ */ jsxDEV(
+                                    "div",
+                                    {
+                                      className: "framer-1kgz4kp",
+                                      "data-framer-name": "Line",
+                                      style: {
+                                        backgroundColor: isScrolled ? "#ffffff" : "rgb(18, 18, 20)",
+                                        borderRadius: "999px",
+                                        width: 16,
+                                        height: 2,
+                                        position: "absolute",
+                                        top: mobileOpen ? 7 : 10,
+                                        transform: mobileOpen ? "rotate(-45deg)" : "none",
+                                        transition: "transform 0.25s ease, top 0.25s ease, background-color 0.25s ease"
+                                      }
+                                    },
+                                    void 0,
+                                    false,
+                                    {
+                                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                      lineNumber: 512,
+                                      columnNumber: 10
+                                    },
+                                    this
+                                  )
+                                ]
+                              },
+                              void 0,
+                              true,
+                              {
+                                fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                                lineNumber: 493,
+                                columnNumber: 9
+                              },
+                              this
+                            )
+                          },
+                          void 0,
+                          false,
+                          {
+                            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                            lineNumber: 479,
+                            columnNumber: 8
+                          },
+                          this
+                        )
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 474,
+                        columnNumber: 7
+                      },
+                      this
+                    )
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                  lineNumber: 412,
+                  columnNumber: 6
+                },
+                this
+              ),
+              mobileOpen && /* @__PURE__ */ jsxDEV(
+                "div",
+                {
+                  className: "framer-1k6wfnj",
+                  "data-framer-name": "Nav menu",
+                  style: {
+                    backdropFilter: "blur(24px)",
+                    backgroundColor: isScrolled ? "rgba(255, 255, 255, 0.98)" : "rgba(0, 0, 0, 0.25)",
+                    border: isScrolled ? "1px solid rgba(0, 0, 0, 0.08)" : "none",
+                    WebkitBackdropFilter: "blur(24px)",
+                    borderRadius: "20px",
+                    width: "100%",
+                    marginTop: 12,
+                    padding: 8,
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: 8,
+                    boxShadow: isScrolled ? "0 12px 32px rgba(0, 0, 0, 0.1)" : "none"
+                  },
+                  children: [
+                    /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        href: "/",
+                        style: {
+                          color: isScrolled ? "#0f172a" : "#fff",
+                          padding: "10px 16px",
+                          textDecoration: "none",
+                          fontWeight: 600
+                        },
+                        onClick: () => setMobileOpen(false),
+                        children: "Home"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 551,
+                        columnNumber: 8
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        href: "#benefit",
+                        style: {
+                          color: isScrolled ? "#334155" : "rgba(255, 255, 255, 0.85)",
+                          padding: "10px 16px",
+                          textDecoration: "none"
+                        },
+                        onClick: () => setMobileOpen(false),
+                        children: "About"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 563,
+                        columnNumber: 8
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        href: "#about",
+                        style: {
+                          color: isScrolled ? "#334155" : "rgba(255, 255, 255, 0.85)",
+                          padding: "10px 16px",
+                          textDecoration: "none"
+                        },
+                        onClick: () => setMobileOpen(false),
+                        children: "Feature"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 574,
+                        columnNumber: 8
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        href: "#pricing",
+                        style: {
+                          color: isScrolled ? "#334155" : "rgba(255, 255, 255, 0.85)",
+                          padding: "10px 16px",
+                          textDecoration: "none"
+                        },
+                        onClick: () => setMobileOpen(false),
+                        children: "Pricing"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 585,
+                        columnNumber: 8
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        href: "#faq",
+                        style: {
+                          color: isScrolled ? "#334155" : "rgba(255, 255, 255, 0.85)",
+                          padding: "10px 16px",
+                          textDecoration: "none"
+                        },
+                        onClick: () => setMobileOpen(false),
+                        children: "Careers"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 597,
+                        columnNumber: 8
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      "a",
+                      {
+                        href: "https://www.phoneticedu.com/auth/login",
+                        style: {
+                          backgroundColor: isScrolled ? "#0f172a" : "#fff",
+                          color: isScrolled ? "#ffffff" : "#121214",
+                          padding: "12px 16px",
+                          borderRadius: 16,
+                          textAlign: "center",
+                          fontWeight: 700,
+                          textDecoration: "none",
+                          marginTop: 4
+                        },
+                        onClick: () => setMobileOpen(false),
+                        children: "Contact us"
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                        lineNumber: 608,
+                        columnNumber: 8
+                      },
+                      this
+                    )
+                  ]
+                },
+                void 0,
+                true,
+                {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+                  lineNumber: 533,
+                  columnNumber: 11
+                },
+                this
+              )
+            ]
+          },
+          void 0,
+          true,
+          {
+            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+            lineNumber: 407,
+            columnNumber: 5
+          },
+          this
+        ) }, void 0, false, {
+          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+          lineNumber: 406,
+          columnNumber: 4
+        }, this)
+      ]
+    },
+    void 0,
+    true,
+    {
+      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx",
+      lineNumber: 36,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(Navbar, "risx8nH0y7pWKMG0aEvXsVWPg5M=");
+_c = Navbar;
+var _c;
+$RefreshReg$(_c, "Navbar");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/Navbar.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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QyxPQUFPbEMsYUFBYSxZQUFZO0FBQUEsMEJBQ2hDdUIsU0FBUztBQUFBLDBCQUNURCxjQUFjO0FBQUEsMEJBQ2R1QixXQUFXO0FBQUEsMEJBQ1hULFlBQVk7QUFBQSwwQkFDWlAsZ0JBQWdCO0FBQUEsMEJBQ2hCYyxXQUFXO0FBQUEsd0JBQ1o7QUFBQSx3QkFDQSxTQUFTLE1BQU14QyxjQUFjLEtBQUs7QUFBQSx3QkFBRTtBQUFBO0FBQUEsc0JBWnJDO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxvQkFlQTtBQUFBO0FBQUE7QUFBQSxnQkExRkQ7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBLGNBMkZBO0FBQUE7QUFBQTtBQUFBLFVBek5GO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQSxRQTJOQSxLQTVORDtBQUFBO0FBQUE7QUFBQTtBQUFBLGVBNk5BO0FBQUE7QUFBQTtBQUFBLElBL2tCRDtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUE7QUFBQTtBQUFBO0FBQUEsRUFnbEJBO0FBRUY7QUFBQ0osR0FobUJ1QkQsUUFBTTtBQUFBLEtBQU5BO0FBQU0sSUFBQWdEO0FBQUEsYUFBQUEsSUFBQSIsIm5hbWVzIjpbInVzZUVmZmVjdCIsInVzZVN0YXRlIiwiTmF2YmFyIiwiX3MiLCJpc1Njcm9sbGVkIiwic2V0SXNTY3JvbGxlZCIsIm1vYmlsZU9wZW4iLCJzZXRNb2JpbGVPcGVuIiwiaGFuZGxlU2Nyb2xsIiwid2luZG93Iiwic2Nyb2xsWSIsImFkZEV2ZW50TGlzdGVuZXIiLCJwYXNzaXZlIiwicmVtb3ZlRXZlbnRMaXN0ZW5lciIsIm9wYWNpdHkiLCJ0cmFuc2Zvcm0iLCJwb3NpdGlvbiIsInRvcCIsImxlZnQiLCJ6SW5kZXgiLCJ0cmFuc2l0aW9uIiwid2lkdGgiLCJiYWNrZHJvcEZpbHRlciIsIldlYmtpdEJhY2tkcm9wRmlsdGVyIiwiYmFja2dyb3VuZENvbG9yIiwiYm9yZGVyIiwiYm9yZGVyUmFkaXVzIiwicGFkZGluZyIsImJveFNoYWRvdyIsIm92ZXJmbG93IiwiZGlzcGxheSIsImFsaWduSXRlbXMiLCJqdXN0aWZ5Q29udGVudCIsInRleHREZWNvcmF0aW9uIiwiZ2FwIiwiaGVpZ2h0Iiwid2hpdGVTcGFjZSIsImZpbHRlciIsImNvbG9yIiwiZm9udFNpemUiLCJmb250V2VpZ2h0IiwibGV0dGVyU3BhY2luZyIsImZvbnRGYW1pbHkiLCJsaW5lSGVpZ2h0IiwibWFyZ2luIiwiYmFja2dyb3VuZCIsImN1cnNvciIsIm1hcmdpblRvcCIsImZsZXhEaXJlY3Rpb24iLCJ0ZXh0QWxpZ24iLCJfYyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJOYXZiYXIuanN4Il0sInNvdXJjZXNDb250ZW50IjpbImltcG9ydCB7IHVzZUVmZmVjdCwgdXNlU3RhdGUgfSBmcm9tICdyZWFjdCdcclxuXHJcbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIE5hdmJhcigpIHtcclxuXHRjb25zdCBbaXNTY3JvbGxlZCwgc2V0SXNTY3JvbGxlZF0gPSB1c2VTdGF0ZShmYWxzZSlcclxuXHRjb25zdCBbbW9iaWxlT3Blbiwgc2V0TW9iaWxlT3Blbl0gPSB1c2VTdGF0ZShmYWxzZSlcclxuXHJcblx0dXNlRWZmZWN0KCgpID0+IHtcclxuXHRcdGNvbnN0IGhhbmRsZVNjcm9sbCA9ICgpID0+IHtcclxuXHRcdFx0c2V0SXNTY3JvbGxlZCh3aW5kb3cuc2Nyb2xsWSA+IDUwKVxyXG5cdFx0fVxyXG5cdFx0d2luZG93LmFkZEV2ZW50TGlzdGVuZXIoJ3Njcm9sbCcsIGhhbmRsZVNjcm9sbCwgeyBwYXNzaXZlOiB0cnVlIH0pXHJcblx0XHRoYW5kbGVTY3JvbGwoKVxyXG5cdFx0cmV0dXJuICgpID0+IHdpbmRvdy5yZW1vdmVFdmVudExpc3RlbmVyKCdzY3JvbGwnLCBoYW5kbGVTY3JvbGwpXHJcblx0fSwgW10pXHJcblxyXG5cdHJldHVybiAoXHJcblx0XHQ8ZGl2XHJcblx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci0xdWtqMnRwLWNvbnRhaW5lclwiXHJcblx0XHRcdGRhdGEtZnJhbWVyLWFwcGVhci1pZD1cIjF1a2oydHBcIlxyXG5cdFx0XHRkYXRhLWZyYW1lci1sYXlvdXQtaGludC1jZW50ZXIteD1cInRydWVcIlxyXG5cdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdG9wYWNpdHk6IDEsXHJcblx0XHRcdFx0dHJhbnNmb3JtOiAndHJhbnNsYXRlWCgtNTAlKSB0cmFuc2xhdGVZKDBweCknLFxyXG5cdFx0XHRcdHBvc2l0aW9uOiAnZml4ZWQnLFxyXG5cdFx0XHRcdHRvcDogMCxcclxuXHRcdFx0XHRsZWZ0OiAnNTAlJyxcclxuXHRcdFx0XHR6SW5kZXg6IDEwMCxcclxuXHRcdFx0XHR0cmFuc2l0aW9uOiAnYWxsIDAuM3MgY3ViaWMtYmV6aWVyKDAuMTYsIDEsIDAuMywgMSknLFxyXG5cdFx0XHR9fVxyXG5cdFx0PlxyXG5cdFx0XHR7LyogRGVza3RvcCBOYXZiYXIgKi99XHJcblx0XHRcdDxkaXYgY2xhc3NOYW1lPVwic3NyLXZhcmlhbnQgaGlkZGVuLXVzNGtoNSBoaWRkZW4tbXpudG1mIG5hdi1kZXNrdG9wLXdyYXBwZXJcIj5cclxuXHRcdFx0XHQ8bmF2XHJcblx0XHRcdFx0XHRjbGFzc05hbWU9e2BmcmFtZXItZTdld1IgZnJhbWVyLTE1bzg5dWwgJHtpc1Njcm9sbGVkID8gJ2ZyYW1lci12LTFrMW1ucWgnIDogJ2ZyYW1lci12LTE1bzg5dWwnfWB9XHJcblx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPXtpc1Njcm9sbGVkID8gJ0Rlc2t0b3AgLSBPbiBTY3JvbGwnIDogJ0Rlc2t0b3AgLSBQcmltYXJ5J31cclxuXHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdHdpZHRoOiAnMTAwJScsXHJcblx0XHRcdFx0XHRcdHRyYW5zaXRpb246XHJcblx0XHRcdFx0XHRcdFx0J2JhY2tncm91bmQtY29sb3IgMC4zcyBlYXNlLCBiYWNrZHJvcC1maWx0ZXIgMC4zcyBlYXNlLCBib3JkZXItY29sb3IgMC4zcyBlYXNlLCBib3gtc2hhZG93IDAuM3MgZWFzZScsXHJcblx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdD5cclxuXHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLWtldHA1MFwiXHJcblx0XHRcdFx0XHRcdGRhdGEtZnJhbWVyLW5hbWU9XCJOYXYgTGF5b3V0XCJcclxuXHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRiYWNrZHJvcEZpbHRlcjogaXNTY3JvbGxlZCA/ICdibHVyKDIwcHgpJyA6ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRXZWJraXRCYWNrZHJvcEZpbHRlcjogaXNTY3JvbGxlZCA/ICdibHVyKDIwcHgpJyA6ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRiYWNrZ3JvdW5kQ29sb3I6IGlzU2Nyb2xsZWQgPyAncmdiYSgyNTUsIDI1NSwgMjU1LCAwLjk2KScgOiAncmdiYSgwLCAwLCAwLCAwKScsXHJcblx0XHRcdFx0XHRcdFx0Ym9yZGVyOiBpc1Njcm9sbGVkID8gJzFweCBzb2xpZCByZ2JhKDAsIDAsIDAsIDAuMDgpJyA6ICcxcHggc29saWQgdHJhbnNwYXJlbnQnLFxyXG5cdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogaXNTY3JvbGxlZCA/ICcyNHB4JyA6ICcwcHgnLFxyXG5cdFx0XHRcdFx0XHRcdHBhZGRpbmc6IGlzU2Nyb2xsZWQgPyAnNnB4IDIwcHgnIDogJzEwcHggMHB4JyxcclxuXHRcdFx0XHRcdFx0XHRib3hTaGFkb3c6IGlzU2Nyb2xsZWRcclxuXHRcdFx0XHRcdFx0XHRcdD8gJzAgMTBweCAzMHB4IC0xMHB4IHJnYmEoMCwgMCwgMCwgMC4xMiksIDAgNHB4IDEycHggLTJweCByZ2JhKDAsIDAsIDAsIDAuMDQpJ1xyXG5cdFx0XHRcdFx0XHRcdFx0OiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2FsbCAwLjNzIGN1YmljLWJlemllcigwLjE2LCAxLCAwLjMsIDEpJyxcclxuXHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0ey8qIExvZ28gKi99XHJcblx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLTE1M3J4dXBcIiBkYXRhLWZyYW1lci1uYW1lPVwiTG9nbyBXcmFwXCIgc3R5bGU9e3sgb3ZlcmZsb3c6ICd2aXNpYmxlJywgd2lkdGg6ICdhdXRvJyB9fT5cclxuXHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLTE0b29kOHYgZnJhbWVyLXNmbThrdFwiXHJcblx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPVwiTmF2IExvZ29cIlxyXG5cdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItcGFnZS1saW5rLWN1cnJlbnQ9XCJ0cnVlXCJcclxuXHRcdFx0XHRcdFx0XHRcdGhyZWY9XCIvXCJcclxuXHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogJ3JnYmEoMCwgMCwgMCwgMCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRib3JkZXJSYWRpdXM6ICcyMHB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0cGFkZGluZzogJzZweCAwcHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRkaXNwbGF5OiAnZmxleCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGFsaWduSXRlbXM6ICdjZW50ZXInLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRqdXN0aWZ5Q29udGVudDogJ2NlbnRlcicsXHJcblx0XHRcdFx0XHRcdFx0XHRcdHRleHREZWNvcmF0aW9uOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdHRyYW5zaXRpb246ICdhbGwgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdG92ZXJmbG93OiAndmlzaWJsZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdHdpZHRoOiAnYXV0bycsXHJcblx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRkaXNwbGF5OiAnZmxleCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0YWxpZ25JdGVtczogJ2NlbnRlcicsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Z2FwOiAnMTBweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0aGVpZ2h0OiAnMTAwJScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0dGV4dERlY29yYXRpb246ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHR3aGl0ZVNwYWNlOiAnbm93cmFwJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHR3aWR0aDogJ2F1dG8nLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHQ8aW1nXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0c3JjPVwiL2Fzc2V0cy9waG9uZWN0aWMtbG9nby10cmFuc3BhcmVudC5wbmdcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGFsdD1cIlBob25lY3RpYyBMb2dvXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0aGVpZ2h0OiBpc1Njcm9sbGVkID8gJzI4cHgnIDogJzMycHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0d2lkdGg6ICdhdXRvJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdibG9jaycsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmaWx0ZXI6IGlzU2Nyb2xsZWQgPyAnbm9uZScgOiAnZHJvcC1zaGFkb3coMCAycHggOHB4IHJnYmEoMCwgMTAyLCAyNTUsIDAuNDUpKScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAnaGVpZ2h0IDAuMjVzIGVhc2UnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRcdC8+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDxzcGFuXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGNvbG9yOiBpc1Njcm9sbGVkID8gJyMwZjE3MmEnIDogJyNmZmZmZmYnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFNpemU6IGlzU2Nyb2xsZWQgPyAnMjBweCcgOiAnMjJweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiA4MDAsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRsZXR0ZXJTcGFjaW5nOiAnLTAuMDJlbScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250RmFtaWx5OiAnXCJPdXRmaXRcIiwgXCJJbnRlclwiLCBzYW5zLXNlcmlmJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHdoaXRlU3BhY2U6ICdub3dyYXAnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0bGluZUhlaWdodDogMSxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHRyYW5zaXRpb246ICdjb2xvciAwLjI1cyBlYXNlLCBmb250LXNpemUgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFBob25lY3RpY1xyXG5cdFx0XHRcdFx0XHRcdFx0XHQ8L3NwYW4+XHJcblx0XHRcdFx0XHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHRcdFx0XHQ8L2E+XHJcblx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cclxuXHRcdFx0XHRcdFx0ey8qIE5hdiBNZW51IEZsb2F0aW5nIFBpbGwgKi99XHJcblx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItMWs2d2ZualwiXHJcblx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIk5hdiBtZW51XCJcclxuXHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0YmFja2Ryb3BGaWx0ZXI6ICdibHVyKDI0cHgpJyxcclxuXHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogaXNTY3JvbGxlZCA/ICdyZ2JhKDAsIDAsIDAsIDAuMDUpJyA6ICdyZ2JhKDAsIDAsIDAsIDAuMTUpJyxcclxuXHRcdFx0XHRcdFx0XHRcdGJvcmRlcjogaXNTY3JvbGxlZCA/ICcxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjA2KScgOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRXZWJraXRCYWNrZHJvcEZpbHRlcjogJ2JsdXIoMjRweCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAnMjBweCcsXHJcblx0XHRcdFx0XHRcdFx0XHR0cmFuc2Zvcm06IGlzU2Nyb2xsZWQgPyAnbm9uZScgOiAndHJhbnNsYXRlKC01MCUsIC01MCUpJyxcclxuXHRcdFx0XHRcdFx0XHRcdHBvc2l0aW9uOiBpc1Njcm9sbGVkID8gJ3JlbGF0aXZlJyA6ICdhYnNvbHV0ZScsXHJcblx0XHRcdFx0XHRcdFx0XHRsZWZ0OiBpc1Njcm9sbGVkID8gJ3Vuc2V0JyA6ICc1MCUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0dG9wOiBpc1Njcm9sbGVkID8gJ3Vuc2V0JyA6ICc1MCUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0ZGlzcGxheTogJ2ZsZXgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0YWxpZ25JdGVtczogJ2NlbnRlcicsXHJcblx0XHRcdFx0XHRcdFx0XHRnYXA6IDQsXHJcblx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnNHB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdGJveFNoYWRvdzogaXNTY3JvbGxlZCA/ICdub25lJyA6ICcwIDhweCAzMnB4IDAgcmdiYSgwLCAwLCAwLCAwLjA4KScsXHJcblx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAnYWxsIDAuM3MgY3ViaWMtYmV6aWVyKDAuMTYsIDEsIDAuMywgMSknLFxyXG5cdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHR7LyogSG9tZSAqL31cclxuXHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZyYW1lci0xMWUzdDkyLWNvbnRhaW5lclwiIGRhdGEtZnJhbWVyLW5hbWU9XCJOYXZsaW5rXCI+XHJcblx0XHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItRDZMemcgZnJhbWVyLWlEVjYyIGZyYW1lci0xcDFyenVhIGZyYW1lci12LTE1Zmlpa3kgZnJhbWVyLTE5ZzJoOXMgbmF2LWxpbmstaXRlbVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdGRhdGEtZnJhbWVyLW5hbWU9XCJBY3RpdmVcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1wYWdlLWxpbmstY3VycmVudD1cInRydWVcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRocmVmPVwiL1wiXHJcblx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0YmFja2dyb3VuZENvbG9yOiBpc1Njcm9sbGVkID8gJyMwZjE3MmEnIDogJ3JnYmEoMjU1LCAyNTUsIDI1NSwgMC4yKScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0aGVpZ2h0OiAnMTAwJScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAnMTZweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0ZGlzcGxheTogJ2ZsZXgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGFsaWduSXRlbXM6ICdjZW50ZXInLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGdhcDogNixcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnOHB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHRleHREZWNvcmF0aW9uOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2FsbCAwLjI1cyBlYXNlJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0PGRpdlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci16YjNoNGIgbmF2LWRvdC1wdWxzZVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cImRvdFwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogaXNTY3JvbGxlZCA/ICcjMzhiZGY4JyA6ICdyZ2IoMjU1LCAyNTUsIDI1NSknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAnOTk5cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0d2lkdGg6IDYsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRoZWlnaHQ6IDYsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHRcdFx0Lz5cclxuXHRcdFx0XHRcdFx0XHRcdFx0PGRpdlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci0xN2FnbDJqXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1jb21wb25lbnQtdHlwZT1cIlJpY2hUZXh0Q29udGFpbmVyXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPVwiQWJvdXRcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PHBcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci10ZXh0IGZyYW1lci1zdHlsZXMtcHJlc2V0LXljdHUzYVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLXN0eWxlcy1wcmVzZXQ9XCJkTEpzeFhBTFpcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0bWFyZ2luOiAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRjb2xvcjogJyNmZmZmZmYnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiA2MDAsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdGZvbnRTaXplOiAxNCxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0SG9tZVxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdDwvcD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0XHRcdFx0XHQ8L2E+XHJcblx0XHRcdFx0XHRcdFx0PC9kaXY+XHJcblxyXG5cdFx0XHRcdFx0XHRcdHsvKiBBYm91dCAqL31cclxuXHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZyYW1lci05dW1wNjUtY29udGFpbmVyXCIgZGF0YS1mcmFtZXItbmFtZT1cIk5hdmxpbmtcIj5cclxuXHRcdFx0XHRcdFx0XHRcdDxhXHJcblx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci1ENkx6ZyBmcmFtZXItaURWNjIgZnJhbWVyLTFwMXJ6dWEgZnJhbWVyLXYtMXAxcnp1YSBmcmFtZXItMTlnMmg5cyBuYXYtbGluay1pdGVtXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIkRlZmF1bHRcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRocmVmPVwiI2JlbmVmaXRcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogJ3JnYmEoMCwgMCwgMCwgMCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogJzEwMCUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdmbGV4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRhbGlnbkl0ZW1zOiAnY2VudGVyJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnOHB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHRleHREZWNvcmF0aW9uOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLTE3YWdsMmpcIiBkYXRhLWZyYW1lci1jb21wb25lbnQtdHlwZT1cIlJpY2hUZXh0Q29udGFpbmVyXCI+XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PHBcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci10ZXh0IGZyYW1lci1zdHlsZXMtcHJlc2V0LXljdHUzYVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLXN0eWxlcy1wcmVzZXQ9XCJkTEpzeFhBTFpcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0bWFyZ2luOiAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRjb2xvcjogaXNTY3JvbGxlZCA/ICcjMzM0MTU1JyA6ICcjZmZmZmZmJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFNpemU6IDE0LFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiBpc1Njcm9sbGVkID8gNTAwIDogNDAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAnY29sb3IgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdEFib3V0XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PC9wPlxyXG5cdFx0XHRcdFx0XHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHRcdFx0XHRcdDwvYT5cclxuXHRcdFx0XHRcdFx0XHQ8L2Rpdj5cclxuXHJcblx0XHRcdFx0XHRcdFx0ey8qIEZlYXR1cmUgKi99XHJcblx0XHRcdFx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJmcmFtZXItZm9yenppLWNvbnRhaW5lclwiPlxyXG5cdFx0XHRcdFx0XHRcdFx0PGFcclxuXHRcdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLUQ2THpnIGZyYW1lci1pRFY2MiBmcmFtZXItMXAxcnp1YSBmcmFtZXItdi0xcDFyenVhIGZyYW1lci0xOWcyaDlzIG5hdi1saW5rLWl0ZW1cIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPVwiRGVmYXVsdFwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdGhyZWY9XCIjYWJvdXRcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogJ3JnYmEoMCwgMCwgMCwgMCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogJzEwMCUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdmbGV4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRhbGlnbkl0ZW1zOiAnY2VudGVyJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnOHB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHRleHREZWNvcmF0aW9uOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLTE3YWdsMmpcIiBkYXRhLWZyYW1lci1jb21wb25lbnQtdHlwZT1cIlJpY2hUZXh0Q29udGFpbmVyXCI+XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PHBcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci10ZXh0IGZyYW1lci1zdHlsZXMtcHJlc2V0LXljdHUzYVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLXN0eWxlcy1wcmVzZXQ9XCJkTEpzeFhBTFpcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0bWFyZ2luOiAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRjb2xvcjogaXNTY3JvbGxlZCA/ICcjMzM0MTU1JyA6ICcjZmZmZmZmJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFNpemU6IDE0LFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiBpc1Njcm9sbGVkID8gNTAwIDogNDAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAnY29sb3IgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdEZlYXR1cmVcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHQ8L3A+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHRcdFx0PC9hPlxyXG5cdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cclxuXHRcdFx0XHRcdFx0XHR7LyogUHJpY2luZyAqL31cclxuXHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZyYW1lci0xYmFqN2s0LWNvbnRhaW5lclwiPlxyXG5cdFx0XHRcdFx0XHRcdFx0PGFcclxuXHRcdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLUQ2THpnIGZyYW1lci1pRFY2MiBmcmFtZXItMXAxcnp1YSBmcmFtZXItdi0xcDFyenVhIGZyYW1lci0xOWcyaDlzIG5hdi1saW5rLWl0ZW1cIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPVwiRGVmYXVsdFwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdGhyZWY9XCIjcHJpY2luZ1wiXHJcblx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0YmFja2dyb3VuZENvbG9yOiAncmdiYSgwLCAwLCAwLCAwKScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0aGVpZ2h0OiAnMTAwJScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAnMTZweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0ZGlzcGxheTogJ2ZsZXgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGFsaWduSXRlbXM6ICdjZW50ZXInLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHBhZGRpbmc6ICc4cHggMTZweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0dGV4dERlY29yYXRpb246ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJmcmFtZXItMTdhZ2wyalwiIGRhdGEtZnJhbWVyLWNvbXBvbmVudC10eXBlPVwiUmljaFRleHRDb250YWluZXJcIj5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHQ8cFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLXRleHQgZnJhbWVyLXN0eWxlcy1wcmVzZXQteWN0dTNhXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGRhdGEtc3R5bGVzLXByZXNldD1cImRMSnN4WEFMWlwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRtYXJnaW46IDAsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdGNvbG9yOiBpc1Njcm9sbGVkID8gJyMzMzQxNTUnIDogJyNmZmZmZmYnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250U2l6ZTogMTQsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdGZvbnRXZWlnaHQ6IGlzU2Nyb2xsZWQgPyA1MDAgOiA0MDAsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdHRyYW5zaXRpb246ICdjb2xvciAwLjI1cyBlYXNlJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0UHJpY2luZ1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdDwvcD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0XHRcdFx0XHQ8L2E+XHJcblx0XHRcdFx0XHRcdFx0PC9kaXY+XHJcblxyXG5cclxuXHRcdFx0XHRcdFx0XHR7LyogQ2FyZWVycyAqL31cclxuXHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZyYW1lci0xc2ZteTAtY29udGFpbmVyXCI+XHJcblx0XHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItRDZMemcgZnJhbWVyLWlEVjYyIGZyYW1lci0xcDFyenVhIGZyYW1lci12LTFwMXJ6dWEgZnJhbWVyLTE5ZzJoOXMgbmF2LWxpbmstaXRlbVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdGRhdGEtZnJhbWVyLW5hbWU9XCJEZWZhdWx0XCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0aHJlZj1cIiNmYXFcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogJ3JnYmEoMCwgMCwgMCwgMCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogJzEwMCUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdmbGV4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRhbGlnbkl0ZW1zOiAnY2VudGVyJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnOHB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHRleHREZWNvcmF0aW9uOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLTE3YWdsMmpcIiBkYXRhLWZyYW1lci1jb21wb25lbnQtdHlwZT1cIlJpY2hUZXh0Q29udGFpbmVyXCI+XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PHBcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci10ZXh0IGZyYW1lci1zdHlsZXMtcHJlc2V0LXljdHUzYVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLXN0eWxlcy1wcmVzZXQ9XCJkTEpzeFhBTFpcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0bWFyZ2luOiAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRjb2xvcjogaXNTY3JvbGxlZCA/ICcjMzM0MTU1JyA6ICcjZmZmZmZmJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFNpemU6IDE0LFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiBpc1Njcm9sbGVkID8gNTAwIDogNDAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAnY29sb3IgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdENhcmVlcnNcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHQ8L3A+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHRcdFx0PC9hPlxyXG5cdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHQ8L2Rpdj5cclxuXHJcblx0XHRcdFx0XHRcdHsvKiBDb250YWN0IFVzIENUQSBCdXR0b24gKi99XHJcblx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLTFxcm9jd3EtY29udGFpbmVyXCI+XHJcblx0XHRcdFx0XHRcdFx0PGFcclxuXHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci13VURNOCBmcmFtZXItbHEyZWYwIGZyYW1lci12LXNqcmZvNCBmcmFtZXItMXhpbG9hMiBuYXYtY29udGFjdC1idG5cIlxyXG5cdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIlRlcmlhcnlcIlxyXG5cdFx0XHRcdFx0XHRcdFx0ZGF0YS1oaWdobGlnaHQ9XCJ0cnVlXCJcclxuXHRcdFx0XHRcdFx0XHRcdGhyZWY9XCJodHRwczovL3d3dy5waG9uZXRpY2VkdS5jb20vYXV0aC9sb2dpblwiXHJcblx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRiYWNrZ3JvdW5kOiBpc1Njcm9sbGVkXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0PyAnbm9uZSdcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHQ6ICdsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCByZ2JhKDIyNCwgMjI0LCAyMjQsIDAuMikgMCUsIHJnYmEoMjI0LCAyMjQsIDIyNCwgMC40KSAxMDAlKScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzIycHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRib3hTaGFkb3c6IGlzU2Nyb2xsZWQgPyAnMCA0cHggMTRweCByZ2JhKDE1LCAyMywgNDIsIDAuMTUpJyA6ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0ZGlzcGxheTogJ2Jsb2NrJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0dGV4dERlY29yYXRpb246ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2FsbCAwLjI1cyBlYXNlJyxcclxuXHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0PGRpdlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItbDEzdHg2XCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIk1haW5cIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmQ6IGlzU2Nyb2xsZWRcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdD8gJ2xpbmVhci1ncmFkaWVudCgxMzVkZWcsICMwZjE3MmEgMCUsICMxZTI5M2IgMTAwJSknXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHQ6ICdsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCByZ2IoMjU1LCAyNTUsIDI1NSkgMCUsIHJnYigyNTUsIDI1NSwgMjU1KSAxMDAlKScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0YmFja2dyb3VuZENvbG9yOiBpc1Njcm9sbGVkID8gJyMwZjE3MmEnIDogJ3JnYigyNTUsIDI1NSwgMjU1KScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAnMjBweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Ym94U2hhZG93OiBpc1Njcm9sbGVkID8gJ25vbmUnIDogJ2luc2V0IDBweCAtMnB4IDFweCAwcHggcmdiYSgxNSwgMjMsIDQyLCAwLjI1KScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0cGFkZGluZzogJzhweCAyMHB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAnYWxsIDAuMjVzIGVhc2UnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZyYW1lci0xdnR2b3RnLWNvbnRhaW5lclwiPlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLUs1ZVl1IGZyYW1lci1yWE5DeiBmcmFtZXItU3ZaankgZnJhbWVyLTltY2RtZSBmcmFtZXItdi1iOXE0YTVcIj5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZnJhbWVyLWdmMm9uelwiIGRhdGEtZnJhbWVyLWNvbXBvbmVudC10eXBlPVwiUmljaFRleHRDb250YWluZXJcIj5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0PHBcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItdGV4dCBmcmFtZXItc3R5bGVzLXByZXNldC0xcmdvb3RhXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRkYXRhLXN0eWxlcy1wcmVzZXQ9XCJubDVlZ0x5enpcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRtYXJnaW46IDAsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRjb2xvcjogaXNTY3JvbGxlZCA/ICcjZmZmZmZmJyA6ICdyZ2IoMzMsIDMzLCAzNiknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFdlaWdodDogNzAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFNpemU6IDE0LFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2NvbG9yIDAuMjVzIGVhc2UnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHRDb250YWN0IHVzXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdDwvcD5cclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHRcdDwvYT5cclxuXHRcdFx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHQ8L25hdj5cclxuXHRcdFx0PC9kaXY+XHJcblxyXG5cdFx0XHR7LyogTW9iaWxlIE5hdmJhciAqL31cclxuXHRcdFx0PGRpdiBjbGFzc05hbWU9XCJzc3ItdmFyaWFudCBoaWRkZW4tcGVmMTJjIG5hdi1tb2JpbGUtd3JhcHBlclwiPlxyXG5cdFx0XHRcdDxuYXZcclxuXHRcdFx0XHRcdGNsYXNzTmFtZT17YGZyYW1lci1lN2V3UiBmcmFtZXItMTVvODl1bCAke21vYmlsZU9wZW4gPyAnZnJhbWVyLXYta3g1dWUyJyA6ICdmcmFtZXItdi0xbnR4aWpkJ31gfVxyXG5cdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT17bW9iaWxlT3BlbiA/ICdNb2JpbGUgLSBPcGVuJyA6ICdNb2JpbGUgLSBDbG9zZSd9XHJcblx0XHRcdFx0XHRzdHlsZT17eyB3aWR0aDogJzEwMCUnLCB0cmFuc2l0aW9uOiAnYWxsIDAuM3MgZWFzZScgfX1cclxuXHRcdFx0XHQ+XHJcblx0XHRcdFx0XHQ8ZGl2XHJcblx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci1rZXRwNTBcIlxyXG5cdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPVwiTmF2IExheW91dFwiXHJcblx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0YmFja2Ryb3BGaWx0ZXI6ICdibHVyKDI0cHgpJyxcclxuXHRcdFx0XHRcdFx0XHRiYWNrZ3JvdW5kQ29sb3I6IGlzU2Nyb2xsZWQgPyAncmdiYSgyNTUsIDI1NSwgMjU1LCAwLjk2KScgOiAncmdiYSgwLCAwLCAwLCAwLjIpJyxcclxuXHRcdFx0XHRcdFx0XHRXZWJraXRCYWNrZHJvcEZpbHRlcjogJ2JsdXIoMjRweCknLFxyXG5cdFx0XHRcdFx0XHRcdGJvcmRlcjogaXNTY3JvbGxlZCA/ICcxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjA4KScgOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0Ym94U2hhZG93OiBpc1Njcm9sbGVkID8gJzAgOHB4IDI0cHggLTZweCByZ2JhKDAsIDAsIDAsIDAuMSknIDogJ25vbmUnLFxyXG5cdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzIwcHgnLFxyXG5cdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdmbGV4JyxcclxuXHRcdFx0XHRcdFx0XHRhbGlnbkl0ZW1zOiAnY2VudGVyJyxcclxuXHRcdFx0XHRcdFx0XHRqdXN0aWZ5Q29udGVudDogJ3NwYWNlLWJldHdlZW4nLFxyXG5cdFx0XHRcdFx0XHRcdHBhZGRpbmc6ICcxMnB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdHdpZHRoOiAnMTAwJScsXHJcblx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2FsbCAwLjI1cyBlYXNlJyxcclxuXHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0ey8qIE1vYmlsZSBMb2dvICovfVxyXG5cdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZyYW1lci0xNTNyeHVwXCIgZGF0YS1mcmFtZXItbmFtZT1cIkxvZ28gV3JhcFwiIHN0eWxlPXt7IG92ZXJmbG93OiAndmlzaWJsZScsIHdpZHRoOiAnYXV0bycgfX0+XHJcblx0XHRcdFx0XHRcdFx0PGFcclxuXHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci0xNG9vZDh2IGZyYW1lci1zZm04a3RcIlxyXG5cdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIk5hdiBMb2dvXCJcclxuXHRcdFx0XHRcdFx0XHRcdGhyZWY9XCIvXCJcclxuXHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogJ3JnYmEoMCwgMCwgMCwgMCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRkaXNwbGF5OiAnZmxleCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGFsaWduSXRlbXM6ICdjZW50ZXInLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRnYXA6ICc4cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR0ZXh0RGVjb3JhdGlvbjogJ25vbmUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRvdmVyZmxvdzogJ3Zpc2libGUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR3aWR0aDogJ2F1dG8nLFxyXG5cdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHQ8aW1nXHJcblx0XHRcdFx0XHRcdFx0XHRcdHNyYz1cIi9hc3NldHMvcGhvbmVjdGljLWxvZ28tdHJhbnNwYXJlbnQucG5nXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0YWx0PVwiUGhvbmVjdGljXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRoZWlnaHQ6ICcyNHB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHR3aWR0aDogJ2F1dG8nLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdibG9jaycsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0ZmlsdGVyOiBpc1Njcm9sbGVkID8gJ25vbmUnIDogJ2Ryb3Atc2hhZG93KDAgMnB4IDZweCByZ2JhKDAsIDEwMiwgMjU1LCAwLjM1KSknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0Lz5cclxuXHRcdFx0XHRcdFx0XHRcdDxzcGFuXHJcblx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Y29sb3I6IGlzU2Nyb2xsZWQgPyAnIzBmMTcyYScgOiAnI2ZmZmZmZicsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Zm9udFNpemU6ICcxOXB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiA4MDAsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0bGV0dGVyU3BhY2luZzogJy0wLjAyZW0nLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGZvbnRGYW1pbHk6ICdcIk91dGZpdFwiLCBcIkludGVyXCIsIHNhbnMtc2VyaWYnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHdoaXRlU3BhY2U6ICdub3dyYXAnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdGxpbmVIZWlnaHQ6IDEsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2NvbG9yIDAuMjVzIGVhc2UnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRQaG9uZWN0aWNcclxuXHRcdFx0XHRcdFx0XHRcdDwvc3Bhbj5cclxuXHRcdFx0XHRcdFx0XHQ8L2E+XHJcblx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cclxuXHRcdFx0XHRcdFx0ey8qIEhhbWJ1cmdlciAvIENsb3NlIFRvZ2dsZSBCdXR0b24gKi99XHJcblx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItYWQ3eHUzLWNvbnRhaW5lclwiXHJcblx0XHRcdFx0XHRcdFx0b25DbGljaz17KCkgPT4gc2V0TW9iaWxlT3BlbighbW9iaWxlT3Blbil9XHJcblx0XHRcdFx0XHRcdFx0c3R5bGU9e3sgY3Vyc29yOiAncG9pbnRlcicgfX1cclxuXHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT1cImZyYW1lci03OGlPNyBmcmFtZXItN3V5Z3hxIGZyYW1lci12LTd1eWd4cVwiXHJcblx0XHRcdFx0XHRcdFx0XHRkYXRhLWZyYW1lci1uYW1lPVwiQ2xvc2VcIlxyXG5cdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0YmFja2dyb3VuZENvbG9yOiBpc1Njcm9sbGVkID8gJyMwZjE3MmEnIDogJ3JnYigyNTUsIDI1NSwgMjU1KScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzEycHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR3aWR0aDogMzYsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogMzYsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGRpc3BsYXk6ICdmbGV4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0YWxpZ25JdGVtczogJ2NlbnRlcicsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGp1c3RpZnlDb250ZW50OiAnY2VudGVyJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0dHJhbnNpdGlvbjogJ2JhY2tncm91bmQtY29sb3IgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLXcwYnkwaFwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdGRhdGEtZnJhbWVyLW5hbWU9XCJJY29uXCJcclxuXHRcdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3sgcG9zaXRpb246ICdyZWxhdGl2ZScsIHdpZHRoOiAxNiwgaGVpZ2h0OiAxNiB9fVxyXG5cdFx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0XHQ8ZGl2XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPVwiZnJhbWVyLWtjcmZ5OVwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIkxpbmVcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRiYWNrZ3JvdW5kQ29sb3I6IGlzU2Nyb2xsZWQgPyAnI2ZmZmZmZicgOiAncmdiKDE4LCAxOCwgMjApJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzk5OXB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHdpZHRoOiAxNixcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogMixcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0dG9wOiBtb2JpbGVPcGVuID8gNyA6IDQsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2Zvcm06IG1vYmlsZU9wZW4gPyAncm90YXRlKDQ1ZGVnKScgOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHR0cmFuc2l0aW9uOiAndHJhbnNmb3JtIDAuMjVzIGVhc2UsIHRvcCAwLjI1cyBlYXNlLCBiYWNrZ3JvdW5kLWNvbG9yIDAuMjVzIGVhc2UnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRcdC8+XHJcblx0XHRcdFx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItMWtnejRrcFwiXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIkxpbmVcIlxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRiYWNrZ3JvdW5kQ29sb3I6IGlzU2Nyb2xsZWQgPyAnI2ZmZmZmZicgOiAncmdiKDE4LCAxOCwgMjApJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGJvcmRlclJhZGl1czogJzk5OXB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHdpZHRoOiAxNixcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogMixcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHBvc2l0aW9uOiAnYWJzb2x1dGUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0dG9wOiBtb2JpbGVPcGVuID8gNyA6IDEwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0dHJhbnNmb3JtOiBtb2JpbGVPcGVuID8gJ3JvdGF0ZSgtNDVkZWcpJyA6ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdHRyYW5zaXRpb246ICd0cmFuc2Zvcm0gMC4yNXMgZWFzZSwgdG9wIDAuMjVzIGVhc2UsIGJhY2tncm91bmQtY29sb3IgMC4yNXMgZWFzZScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHRcdFx0Lz5cclxuXHRcdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHRcdDwvZGl2PlxyXG5cdFx0XHRcdFx0XHQ8L2Rpdj5cclxuXHRcdFx0XHRcdDwvZGl2PlxyXG5cclxuXHRcdFx0XHRcdHsvKiBNb2JpbGUgRHJhd2VyIE1lbnUgKi99XHJcblx0XHRcdFx0XHR7bW9iaWxlT3BlbiAmJiAoXHJcblx0XHRcdFx0XHRcdDxkaXZcclxuXHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJmcmFtZXItMWs2d2ZualwiXHJcblx0XHRcdFx0XHRcdFx0ZGF0YS1mcmFtZXItbmFtZT1cIk5hdiBtZW51XCJcclxuXHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0YmFja2Ryb3BGaWx0ZXI6ICdibHVyKDI0cHgpJyxcclxuXHRcdFx0XHRcdFx0XHRcdGJhY2tncm91bmRDb2xvcjogaXNTY3JvbGxlZCA/ICdyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuOTgpJyA6ICdyZ2JhKDAsIDAsIDAsIDAuMjUpJyxcclxuXHRcdFx0XHRcdFx0XHRcdGJvcmRlcjogaXNTY3JvbGxlZCA/ICcxcHggc29saWQgcmdiYSgwLCAwLCAwLCAwLjA4KScgOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHRXZWJraXRCYWNrZHJvcEZpbHRlcjogJ2JsdXIoMjRweCknLFxyXG5cdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAnMjBweCcsXHJcblx0XHRcdFx0XHRcdFx0XHR3aWR0aDogJzEwMCUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0bWFyZ2luVG9wOiAxMixcclxuXHRcdFx0XHRcdFx0XHRcdHBhZGRpbmc6IDgsXHJcblx0XHRcdFx0XHRcdFx0XHRkaXNwbGF5OiAnZmxleCcsXHJcblx0XHRcdFx0XHRcdFx0XHRmbGV4RGlyZWN0aW9uOiAnY29sdW1uJyxcclxuXHRcdFx0XHRcdFx0XHRcdGdhcDogOCxcclxuXHRcdFx0XHRcdFx0XHRcdGJveFNoYWRvdzogaXNTY3JvbGxlZCA/ICcwIDEycHggMzJweCByZ2JhKDAsIDAsIDAsIDAuMSknIDogJ25vbmUnLFxyXG5cdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0aHJlZj1cIi9cIlxyXG5cdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0Y29sb3I6IGlzU2Nyb2xsZWQgPyAnIzBmMTcyYScgOiAnI2ZmZicsXHJcblx0XHRcdFx0XHRcdFx0XHRcdHBhZGRpbmc6ICcxMHB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR0ZXh0RGVjb3JhdGlvbjogJ25vbmUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRmb250V2VpZ2h0OiA2MDAsXHJcblx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0b25DbGljaz17KCkgPT4gc2V0TW9iaWxlT3BlbihmYWxzZSl9XHJcblx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0SG9tZVxyXG5cdFx0XHRcdFx0XHRcdDwvYT5cclxuXHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0aHJlZj1cIiNiZW5lZml0XCJcclxuXHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGNvbG9yOiBpc1Njcm9sbGVkID8gJyMzMzQxNTUnIDogJ3JnYmEoMjU1LCAyNTUsIDI1NSwgMC44NSknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnMTBweCAxNnB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0dGV4dERlY29yYXRpb246ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRvbkNsaWNrPXsoKSA9PiBzZXRNb2JpbGVPcGVuKGZhbHNlKX1cclxuXHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHRBYm91dFxyXG5cdFx0XHRcdFx0XHRcdDwvYT5cclxuXHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0aHJlZj1cIiNhYm91dFwiXHJcblx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRjb2xvcjogaXNTY3JvbGxlZCA/ICcjMzM0MTU1JyA6ICdyZ2JhKDI1NSwgMjU1LCAyNTUsIDAuODUpJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0cGFkZGluZzogJzEwcHggMTZweCcsXHJcblx0XHRcdFx0XHRcdFx0XHRcdHRleHREZWNvcmF0aW9uOiAnbm9uZScsXHJcblx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0b25DbGljaz17KCkgPT4gc2V0TW9iaWxlT3BlbihmYWxzZSl9XHJcblx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0RmVhdHVyZVxyXG5cdFx0XHRcdFx0XHRcdDwvYT5cclxuXHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0aHJlZj1cIiNwcmljaW5nXCJcclxuXHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XHJcblx0XHRcdFx0XHRcdFx0XHRcdGNvbG9yOiBpc1Njcm9sbGVkID8gJyMzMzQxNTUnIDogJ3JnYmEoMjU1LCAyNTUsIDI1NSwgMC44NSknLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnMTBweCAxNnB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0dGV4dERlY29yYXRpb246ICdub25lJyxcclxuXHRcdFx0XHRcdFx0XHRcdH19XHJcblx0XHRcdFx0XHRcdFx0XHRvbkNsaWNrPXsoKSA9PiBzZXRNb2JpbGVPcGVuKGZhbHNlKX1cclxuXHRcdFx0XHRcdFx0XHQ+XHJcblx0XHRcdFx0XHRcdFx0XHRQcmljaW5nXHJcblx0XHRcdFx0XHRcdFx0PC9hPlxyXG5cclxuXHRcdFx0XHRcdFx0XHQ8YVxyXG5cdFx0XHRcdFx0XHRcdFx0aHJlZj1cIiNmYXFcIlxyXG5cdFx0XHRcdFx0XHRcdFx0c3R5bGU9e3tcclxuXHRcdFx0XHRcdFx0XHRcdFx0Y29sb3I6IGlzU2Nyb2xsZWQgPyAnIzMzNDE1NScgOiAncmdiYSgyNTUsIDI1NSwgMjU1LCAwLjg1KScsXHJcblx0XHRcdFx0XHRcdFx0XHRcdHBhZGRpbmc6ICcxMHB4IDE2cHgnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR0ZXh0RGVjb3JhdGlvbjogJ25vbmUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0fX1cclxuXHRcdFx0XHRcdFx0XHRcdG9uQ2xpY2s9eygpID0+IHNldE1vYmlsZU9wZW4oZmFsc2UpfVxyXG5cdFx0XHRcdFx0XHRcdD5cclxuXHRcdFx0XHRcdFx0XHRcdENhcmVlcnNcclxuXHRcdFx0XHRcdFx0XHQ8L2E+XHJcblx0XHRcdFx0XHRcdFx0PGFcclxuXHRcdFx0XHRcdFx0XHRcdGhyZWY9XCJodHRwczovL3d3dy5waG9uZXRpY2VkdS5jb20vYXV0aC9sb2dpblwiXHJcblx0XHRcdFx0XHRcdFx0XHRzdHlsZT17e1xyXG5cdFx0XHRcdFx0XHRcdFx0XHRiYWNrZ3JvdW5kQ29sb3I6IGlzU2Nyb2xsZWQgPyAnIzBmMTcyYScgOiAnI2ZmZicsXHJcblx0XHRcdFx0XHRcdFx0XHRcdGNvbG9yOiBpc1Njcm9sbGVkID8gJyNmZmZmZmYnIDogJyMxMjEyMTQnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRwYWRkaW5nOiAnMTJweCAxNnB4JyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0Ym9yZGVyUmFkaXVzOiAxNixcclxuXHRcdFx0XHRcdFx0XHRcdFx0dGV4dEFsaWduOiAnY2VudGVyJyxcclxuXHRcdFx0XHRcdFx0XHRcdFx0Zm9udFdlaWdodDogNzAwLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHR0ZXh0RGVjb3JhdGlvbjogJ25vbmUnLFxyXG5cdFx0XHRcdFx0XHRcdFx0XHRtYXJnaW5Ub3A6IDQsXHJcblx0XHRcdFx0XHRcdFx0XHR9fVxyXG5cdFx0XHRcdFx0XHRcdFx0b25DbGljaz17KCkgPT4gc2V0TW9iaWxlT3BlbihmYWxzZSl9XHJcblx0XHRcdFx0XHRcdFx0PlxyXG5cdFx0XHRcdFx0XHRcdFx0Q29udGFjdCB1c1xyXG5cdFx0XHRcdFx0XHRcdDwvYT5cclxuXHRcdFx0XHRcdFx0PC9kaXY+XHJcblx0XHRcdFx0XHQpfVxyXG5cdFx0XHRcdDwvbmF2PlxyXG5cdFx0XHQ8L2Rpdj5cclxuXHRcdDwvZGl2PlxyXG5cdClcclxufVxyXG4iXSwiZmlsZSI6IkM6L1VzZXJzL2RoYW51L09uZURyaXZlL0Rlc2t0b3AvVGhlIEdyYW5kIEZpbmFsZS9zcmMvY29tcG9uZW50cy9OYXZiYXIuanN4In0=

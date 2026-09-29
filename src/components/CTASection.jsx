@@ -9,6 +9,39 @@ export default function CTASection() {
 			const section = document.getElementById('cta')
 			if (!section) return
 
+
+			// Force overflow visible on all CTA wrappers so giant text isn't clipped
+			;[
+				section.querySelector('section'),
+				section.querySelector('.framer-1e0pwqt'),
+				section.querySelector('.framer-1fgev8h'),
+				section.querySelector('.framer-1ffnixg'),
+				section.querySelector('.framer-mo4q0l'),
+			].forEach((el) => {
+				if (el) el.style.setProperty('overflow', 'visible', 'important')
+			})
+
+			// Fix text container: widen and add gap
+			const textWrap = section.querySelector('.framer-mo4q0l')
+			if (textWrap) {
+				textWrap.style.setProperty('width', 'max-content', 'important')
+				textWrap.style.setProperty('gap', '10px', 'important')
+			}
+			;['.framer-l5zhei', '.framer-1ge4eqe', '.framer-1cc3myi'].forEach((sel) => {
+				const el = section.querySelector(sel)
+				if (!el) return
+				el.style.setProperty('overflow', 'visible', 'important')
+				el.style.setProperty('width', 'max-content', 'important')
+				const h1 = el.querySelector('h1')
+				if (h1) {
+					h1.style.setProperty('white-space', 'nowrap', 'important')
+					h1.style.setProperty('overflow', 'visible', 'important')
+					h1.style.setProperty('font-size', 'clamp(64px, 8.5vw, 128px)', 'important')
+					h1.style.setProperty('line-height', '1', 'important')
+					h1.style.setProperty('letter-spacing', '-0.05em', 'important')
+					h1.style.setProperty('margin', '0', 'important')
+				}
+			})
 			const ease = 'cubic-bezier(0.16, 1, 0.3, 1)'
 
 			// ── Button Wrap: rise from below ──────────────────────────────────────
@@ -74,28 +107,78 @@ export default function CTASection() {
 
 			obs.observe(section)
 
-			// ── Scroll-linked parallax: phone rising ──────────────────────────────
+			// ── Scroll-linked parallax: phone rising + text slide-in ─────────────
 			const phone = section.querySelector('.framer-9evzuh')
 			const logo = section.querySelector('.framer-1u7j4fm')
+			const topText = section.querySelector('.framer-l5zhei')
+			const midText = section.querySelector('.framer-1ge4eqe')
+			const botText = section.querySelector('.framer-1cc3myi')
+
+			// Starting X offsets matching Framer's inline styles
+			const textOffsets = [
+				{ el: topText, startX: -314 },
+				{ el: midText, startX:  520 },
+				{ el: botText, startX: -491 },
+			]
 
 			let rafPending = false
 			const handleScroll = () => {
 				if (rafPending) return
 				rafPending = true
 				requestAnimationFrame(() => {
-					const rect = section.getBoundingClientRect()
+					const container = document.getElementById('cta')
+					if (!container) {
+						rafPending = false
+						return
+					}
+					const rect = container.getBoundingClientRect()
 					const winH = window.innerHeight
-					if (rect.top < winH + 200 && rect.bottom > 0) {
-						const progress = Math.min(Math.max((winH - rect.top) / (winH + rect.height * 0.6), 0), 1)
-						// Phone slides up as section scrolls into view
+					const totalPinScroll = rect.height - winH
+
+					if (totalPinScroll > 0) {
+						// Pinned scroll progress: 0 when top of section docks at top of viewport, 1 when section completes pin
+						const pinnedScroll = -rect.top
+						const pinProgress = Math.min(Math.max(pinnedScroll / totalPinScroll, 0), 1)
+
+						// Text animation completes within first 60% of the pin track!
+						// For pinProgress 0.0 -> 0.6: animProgress goes 0.0 -> 1.0
+						// For pinProgress 0.6 -> 1.0: animProgress is 1.0 (HOLD - full text complete!)
+						// After pinProgress reaches 1.0, continuing to scroll naturally moves to footer!
+						const animRatio = 0.6
+						const animProgress = Math.min(pinProgress / animRatio, 1)
+						const eased = 1 - Math.pow(1 - animProgress, 2.5)
+
+						// Text words slide from offset to center
+						textOffsets.forEach(({ el, startX }) => {
+							if (!el) return
+							const currentX = startX * (1 - eased)
+							el.style.transform = `translateX(${currentX}px)`
+							el.style.transition = 'none'
+						})
+
+						// Phone slides up
 						if (phone) {
-							const lift = (1 - progress) * 60
+							const lift = eased * 60
 							phone.style.transform = `translate(-50%, -50%) translateY(${168 - lift}px)`
+							phone.style.transition = 'none'
 						}
+
 						// Logo floats slightly opposite
 						if (logo) {
-							const drift = (progress - 0.5) * 20
+							const drift = (eased - 0.5) * 20
 							logo.style.transform = `translate(-50%, -50%) translateY(${drift}px)`
+							logo.style.transition = 'none'
+						}
+
+						// Buttons and badges reveal when pin starts
+						if (pinProgress > 0.05) {
+							if (btnWrap) {
+								btnWrap.style.opacity = '1'
+								btnWrap.style.transform = 'translateY(0)'
+							}
+							badgeEls.forEach((el) => {
+								el.style.opacity = '1'
+							})
 						}
 					}
 					rafPending = false

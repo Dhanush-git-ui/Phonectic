@@ -1,0 +1,319 @@
+import { createHotContext as __vite__createHotContext } from "/@vite/client";import.meta.hot = __vite__createHotContext("/src/components/gamezone-previews/PerformanceInsightsPreview.jsx");import __vite__cjsImport0_react_jsxDevRuntime from "/node_modules/.vite/deps/react_jsx-dev-runtime.js?v=119d0352"; const jsxDEV = __vite__cjsImport0_react_jsxDevRuntime["jsxDEV"];
+import * as RefreshRuntime from "/@react-refresh";
+const inWebWorker = typeof WorkerGlobalScope !== "undefined" && self instanceof WorkerGlobalScope;
+let prevRefreshReg;
+let prevRefreshSig;
+if (import.meta.hot && !inWebWorker) {
+  if (!window.$RefreshReg$) {
+    throw new Error(
+      "@vitejs/plugin-react can't detect preamble. Something is wrong."
+    );
+  }
+  prevRefreshReg = window.$RefreshReg$;
+  prevRefreshSig = window.$RefreshSig$;
+  window.$RefreshReg$ = RefreshRuntime.getRefreshReg("C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx");
+  window.$RefreshSig$ = RefreshRuntime.createSignatureFunctionForTransform;
+}
+var _s = $RefreshSig$();
+import __vite__cjsImport3_react from "/node_modules/.vite/deps/react.js?v=119d0352"; const React = __vite__cjsImport3_react.__esModule ? __vite__cjsImport3_react.default : __vite__cjsImport3_react; const useState = __vite__cjsImport3_react["useState"];
+export default function PerformanceInsightsPreview({ className = "" }) {
+  _s();
+  const [activeBar, setActiveBar] = useState(4);
+  const barData = [
+    { day: "M", height: 48, value: "88% Acc", label: "Mon" },
+    { day: "T", height: 65, value: "92% Acc", label: "Tue" },
+    { day: "W", height: 42, value: "85% Acc", label: "Wed" },
+    { day: "T", height: 78, value: "96% Acc", label: "Thu" },
+    { day: "F", height: 96, value: "99.4% Acc", label: "Fri", isPeak: true },
+    { day: "S", height: 72, value: "94% Acc", label: "Sat" },
+    { day: "S", height: 55, value: "90% Acc", label: "Sun" }
+  ];
+  return /* @__PURE__ */ jsxDEV(
+    "div",
+    {
+      className: `relative w-full h-full min-h-[460px] lg:min-h-[520px] rounded-[40px] md:rounded-[48px] flex flex-col justify-between p-6 md:p-8 select-none overflow-hidden ${className}`,
+      style: {
+        backgroundColor: "#dedbf7",
+        fontFamily: "'Plus Jakarta Sans', sans-serif"
+      },
+      children: [
+        /* @__PURE__ */ jsxDEV(
+          "div",
+          {
+            className: "absolute -top-12 -left-12 w-72 h-72 rounded-full pointer-events-none opacity-40",
+            style: {
+              background: "radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(222, 219, 247, 0) 70%)"
+            }
+          },
+          void 0,
+          false,
+          {
+            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+            lineNumber: 44,
+            columnNumber: 4
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV(
+          "div",
+          {
+            className: "absolute -bottom-12 -right-12 w-72 h-72 rounded-full pointer-events-none opacity-40",
+            style: {
+              background: "radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(222, 219, 247, 0) 70%)"
+            }
+          },
+          void 0,
+          false,
+          {
+            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+            lineNumber: 50,
+            columnNumber: 4
+          },
+          this
+        ),
+        /* @__PURE__ */ jsxDEV("div", { className: "relative z-10 w-full max-w-[390px] mx-auto pt-3", children: [
+          /* @__PURE__ */ jsxDEV(
+            "div",
+            {
+              className: "absolute top-1 left-4 right-4 h-14 rounded-2xl bg-white/70 backdrop-blur-sm px-4 py-2.5 flex items-center justify-between shadow-sm border border-white/60 transition-transform duration-300",
+              style: {
+                transform: "translateY(-12px) scale(0.93)",
+                zIndex: 1
+              },
+              children: [
+                /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2", children: [
+                  /* @__PURE__ */ jsxDEV("span", { className: "w-5 h-5 rounded-full bg-blue-100 text-blue-600 flex items-center justify-center text-xs", children: "📈" }, void 0, false, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                    lineNumber: 68,
+                    columnNumber: 7
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { className: "text-xs font-bold text-slate-600", children: "Trend Forecast: 98.4% Tier-1 Probability" }, void 0, false, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                    lineNumber: 71,
+                    columnNumber: 7
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                  lineNumber: 67,
+                  columnNumber: 6
+                }, this),
+                /* @__PURE__ */ jsxDEV("span", { className: "text-[10px] font-bold text-slate-400", children: "AI Model" }, void 0, false, {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                  lineNumber: 75,
+                  columnNumber: 6
+                }, this)
+              ]
+            },
+            void 0,
+            true,
+            {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 60,
+              columnNumber: 5
+            },
+            this
+          ),
+          /* @__PURE__ */ jsxDEV(
+            "div",
+            {
+              className: "relative z-10 bg-white rounded-3xl p-5 shadow-[0_16px_36px_rgba(25,18,70,0.12)] border border-white/90 transition-all duration-300 hover:-translate-y-1 cursor-pointer",
+              children: [
+                /* @__PURE__ */ jsxDEV("div", { className: "flex items-start justify-between gap-3", children: [
+                  /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2.5", children: [
+                    /* @__PURE__ */ jsxDEV("div", { className: "w-10 h-10 rounded-2xl bg-gradient-to-tr from-indigo-500 to-purple-600 flex items-center justify-center text-white shadow-md text-base", children: "⚡" }, void 0, false, {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                      lineNumber: 86,
+                      columnNumber: 8
+                    }, this),
+                    /* @__PURE__ */ jsxDEV("div", { className: "flex flex-col", children: [
+                      /* @__PURE__ */ jsxDEV("span", { className: "text-sm font-black text-slate-900 tracking-tight", children: "Heads up!" }, void 0, false, {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                        lineNumber: 90,
+                        columnNumber: 9
+                      }, this),
+                      /* @__PURE__ */ jsxDEV("span", { className: "text-[11px] text-slate-400 font-medium", children: "Solve speed increased by 42%" }, void 0, false, {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                        lineNumber: 93,
+                        columnNumber: 9
+                      }, this)
+                    ] }, void 0, true, {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                      lineNumber: 89,
+                      columnNumber: 8
+                    }, this)
+                  ] }, void 0, true, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                    lineNumber: 85,
+                    columnNumber: 7
+                  }, this),
+                  /* @__PURE__ */ jsxDEV("span", { className: "text-[10px] font-bold text-slate-400 bg-slate-100 px-2 py-0.5 rounded-full", children: "now" }, void 0, false, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                    lineNumber: 99,
+                    columnNumber: 7
+                  }, this)
+                ] }, void 0, true, {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                  lineNumber: 84,
+                  columnNumber: 6
+                }, this),
+                /* @__PURE__ */ jsxDEV("p", { className: "text-xs md:text-sm text-slate-600 leading-relaxed mt-2.5 font-medium", children: [
+                  "Your Quant solve speed is ",
+                  /* @__PURE__ */ jsxDEV("strong", { className: "text-indigo-600 font-bold", children: "42% faster" }, void 0, false, {
+                    fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                    lineNumber: 105,
+                    columnNumber: 33
+                  }, this),
+                  " than last week — beating 98% of TCS Prime applicants."
+                ] }, void 0, true, {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                  lineNumber: 104,
+                  columnNumber: 6
+                }, this)
+              ]
+            },
+            void 0,
+            true,
+            {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 81,
+              columnNumber: 5
+            },
+            this
+          )
+        ] }, void 0, true, {
+          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+          lineNumber: 58,
+          columnNumber: 4
+        }, this),
+        /* @__PURE__ */ jsxDEV("div", { className: "relative z-10 w-full max-w-[390px] mx-auto pt-4 pb-2", children: [
+          /* @__PURE__ */ jsxDEV("div", { className: "flex items-center justify-between mb-3 px-2", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "flex items-center gap-2", children: /* @__PURE__ */ jsxDEV("span", { className: "text-xs font-extrabold text-slate-700 tracking-tight", children: "Weekly Speed & Accuracy Velocity" }, void 0, false, {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 115,
+              columnNumber: 7
+            }, this) }, void 0, false, {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 114,
+              columnNumber: 6
+            }, this),
+            /* @__PURE__ */ jsxDEV("span", { className: "text-[11px] font-bold text-indigo-600 bg-white px-2.5 py-1 rounded-full shadow-sm", children: "+38% vs Peers" }, void 0, false, {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 119,
+              columnNumber: 6
+            }, this)
+          ] }, void 0, true, {
+            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+            lineNumber: 113,
+            columnNumber: 5
+          }, this),
+          /* @__PURE__ */ jsxDEV("div", { className: "relative h-44 flex items-end justify-between px-3 gap-2 bg-white/40 backdrop-blur-sm rounded-3xl p-4 border border-white/50 shadow-sm", children: [
+            /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-x-4 top-8 border-b border-indigo-200/50 pointer-events-none" }, void 0, false, {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 127,
+              columnNumber: 6
+            }, this),
+            /* @__PURE__ */ jsxDEV("div", { className: "absolute inset-x-4 top-20 border-b border-indigo-200/40 pointer-events-none" }, void 0, false, {
+              fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+              lineNumber: 128,
+              columnNumber: 6
+            }, this),
+            barData.map((bar, idx) => {
+              const isSelected = activeBar === idx;
+              return /* @__PURE__ */ jsxDEV(
+                "div",
+                {
+                  onClick: () => setActiveBar(idx),
+                  className: "relative flex-1 flex flex-col items-center h-full justify-end group cursor-pointer",
+                  children: [
+                    isSelected && /* @__PURE__ */ jsxDEV("div", { className: "absolute -top-7 px-2 py-0.5 rounded-md bg-slate-900 text-white text-[10px] font-bold shadow-md whitespace-nowrap z-20 animate-fadeIn", children: bar.value }, void 0, false, {
+                      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                      lineNumber: 141,
+                      columnNumber: 17
+                    }, this),
+                    /* @__PURE__ */ jsxDEV(
+                      "div",
+                      {
+                        className: `w-full max-w-[32px] rounded-t-xl transition-all duration-500 ${bar.isPeak || isSelected ? "shadow-[0_8px_20px_rgba(99,102,241,0.45)]" : "opacity-70 group-hover:opacity-100"}`,
+                        style: {
+                          height: `${bar.height}%`,
+                          background: bar.isPeak || isSelected ? "linear-gradient(180deg, #4f46e5 0%, #312e81 100%)" : "linear-gradient(180deg, #818cf8 0%, #a5b4fc 100%)"
+                        }
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                        lineNumber: 147,
+                        columnNumber: 9
+                      },
+                      this
+                    ),
+                    /* @__PURE__ */ jsxDEV(
+                      "span",
+                      {
+                        className: `text-[10px] font-bold mt-2 transition-colors ${isSelected ? "text-indigo-950 font-black" : "text-slate-500"}`,
+                        children: bar.day
+                      },
+                      void 0,
+                      false,
+                      {
+                        fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                        lineNumber: 163,
+                        columnNumber: 9
+                      },
+                      this
+                    )
+                  ]
+                },
+                idx,
+                true,
+                {
+                  fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+                  lineNumber: 134,
+                  columnNumber: 15
+                },
+                this
+              );
+            })
+          ] }, void 0, true, {
+            fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+            lineNumber: 125,
+            columnNumber: 5
+          }, this)
+        ] }, void 0, true, {
+          fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+          lineNumber: 111,
+          columnNumber: 4
+        }, this)
+      ]
+    },
+    void 0,
+    true,
+    {
+      fileName: "C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx",
+      lineNumber: 36,
+      columnNumber: 5
+    },
+    this
+  );
+}
+_s(PerformanceInsightsPreview, "yPkM0asutLYqXWHKI5+j1loyKDs=");
+_c = PerformanceInsightsPreview;
+var _c;
+$RefreshReg$(_c, "PerformanceInsightsPreview");
+if (import.meta.hot && !inWebWorker) {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+if (import.meta.hot && !inWebWorker) {
+  RefreshRuntime.__hmr_import(import.meta.url).then((currentExports) => {
+    RefreshRuntime.registerExportsForReactRefresh("C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx", currentExports);
+    import.meta.hot.accept((nextExports) => {
+      if (!nextExports) return;
+      const invalidateMessage = RefreshRuntime.validateRefreshBoundaryAndEnqueueUpdate("C:/Users/dhanu/OneDrive/Desktop/The Grand Finale/src/components/gamezone-previews/PerformanceInsightsPreview.jsx", currentExports, nextExports);
+      if (invalidateMessage) import.meta.hot.invalidate(invalidateMessage);
+    });
+  });
+}
+
+//# sourceMappingURL=data:application/json;base64,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SUFBQSIsIm5hbWVzIjpbIlJlYWN0IiwidXNlU3RhdGUiLCJQZXJmb3JtYW5jZUluc2lnaHRzUHJldmlldyIsImNsYXNzTmFtZSIsIl9zIiwiYWN0aXZlQmFyIiwic2V0QWN0aXZlQmFyIiwiYmFyRGF0YSIsImRheSIsImhlaWdodCIsInZhbHVlIiwibGFiZWwiLCJpc1BlYWsiLCJiYWNrZ3JvdW5kQ29sb3IiLCJmb250RmFtaWx5IiwiYmFja2dyb3VuZCIsInRyYW5zZm9ybSIsInpJbmRleCIsIm1hcCIsImJhciIsImlkeCIsImlzU2VsZWN0ZWQiLCJfYyJdLCJpZ25vcmVMaXN0IjpbXSwic291cmNlcyI6WyJQZXJmb3JtYW5jZUluc2lnaHRzUHJldmlldy5qc3giXSwic291cmNlc0NvbnRlbnQiOlsiaW1wb3J0IFJlYWN0LCB7IHVzZVN0YXRlIH0gZnJvbSAncmVhY3QnXG5cbmV4cG9ydCBkZWZhdWx0IGZ1bmN0aW9uIFBlcmZvcm1hbmNlSW5zaWdodHNQcmV2aWV3KHsgY2xhc3NOYW1lID0gJycgfSkge1xuXHRjb25zdCBbYWN0aXZlQmFyLCBzZXRBY3RpdmVCYXJdID0gdXNlU3RhdGUoNCkgLy8gRnJpZGF5IGhpZ2hsaWdodGVkXG5cblx0Y29uc3QgYmFyRGF0YSA9IFtcblx0XHR7IGRheTogJ00nLCBoZWlnaHQ6IDQ4LCB2YWx1ZTogJzg4JSBBY2MnLCBsYWJlbDogJ01vbicgfSxcblx0XHR7IGRheTogJ1QnLCBoZWlnaHQ6IDY1LCB2YWx1ZTogJzkyJSBBY2MnLCBsYWJlbDogJ1R1ZScgfSxcblx0XHR7IGRheTogJ1cnLCBoZWlnaHQ6IDQyLCB2YWx1ZTogJzg1JSBBY2MnLCBsYWJlbDogJ1dlZCcgfSxcblx0XHR7IGRheTogJ1QnLCBoZWlnaHQ6IDc4LCB2YWx1ZTogJzk2JSBBY2MnLCBsYWJlbDogJ1RodScgfSxcblx0XHR7IGRheTogJ0YnLCBoZWlnaHQ6IDk2LCB2YWx1ZTogJzk5LjQlIEFjYycsIGxhYmVsOiAnRnJpJywgaXNQZWFrOiB0cnVlIH0sXG5cdFx0eyBkYXk6ICdTJywgaGVpZ2h0OiA3MiwgdmFsdWU6ICc5NCUgQWNjJywgbGFiZWw6ICdTYXQnIH0sXG5cdFx0eyBkYXk6ICdTJywgaGVpZ2h0OiA1NSwgdmFsdWU6ICc5MCUgQWNjJywgbGFiZWw6ICdTdW4nIH0sXG5cdF1cblxuXHRyZXR1cm4gKFxuXHRcdDxkaXZcblx0XHRcdGNsYXNzTmFtZT17YHJlbGF0aXZlIHctZnVsbCBoLWZ1bGwgbWluLWgtWzQ2MHB4XSBsZzptaW4taC1bNTIwcHhdIHJvdW5kZWQtWzQwcHhdIG1kOnJvdW5kZWQtWzQ4cHhdIGZsZXggZmxleC1jb2wganVzdGlmeS1iZXR3ZWVuIHAtNiBtZDpwLTggc2VsZWN0LW5vbmUgb3ZlcmZsb3ctaGlkZGVuICR7Y2xhc3NOYW1lfWB9XG5cdFx0XHRzdHlsZT17e1xuXHRcdFx0XHRiYWNrZ3JvdW5kQ29sb3I6ICcjZGVkYmY3Jyxcblx0XHRcdFx0Zm9udEZhbWlseTogXCInUGx1cyBKYWthcnRhIFNhbnMnLCBzYW5zLXNlcmlmXCIsXG5cdFx0XHR9fVxuXHRcdD5cblx0XHRcdHsvKiBBbWJpZW50IGJhY2tncm91bmQgZ2xvdyAqL31cblx0XHRcdDxkaXZcblx0XHRcdFx0Y2xhc3NOYW1lPVwiYWJzb2x1dGUgLXRvcC0xMiAtbGVmdC0xMiB3LTcyIGgtNzIgcm91bmRlZC1mdWxsIHBvaW50ZXItZXZlbnRzLW5vbmUgb3BhY2l0eS00MFwiXG5cdFx0XHRcdHN0eWxlPXt7XG5cdFx0XHRcdFx0YmFja2dyb3VuZDogJ3JhZGlhbC1ncmFkaWVudChjaXJjbGUsIHJnYmEoMTY4LCA4NSwgMjQ3LCAwLjQpIDAlLCByZ2JhKDIyMiwgMjE5LCAyNDcsIDApIDcwJSknLFxuXHRcdFx0XHR9fVxuXHRcdFx0Lz5cblx0XHRcdDxkaXZcblx0XHRcdFx0Y2xhc3NOYW1lPVwiYWJzb2x1dGUgLWJvdHRvbS0xMiAtcmlnaHQtMTIgdy03MiBoLTcyIHJvdW5kZWQtZnVsbCBwb2ludGVyLWV2ZW50cy1ub25lIG9wYWNpdHktNDBcIlxuXHRcdFx0XHRzdHlsZT17e1xuXHRcdFx0XHRcdGJhY2tncm91bmQ6ICdyYWRpYWwtZ3JhZGllbnQoY2lyY2xlLCByZ2JhKDk5LCAxMDIsIDI0MSwgMC4zKSAwJSwgcmdiYSgyMjIsIDIxOSwgMjQ3LCAwKSA3MCUpJyxcblx0XHRcdFx0fX1cblx0XHRcdC8+XG5cblx0XHRcdHsvKiBUb3AgU3RhY2tlZCBGbG9hdGluZyBOb3RpZmljYXRpb25zIEFyZWEgKi99XG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlIHotMTAgdy1mdWxsIG1heC13LVszOTBweF0gbXgtYXV0byBwdC0zXCI+XG5cdFx0XHRcdHsvKiBCYWNrIFN0YWNrZWQgQ2FyZDogRm9yZWNhc3QgSW5zaWdodCAqL31cblx0XHRcdFx0PGRpdlxuXHRcdFx0XHRcdGNsYXNzTmFtZT1cImFic29sdXRlIHRvcC0xIGxlZnQtNCByaWdodC00IGgtMTQgcm91bmRlZC0yeGwgYmctd2hpdGUvNzAgYmFja2Ryb3AtYmx1ci1zbSBweC00IHB5LTIuNSBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gc2hhZG93LXNtIGJvcmRlciBib3JkZXItd2hpdGUvNjAgdHJhbnNpdGlvbi10cmFuc2Zvcm0gZHVyYXRpb24tMzAwXCJcblx0XHRcdFx0XHRzdHlsZT17e1xuXHRcdFx0XHRcdFx0dHJhbnNmb3JtOiAndHJhbnNsYXRlWSgtMTJweCkgc2NhbGUoMC45MyknLFxuXHRcdFx0XHRcdFx0ekluZGV4OiAxLFxuXHRcdFx0XHRcdH19XG5cdFx0XHRcdD5cblx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImZsZXggaXRlbXMtY2VudGVyIGdhcC0yXCI+XG5cdFx0XHRcdFx0XHQ8c3BhbiBjbGFzc05hbWU9XCJ3LTUgaC01IHJvdW5kZWQtZnVsbCBiZy1ibHVlLTEwMCB0ZXh0LWJsdWUtNjAwIGZsZXggaXRlbXMtY2VudGVyIGp1c3RpZnktY2VudGVyIHRleHQteHNcIj5cblx0XHRcdFx0XHRcdFx08J+TiFxuXHRcdFx0XHRcdFx0PC9zcGFuPlxuXHRcdFx0XHRcdFx0PHNwYW4gY2xhc3NOYW1lPVwidGV4dC14cyBmb250LWJvbGQgdGV4dC1zbGF0ZS02MDBcIj5cblx0XHRcdFx0XHRcdFx0VHJlbmQgRm9yZWNhc3Q6IDk4LjQlIFRpZXItMSBQcm9iYWJpbGl0eVxuXHRcdFx0XHRcdFx0PC9zcGFuPlxuXHRcdFx0XHRcdDwvZGl2PlxuXHRcdFx0XHRcdDxzcGFuIGNsYXNzTmFtZT1cInRleHQtWzEwcHhdIGZvbnQtYm9sZCB0ZXh0LXNsYXRlLTQwMFwiPlxuXHRcdFx0XHRcdFx0QUkgTW9kZWxcblx0XHRcdFx0XHQ8L3NwYW4+XG5cdFx0XHRcdDwvZGl2PlxuXG5cdFx0XHRcdHsvKiBGcm9udCBBbGVydCBDYXJkOiBIZWFkcyB1cCEgKi99XG5cdFx0XHRcdDxkaXZcblx0XHRcdFx0XHRjbGFzc05hbWU9XCJyZWxhdGl2ZSB6LTEwIGJnLXdoaXRlIHJvdW5kZWQtM3hsIHAtNSBzaGFkb3ctWzBfMTZweF8zNnB4X3JnYmEoMjUsMTgsNzAsMC4xMildIGJvcmRlciBib3JkZXItd2hpdGUvOTAgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tMzAwIGhvdmVyOi10cmFuc2xhdGUteS0xIGN1cnNvci1wb2ludGVyXCJcblx0XHRcdFx0PlxuXHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1zdGFydCBqdXN0aWZ5LWJldHdlZW4gZ2FwLTNcIj5cblx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZmxleCBpdGVtcy1jZW50ZXIgZ2FwLTIuNVwiPlxuXHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cInctMTAgaC0xMCByb3VuZGVkLTJ4bCBiZy1ncmFkaWVudC10by10ciBmcm9tLWluZGlnby01MDAgdG8tcHVycGxlLTYwMCBmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWNlbnRlciB0ZXh0LXdoaXRlIHNoYWRvdy1tZCB0ZXh0LWJhc2VcIj5cblx0XHRcdFx0XHRcdFx0XHTimqFcblx0XHRcdFx0XHRcdFx0PC9kaXY+XG5cdFx0XHRcdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwiZmxleCBmbGV4LWNvbFwiPlxuXHRcdFx0XHRcdFx0XHRcdDxzcGFuIGNsYXNzTmFtZT1cInRleHQtc20gZm9udC1ibGFjayB0ZXh0LXNsYXRlLTkwMCB0cmFja2luZy10aWdodFwiPlxuXHRcdFx0XHRcdFx0XHRcdFx0SGVhZHMgdXAhXG5cdFx0XHRcdFx0XHRcdFx0PC9zcGFuPlxuXHRcdFx0XHRcdFx0XHRcdDxzcGFuIGNsYXNzTmFtZT1cInRleHQtWzExcHhdIHRleHQtc2xhdGUtNDAwIGZvbnQtbWVkaXVtXCI+XG5cdFx0XHRcdFx0XHRcdFx0XHRTb2x2ZSBzcGVlZCBpbmNyZWFzZWQgYnkgNDIlXG5cdFx0XHRcdFx0XHRcdFx0PC9zcGFuPlxuXHRcdFx0XHRcdFx0XHQ8L2Rpdj5cblx0XHRcdFx0XHRcdDwvZGl2PlxuXG5cdFx0XHRcdFx0XHQ8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LVsxMHB4XSBmb250LWJvbGQgdGV4dC1zbGF0ZS00MDAgYmctc2xhdGUtMTAwIHB4LTIgcHktMC41IHJvdW5kZWQtZnVsbFwiPlxuXHRcdFx0XHRcdFx0XHRub3dcblx0XHRcdFx0XHRcdDwvc3Bhbj5cblx0XHRcdFx0XHQ8L2Rpdj5cblxuXHRcdFx0XHRcdDxwIGNsYXNzTmFtZT1cInRleHQteHMgbWQ6dGV4dC1zbSB0ZXh0LXNsYXRlLTYwMCBsZWFkaW5nLXJlbGF4ZWQgbXQtMi41IGZvbnQtbWVkaXVtXCI+XG5cdFx0XHRcdFx0XHRZb3VyIFF1YW50IHNvbHZlIHNwZWVkIGlzIDxzdHJvbmcgY2xhc3NOYW1lPVwidGV4dC1pbmRpZ28tNjAwIGZvbnQtYm9sZFwiPjQyJSBmYXN0ZXI8L3N0cm9uZz4gdGhhbiBsYXN0IHdlZWsg4oCUIGJlYXRpbmcgOTglIG9mIFRDUyBQcmltZSBhcHBsaWNhbnRzLlxuXHRcdFx0XHRcdDwvcD5cblx0XHRcdFx0PC9kaXY+XG5cdFx0XHQ8L2Rpdj5cblxuXHRcdFx0ey8qIEJvdHRvbSBNb2Rlcm4gQmFyIENoYXJ0IEFyZWEgKi99XG5cdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cInJlbGF0aXZlIHotMTAgdy1mdWxsIG1heC13LVszOTBweF0gbXgtYXV0byBwdC00IHBiLTJcIj5cblx0XHRcdFx0ey8qIENoYXJ0IFRpdGxlIEhlYWRlciAqL31cblx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBqdXN0aWZ5LWJldHdlZW4gbWItMyBweC0yXCI+XG5cdFx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJmbGV4IGl0ZW1zLWNlbnRlciBnYXAtMlwiPlxuXHRcdFx0XHRcdFx0PHNwYW4gY2xhc3NOYW1lPVwidGV4dC14cyBmb250LWV4dHJhYm9sZCB0ZXh0LXNsYXRlLTcwMCB0cmFja2luZy10aWdodFwiPlxuXHRcdFx0XHRcdFx0XHRXZWVrbHkgU3BlZWQgJmFtcDsgQWNjdXJhY3kgVmVsb2NpdHlcblx0XHRcdFx0XHRcdDwvc3Bhbj5cblx0XHRcdFx0XHQ8L2Rpdj5cblx0XHRcdFx0XHQ8c3BhbiBjbGFzc05hbWU9XCJ0ZXh0LVsxMXB4XSBmb250LWJvbGQgdGV4dC1pbmRpZ28tNjAwIGJnLXdoaXRlIHB4LTIuNSBweS0xIHJvdW5kZWQtZnVsbCBzaGFkb3ctc21cIj5cblx0XHRcdFx0XHRcdCszOCUgdnMgUGVlcnNcblx0XHRcdFx0XHQ8L3NwYW4+XG5cdFx0XHRcdDwvZGl2PlxuXG5cdFx0XHRcdHsvKiBWZXJ0aWNhbCBCYXJzIEdyaWQgKi99XG5cdFx0XHRcdDxkaXYgY2xhc3NOYW1lPVwicmVsYXRpdmUgaC00NCBmbGV4IGl0ZW1zLWVuZCBqdXN0aWZ5LWJldHdlZW4gcHgtMyBnYXAtMiBiZy13aGl0ZS80MCBiYWNrZHJvcC1ibHVyLXNtIHJvdW5kZWQtM3hsIHAtNCBib3JkZXIgYm9yZGVyLXdoaXRlLzUwIHNoYWRvdy1zbVwiPlxuXHRcdFx0XHRcdHsvKiBTdWJ0bGUgSG9yaXpvbnRhbCBCZW5jaG1hcmsgTGluZXMgKi99XG5cdFx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC14LTQgdG9wLTggYm9yZGVyLWIgYm9yZGVyLWluZGlnby0yMDAvNTAgcG9pbnRlci1ldmVudHMtbm9uZVwiIC8+XG5cdFx0XHRcdFx0PGRpdiBjbGFzc05hbWU9XCJhYnNvbHV0ZSBpbnNldC14LTQgdG9wLTIwIGJvcmRlci1iIGJvcmRlci1pbmRpZ28tMjAwLzQwIHBvaW50ZXItZXZlbnRzLW5vbmVcIiAvPlxuXG5cdFx0XHRcdFx0e2JhckRhdGEubWFwKChiYXIsIGlkeCkgPT4ge1xuXHRcdFx0XHRcdFx0Y29uc3QgaXNTZWxlY3RlZCA9IGFjdGl2ZUJhciA9PT0gaWR4XG5cblx0XHRcdFx0XHRcdHJldHVybiAoXG5cdFx0XHRcdFx0XHRcdDxkaXZcblx0XHRcdFx0XHRcdFx0XHRrZXk9e2lkeH1cblx0XHRcdFx0XHRcdFx0XHRvbkNsaWNrPXsoKSA9PiBzZXRBY3RpdmVCYXIoaWR4KX1cblx0XHRcdFx0XHRcdFx0XHRjbGFzc05hbWU9XCJyZWxhdGl2ZSBmbGV4LTEgZmxleCBmbGV4LWNvbCBpdGVtcy1jZW50ZXIgaC1mdWxsIGp1c3RpZnktZW5kIGdyb3VwIGN1cnNvci1wb2ludGVyXCJcblx0XHRcdFx0XHRcdFx0PlxuXHRcdFx0XHRcdFx0XHRcdHsvKiBUb29sdGlwIG9uIGhvdmVyL2FjdGl2ZSAqL31cblx0XHRcdFx0XHRcdFx0XHR7aXNTZWxlY3RlZCAmJiAoXG5cdFx0XHRcdFx0XHRcdFx0XHQ8ZGl2IGNsYXNzTmFtZT1cImFic29sdXRlIC10b3AtNyBweC0yIHB5LTAuNSByb3VuZGVkLW1kIGJnLXNsYXRlLTkwMCB0ZXh0LXdoaXRlIHRleHQtWzEwcHhdIGZvbnQtYm9sZCBzaGFkb3ctbWQgd2hpdGVzcGFjZS1ub3dyYXAgei0yMCBhbmltYXRlLWZhZGVJblwiPlxuXHRcdFx0XHRcdFx0XHRcdFx0XHR7YmFyLnZhbHVlfVxuXHRcdFx0XHRcdFx0XHRcdFx0PC9kaXY+XG5cdFx0XHRcdFx0XHRcdFx0KX1cblxuXHRcdFx0XHRcdFx0XHRcdHsvKiBSb3VuZGVkIEJhciBQaWxsYXIgKi99XG5cdFx0XHRcdFx0XHRcdFx0PGRpdlxuXHRcdFx0XHRcdFx0XHRcdFx0Y2xhc3NOYW1lPXtgdy1mdWxsIG1heC13LVszMnB4XSByb3VuZGVkLXQteGwgdHJhbnNpdGlvbi1hbGwgZHVyYXRpb24tNTAwICR7XG5cdFx0XHRcdFx0XHRcdFx0XHRcdGJhci5pc1BlYWsgfHwgaXNTZWxlY3RlZFxuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdD8gJ3NoYWRvdy1bMF84cHhfMjBweF9yZ2JhKDk5LDEwMiwyNDEsMC40NSldJ1xuXHRcdFx0XHRcdFx0XHRcdFx0XHRcdDogJ29wYWNpdHktNzAgZ3JvdXAtaG92ZXI6b3BhY2l0eS0xMDAnXG5cdFx0XHRcdFx0XHRcdFx0XHR9YH1cblx0XHRcdFx0XHRcdFx0XHRcdHN0eWxlPXt7XG5cdFx0XHRcdFx0XHRcdFx0XHRcdGhlaWdodDogYCR7YmFyLmhlaWdodH0lYCxcblx0XHRcdFx0XHRcdFx0XHRcdFx0YmFja2dyb3VuZDpcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRiYXIuaXNQZWFrIHx8IGlzU2VsZWN0ZWRcblx0XHRcdFx0XHRcdFx0XHRcdFx0XHRcdD8gJ2xpbmVhci1ncmFkaWVudCgxODBkZWcsICM0ZjQ2ZTUgMCUsICMzMTJlODEgMTAwJSknXG5cdFx0XHRcdFx0XHRcdFx0XHRcdFx0XHQ6ICdsaW5lYXItZ3JhZGllbnQoMTgwZGVnLCAjODE4Y2Y4IDAlLCAjYTViNGZjIDEwMCUpJyxcblx0XHRcdFx0XHRcdFx0XHRcdH19XG5cdFx0XHRcdFx0XHRcdFx0Lz5cblxuXHRcdFx0XHRcdFx0XHRcdHsvKiBEYXkgTGFiZWwgKi99XG5cdFx0XHRcdFx0XHRcdFx0PHNwYW5cblx0XHRcdFx0XHRcdFx0XHRcdGNsYXNzTmFtZT17YHRleHQtWzEwcHhdIGZvbnQtYm9sZCBtdC0yIHRyYW5zaXRpb24tY29sb3JzICR7XG5cdFx0XHRcdFx0XHRcdFx0XHRcdGlzU2VsZWN0ZWQgPyAndGV4dC1pbmRpZ28tOTUwIGZvbnQtYmxhY2snIDogJ3RleHQtc2xhdGUtNTAwJ1xuXHRcdFx0XHRcdFx0XHRcdFx0fWB9XG5cdFx0XHRcdFx0XHRcdFx0PlxuXHRcdFx0XHRcdFx0XHRcdFx0e2Jhci5kYXl9XG5cdFx0XHRcdFx0XHRcdFx0PC9zcGFuPlxuXHRcdFx0XHRcdFx0XHQ8L2Rpdj5cblx0XHRcdFx0XHRcdClcblx0XHRcdFx0XHR9KX1cblx0XHRcdFx0PC9kaXY+XG5cdFx0XHQ8L2Rpdj5cblx0XHQ8L2Rpdj5cblx0KVxufVxuIl0sImZpbGUiOiJDOi9Vc2Vycy9kaGFudS9PbmVEcml2ZS9EZXNrdG9wL1RoZSBHcmFuZCBGaW5hbGUvc3JjL2NvbXBvbmVudHMvZ2FtZXpvbmUtcHJldmlld3MvUGVyZm9ybWFuY2VJbnNpZ2h0c1ByZXZpZXcuanN4In0=

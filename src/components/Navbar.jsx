@@ -289,39 +289,6 @@ export default function Navbar() {
 								</a>
 							</div>
 
-							{/* Blog */}
-							<div className="framer-jiylz6-container">
-								<a
-									className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item"
-									data-framer-name="Default"
-									href="#blog"
-									style={{
-										backgroundColor: 'rgba(0, 0, 0, 0)',
-										height: '100%',
-										borderRadius: '16px',
-										display: 'flex',
-										alignItems: 'center',
-										padding: '8px 16px',
-										textDecoration: 'none',
-									}}
-								>
-									<div className="framer-17agl2j" data-framer-component-type="RichTextContainer">
-										<p
-											className="framer-text framer-styles-preset-yctu3a"
-											data-styles-preset="dLJsxXALZ"
-											style={{
-												margin: 0,
-												color: isScrolled ? '#334155' : '#ffffff',
-												fontSize: 14,
-												fontWeight: isScrolled ? 500 : 400,
-												transition: 'color 0.25s ease',
-											}}
-										>
-											Blog
-										</p>
-									</div>
-								</a>
-							</div>
 
 							{/* Careers */}
 							<div className="framer-1sfmy0-container">
@@ -607,17 +574,7 @@ export default function Navbar() {
 							>
 								Pricing
 							</a>
-							<a
-								href="#blog"
-								style={{
-									color: isScrolled ? '#334155' : 'rgba(255, 255, 255, 0.85)',
-									padding: '10px 16px',
-									textDecoration: 'none',
-								}}
-								onClick={() => setMobileOpen(false)}
-							>
-								Blog
-							</a>
+
 							<a
 								href="#faq"
 								style={{
