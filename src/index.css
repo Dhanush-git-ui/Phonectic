@@ -177,49 +177,85 @@ body {
 /* ==========================================================================
    2. Hero Section Animations
    ========================================================================== */
-/* Ambient Phone Bob Loop */
-@keyframes heroPhoneBob {
-	0%,
-	100% {
+/* ==========================================================================
+   HERO FLOATING GRAPHIC COMPOSITION - FRAMER LOOP EFFECTS (FLOATING)
+   Continuous, subtle up-and-down hovering motion of individual cards (±15px)
+   with slight rotation and smooth mirror/alternate easing curves
+   ========================================================================== */
+
+/* Central Phone Mockup Loop (gentle ±12px breathing hover) */
+@keyframes heroPhoneLoop {
+	0% {
 		transform: translateY(0px);
 	}
-	50% {
-		transform: translateY(-8px);
+	100% {
+		transform: translateY(-12px);
 	}
 }
 
 .hero-phone-bob {
-	animation: heroPhoneBob 5s ease-in-out infinite;
+	animation: heroPhoneLoop 5.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate !important;
 	will-change: transform;
 }
 
-/* Floating Cards Ambient Out-of-phase Cycles */
-@keyframes heroCardFloat1 {
-	0%,
-	100% {
+/* Front Card 1 (Aptitude Streak - Right): moves up 15px with slight +2deg rotation */
+@keyframes heroCardLoopFront1 {
+	0% {
 		transform: translateY(0px) rotate(0deg);
 	}
-	50% {
-		transform: translateY(-9px) rotate(1.2deg);
+	100% {
+		transform: translateY(-15px) rotate(2deg);
 	}
 }
 
-@keyframes heroCardFloat2 {
-	0%,
-	100% {
+.hero-card-float-front-1 {
+	animation: heroCardLoopFront1 4.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate !important;
+	will-change: transform;
+}
+
+/* Front Card 2 (Speed Math - Left): moves down 15px with slight -1.8deg rotation */
+@keyframes heroCardLoopFront2 {
+	0% {
 		transform: translateY(0px) rotate(0deg);
 	}
-	50% {
-		transform: translateY(-7px) rotate(-1.5deg);
+	100% {
+		transform: translateY(15px) rotate(-1.8deg);
 	}
 }
 
-.hero-card-float-1 {
-	animation: heroCardFloat1 4.5s ease-in-out infinite;
+.hero-card-float-front-2 {
+	animation: heroCardLoopFront2 5.2s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate !important;
+	will-change: transform;
 }
 
-.hero-card-float-2 {
-	animation: heroCardFloat2 5.5s ease-in-out infinite;
+/* Behind Card 1 (National Percentile - Top Left): moves up 14px with -1.5deg rotation */
+@keyframes heroCardLoopBehind1 {
+	0% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	100% {
+		transform: translateY(-14px) rotate(-1.5deg);
+	}
+}
+
+.hero-card-float-behind-1 {
+	animation: heroCardLoopBehind1 5.8s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate !important;
+	will-change: transform;
+}
+
+/* Behind Card 2 (Placement Offers - Top Right): moves down 15px with +1.6deg rotation */
+@keyframes heroCardLoopBehind2 {
+	0% {
+		transform: translateY(0px) rotate(0deg);
+	}
+	100% {
+		transform: translateY(15px) rotate(1.6deg);
+	}
+}
+
+.hero-card-float-behind-2 {
+	animation: heroCardLoopBehind2 4.6s cubic-bezier(0.45, 0.05, 0.55, 0.95) infinite alternate !important;
+	will-change: transform;
 }
 
 /* Ambient Radial Glow Breathing */
@@ -381,9 +417,9 @@ body {
 }
 .framer-btjjzy .framer-xtmfu3 {
 	width: 48px !important;
-	height: 48px !important;
+	height: 52px !important;
 	min-width: 48px !important;
-	min-height: 48px !important;
+	min-height: 52px !important;
 	border-radius: 14px !important;
 	overflow: hidden !important;
 	padding: 0 !important;
@@ -1141,15 +1177,15 @@ body {
 
 .framer-spMKf .framer-18iagas {
 	aspect-ratio: unset !important;
-	width: 220px !important;
-	height: 48px !important;
+	width: 250px !important;
+	height: 52px !important;
 	position: relative !important;
 	flex-shrink: 0 !important;
 	cursor: pointer !important;
 	background: transparent !important;
 	border: none !important;
 	box-shadow: none !important;
-	opacity: 0.85 !important;
+	opacity: 1 !important;
 	transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease !important;
 }
 
@@ -1782,15 +1818,15 @@ img[data-loaded] {
 
 .framer-spMKf .framer-18iagas {
 	aspect-ratio: unset !important;
-	width: 220px !important;
-	height: 48px !important;
+	width: 250px !important;
+	height: 52px !important;
 	position: relative !important;
 	flex-shrink: 0 !important;
 	cursor: pointer !important;
 	background: transparent !important;
 	border: none !important;
 	box-shadow: none !important;
-	opacity: 0.85 !important;
+	opacity: 1 !important;
 	transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease !important;
 }
 
@@ -1863,7 +1899,7 @@ img[data-loaded] {
 /* Testimonials Sticky Scroll Pinning & White Background Canvas */
 .testimonials-scroll-track {
 	width: 100%;
-	height: 240vh;
+	height: 380vh;
 	position: relative;
 	background-color: #ffffff !important;
 	margin-bottom: 0 !important;
@@ -1891,8 +1927,8 @@ img[data-loaded] {
 @media (min-width: 1025px) {
 	.testimonials-sticky-container .framer-i1pQu.framer-1m63sx3 {
 		width: min(1560px, 96vw) !important;
-		height: min(800px, calc(100vh - 40px)) !important;
-		padding: 12px 20px !important;
+		height: min(870px, calc(100vh - 16px)) !important;
+		padding: 8px 16px !important;
 		display: flex !important;
 		align-items: center !important;
 		justify-content: center !important;
@@ -1901,13 +1937,13 @@ img[data-loaded] {
 	.testimonials-sticky-container .framer-gnrgmb {
 		width: 100% !important;
 		height: 100% !important;
-		min-height: min(700px, calc(100vh - 50px)) !important;
-		max-height: min(800px, calc(100vh - 40px)) !important;
+		min-height: min(825px, calc(100vh - 16px)) !important;
+		max-height: min(870px, calc(100vh - 16px)) !important;
 		border-radius: min(64px, 5vw) !important;
 	}
 
 	.testimonials-sticky-container .framer-1cypbs7 {
-		gap: clamp(16px, 3vh, 48px) !important;
+		gap: clamp(16px, 3vh, 44px) !important;
 	}
 
 	.testimonials-sticky-container .framer-1j99ufo,
@@ -1915,9 +1951,22 @@ img[data-loaded] {
 	.testimonials-sticky-container .framer-18hgfpp,
 	.testimonials-sticky-container .framer-1q8094n,
 	.testimonials-sticky-container .framer-1k18mro {
-		width: clamp(260px, 19vw, 290px) !important;
-		padding: 20px 22px !important;
-		gap: 18px !important;
+		width: clamp(235px, 17vw, 255px) !important;
+		padding: 15px 17px !important;
+		gap: 10px !important;
+	}
+
+	.testimonials-sticky-container .framer-zozq8y,
+	.testimonials-sticky-container .framer-wps36d,
+	.testimonials-sticky-container .framer-1utkjlt,
+	.testimonials-sticky-container .framer-hc2z6s,
+	.testimonials-sticky-container .framer-opff2l {
+		gap: 8px !important;
+	}
+
+	.testimonials-sticky-container .framer-text.framer-styles-preset-yctu3a {
+		font-size: 12.5px !important;
+		line-height: 1.4 !important;
 	}
 }
 
@@ -1943,4 +1992,135 @@ img[data-loaded] {
 	}
 }
 
+/* ==========================================================================
+   NEW FAQ: OUR WORKING METHOD ACCORDION CARDS (MATCHING REFERENCE)
+   ========================================================================== */
+.faq-accordion-item.faq-revealed {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+@media (max-width: 900px) {
+	.faq-expanded-top-grid {
+		grid-template-columns: 1fr auto !important;
+		gap: 16px !important;
+	}
+	.faq-expanded-top-grid p {
+		grid-column: 1 / -1;
+		padding-top: 0 !important;
+	}
+	.faq-white-cards-grid {
+		grid-template-columns: 1fr !important;
+	}
+	.faq-collapsed-teaser {
+		display: none !important;
+	}
+}
+
+@media (max-width: 600px) {
+	.faq-expanded-card {
+		padding: 24px 20px 28px !important;
+		border-radius: 24px !important;
+	}
+	.faq-collapsed-row {
+		padding: 18px 20px !important;
+	}
+}
+
+.framer-Tesak .framer-193gfb {
+	background-color: #ffffff !important;
+	padding: 100px 24px 120px !important;
+	display: block !important;
+	overflow: visible !important;
+}
+
+/* ==========================================================================
+   NEW TESTIMONIALS GRID (CLEAN MODERN RESPONSIVE LAYOUT)
+   ========================================================================== */
+.testimonial-grid-card.testimonial-card-revealed {
+	opacity: 1 !important;
+	transform: translateY(0) !important;
+}
+
+@media (max-width: 1024px) {
+	.testimonials-cards-grid {
+		grid-template-columns: repeat(2, 1fr) !important;
+	}
+}
+
+@media (max-width: 640px) {
+	.testimonials-cards-grid {
+		grid-template-columns: 1fr !important;
+	}
+	.testimonials-bottom-banner {
+		flex-direction: column !important;
+		gap: 16px !important;
+		align-items: flex-start !important;
+	}
+}
+
+/* ==========================================================================
+   FRAMER-STYLE HEADING APPEAR & SCROLL REVEAL (TEXT MASKING & STAGGER)
+   ========================================================================== */
+.framer-word-mask {
+	display: inline-block;
+	overflow: hidden;
+	vertical-align: top;
+	padding-bottom: 0.16em;
+	margin-bottom: -0.16em;
+	line-height: inherit;
+}
+
+.framer-reveal-word {
+	display: inline-block;
+	vertical-align: top;
+	will-change: transform, opacity;
+	transform: translateY(115%) scale(0.95);
+	opacity: 0;
+	transition: transform 0.8s cubic-bezier(0.16, 1, 0.3, 1),
+	            opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+	transition-delay: calc(var(--word-index, 0) * 45ms);
+}
+
+.framer-reveal-heading.is-revealed .framer-reveal-word {
+	transform: translateY(0%) scale(1);
+	opacity: 1;
+}
+
+/* Ensure headings with text-fill / linear-gradients maintain their fill */
+[data-text-fill="true"] .framer-reveal-word {
+	background-image: inherit;
+	-webkit-background-clip: text;
+	background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.framer-reveal-word {
+		transform: none !important;
+		opacity: 1 !important;
+		transition: none !important;
+	}
+}
+
+/* ==========================================================================
+   GLOBAL TYPOGRAPHY UNIFICATION (ROBOTO CONDENSED BLACK / GEIST SANS)
+   ========================================================================== */
+h1, h2, h3, h4,
+.framer-text h1, .framer-text h2, .framer-text h3, .framer-text h4,
+[data-framer-name="Heading"] h1, [data-framer-name="Heading"] h2, [data-framer-name="Heading"] h3,
+.programs-section h2, .programs-section h3,
+#faq h2, #faq h3, #faq h4, .faq-header h2,
+.framer-18ug3rd-section h2, .framer-18ug3rd-section h3 {
+	font-family: "Roboto Condensed", -apple-system, BlinkMacSystemFont, sans-serif !important;
+	font-weight: 900 !important;
+	text-transform: uppercase !important;
+	letter-spacing: -0.04em !important;
+}
+
+/* Sub-headings and card titles fine-tuning */
+h3, h4,
+.framer-text h3, .framer-text h4 {
+	letter-spacing: -0.025em !important;
+}
 

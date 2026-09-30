@@ -418,7 +418,7 @@ export default function PlacementArcadeGame() {
 				margin: '0 auto',
 				position: 'relative',
 				borderRadius: 24,
-				background: 'linear-gradient(180deg, #0e1526 0%, #090e1a 100%)',
+				background: '#0b101d',
 				border: '1px solid rgba(255, 255, 255, 0.08)',
 				boxShadow: '0 24px 60px -15px rgba(0, 0, 0, 0.6), inset 0 1px 0 rgba(255, 255, 255, 0.06)',
 				overflow: 'hidden',
@@ -435,7 +435,7 @@ export default function PlacementArcadeGame() {
 					transform: 'translateX(-50%)',
 					width: 520,
 					height: 120,
-					background: 'radial-gradient(ellipse at top, rgba(59, 130, 246, 0.12) 0%, transparent 70%)',
+					background: 'linear-gradient(180deg, rgba(59, 130, 246, 0.06) 0%, transparent 100%)',
 					pointerEvents: 'none',
 				}}
 			/>
@@ -599,12 +599,14 @@ export default function PlacementArcadeGame() {
 						{/* Confident, High-legibility Headline */}
 						<h3
 							style={{
-								fontSize: 'clamp(28px, 3.8vw, 42px)',
-								fontWeight: 800,
+								fontFamily: '"Roboto Condensed", sans-serif',
+								fontSize: 'clamp(30px, 4vw, 46px)',
+								fontWeight: 900,
+								textTransform: 'uppercase',
+								letterSpacing: '-0.035em',
+								lineHeight: 1.05,
 								color: '#ffffff',
 								margin: '0 0 12px 0',
-								letterSpacing: '-0.025em',
-								lineHeight: 1.15,
 							}}
 						>
 							Test Your Speed.{' '}

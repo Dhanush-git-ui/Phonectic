@@ -151,19 +151,19 @@ export default function DarkFeatures() {
 					zIndex: 10,
 				}}
 			>
-				{/* Background Atmospheric Radial Glow */}
+				{/* Sleek Technical Dot Grid Background (Clean Engineering Aesthetic, Non-AI) */}
 				<div
 					style={{
 						position: 'absolute',
-						top: '50%',
-						left: '50%',
-						transform: 'translate(-50%, -50%)',
-						width: '90%',
-						maxWidth: 1200,
-						height: 500,
-						background:
-							'radial-gradient(ellipse at center, rgba(37, 99, 235, 0.12) 0%, rgba(30, 58, 138, 0.04) 50%, transparent 75%)',
-						filter: 'blur(50px)',
+						top: 0,
+						left: 0,
+						right: 0,
+						bottom: 0,
+						backgroundImage:
+							'radial-gradient(rgba(255, 255, 255, 0.08) 1.2px, transparent 1.2px)',
+						backgroundSize: '24px 24px',
+						maskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, #000 40%, transparent 100%)',
+						WebkitMaskImage: 'radial-gradient(ellipse 70% 60% at 50% 50%, #000 40%, transparent 100%)',
 						pointerEvents: 'none',
 						zIndex: 0,
 					}}

@@ -65,11 +65,11 @@ export default function Benefits() {
 
 					<h2
 						style={{
-							fontFamily: "'Anton', sans-serif",
+							fontFamily: "'Roboto Condensed', sans-serif",
 							fontSize: 'clamp(36px, 5vw, 64px)',
-							lineHeight: 1.05,
+							lineHeight: 0.98,
 							fontWeight: 900,
-							letterSpacing: '-0.01em',
+							letterSpacing: '-0.04em',
 							color: '#0f172a',
 							textTransform: 'uppercase',
 							margin: '0 0 16px',
@@ -80,7 +80,7 @@ export default function Benefits() {
 
 					<p
 						style={{
-							fontFamily: "'Plus Jakarta Sans', sans-serif",
+							fontFamily: '"Geist", "Inter", sans-serif',
 							fontSize: 'clamp(14px, 1.2vw, 16px)',
 							lineHeight: 1.6,
 							color: '#475569',
@@ -153,6 +153,7 @@ export default function Benefits() {
 						{/* CARD 1: Aptitude Mastery */}
 						<div
 							className="program-card"
+							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
 							style={{
 								background: '#ffffff',
 								border: '1px solid #e2e8f0',
@@ -163,6 +164,7 @@ export default function Benefits() {
 								justifyContent: 'space-between',
 								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
 								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								cursor: 'pointer',
 							}}
 						>
 							<div>
@@ -193,9 +195,11 @@ export default function Benefits() {
 
 								<h3
 									style={{
-										fontFamily: "'Plus Jakarta Sans', sans-serif",
-										fontSize: '20px',
-										fontWeight: 800,
+										fontFamily: "'Roboto Condensed', sans-serif",
+										fontSize: '22px',
+										fontWeight: 900,
+										textTransform: 'uppercase',
+										letterSpacing: '-0.025em',
 										color: '#0f172a',
 										margin: '0 0 4px',
 									}}
@@ -373,11 +377,32 @@ export default function Benefits() {
 									<path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 							</a>
+
+							{/* Learn More & Explore Button */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									gap: '8px',
+									marginTop: '12px',
+									padding: '9px 14px',
+									borderRadius: '12px',
+									background: '#0f172a',
+									color: '#ffffff',
+									fontSize: '12px',
+									fontWeight: 700,
+								}}
+							>
+								<span>Explore on LMS</span>
+								<span>→</span>
+							</div>
 						</div>
 
 						{/* CARD 2: Technical & DSA Coding */}
 						<div
 							className="program-card"
+							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
 							style={{
 								background: '#ffffff',
 								border: '1px solid #e2e8f0',
@@ -388,6 +413,7 @@ export default function Benefits() {
 								justifyContent: 'space-between',
 								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
 								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								cursor: 'pointer',
 							}}
 						>
 							<div>
@@ -418,9 +444,11 @@ export default function Benefits() {
 
 								<h3
 									style={{
-										fontFamily: "'Plus Jakarta Sans', sans-serif",
-										fontSize: '20px',
-										fontWeight: 800,
+										fontFamily: "'Roboto Condensed', sans-serif",
+										fontSize: '22px',
+										fontWeight: 900,
+										textTransform: 'uppercase',
+										letterSpacing: '-0.025em',
 										color: '#0f172a',
 										margin: '0 0 4px',
 									}}
@@ -571,11 +599,32 @@ export default function Benefits() {
 									<path d="M9 18l6-6-6-6" strokeLinecap="round" strokeLinejoin="round" />
 								</svg>
 							</a>
+
+							{/* Learn More & Explore Button */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									gap: '8px',
+									marginTop: '12px',
+									padding: '9px 14px',
+									borderRadius: '12px',
+									background: '#0f172a',
+									color: '#ffffff',
+									fontSize: '12px',
+									fontWeight: 700,
+								}}
+							>
+								<span>Explore on LMS</span>
+								<span>→</span>
+							</div>
 						</div>
 
 						{/* CARD 3: Proven Placements (FEATURED DARK OBSIDIAN CARD) */}
 						<div
 							className="program-card program-card-featured"
+							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
 							style={{
 								background: 'radial-gradient(ellipse at 50% 0%, #1e3a8a 0%, #090d16 100%)',
 								border: '1.5px solid rgba(59, 130, 246, 0.45)',
@@ -589,6 +638,7 @@ export default function Benefits() {
 								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
 								position: 'relative',
 								overflow: 'hidden',
+								cursor: 'pointer',
 							}}
 						>
 							<div>
@@ -619,9 +669,11 @@ export default function Benefits() {
 
 								<h3
 									style={{
-										fontFamily: "'Plus Jakarta Sans', sans-serif",
-										fontSize: '20px',
-										fontWeight: 800,
+										fontFamily: "'Roboto Condensed', sans-serif",
+										fontSize: '22px',
+										fontWeight: 900,
+										textTransform: 'uppercase',
+										letterSpacing: '-0.025em',
 										color: '#ffffff',
 										margin: '0 0 4px',
 									}}
@@ -637,8 +689,10 @@ export default function Benefits() {
 									<div>
 										<div
 											style={{
-												fontFamily: "'Anton', sans-serif",
-												fontSize: '28px',
+												fontFamily: "'Roboto Condensed', sans-serif",
+												fontSize: '32px',
+												fontWeight: 900,
+												letterSpacing: '-0.02em',
 												color: '#ffffff',
 												lineHeight: 1,
 											}}
@@ -650,8 +704,10 @@ export default function Benefits() {
 									<div>
 										<div
 											style={{
-												fontFamily: "'Anton', sans-serif",
-												fontSize: '28px',
+												fontFamily: "'Roboto Condensed', sans-serif",
+												fontSize: '32px',
+												fontWeight: 900,
+												letterSpacing: '-0.02em',
 												color: '#38bdf8',
 												lineHeight: 1,
 											}}
@@ -748,11 +804,33 @@ export default function Benefits() {
 									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>Capgemini</span>
 								</div>
 							</div>
+
+							{/* Learn More & Explore Button */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									gap: '8px',
+									marginTop: '12px',
+									padding: '9px 14px',
+									borderRadius: '12px',
+									background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+									color: '#ffffff',
+									fontSize: '12px',
+									fontWeight: 700,
+									boxShadow: '0 4px 15px rgba(59, 130, 246, 0.4)',
+								}}
+							>
+								<span>Explore Placements on LMS</span>
+								<span>→</span>
+							</div>
 						</div>
 
 						{/* CARD 4: Interview Ready */}
 						<div
 							className="program-card"
+							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
 							style={{
 								background: '#ffffff',
 								border: '1px solid #e2e8f0',
@@ -763,6 +841,7 @@ export default function Benefits() {
 								justifyContent: 'space-between',
 								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
 								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								cursor: 'pointer',
 							}}
 						>
 							<div>
@@ -795,9 +874,11 @@ export default function Benefits() {
 
 								<h3
 									style={{
-										fontFamily: "'Plus Jakarta Sans', sans-serif",
-										fontSize: '20px',
-										fontWeight: 800,
+										fontFamily: "'Roboto Condensed', sans-serif",
+										fontSize: '22px',
+										fontWeight: 900,
+										textTransform: 'uppercase',
+										letterSpacing: '-0.025em',
 										color: '#0f172a',
 										margin: '0 0 4px',
 									}}
@@ -1042,6 +1123,26 @@ export default function Benefits() {
 									</span>
 								</div>
 								<span style={{ color: '#94a3b8', fontSize: '12px' }}>›</span>
+							</div>
+
+							{/* Learn More & Explore Button */}
+							<div
+								style={{
+									display: 'flex',
+									alignItems: 'center',
+									justifyContent: 'center',
+									gap: '8px',
+									marginTop: '12px',
+									padding: '9px 14px',
+									borderRadius: '12px',
+									background: '#0f172a',
+									color: '#ffffff',
+									fontSize: '12px',
+									fontWeight: 700,
+								}}
+							>
+								<span>Start Free on LMS</span>
+								<span>→</span>
 							</div>
 						</div>
 					</div>

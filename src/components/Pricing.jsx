@@ -121,5 +121,5 @@ export default function Pricing() {
 		})
 	}, [isYearly])
 
-	return <section className="framer-13e87qe" data-framer-name="Pricing" dangerouslySetInnerHTML={{ __html: content }} />
+	return <section id="pricing" className="framer-13e87qe" data-framer-name="Pricing" dangerouslySetInnerHTML={{ __html: content }} />
 }

@@ -359,10 +359,114 @@ export function useScrollAnimations() {
 		window.addEventListener('scroll', handleScroll, { passive: true })
 		window.addEventListener('resize', handleScroll, { passive: true })
 
+		// ─────────────────────────────────────────────
+		// 11. FRAMER-STYLE HEADING APPEAR & SCROLL REVEALS
+		//     Text Masking (overflow: hidden), Word Slide-Up, Stagger & Scale
+		// ─────────────────────────────────────────────
+		const headingObserver = new IntersectionObserver(
+			(entries) => {
+				entries.forEach((entry) => {
+					if (entry.isIntersecting) {
+						entry.target.classList.add('is-revealed')
+						headingObserver.unobserve(entry.target)
+					}
+				})
+			},
+			{ threshold: 0.1, rootMargin: '0px 0px -40px 0px' },
+		)
+
+		function splitHeadingIntoWords(heading) {
+			if (heading.dataset.headingRevealed) return
+			heading.dataset.headingRevealed = 'true'
+			heading.classList.add('framer-reveal-heading')
+
+			const originalText = heading.textContent.trim()
+			if (!heading.getAttribute('aria-label')) {
+				heading.setAttribute('aria-label', originalText)
+			}
+
+			let wordIndex = 0
+			function processNode(node) {
+				if (node.nodeType === Node.TEXT_NODE) {
+					const text = node.textContent
+					if (!text.trim()) return node
+					const parts = text.split(/(\s+)/)
+					const frag = document.createDocumentFragment()
+					parts.forEach((part) => {
+						if (!part) return
+						if (/^\s+$/.test(part)) {
+							frag.appendChild(document.createTextNode(part))
+						} else {
+							const mask = document.createElement('span')
+							mask.className = 'framer-word-mask'
+							const word = document.createElement('span')
+							word.className = 'framer-reveal-word'
+							word.style.setProperty('--word-index', wordIndex++)
+							word.textContent = part
+							mask.appendChild(word)
+							frag.appendChild(mask)
+						}
+					})
+					return frag
+				} else if (node.nodeType === Node.ELEMENT_NODE) {
+					if (['SVG', 'BUTTON', 'IMG'].includes(node.tagName)) return node
+					const children = Array.from(node.childNodes)
+					children.forEach((child) => {
+						const replacement = processNode(child)
+						if (replacement && replacement !== child) {
+							node.replaceChild(replacement, child)
+						}
+					})
+					return node
+				}
+				return node
+			}
+
+			processNode(heading)
+		}
+
+		function processAllHeadings() {
+			const headingSelectors = [
+				'h1',
+				'h2',
+				'h3',
+				'h4',
+				'[data-framer-name="Heading"] h2',
+				'[data-framer-name="Heading"] h3',
+				'.framer-1npdw8x h2',
+				'.framer-1npdw8x h3',
+			]
+			const headings = document.querySelectorAll(headingSelectors.join(','))
+			headings.forEach((h) => {
+				if (h.closest('#hero')) return
+				splitHeadingIntoWords(h)
+				const rect = h.getBoundingClientRect()
+				if (rect.top < window.innerHeight && rect.bottom > 0) {
+					setTimeout(() => h.classList.add('is-revealed'), 100)
+				} else {
+					headingObserver.observe(h)
+				}
+			})
+		}
+
+		processAllHeadings()
+
+		let mutationTimeout = null
+		const headingMutationObserver = new MutationObserver(() => {
+			if (mutationTimeout) clearTimeout(mutationTimeout)
+			mutationTimeout = setTimeout(() => {
+				processAllHeadings()
+			}, 150)
+		})
+		headingMutationObserver.observe(document.body, { childList: true, subtree: true })
+
 		return () => {
 			revealObserver.disconnect()
 			staggerObserver.disconnect()
 			counterObserver.disconnect()
+			headingObserver.disconnect()
+			headingMutationObserver.disconnect()
+			if (mutationTimeout) clearTimeout(mutationTimeout)
 			window.removeEventListener('scroll', handleScroll)
 			window.removeEventListener('resize', handleScroll)
 			tiltHandlers.forEach(({ card, onMove, onLeave }) => {

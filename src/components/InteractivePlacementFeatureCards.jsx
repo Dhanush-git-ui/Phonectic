@@ -723,10 +723,12 @@ export default function InteractivePlacementFeatureCards() {
 
 				<h2
 					style={{
-						fontSize: 'clamp(32px, 4.5vw, 54px)',
-						fontWeight: 800,
-						letterSpacing: '-0.035em',
-						lineHeight: 1.12,
+						fontFamily: '"Roboto Condensed", sans-serif',
+						fontSize: 'clamp(34px, 4.8vw, 58px)',
+						fontWeight: 900,
+						textTransform: 'uppercase',
+						letterSpacing: '-0.04em',
+						lineHeight: 1.0,
 						color: '#ffffff',
 						margin: '0 0 14px',
 					}}
@@ -838,12 +840,14 @@ export default function InteractivePlacementFeatureCards() {
 								{/* Title */}
 								<h3
 									style={{
-										fontSize: 21,
-										fontWeight: 800,
+										fontFamily: '"Roboto Condensed", sans-serif',
+										fontSize: 22,
+										fontWeight: 900,
+										textTransform: 'uppercase',
+										letterSpacing: '-0.025em',
 										color: '#ffffff',
-										letterSpacing: '-0.02em',
 										margin: '0 0 6px 0',
-										lineHeight: 1.2,
+										lineHeight: 1.15,
 									}}
 								>
 									{card.title}

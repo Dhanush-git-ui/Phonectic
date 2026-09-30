@@ -14,32 +14,32 @@ export default function Testimonials() {
 		const cardConfigs = [
 			{
 				sel: '.framer-1j99ufo',
-				base: 'translate(-50%, -50%) translateX(53px) translateY(131px) rotate(-5deg)',
-				dx: -260, dy: -130, dr: 1,
-				zIndex: 1,
+				start: { x: 53, y: 131, r: -5 },
+				end: { x: -275, y: -10, r: -6 },
+				zIndex: 3,
 			},
 			{
 				sel: '.framer-6idmd8',
-				base: 'translate(-50%, -50%) translateX(142px) translateY(-43px) rotate(-7deg)',
-				dx: -320, dy: 40, dr: 1,
+				start: { x: 142, y: -43, r: -7 },
+				end: { x: -155, y: -35, r: 5 },
 				zIndex: 2,
 			},
 			{
 				sel: '.framer-18hgfpp',
-				base: 'translate(-50%, -50%) translateX(240px) translateY(-106px) rotate(6deg)',
-				dx: -160, dy: 50, dr: -2,
-				zIndex: 3,
+				start: { x: 240, y: -106, r: 6 },
+				end: { x: -35, y: 16, r: -5 },
+				zIndex: 1,
 			},
 			{
 				sel: '.framer-1q8094n',
-				base: 'translate(-50%, -50%) translateX(-265px) translateY(53px) rotate(9deg)',
-				dx: 350, dy: -100, dr: -2,
+				start: { x: -265, y: 53, r: 9 },
+				end: { x: 130, y: -35, r: 6 },
 				zIndex: 2,
 			},
 			{
 				sel: '.framer-1k18mro',
-				base: 'translate(-50%, -50%) translateX(-62px) translateY(-40px) rotate(-16deg)',
-				dx: 240, dy: 70, dr: 8,
+				start: { x: -62, y: -40, r: -16 },
+				end: { x: 190, y: 40, r: -6 },
 				zIndex: 3,
 			},
 		]
@@ -48,9 +48,9 @@ export default function Testimonials() {
 			.map(c => ({ ...c, el: section.querySelector(c.sel) }))
 			.filter(c => c.el)
 
-		// Cards start in initial clustered position and are ALWAYS fully visible
+		// Set initial state
 		cards.forEach(c => {
-			c.el.style.transform = c.base
+			c.el.style.transform = `translate(-50%, -50%) translateX(${c.start.x}px) translateY(${c.start.y}px) rotate(${c.start.r}deg)`
 			c.el.style.opacity = '1'
 			c.el.style.cursor = 'pointer'
 			c.el.style.willChange = 'transform'
@@ -62,6 +62,7 @@ export default function Testimonials() {
 
 		let rafPending = false
 		const handleScroll = () => {
+			if (window.innerWidth <= 1024) return
 			if (rafPending) return
 			rafPending = true
 			requestAnimationFrame(() => {
@@ -75,15 +76,15 @@ export default function Testimonials() {
 					const raw = scrolled / scrollableDist
 					const progress = Math.min(Math.max(raw, 0), 1)
 
-					// Cards stay clustered at progress 0, spread outward over 0 -> 0.65, hold completed 0.65 -> 1.0
-					const spreadProgress = Math.min(progress / 0.65, 1)
+					// Cards smoothly spread outward over 0 -> 0.45, then remain locked in place for comfortable reading
+					const spreadProgress = Math.min(progress / 0.45, 1)
 					const eased = 1 - Math.pow(1 - spreadProgress, 2.5)
 
 					cards.forEach(c => {
-						const currentDx = c.dx * eased
-						const currentDy = c.dy * eased
-						const currentDr = c.dr * eased
-						c.el.style.transform = `${c.base} translateX(${currentDx}px) translateY(${currentDy}px) rotate(${currentDr}deg)`
+						const curX = c.start.x + (c.end.x - c.start.x) * eased
+						const curY = c.start.y + (c.end.y - c.start.y) * eased
+						const curR = c.start.r + (c.end.r - c.start.r) * eased
+						c.el.style.transform = `translate(-50%, -50%) translateX(${curX}px) translateY(${curY}px) rotate(${curR}deg)`
 						c.el.style.opacity = '1'
 						c.el.style.transition = 'none'
 					})
@@ -102,11 +103,11 @@ export default function Testimonials() {
 
 	return (
 		<div ref={trackRef} className="testimonials-scroll-track">
-			<section
+		<section
 				className="framer-1gx9988 testimonials-sticky-container"
 				data-framer-name="Testimonials"
 				dangerouslySetInnerHTML={{ __html: content }}
 			/>
-		</div>
+			</div>
 	)
 }

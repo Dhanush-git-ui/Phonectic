@@ -22,9 +22,10 @@ export default function Navbar() {
 				opacity: 1,
 				transform: 'translateX(-50%) translateY(0px)',
 				position: 'fixed',
-				top: 0,
+				top: isScrolled ? 12 : 0,
 				left: '50%',
 				zIndex: 100,
+				width: 'min(1280px, calc(100vw - 32px))',
 				transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
 			}}
 		>
@@ -48,11 +49,15 @@ export default function Navbar() {
 							backgroundColor: isScrolled ? 'rgba(255, 255, 255, 0.96)' : 'rgba(0, 0, 0, 0)',
 							border: isScrolled ? '1px solid rgba(0, 0, 0, 0.08)' : '1px solid transparent',
 							borderRadius: isScrolled ? '24px' : '0px',
-							padding: isScrolled ? '6px 20px' : '10px 0px',
+							padding: isScrolled ? '6px 20px' : '10px 20px',
 							boxShadow: isScrolled
 								? '0 10px 30px -10px rgba(0, 0, 0, 0.12), 0 4px 12px -2px rgba(0, 0, 0, 0.04)'
 								: 'none',
 							transition: 'all 0.3s cubic-bezier(0.16, 1, 0.3, 1)',
+							display: 'flex',
+							alignItems: 'center',
+							justifyContent: 'space-between',
+							position: 'relative',
 						}}
 					>
 						{/* Logo */}

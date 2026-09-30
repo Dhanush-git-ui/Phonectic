@@ -98,8 +98,13 @@ export default function GameZoneFeature1Section() {
 							</span>
 
 							<h3
-								className="text-3xl lg:text-4xl font-extrabold text-white tracking-tight leading-tight"
-								style={{ fontFamily: "'Plus Jakarta Sans', sans-serif" }}
+								className="text-3xl lg:text-4xl text-white leading-tight"
+								style={{
+									fontFamily: '"Roboto Condensed", sans-serif',
+									fontWeight: 900,
+									textTransform: 'uppercase',
+									letterSpacing: '-0.03em',
+								}}
 							>
 								Track your preparation effortlessly.
 							</h3>
@@ -141,9 +146,15 @@ export default function GameZoneFeature1Section() {
 												) : null}
 
 												<h4
-													className={`text-base font-bold transition-colors ${
+													className={`text-base transition-colors ${
 														isActive ? 'text-white' : 'text-white/80 group-hover:text-white'
 													}`}
+													style={{
+														fontFamily: '"Roboto Condensed", sans-serif',
+														fontWeight: 900,
+														textTransform: 'uppercase',
+														letterSpacing: '-0.02em',
+													}}
 												>
 													{item.title}
 												</h4>

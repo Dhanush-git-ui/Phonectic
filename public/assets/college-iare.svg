@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 240 48" width="240" height="48" fill="none">
   <!-- IARE Emblem: Monochrome Aero Chevron -->
-  <g transform="translate(6, 6)">
+  <g transform="translate(6, 4)">
     <circle cx="18" cy="18" r="17" stroke="#FFFFFF" stroke-width="1.8" stroke-opacity="0.9"/>
     <!-- Supersonic Jet Chevron -->
     <path d="M18 5L28 26l-10-4-10 4 10-21z" fill="#FFFFFF" fill-opacity="0.95"/>
@@ -9,6 +9,6 @@
     <ellipse cx="18" cy="18" rx="14" ry="6" stroke="#FFFFFF" stroke-width="1" stroke-opacity="0.5" fill="none"/>
   </g>
   <!-- Typography -->
-  <text x="54" y="22" fill="#FFFFFF" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="15" letter-spacing="0.04em">IARE HYDERABAD</text>
-  <text x="54" y="37" fill="#FFFFFF" fill-opacity="0.7" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="600" font-size="10.5" letter-spacing="0.03em">AERONAUTICAL &amp; TECH</text>
+  <text x="54" y="19" fill="#FFFFFF" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="800" font-size="15" letter-spacing="0.04em">IARE HYDERABAD</text>
+  <text x="54" y="33" fill="#FFFFFF" fill-opacity="0.95" font-family="'Plus Jakarta Sans', 'Inter', -apple-system, sans-serif" font-weight="700" font-size="10.5" letter-spacing="0.03em">AERONAUTICAL &amp; TECH</text>
 </svg>
