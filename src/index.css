@@ -718,6 +718,23 @@ body {
 	transform: translateX(2px);
 }
 
+.framer-Kgmir .framer-1fgqvop {
+	justify-content: center !important;
+	text-align: center !important;
+}
+
+.framer-Kgmir .framer-zza2ld {
+	width: 100% !important;
+	text-align: center !important;
+	display: flex !important;
+	justify-content: center !important;
+}
+
+.framer-Kgmir .framer-zza2ld p {
+	text-align: center !important;
+	width: 100% !important;
+}
+
 /* "Get this Template" Floating Pill (Bottom Right) */
 .floating-template-pill {
 	position: fixed;
@@ -1360,6 +1377,7 @@ body {
 	.programs-cards-grid {
 		grid-template-columns: repeat(2, 1fr) !important;
 		gap: 24px !important;
+		margin-top: 0 !important;
 	}
 	.programs-connecting-curve-wrap {
 		display: none !important;
@@ -1374,6 +1392,40 @@ body {
 		flex-direction: column !important;
 		align-items: flex-start !important;
 	}
+}
+
+/* ============================================================ */
+/* ABOUT SECTION: Aptitude, Coding DSA, Dream Career Pills      */
+/* ============================================================ */
+#about [data-bubble="true"],
+#about .framer-nz2nc6,
+#about .framer-74k4u,
+#about .framer-c8enmy {
+	background: linear-gradient(135deg, #eff6ff 0%, #bfdbfe 50%, #93c5fd 100%) !important;
+	border: 1.5px solid #1d4ed8 !important;
+	box-shadow: 0 8px 24px -4px rgba(37, 99, 235, 0.22), inset 0 2px 4px rgba(255, 255, 255, 0.9) !important;
+	transition: box-shadow 0.3s ease, border-color 0.3s ease, background 0.3s ease !important;
+	will-change: transform, opacity;
+}
+
+#about [data-bubble="true"]:hover,
+#about .framer-nz2nc6:hover,
+#about .framer-74k4u:hover,
+#about .framer-c8enmy:hover {
+	transform: translateY(-4px) scale(1.04) !important;
+	background: linear-gradient(135deg, #ffffff 0%, #dbeafe 50%, #bfdbfe 100%) !important;
+	box-shadow: 0 12px 28px -4px rgba(37, 99, 235, 0.35), inset 0 2px 4px rgba(255, 255, 255, 0.95) !important;
+	border-color: #2563eb !important;
+}
+
+#about [data-bubble="true"] p,
+#about [data-bubble="true"] span,
+#about [data-bubble="true"] * {
+	color: #1e3a8a !important;
+	--framer-text-color: #1e3a8a !important;
+	--extracted-r6o4lv: #1e3a8a !important;
+	font-weight: 800 !important;
+	text-shadow: 0 1px 1px rgba(255, 255, 255, 0.6) !important;
 }
 
 /* ============================================================ */
@@ -1663,7 +1715,22 @@ img[data-loaded] {
 	top: 50% !important;
 	left: 50% !important;
 	transform: translate(-50%, -50%) !important;
+	z-index: 1 !important;
+}
+
+#cta .framer-1jc23k8 {
 	z-index: 2 !important;
+	position: relative !important;
+}
+
+#cta .framer-t1xs0v {
+	z-index: 3 !important;
+	position: absolute !important;
+	pointer-events: none !important;
+}
+
+#cta .framer-t1xs0v a {
+	pointer-events: auto !important;
 }
 
 #cta .framer-l5zhei,

@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react'
 
-export default function Navbar() {
+export default function Navbar({ onOpenContact }) {
 	const [isScrolled, setIsScrolled] = useState(false)
 	const [mobileOpen, setMobileOpen] = useState(false)
 
@@ -332,11 +332,16 @@ export default function Navbar() {
 
 						{/* Contact Us CTA Button */}
 						<div className="framer-1qrocwq-container">
-							<a
+							<button
+								type="button"
+								onClick={(e) => {
+									e.preventDefault()
+									if (onOpenContact) onOpenContact()
+									else window.dispatchEvent(new CustomEvent('open-contact-modal'))
+								}}
 								className="framer-wUDM8 framer-lq2ef0 framer-v-sjrfo4 framer-1xiloa2 nav-contact-btn"
 								data-framer-name="Teriary"
 								data-highlight="true"
-								href="https://www.phoneticedu.com/auth/login"
 								style={{
 									background: isScrolled
 										? 'none'
@@ -344,6 +349,9 @@ export default function Navbar() {
 									borderRadius: '22px',
 									boxShadow: isScrolled ? '0 4px 14px rgba(15, 23, 42, 0.15)' : 'none',
 									display: 'block',
+									border: 'none',
+									cursor: 'pointer',
+									padding: 0,
 									textDecoration: 'none',
 									transition: 'all 0.25s ease',
 								}}
@@ -382,7 +390,7 @@ export default function Navbar() {
 										</div>
 									</div>
 								</div>
-							</a>
+							</button>
 						</div>
 					</div>
 				</nav>
@@ -591,8 +599,13 @@ export default function Navbar() {
 							>
 								Careers
 							</a>
-							<a
-								href="https://www.phoneticedu.com/auth/login"
+							<button
+								type="button"
+								onClick={() => {
+									setMobileOpen(false)
+									if (onOpenContact) onOpenContact()
+									else window.dispatchEvent(new CustomEvent('open-contact-modal'))
+								}}
 								style={{
 									backgroundColor: isScrolled ? '#0f172a' : '#fff',
 									color: isScrolled ? '#ffffff' : '#121214',
@@ -600,13 +613,16 @@ export default function Navbar() {
 									borderRadius: 16,
 									textAlign: 'center',
 									fontWeight: 700,
-									textDecoration: 'none',
+									border: 'none',
+									cursor: 'pointer',
 									marginTop: 4,
+									fontFamily: 'inherit',
+									fontSize: '15px',
+									width: '100%',
 								}}
-								onClick={() => setMobileOpen(false)}
 							>
 								Contact us
-							</a>
+							</button>
 						</div>
 					)}
 				</nav>
