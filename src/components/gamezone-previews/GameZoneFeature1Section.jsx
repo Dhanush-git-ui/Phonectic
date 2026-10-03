@@ -72,7 +72,7 @@ export default function GameZoneFeature1Section() {
 					<div
 						className="relative w-full rounded-[48px] lg:rounded-[64px] overflow-hidden flex items-center justify-center p-2 min-h-[540px] shadow-[0_20px_50px_rgba(0,0,0,0.3)] transition-all duration-500"
 						style={{
-							backgroundColor: '#dedbf7',
+							backgroundColor: '#dbeafe',
 						}}
 					>
 						<div key={activeFeature.id} className="tab-preview-animate">
@@ -91,7 +91,7 @@ export default function GameZoneFeature1Section() {
 						{/* Header Titles */}
 						<div className="flex flex-col gap-3 mb-6">
 							<span
-								className="text-xs font-black tracking-widest uppercase text-[#9696ff]"
+								className="text-xs font-black tracking-widest uppercase text-[#60a5fa]"
 								style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
 							>
 								PLACEMENT INTELLIGENCE
@@ -129,8 +129,8 @@ export default function GameZoneFeature1Section() {
 												: 'hover:bg-white/[0.04]'
 										}`}
 										style={{
-											backgroundColor: isActive ? 'rgba(170, 156, 236, 0.1)' : 'transparent',
-											border: isActive ? '1px solid rgba(170, 156, 236, 0.25)' : '1px solid transparent',
+											backgroundColor: isActive ? 'rgba(59, 130, 246, 0.12)' : 'transparent',
+											border: isActive ? '1px solid rgba(59, 130, 246, 0.35)' : '1px solid transparent',
 										}}
 									>
 										{/* Left Side: Number + Title & Description */}
@@ -138,7 +138,7 @@ export default function GameZoneFeature1Section() {
 											<div className="flex items-center gap-2.5">
 												{isActive ? (
 													<span
-														className="w-5 h-5 rounded-md bg-white text-[#121214] font-black text-xs flex items-center justify-center shadow-sm"
+														className="w-5 h-5 rounded-md bg-blue-600 text-white font-black text-xs flex items-center justify-center shadow-sm"
 														style={{ fontFamily: "'DM Mono', monospace" }}
 													>
 														{item.num}
@@ -173,13 +173,13 @@ export default function GameZoneFeature1Section() {
 										<div
 											className={`relative w-11 h-11 min-w-[44px] min-h-[44px] rounded-2xl flex items-center justify-center transition-all duration-300 ${
 												isActive
-													? 'text-white scale-105 shadow-[0_4px_16px_rgba(56,26,201,0.5)]'
+													? 'text-white scale-105 shadow-[0_4px_16px_rgba(37,99,235,0.5)]'
 													: 'text-white/40 group-hover:text-white/70 group-hover:scale-105'
 											}`}
 											style={{
-												backgroundColor: isActive ? '#381ac9' : 'rgba(255, 255, 255, 0.05)',
+												backgroundColor: isActive ? '#2563eb' : 'rgba(255, 255, 255, 0.05)',
 												boxShadow: isActive
-													? '0 0 15px rgba(56,26,201,0.6), inset 0 0 6px rgba(255,255,255,0.2)'
+													? '0 0 16px rgba(37,99,235,0.6), inset 0 0 6px rgba(255,255,255,0.2)'
 													: 'inset 0 0 6px rgba(255,255,255,0.05)',
 											}}
 										>
@@ -197,7 +197,7 @@ export default function GameZoneFeature1Section() {
 					{/* Header */}
 					<div className="flex flex-col gap-2 text-center items-center">
 						<span
-							className="text-xs font-black tracking-widest uppercase text-[#9696ff]"
+							className="text-xs font-black tracking-widest uppercase text-[#60a5fa]"
 							style={{ fontFamily: '"Roboto Condensed", sans-serif' }}
 						>
 							PLACEMENT INTELLIGENCE
@@ -218,7 +218,7 @@ export default function GameZoneFeature1Section() {
 								onClick={() => setActiveTab(item.id)}
 								className={`px-3.5 py-2 rounded-2xl text-xs font-bold whitespace-nowrap transition-all flex items-center gap-1.5 ${
 									activeTab === item.id
-										? 'bg-white text-black shadow-md'
+										? 'bg-blue-600 text-white shadow-md'
 										: 'bg-white/[0.06] text-white/60 hover:text-white'
 								}`}
 							>
@@ -231,7 +231,7 @@ export default function GameZoneFeature1Section() {
 					{/* Active Preview on Mobile */}
 					<div
 						className="w-full relative rounded-3xl overflow-hidden shadow-2xl p-2 min-h-[460px] flex items-center justify-center"
-						style={{ backgroundColor: '#dedbf7' }}
+						style={{ backgroundColor: '#dbeafe' }}
 					>
 						<div key={activeFeature.id} className="tab-preview-animate">
 							<ActivePreview />

@@ -55,32 +55,32 @@ export default function PlacementTargetsPreview({ className = '' }) {
 		<div
 			className={`relative w-full h-full min-h-[460px] lg:min-h-[520px] rounded-[40px] md:rounded-[48px] flex flex-col items-center justify-center p-6 md:p-8 select-none overflow-hidden ${className}`}
 			style={{
-				backgroundColor: '#dedbf7',
+				backgroundColor: '#dbeafe',
 				fontFamily: "'Plus Jakarta Sans', sans-serif",
 			}}
 		>
 			{/* Ambient glows */}
 			<div
-				className="absolute -top-16 -right-16 w-72 h-72 rounded-full pointer-events-none opacity-40"
+				className="absolute -top-16 -right-16 w-72 h-72 rounded-full pointer-events-none opacity-50"
 				style={{
-					background: 'radial-gradient(circle, rgba(234, 88, 12, 0.3) 0%, rgba(222, 219, 247, 0) 70%)',
+					background: 'radial-gradient(circle, rgba(59, 130, 246, 0.3) 0%, rgba(219, 234, 254, 0) 70%)',
 				}}
 			/>
 			<div
-				className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full pointer-events-none opacity-40"
+				className="absolute -bottom-16 -left-16 w-72 h-72 rounded-full pointer-events-none opacity-50"
 				style={{
-					background: 'radial-gradient(circle, rgba(139, 92, 246, 0.3) 0%, rgba(222, 219, 247, 0) 70%)',
+					background: 'radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(219, 234, 254, 0) 70%)',
 				}}
 			/>
 
 			{/* Floating 3D Target Notification Pill at Top */}
 			<div className="relative z-10 mb-6 transition-transform duration-300 hover:scale-105 cursor-pointer">
 				<div
-					className="w-14 h-14 rounded-2xl bg-[#1e1b2e] flex items-center justify-center text-white shadow-[0_12px_28px_rgba(30,27,46,0.35)] border border-white/10 relative"
+					className="w-14 h-14 rounded-2xl bg-[#0f172a] flex items-center justify-center text-white shadow-[0_12px_28px_rgba(15,23,42,0.35)] border border-blue-500/20 relative"
 				>
 					{/* Glowing indicator dot */}
-					<span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-indigo-400 border-2 border-[#dedbf7] animate-ping" />
-					<span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-indigo-500 border-2 border-[#dedbf7]" />
+					<span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-blue-400 border-2 border-[#dbeafe] animate-ping" />
+					<span className="absolute -top-1 -right-1 w-3 h-3 rounded-full bg-blue-500 border-2 border-[#dbeafe]" />
 					<span className="text-2xl animate-bounce">🔔</span>
 				</div>
 			</div>

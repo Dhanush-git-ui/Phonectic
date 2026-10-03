@@ -93,18 +93,26 @@ export default function IdeaTokPreview({ className = '' }) {
 						{/* Card Header Tags */}
 						<div className="flex items-center justify-between gap-2">
 							<div className="flex items-center gap-2">
-								<span className="px-2 py-0.5 rounded-md bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-black uppercase tracking-wider">
-									⚡ QUANTS SHORTCUT
+								<span className="px-2 py-0.5 rounded-md bg-amber-500/20 border border-amber-500/40 text-amber-300 text-[10px] font-black uppercase tracking-wider flex items-center gap-1">
+									<svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+										<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+									</svg>
+									<span>QUANTS SHORTCUT</span>
 								</span>
 								<span className="text-[11px] text-slate-400 font-medium">Remainder Theorem</span>
 							</div>
 							<div className="flex items-center gap-2">
 								<span className="text-[10px] px-2 py-0.5 rounded bg-white/[0.05] border border-white/[0.08] text-amber-400 font-bold flex items-center gap-1">
-									<span>★</span>
+									<svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+										<polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+									</svg>
 									<span>SAVED</span>
 								</span>
-								<span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-bold hidden sm:inline">
-									▶ 0:18s
+								<span className="text-[10px] px-2 py-0.5 rounded bg-amber-500/10 text-amber-300 font-bold hidden sm:inline-flex items-center gap-1">
+									<svg className="w-2.5 h-2.5 fill-current" viewBox="0 0 24 24">
+										<polygon points="5 3 19 12 5 21 5 3" />
+									</svg>
+									<span>0:18s</span>
 								</span>
 							</div>
 						</div>

@@ -17,7 +17,7 @@ export default function PerformanceInsightsPreview({ className = '' }) {
 		<div
 			className={`relative w-full h-full min-h-[460px] lg:min-h-[520px] rounded-[40px] md:rounded-[48px] flex flex-col justify-between p-6 md:p-8 select-none overflow-hidden ${className}`}
 			style={{
-				backgroundColor: '#dedbf7',
+				backgroundColor: '#dbeafe',
 				fontFamily: "'Plus Jakarta Sans', sans-serif",
 			}}
 		>
@@ -25,13 +25,13 @@ export default function PerformanceInsightsPreview({ className = '' }) {
 			<div
 				className="absolute -top-12 -left-12 w-72 h-72 rounded-full pointer-events-none opacity-40"
 				style={{
-					background: 'radial-gradient(circle, rgba(168, 85, 247, 0.4) 0%, rgba(222, 219, 247, 0) 70%)',
+					background: 'radial-gradient(circle, rgba(59, 130, 246, 0.35) 0%, rgba(219, 234, 254, 0) 70%)',
 				}}
 			/>
 			<div
 				className="absolute -bottom-12 -right-12 w-72 h-72 rounded-full pointer-events-none opacity-40"
 				style={{
-					background: 'radial-gradient(circle, rgba(99, 102, 241, 0.3) 0%, rgba(222, 219, 247, 0) 70%)',
+					background: 'radial-gradient(circle, rgba(96, 165, 250, 0.3) 0%, rgba(219, 234, 254, 0) 70%)',
 				}}
 			/>
 

@@ -7,7 +7,7 @@ export default function PlacementWalletPreview({ className = '' }) {
 		<div
 			className={`relative w-full h-full min-h-[460px] lg:min-h-[520px] rounded-[40px] md:rounded-[48px] flex items-center justify-center p-6 md:p-10 select-none overflow-hidden ${className}`}
 			style={{
-				backgroundColor: '#dedbf7',
+				backgroundColor: '#dbeafe',
 				fontFamily: "'Plus Jakarta Sans', sans-serif",
 			}}
 		>
@@ -15,13 +15,13 @@ export default function PlacementWalletPreview({ className = '' }) {
 			<div
 				className="absolute -top-20 -left-20 w-72 h-72 rounded-full pointer-events-none opacity-60"
 				style={{
-					background: 'radial-gradient(circle, rgba(168, 154, 255, 0.45) 0%, rgba(222, 219, 247, 0) 70%)',
+					background: 'radial-gradient(circle, rgba(147, 197, 253, 0.45) 0%, rgba(219, 234, 254, 0) 70%)',
 				}}
 			/>
 			<div
 				className="absolute -bottom-20 -right-20 w-80 h-80 rounded-full pointer-events-none opacity-60"
 				style={{
-					background: 'radial-gradient(circle, rgba(255, 182, 193, 0.35) 0%, rgba(222, 219, 247, 0) 70%)',
+					background: 'radial-gradient(circle, rgba(96, 165, 250, 0.35) 0%, rgba(219, 234, 254, 0) 70%)',
 				}}
 			/>
 

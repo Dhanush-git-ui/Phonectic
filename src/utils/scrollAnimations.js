@@ -1,9 +1,49 @@
 import { useEffect } from 'react'
+import Lenis from 'lenis'
+import 'lenis/dist/lenis.css'
 
 export function useScrollAnimations() {
 	useEffect(() => {
 		// ─────────────────────────────────────────────
-		// 0. SCROLL PROGRESS BAR (OneFin-style top indicator)
+		// 0. LENIS ULTRA-SMOOTH INERTIA SCROLL
+		// ─────────────────────────────────────────────
+		const lenis = new Lenis({
+			duration: 1.25,
+			easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+			orientation: 'vertical',
+			gestureOrientation: 'vertical',
+			smoothWheel: true,
+			wheelMultiplier: 1.0,
+			touchMultiplier: 1.5,
+			infinite: false,
+		})
+		window.lenis = lenis
+
+		let rafId
+		function raf(time) {
+			lenis.raf(time)
+			rafId = requestAnimationFrame(raf)
+		}
+		rafId = requestAnimationFrame(raf)
+
+		// Smooth anchor scrolling (#hash)
+		const handleAnchorClick = (e) => {
+			const anchor = e.target.closest('a[href^="#"]')
+			if (anchor) {
+				const href = anchor.getAttribute('href')
+				if (href && href.length > 1) {
+					const targetEl = document.querySelector(href)
+					if (targetEl) {
+						e.preventDefault()
+						lenis.scrollTo(targetEl, { offset: -70, duration: 1.4 })
+					}
+				}
+			}
+		}
+		document.addEventListener('click', handleAnchorClick)
+
+		// ─────────────────────────────────────────────
+		// 0b. SCROLL PROGRESS BAR (OneFin-style top indicator)
 		// ─────────────────────────────────────────────
 		let progressBar = document.getElementById('onefin-scroll-progress')
 		if (!progressBar) {
@@ -318,7 +358,7 @@ export function useScrollAnimations() {
 					logos.forEach((logo, idx) => {
 						const spreadFactor = (idx - 2.5) * 12
 						logo.style.transform = `translateX(${spreadFactor * progress}px) rotate(${(idx - 2.5) * 4 * progress}deg)`
-						logo.style.transition = 'transform 0.15s ease-out'
+						logo.style.willChange = 'transform'
 					})
 				}
 			}
@@ -332,12 +372,12 @@ export function useScrollAnimations() {
 					const ctaPhone = ctaSection.querySelector('.framer-1eicwsq')
 					if (ctaPhone) {
 						ctaPhone.style.transform = `translateY(${(1 - progress) * 80}px)`
-						ctaPhone.style.transition = 'transform 0.1s ease-out'
+						ctaPhone.style.willChange = 'transform'
 					}
 					ctaSection.querySelectorAll('.framer-1v95j3x, .framer-1u039q2').forEach((badge, idx) => {
 						const dir = idx % 2 === 0 ? 1 : -1
 						badge.style.transform = `translate3d(0, ${(progress - 0.5) * 30 * dir}px, 0)`
-						badge.style.transition = 'transform 0.15s ease-out'
+						badge.style.willChange = 'transform'
 					})
 				}
 			}
@@ -349,13 +389,13 @@ export function useScrollAnimations() {
 				if (rect.top < winHeight + 100 && rect.bottom > -100) {
 					const deltaY = (rect.top + rect.height / 2 - winHeight / 2) * speed
 					el.style.transform = `translate3d(0, ${-deltaY}px, 0)`
+					el.style.willChange = 'transform'
 				}
 			})
-
-
 		}
 
 		updateScrollEffects()
+		lenis.on('scroll', handleScroll)
 		window.addEventListener('scroll', handleScroll, { passive: true })
 		window.addEventListener('resize', handleScroll, { passive: true })
 
@@ -430,7 +470,6 @@ export function useScrollAnimations() {
 				'h1',
 				'h2',
 				'h3',
-				'h4',
 				'[data-framer-name="Heading"] h2',
 				'[data-framer-name="Heading"] h3',
 				'.framer-1npdw8x h2',
@@ -438,7 +477,7 @@ export function useScrollAnimations() {
 			]
 			const headings = document.querySelectorAll(headingSelectors.join(','))
 			headings.forEach((h) => {
-				if (h.closest('#hero')) return
+				if (h.closest('#hero') || h.closest('#darkfeatures') || h.closest('.no-reveal') || h.closest('[data-no-reveal]')) return
 				splitHeadingIntoWords(h)
 				const rect = h.getBoundingClientRect()
 				if (rect.top < window.innerHeight && rect.bottom > 0) {
@@ -461,6 +500,10 @@ export function useScrollAnimations() {
 		headingMutationObserver.observe(document.body, { childList: true, subtree: true })
 
 		return () => {
+			if (rafId) cancelAnimationFrame(rafId)
+			lenis.destroy()
+			delete window.lenis
+			document.removeEventListener('click', handleAnchorClick)
 			revealObserver.disconnect()
 			staggerObserver.disconnect()
 			counterObserver.disconnect()

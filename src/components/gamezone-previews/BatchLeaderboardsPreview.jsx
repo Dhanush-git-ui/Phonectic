@@ -40,8 +40,11 @@ export default function BatchLeaderboardsPreview({ className = '' }) {
 				{/* Filter Tabs & Live Count */}
 				<div className="flex items-center gap-2">
 					<div className="flex items-center gap-1 bg-black/40 border border-white/[0.08] rounded-lg p-0.5 text-[10px] font-bold">
-						<span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40">
-							⚡ Sprint
+						<span className="px-2 py-0.5 rounded bg-amber-500/20 text-amber-300 border border-amber-500/40 flex items-center gap-1">
+							<svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+								<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+							</svg>
+							<span>Sprint</span>
 						</span>
 						<span className="px-2 py-0.5 text-slate-500 hidden sm:inline">Weekly OA</span>
 					</div>
@@ -84,8 +87,10 @@ export default function BatchLeaderboardsPreview({ className = '' }) {
 					{/* Rank 1 (Gold - Center & Elevated) */}
 					<div className="flex flex-col items-center">
 						<div className="relative mb-1">
-							<div className="absolute -top-3 left-1/2 -translate-x-1/2 text-sm animate-bounce">
-								👑
+							<div className="absolute -top-3 left-1/2 -translate-x-1/2 animate-bounce">
+								<svg className="w-4 h-4 text-amber-300 fill-current" viewBox="0 0 24 24">
+									<path d="M5 16L3 5l5.5 5L12 4l3.5 6L21 5l-2 11H5zm14 3c0 .6-.4 1-1 1H6c-.6 0-1-.4-1-1v-1h14v1z" />
+								</svg>
 							</div>
 							<div className="w-12 h-12 md:w-14 md:h-14 rounded-full bg-gradient-to-br from-yellow-300 via-amber-400 to-yellow-600 p-0.5 shadow-[0_0_24px_rgba(251,191,36,0.6)]">
 								<div className="w-full h-full rounded-full bg-[#1a150b] flex items-center justify-center text-sm font-black text-yellow-300">

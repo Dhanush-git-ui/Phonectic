@@ -72,7 +72,9 @@ export default function SpeedMathPreview({ className = '' }) {
 						<span>• TCS Prime Benchmark</span>
 					</div>
 					<div className="flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-amber-500/15 border border-amber-500/30 text-amber-300 text-[11px] font-bold shadow-[0_0_12px_rgba(245,158,11,0.2)]">
-						<span>🔥</span>
+						<svg className="w-3.5 h-3.5 fill-current text-amber-400" viewBox="0 0 24 24">
+							<path d="M12 2c-.5 2.5-2.5 4.5-4 6-2 2-3 4.5-3 7 0 4.4 3.6 8 8 8s8-3.6 8-8c0-3-1.5-5.5-3.5-7.5-.5 2-2 3.5-3.5 3.5-2 0-3-2-2-5 0-1.5 0-3 0-4z" />
+						</svg>
 						<span>14x Multiplier</span>
 					</div>
 				</div>
@@ -88,7 +90,12 @@ export default function SpeedMathPreview({ className = '' }) {
 
 					{/* Shortcut Decomposition Hint Chip */}
 					<div className="inline-flex items-center gap-1.5 px-3 py-1 rounded-lg bg-cyan-950/40 border border-cyan-500/30 text-cyan-300 text-[11px] md:text-xs">
-						<span className="text-cyan-400 font-bold">⚡ 1.2s target</span>
+						<span className="text-cyan-400 font-bold flex items-center gap-1">
+							<svg className="w-3 h-3 fill-current" viewBox="0 0 24 24">
+								<path d="M13 2L3 14h9l-1 8 10-12h-9l1-8z" />
+							</svg>
+							<span>1.2s target</span>
+						</span>
 						<span className="text-slate-500">•</span>
 						<span style={{ fontFamily: "'DM Mono', monospace" }}>
 							Shortcut decomposition: (840 + 168) + 48 = 1,056

@@ -7,9 +7,9 @@ const FAQ_ITEMS = [
 		numberShort: '01',
 		title: "HOW DOES PHONETICEDU'S GAMIFIED LEARNING METHOD WORK?",
 		shortAnswer:
-			'We turn dry aptitude formulas into high-speed arcade drills, visual logic teasers, and timed sprints that build instant mental calculation muscle.',
+			'We turn dry aptitude formulas and DSA patterns into high-speed arcade drills, visual logic teasers, and timed sprints that build instant mental calculation reflex.',
 		theme: {
-			bg: '#ff782d', // Vibrant Warm Orange (from screenshot 1)
+			bg: '#ff782d', // Vibrant Warm Orange
 			textColor: '#ffffff',
 			subtextColor: 'rgba(255, 255, 255, 0.92)',
 			btnBg: '#ffffff',
@@ -21,40 +21,40 @@ const FAQ_ITEMS = [
 		},
 		cards: [
 			{
-				title: 'Speed Quant',
-				subtitle: 'Duration: 3 Weeks',
+				title: 'Speed Math & Quants',
+				subtitle: 'Duration: 3 Weeks Sprint',
 				type: 'pills',
 				pills: [
-					{ label: 'Functionality', color: '#bef264', textColor: '#0f172a' },
-					{ label: 'Vedic Math', color: '#ff782d', textColor: '#ffffff' },
-					{ label: 'Mental Speed', color: '#ef4444', textColor: '#ffffff' },
-					{ label: 'Elimination', color: '#10b981', textColor: '#ffffff' },
+					{ label: 'Vedic Math Shortcuts', color: '#ffedd5', textColor: '#9a3412' },
+					{ label: 'Modulo & Remainders', color: '#dbeafe', textColor: '#1e40af' },
+					{ label: 'Alligations & Mixtures', color: '#fef3c7', textColor: '#92400e' },
+					{ label: 'Option Elimination Tricks', color: '#dcfce7', textColor: '#166534' },
 				],
-				footerText: 'Average response: 18s vs 60s benchmark',
+				footerText: 'Average response: 18s vs 60s college benchmark',
 			},
 			{
-				title: 'Visual Logic',
-				subtitle: 'Duration: 2 Weeks',
+				title: 'Cognitive & Visual Logic',
+				subtitle: 'Duration: 2 Weeks Sprint',
 				type: 'pills',
 				pills: [
-					{ label: 'Pattern Clues', color: '#bfdbfe', textColor: '#1e3a8a' },
-					{ label: 'Target OA', color: '#0f172a', textColor: '#ffffff' },
-					{ label: 'Flow Charts', color: '#818cf8', textColor: '#ffffff' },
-					{ label: 'Syllogisms', color: '#ef4444', textColor: '#ffffff' },
+					{ label: 'Capgemini Game Drills', color: '#e0e7ff', textColor: '#3730a3' },
+					{ label: 'Accenture Flowchart Logic', color: '#fae8ff', textColor: '#86198f' },
+					{ label: 'Spatial Matrix Rotations', color: '#ccfbf1', textColor: '#115e59' },
+					{ label: 'Deductive Syllogisms', color: '#fee2e2', textColor: '#991b1b' },
 				],
-				footerText: 'Cognitive reasoning for Capgemini & Accenture',
+				footerText: 'Cognitive reasoning modules for Capgemini & Accenture OA',
 			},
 			{
-				title: 'Exam Arcade',
-				subtitle: 'Duration: 4 Weeks',
+				title: 'Placement Exam Arcade',
+				subtitle: 'Duration: 4 Weeks Sprints',
 				type: 'pills',
 				pills: [
-					{ label: 'Live Battles', color: '#0f172a', textColor: '#ffffff' },
-					{ label: 'Speed Sprints', color: '#bef264', textColor: '#0f172a' },
-					{ label: 'Streaks', color: '#f59e0b', textColor: '#ffffff' },
-					{ label: 'National Rank', color: '#a78bfa', textColor: '#ffffff' },
+					{ label: 'Timed Full-Length OAs', color: '#f1f5f9', textColor: '#0f172a' },
+					{ label: 'Negative Marking Simulator', color: '#fee2e2', textColor: '#991b1b' },
+					{ label: 'Daily Streak Leagues', color: '#fef3c7', textColor: '#92400e' },
+					{ label: 'National Percentile Rank', color: '#ede9fe', textColor: '#5b21b6' },
 				],
-				footerText: 'Real exam timers with negative marking simulation',
+				footerText: 'Real exam timers matching TCS NQT, Infosys & Cognizant',
 			},
 		],
 	},
@@ -64,10 +64,10 @@ const FAQ_ITEMS = [
 		numberShort: '02',
 		title: 'WHICH COMPANY RECRUITMENT PATTERNS ARE COVERED?',
 		shortAnswer:
-			'We provide authenticated syllabus coverage for mass IT drives, game-based aptitude rounds, and high-CTC product companies.',
+			'We provide authenticated syllabus coverage for mass IT drives, game-based cognitive tests, and high-CTC product engineering companies with verified repeat question banks.',
 		theme: {
-			bg: '#d4f933', // Vibrant Neon Lime (from screenshot 2)
-			textColor: '#0f172a', // Dark text as in screenshot 2!
+			bg: '#d4f933', // Vibrant Neon Lime
+			textColor: '#0f172a',
 			subtextColor: 'rgba(15, 23, 42, 0.85)',
 			btnBg: '#0f172a',
 			btnIconColor: '#ffffff',
@@ -78,32 +78,39 @@ const FAQ_ITEMS = [
 		},
 		cards: [
 			{
-				title: 'Recruitment Patterns',
-				subtitle: 'Top IT Services',
-				type: 'swatches',
-				swatches: [
-					{ code: 'TCS NQT', bg: '#6366f1', text: '#ffffff' },
-					{ code: 'Infosys', bg: '#93c5fd', text: '#1e3a8a' },
-					{ code: 'Accenture', bg: '#facc15', text: '#713f12' },
-					{ code: 'Wipro', bg: '#10b981', text: '#ffffff' },
+				title: 'Tier-1 IT Services',
+				subtitle: 'Mass Campus Hiring (3.6 – 9.5 LPA)',
+				type: 'companyGrid',
+				companies: [
+					{ name: 'TCS', role: 'NQT & Prime (9 LPA)', logo: '/assets/engine-tcs.svg' },
+					{ name: 'Infosys', role: 'SE & SP (9.5 LPA)', logo: '/assets/engine-infosys.svg' },
+					{ name: 'Accenture', role: 'Associate (6.5 LPA)', logo: '/assets/engine-accenture.svg' },
+					{ name: 'Wipro', role: 'Turbo (6.5 LPA)', logo: '/assets/engine-wipro.svg' },
 				],
-				footerText: 'Full aptitude + technical syllabus updated for 2025-26',
+				footerText: 'Full aptitude + technical syllabus updated for 2025–26',
 			},
 			{
-				title: 'Screening Rounds',
-				subtitle: 'Cognitive & Games',
-				type: 'typography',
-				headline: 'OA',
-				headlineSub: 'Online Assessment',
-				tags: ['Capgemini Game Aptitude', 'Cognizant GenC Next', 'L&T Infotech'],
+				title: 'Cognitive & OA Rounds',
+				subtitle: 'Game-Based & Adaptive Testing',
+				type: 'companyGrid',
+				companies: [
+					{ name: 'Capgemini', role: 'Game OA & Exceller', logo: '/assets/engine-capgemini.svg' },
+					{ name: 'Cognizant', role: 'GenC Next & Elevate', logo: '/assets/engine-cognizant.svg' },
+					{ name: 'Deloitte', role: 'USI Analyst (7.6 LPA)', logo: '/assets/engine-deloitte.svg' },
+					{ name: 'IBM', role: 'Systems & Code OA', logo: '/assets/engine-ibm.svg' },
+				],
 				footerText: 'Adaptive difficulty with real repeat question banks',
 			},
 			{
-				title: 'Product & FinTech',
-				subtitle: 'Super Dream (12-40 LPA)',
-				type: 'preview',
-				roleTag: 'High CTC',
-				companies: ['Amazon OA', 'Google Foobar', 'Oracle', 'Deloitte'],
+				title: 'Product & Super Dream',
+				subtitle: 'Elite Engineering (12 – 42 LPA)',
+				type: 'companyGrid',
+				companies: [
+					{ name: 'Amazon', role: 'SDE-1 OA (28 LPA)', logo: '/assets/engine-amazon.svg' },
+					{ name: 'Google', role: 'SWE Campus Drive', logo: '/assets/engine-google.svg' },
+					{ name: 'Microsoft', role: 'Software Engineer OA', logo: '/assets/engine-microsoft.svg' },
+					{ name: 'Oracle', role: 'Cloud Tech (18 LPA)', logo: '/assets/engine-deloitte.svg' },
+				],
 				footerText: 'Data structures, algorithms & system round prep',
 			},
 		],
@@ -114,9 +121,9 @@ const FAQ_ITEMS = [
 		numberShort: '03',
 		title: 'ARE NON-CS AND DEGREE STUDENTS ELIGIBLE?',
 		shortAnswer:
-			'Our process begins from fundamental arithmetic to advanced coding, ensuring students from any branch or degree can confidently clear campus rounds.',
+			'Yes! Our curriculum starts from high school math to core algorithmic logic, ensuring students from Mechanical, Civil, ECE, EEE, BCA, and B.Sc confidently clear campus rounds.',
 		theme: {
-			bg: '#ff4638', // Vibrant Coral Red (from screenshot 3)
+			bg: '#ff4638', // Vibrant Coral Red
 			textColor: '#ffffff',
 			subtextColor: 'rgba(255, 255, 255, 0.92)',
 			btnBg: '#ffffff',
@@ -128,33 +135,33 @@ const FAQ_ITEMS = [
 		},
 		cards: [
 			{
-				title: 'Zero Prerequisite',
-				subtitle: '1-3 Sprints • 2.30 hrs/day',
+				title: 'Zero Prerequisite Foundation',
+				subtitle: 'Weeks 1–3 • 2.5 hrs/day',
 				type: 'checklist',
 				checkColor: '#818cf8',
-				headline: 'Discovery & Foundations',
+				headline: 'Arithmetic to Core Coding',
 				description:
-					'Step-by-step arithmetic from scratch. Non-programmers learn logic building without overwhelming syntax jargon.',
+					'Step-by-step arithmetic from scratch. Non-programmers learn logic building in C++/Python without overwhelming syntax jargon.',
 			},
 			{
-				title: 'Branch-Specific Tracks',
-				subtitle: 'Notes for Every Stream',
+				title: 'Branch-Specific Fast-Tracks',
+				subtitle: 'Custom Syllabi for Every Stream',
 				type: 'stickyNotes',
 				notes: [
-					{ text: 'ECE / EEE: Core logic + C++ track', bg: '#fed7aa', color: '#9a3412' },
-					{ text: 'Mech / Civil: High-scoring quants', bg: '#a7f3d0', color: '#065f46' },
-					{ text: 'B.Sc / BCA: IT drive fast-track', bg: '#fef08a', color: '#854d0e' },
-					{ text: '1-on-1 mentor guidance weekly', bg: '#bfdbfe', color: '#1e3a8a' },
+					{ text: 'ECE / EEE: Core logic + C++ & DSA track', bg: '#fed7aa', color: '#9a3412' },
+					{ text: 'Mech / Civil: High-scoring quants & analytics', bg: '#a7f3d0', color: '#065f46' },
+					{ text: 'B.Sc / BCA: IT drive fast-track (TCS & Wipro)', bg: '#fef08a', color: '#854d0e' },
+					{ text: 'Weekly 1-on-1 mentor guidance with Santhosh Sir', bg: '#bfdbfe', color: '#1e3a8a' },
 				],
 			},
 			{
-				title: 'Offer Readiness',
-				subtitle: '3-5 Sprints',
+				title: 'Verified Placement Track Record',
+				subtitle: 'Proven Hiring Outcomes',
 				type: 'checklist',
-				checkColor: '#818cf8',
-				headline: 'Confidence & Placement',
+				checkColor: '#10b981',
+				headline: 'Over 42% Non-CS Placements',
 				description:
-					'Over 40% of our placed students come from non-CS backgrounds, successfully placed in TCS, Accenture & Capgemini.',
+					'42% of our placed students come from Non-CS branches, successfully placed in TCS Prime, Accenture, Capgemini, and Deloitte.',
 			},
 		],
 	},
@@ -164,9 +171,9 @@ const FAQ_ITEMS = [
 		numberShort: '04',
 		title: 'HOW ARE 1-ON-1 MOCK INTERVIEWS CONDUCTED?',
 		shortAnswer:
-			'We simulate actual interview panel pressure with founder Santhosh Kumar Ananta and industry mentors, giving precise feedback on tech, communication, and body language.',
+			'We simulate actual interview panel pressure with founder Santhosh Kumar Ananta and industry mentors, giving precise feedback on DSA complexity, STAR behavioral answers, and resume defense.',
 		theme: {
-			bg: '#10b981', // Vibrant Emerald Mint (from screenshot 4)
+			bg: '#10b981', // Vibrant Emerald Mint
 			textColor: '#ffffff',
 			subtextColor: 'rgba(255, 255, 255, 0.92)',
 			btnBg: '#ffffff',
@@ -179,23 +186,32 @@ const FAQ_ITEMS = [
 		cards: [
 			{
 				title: 'Live Panel Simulation',
-				subtitle: 'Technical & HR Rounds',
+				subtitle: 'Technical & System Deep-Dive',
 				type: 'barchart',
-				headline: 'Competency Scoring',
+				headline: 'Competency Scoring Rubric',
 				bars: [
-					{ label: 'Problem Solving', val: '9.4', h: '88%', color: '#a78bfa' },
-					{ label: 'Logic Clarity', val: '8.8', h: '80%', color: '#facc15' },
-					{ label: 'Tech Depth', val: '7.6', h: '70%', color: '#818cf8' },
-					{ label: 'Confidence', val: '9.1', h: '85%', color: '#bef264' },
+					{ label: 'Problem Solving', val: '9.4', h: '94%', color: '#a78bfa' },
+					{ label: 'Logic Clarity', val: '8.8', h: '88%', color: '#facc15' },
+					{ label: 'DSA Complexity', val: '8.2', h: '82%', color: '#818cf8' },
+					{ label: 'HR Confidence', val: '9.1', h: '91%', color: '#bef264' },
 				],
 			},
 			{
+				title: 'HR & STAR Coaching',
+				subtitle: 'Eliminating Interview Rejection',
+				type: 'checklist',
+				checkColor: '#34d399',
+				headline: 'Behavioral Mastery',
+				description:
+					'Structured STAR method coaching (Situation, Task, Action, Result) with real-time feedback on communication clarity and executive presence.',
+			},
+			{
 				title: 'Placement Conversion',
-				subtitle: 'Industry benchmarks Q3',
+				subtitle: 'Post-Mock Outcomes',
 				type: 'metrics',
 				headline: 'First-Attempt Clearance',
-				statValue: '85%',
-				statLabel: 'Offer Rate Post Mock Rounds',
+				statValue: '89.4%',
+				statLabel: 'Offer Rate Post 2 Mock Sessions',
 				barColor: '#ccff00',
 			},
 		],
@@ -221,35 +237,35 @@ const FAQ_ITEMS = [
 		cards: [
 			{
 				title: 'Universal LMS Access',
-				subtitle: '24/7 Cloud Practice',
+				subtitle: '24/7 Cloud Practice Platform',
 				type: 'pills',
 				pills: [
-					{ label: 'Desktop & Web', color: '#93c5fd', textColor: '#1e3a8a' },
-					{ label: 'Mobile Optimized', color: '#bef264', textColor: '#0f172a' },
-					{ label: 'Offline Sync', color: '#fed7aa', textColor: '#9a3412' },
-					{ label: 'Leaderboards', color: '#a78bfa', textColor: '#ffffff' },
+					{ label: 'Desktop & Web Portal', color: '#93c5fd', textColor: '#1e3a8a' },
+					{ label: 'Mobile-Optimized Drills', color: '#bef264', textColor: '#0f172a' },
+					{ label: 'Real-Time Leaderboards', color: '#fed7aa', textColor: '#9a3412' },
+					{ label: 'Company Test Archives', color: '#a78bfa', textColor: '#ffffff' },
 				],
 				footerText: 'Synchronized test history, time analytics, and rankings',
 			},
 			{
-				title: 'Hyderabad Hub',
-				subtitle: 'Elite Training Center',
+				title: 'Hyderabad Training Hub',
+				subtitle: 'Madhapur, Hitech City',
 				type: 'pills',
 				pills: [
 					{ label: 'In-Person Bootcamps', color: '#fef08a', textColor: '#854d0e' },
 					{ label: 'College Partnerships', color: '#6ee7b7', textColor: '#065f46' },
 					{ label: 'Live Q&A Sessions', color: '#bfdbfe', textColor: '#1e3a8a' },
-					{ label: 'Campus Drives', color: '#f43f5e', textColor: '#ffffff' },
+					{ label: 'Direct Placement Drives', color: '#f43f5e', textColor: '#ffffff' },
 				],
-				footerText: 'Direct campus hiring alliances across Telangana & AP',
+				footerText: 'Direct campus hiring alliances across engineering colleges',
 			},
 			{
-				title: 'Start Free Journey',
-				subtitle: 'Diagnostic Assessment',
+				title: 'Free Diagnostic Evaluation',
+				subtitle: 'Find Your Placement Readiness',
 				type: 'cta',
 				headline: 'Instant Evaluation',
 				description:
-					'Sign up free on our LMS, take a 15-minute diagnostic test, and receive your personalized placement roadmap.',
+					'Sign up free on our LMS, take a 15-minute diagnostic test, and receive your personalized company placement roadmap.',
 				ctaLabel: 'Open LMS Dashboard →',
 				ctaUrl: 'https://www.phoneticedu.com/auth/login',
 			},
@@ -641,7 +657,85 @@ export default function FAQ() {
 															</div>
 														)}
 
-														{/* Type 2: Swatches Layout (Screenshot 2 Color Palette Style) */}
+														{/* Type 2: Company Grid with Real SVG Logos */}
+														{card.type === 'companyGrid' && (
+															<div
+																style={{
+																	display: 'grid',
+																	gridTemplateColumns: 'repeat(2, 1fr)',
+																	gap: '8px',
+																	margin: '8px 0 16px',
+																}}
+															>
+																{card.companies.map((co, coIdx) => (
+																	<div
+																		key={coIdx}
+																		style={{
+																			backgroundColor: '#f8fafc',
+																			border: '1px solid #e2e8f0',
+																			borderRadius: '14px',
+																			padding: '10px 8px',
+																			display: 'flex',
+																			alignItems: 'center',
+																			gap: '8px',
+																			boxShadow: '0 2px 5px rgba(0,0,0,0.03)',
+																		}}
+																	>
+																		<div
+																			style={{
+																				width: '30px',
+																				height: '30px',
+																				flexShrink: 0,
+																				backgroundColor: '#ffffff',
+																				borderRadius: '9px',
+																				border: '1px solid #e2e8f0',
+																				display: 'flex',
+																				alignItems: 'center',
+																				justifyContent: 'center',
+																				padding: '3px',
+																			}}
+																		>
+																			<img
+																				src={co.logo}
+																				alt={co.name}
+																				style={{
+																					width: '100%',
+																					height: '100%',
+																					objectFit: 'contain',
+																				}}
+																			/>
+																		</div>
+																		<div style={{ textAlign: 'left', minWidth: 0, flex: 1 }}>
+																			<div
+																				style={{
+																					fontSize: '11px',
+																					fontWeight: 800,
+																					color: '#0f172a',
+																					lineHeight: 1.2,
+																					whiteSpace: 'nowrap',
+																					overflow: 'hidden',
+																					textOverflow: 'ellipsis',
+																				}}
+																			>
+																				{co.name}
+																			</div>
+																			<div
+																				style={{
+																					fontSize: '9.5px',
+																					fontWeight: 700,
+																					color: '#2563eb',
+																					lineHeight: 1.2,
+																				}}
+																			>
+																				{co.role}
+																			</div>
+																		</div>
+																	</div>
+																))}
+															</div>
+														)}
+
+														{/* Type 2b: Swatches Layout */}
 														{card.type === 'swatches' && (
 															<div
 																style={{

@@ -24,6 +24,28 @@ body {
 	-moz-osx-font-smoothing: grayscale;
 }
 
+/* Lenis Smooth Momentum Scrolling */
+html.lenis,
+html.lenis body {
+	height: auto;
+}
+
+.lenis.lenis-smooth {
+	scroll-behavior: auto !important;
+}
+
+.lenis.lenis-smooth [data-lenis-prevent] {
+	overscroll-behavior: contain;
+}
+
+.lenis.lenis-stopped {
+	overflow: hidden;
+}
+
+.lenis.lenis-scrolling iframe {
+	pointer-events: none;
+}
+
 #root {
 	min-height: 100vh;
 	width: 100%;
@@ -1899,7 +1921,7 @@ img[data-loaded] {
 /* Testimonials Sticky Scroll Pinning & White Background Canvas */
 .testimonials-scroll-track {
 	width: 100%;
-	height: 380vh;
+	height: 175vh;
 	position: relative;
 	background-color: #ffffff !important;
 	margin-bottom: 0 !important;
@@ -2122,5 +2144,33 @@ h1, h2, h3, h4,
 h3, h4,
 .framer-text h3, .framer-text h4 {
 	letter-spacing: -0.025em !important;
+}
+
+/* ==========================================================================
+   SEAMLESS TRANSITION FROM FAQ TO DARK CTA
+   ========================================================================== */
+#cta,
+.framer-14eznka-container#cta {
+	position: relative !important;
+	background-color: var(--token-2ccbd3b4-6283-4510-8ca1-768518dd3bdd, rgb(18, 18, 20)) !important;
+	border-top-left-radius: clamp(36px, 5vw, 64px) !important;
+	border-top-right-radius: clamp(36px, 5vw, 64px) !important;
+	margin-top: -36px !important;
+	z-index: 10 !important;
+	box-shadow: 0 -25px 50px -10px rgba(0, 0, 0, 0.25) !important;
+	overflow: hidden !important;
+}
+
+#cta::before,
+.framer-14eznka-container#cta::before {
+	content: '';
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	height: 1px;
+	background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.15) 20%, rgba(59, 130, 246, 0.4) 50%, rgba(255, 255, 255, 0.15) 80%, transparent);
+	pointer-events: none;
+	z-index: 20;
 }
 

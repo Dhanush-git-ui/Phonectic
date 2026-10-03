@@ -60,6 +60,15 @@ export default function CTASection() {
 			})
 
 			// ── Social badge containers: stagger pop-in & hover bounce ─────────────
+			const xBadge = section.querySelector('.framer-o7u6tc-container')
+			if (xBadge) {
+				xBadge.style.setProperty('transform', 'translateX(-68px) translateY(-145px)', 'important')
+			}
+			const ytBadge = section.querySelector('.framer-67hkou-container')
+			if (ytBadge) {
+				ytBadge.style.setProperty('transform', 'translateX(-180px) translateY(-15px)', 'important')
+			}
+
 			const badgeContainerClasses = [
 				'.framer-67hkou-container',
 				'.framer-190cz8u-container',

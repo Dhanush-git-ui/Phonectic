@@ -5,7 +5,7 @@ export default function InteractivePlacementFeatureCards() {
 	const [isPaused, setIsPaused] = useState(false)
 	const timerRef = useRef(null)
 
-	const SLIDE_DURATION = 3500 // 3.5 seconds auto-shift
+	const SLIDE_DURATION = 2500 // Snappy 2.5s auto-shift
 
 	const cardsData = [
 		{
@@ -555,7 +555,7 @@ export default function InteractivePlacementFeatureCards() {
 		if (diff === 0) {
 			// Center Active Card
 			return {
-				transform: 'translateX(0px) scale(1) rotateY(0deg)',
+				transform: 'translateX(0px) scale(1) rotateY(0deg) translateZ(0px)',
 				opacity: 1,
 				zIndex: 20,
 				cursor: 'default',
@@ -566,8 +566,8 @@ export default function InteractivePlacementFeatureCards() {
 		} else if (diff === 1) {
 			// Right Card
 			return {
-				transform: 'translateX(380px) scale(0.85) rotateY(-8deg)',
-				opacity: 0.45,
+				transform: 'translateX(340px) scale(0.88) rotateY(-7deg) translateZ(-60px)',
+				opacity: 0.42,
 				zIndex: 10,
 				cursor: 'pointer',
 				boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6)',
@@ -576,8 +576,8 @@ export default function InteractivePlacementFeatureCards() {
 		} else {
 			// Left Card (diff === 2)
 			return {
-				transform: 'translateX(-380px) scale(0.85) rotateY(8deg)',
-				opacity: 0.45,
+				transform: 'translateX(-340px) scale(0.88) rotateY(7deg) translateZ(-60px)',
+				opacity: 0.42,
 				zIndex: 10,
 				cursor: 'pointer',
 				boxShadow: '0 20px 40px rgba(0, 0, 0, 0.6)',
@@ -784,7 +784,7 @@ export default function InteractivePlacementFeatureCards() {
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'space-between',
-								transition: 'all 0.6s cubic-bezier(0.16, 1, 0.3, 1)',
+								transition: 'transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.75s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.75s cubic-bezier(0.22, 1, 0.36, 1)',
 								willChange: 'transform, opacity',
 								userSelect: 'none',
 								...cardStyle,
