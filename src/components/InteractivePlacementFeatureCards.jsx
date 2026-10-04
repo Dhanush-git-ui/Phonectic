@@ -1,11 +1,431 @@
 import { useEffect, useRef, useState } from 'react'
 
+function AnimatedCounter({ end, duration = 1200, triggerKey, prefix = '', suffix = '%', decimals = 0 }) {
+	const [val, setVal] = useState(0)
+
+	useEffect(() => {
+		let startTimestamp = null
+		let rafId
+
+		const step = (timestamp) => {
+			if (!startTimestamp) startTimestamp = timestamp
+			const elapsed = timestamp - startTimestamp
+			const progress = Math.min(elapsed / duration, 1)
+			// Smooth ease-out exponential curve
+			const eased = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress)
+			const current = eased * end
+			setVal(decimals > 0 ? current.toFixed(decimals) : Math.round(current))
+
+			if (progress < 1) {
+				rafId = requestAnimationFrame(step)
+			}
+		}
+
+		setVal(0)
+		rafId = requestAnimationFrame(step)
+		return () => cancelAnimationFrame(rafId)
+	}, [end, duration, triggerKey, decimals])
+
+	return <span>{prefix}{val}{suffix}</span>
+}
+
+function RebalancingVisual({ isActive }) {
+	const [hoverCount, setHoverCount] = useState(0)
+	const [inViewCount, setInViewCount] = useState(0)
+	const containerRef = useRef(null)
+
+	useEffect(() => {
+		const el = containerRef.current
+		if (!el) return
+		const obs = new IntersectionObserver((entries) => {
+			if (entries[0].isIntersecting) {
+				setInViewCount(prev => prev + 1)
+			}
+		}, { threshold: 0.25 })
+		obs.observe(el)
+		return () => obs.disconnect()
+	}, [])
+
+	const triggerKey = `${isActive ? 'active' : 'inactive'}-${hoverCount}-${inViewCount}`
+
+	return (
+		<div
+			ref={containerRef}
+			onMouseEnter={() => setHoverCount(prev => prev + 1)}
+			style={{
+				position: 'relative',
+				width: '100%',
+				height: '100%',
+				borderRadius: 30,
+				background: 'linear-gradient(180deg, #dbeafe 0%, #bfdbfe 55%, #93c5fd 100%)',
+				padding: '24px 20px',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				overflow: 'hidden',
+				boxShadow: 'inset 0 2px 6px rgba(255, 255, 255, 0.7)',
+				cursor: 'pointer',
+			}}
+		>
+			{/* 4 Pastel / Gradient Module Blocks */}
+			<div
+				style={{
+					display: 'grid',
+					gridTemplateColumns: '1fr 1fr',
+					gap: 12,
+					width: '100%',
+					maxWidth: 340,
+					position: 'relative',
+				}}
+			>
+				{/* Block 1: Peach / Coral */}
+				<div
+					className="float-subtle-1 hover-lift-scale"
+					onMouseEnter={(e) => {
+						e.stopPropagation()
+						setHoverCount(prev => prev + 1)
+					}}
+					style={{
+						borderRadius: 20,
+						padding: '16px 14px',
+						backgroundColor: '#ffedd5',
+						border: '1.5px solid #fed7aa',
+						boxShadow: '0 10px 24px rgba(249, 115, 22, 0.1)',
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'space-between',
+						height: 110,
+						textAlign: 'left',
+						transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+					}}
+				>
+					<div style={{ fontSize: 11, fontWeight: 800, color: '#9a3412' }}>Full-Stack DSA</div>
+					<div>
+						<div style={{ fontSize: 26, fontWeight: 900, color: '#c2410c', lineHeight: 1 }}>
+							<AnimatedCounter end={38} triggerKey={triggerKey} />
+						</div>
+						<div style={{ fontSize: 10, color: '#9a3412', fontWeight: 600, marginTop: 4 }}>
+							Arrays · Trees · DP
+						</div>
+					</div>
+				</div>
+
+				{/* Block 2: Electric Sapphire Blue */}
+				<div
+					className="float-subtle-2 hover-lift-scale"
+					onMouseEnter={(e) => {
+						e.stopPropagation()
+						setHoverCount(prev => prev + 1)
+					}}
+					style={{
+						borderRadius: 20,
+						padding: '16px 14px',
+						backgroundColor: '#dbeafe',
+						border: '1.5px solid #93c5fd',
+						boxShadow: '0 10px 24px rgba(37, 99, 235, 0.12)',
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'space-between',
+						height: 110,
+						textAlign: 'left',
+						transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+					}}
+				>
+					<div style={{ fontSize: 11, fontWeight: 800, color: '#1e3a8a' }}>System Design</div>
+					<div>
+						<div style={{ fontSize: 26, fontWeight: 900, color: '#1d4ed8', lineHeight: 1 }}>
+							<AnimatedCounter end={24} triggerKey={triggerKey} />
+						</div>
+						<div style={{ fontSize: 10, color: '#1e3a8a', fontWeight: 600, marginTop: 4 }}>
+							HLD · LLD · Scaling
+						</div>
+					</div>
+				</div>
+
+				{/* Block 3: Mint / Emerald */}
+				<div
+					className="float-subtle-3 hover-lift-scale"
+					onMouseEnter={(e) => {
+						e.stopPropagation()
+						setHoverCount(prev => prev + 1)
+					}}
+					style={{
+						borderRadius: 20,
+						padding: '16px 14px',
+						backgroundColor: '#dcfce7',
+						border: '1.5px solid #86efac',
+						boxShadow: '0 10px 24px rgba(22, 163, 74, 0.1)',
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'space-between',
+						height: 110,
+						textAlign: 'left',
+						transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+					}}
+				>
+					<div style={{ fontSize: 11, fontWeight: 800, color: '#14532d' }}>Core CS &amp; DBMS</div>
+					<div>
+						<div style={{ fontSize: 26, fontWeight: 900, color: '#15803d', lineHeight: 1 }}>
+							<AnimatedCounter end={20} triggerKey={triggerKey} />
+						</div>
+						<div style={{ fontSize: 10, color: '#14532d', fontWeight: 600, marginTop: 4 }}>
+							OS · Networks · SQL
+						</div>
+					</div>
+				</div>
+
+				{/* Block 4: Cyan / Ice Blue */}
+				<div
+					className="float-subtle-4 hover-lift-scale"
+					onMouseEnter={(e) => {
+						e.stopPropagation()
+						setHoverCount(prev => prev + 1)
+					}}
+					style={{
+						borderRadius: 20,
+						padding: '16px 14px',
+						backgroundColor: '#e0f2fe',
+						border: '1.5px solid #7dd3fc',
+						boxShadow: '0 10px 24px rgba(2, 132, 199, 0.1)',
+						display: 'flex',
+						flexDirection: 'column',
+						justifyContent: 'space-between',
+						height: 110,
+						textAlign: 'left',
+						transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s ease',
+					}}
+				>
+					<div style={{ fontSize: 11, fontWeight: 800, color: '#0c4a6e' }}>Behavioral &amp; HR</div>
+					<div>
+						<div style={{ fontSize: 26, fontWeight: 900, color: '#0284c7', lineHeight: 1 }}>
+							<AnimatedCounter end={18} triggerKey={triggerKey} />
+						</div>
+						<div style={{ fontSize: 10, color: '#0c4a6e', fontWeight: 600, marginTop: 4 }}>
+							STAR · Leadership
+						</div>
+					</div>
+				</div>
+
+				{/* Center Floating Pill Badge */}
+				<div
+					onMouseEnter={(e) => {
+						e.stopPropagation()
+						setHoverCount(prev => prev + 1)
+					}}
+					style={{
+						position: 'absolute',
+						top: '50%',
+						left: '50%',
+						transform: 'translate(-50%, -50%)',
+						backgroundColor: '#090d16',
+						color: '#ffffff',
+						padding: '7px 18px',
+						borderRadius: 999,
+						fontSize: 11,
+						fontWeight: 800,
+						letterSpacing: '0.03em',
+						boxShadow: '0 10px 25px rgba(0, 0, 0, 0.35)',
+						display: 'flex',
+						alignItems: 'center',
+						gap: 6,
+						whiteSpace: 'nowrap',
+						zIndex: 10,
+						transition: 'transform 0.2s ease',
+					}}
+				>
+					<span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#22c55e', display: 'inline-block' }} />
+					<span>
+						<AnimatedCounter end={100} triggerKey={triggerKey} suffix="% Preparedness" />
+					</span>
+				</div>
+			</div>
+		</div>
+	)
+}
+
+function PerformanceTrackingVisual({ isActive }) {
+	const companies = [
+		{
+			id: 'tcs',
+			label: 'TCS Prime',
+			benchmark: '₹ 9,00,000',
+			badge: 'Prime Offer Letter',
+			rating: '9.2 / 10',
+			verdict: 'Verified Clearance',
+			verdictColor: '#16a34a',
+		},
+		{
+			id: 'amazon',
+			label: 'Amazon SDE-1',
+			benchmark: '₹ 28,45,000',
+			badge: 'Tier-1 Offer Letter',
+			rating: '9.8 / 10',
+			verdict: 'Recommended Hire',
+			verdictColor: '#16a34a',
+		},
+		{
+			id: 'google',
+			label: 'Google L4',
+			benchmark: '₹ 44,50,000',
+			badge: 'Super Dream Offer',
+			rating: '9.9 / 10',
+			verdict: 'Elite Tier Selection',
+			verdictColor: '#2563eb',
+		},
+	]
+
+	const [companyIndex, setCompanyIndex] = useState(0)
+
+	// Automatically cycle between TCS Prime -> Amazon SDE-1 -> Google L4
+	useEffect(() => {
+		const interval = setInterval(() => {
+			setCompanyIndex((prev) => (prev + 1) % companies.length)
+		}, 2500)
+
+		return () => clearInterval(interval)
+	}, [companies.length])
+
+	const current = companies[companyIndex]
+
+	return (
+		<div
+			style={{
+				position: 'relative',
+				width: '100%',
+				height: '100%',
+				borderRadius: 30,
+				background: 'linear-gradient(180deg, #dbeafe 0%, #bfdbfe 55%, #93c5fd 100%)',
+				padding: '24px 20px',
+				display: 'flex',
+				alignItems: 'center',
+				justifyContent: 'center',
+				overflow: 'hidden',
+				boxShadow: 'inset 0 2px 6px rgba(255, 255, 255, 0.7)',
+			}}
+		>
+			{/* White Base Earnings / CTC Card Matching hi.mp4 Frame 3 */}
+			<div
+				className="float-subtle-1"
+				style={{
+					width: '100%',
+					maxWidth: 340,
+					backgroundColor: '#ffffff',
+					borderRadius: 24,
+					padding: '22px 20px 18px',
+					boxShadow: '0 20px 45px rgba(29, 78, 216, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05)',
+					textAlign: 'center',
+					position: 'relative',
+				}}
+			>
+				{/* 3 Pills Row at top */}
+				<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginBottom: 12 }}>
+					{companies.map((comp, idx) => {
+						const isSelected = idx === companyIndex
+						return (
+							<button
+								key={comp.id}
+								type="button"
+								onClick={(e) => {
+									e.stopPropagation()
+									setCompanyIndex(idx)
+								}}
+								style={{
+									fontSize: 10,
+									fontWeight: isSelected ? 800 : 600,
+									color: isSelected ? '#2563eb' : '#64748b',
+									backgroundColor: isSelected ? '#dbeafe' : '#f1f5f9',
+									border: isSelected ? '1px solid #93c5fd' : '1px solid transparent',
+									padding: '3px 9px',
+									borderRadius: 12,
+									cursor: 'pointer',
+									transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+									boxShadow: isSelected ? '0 2px 8px rgba(37, 99, 235, 0.15)' : 'none',
+									transform: isSelected ? 'scale(1.05)' : 'scale(1)',
+								}}
+							>
+								{comp.label}
+							</button>
+						)
+					})}
+				</div>
+
+				<div style={{ fontSize: 10.5, fontWeight: 700, color: '#64748b', letterSpacing: '0.04em' }}>
+					QUALIFIED CTC BENCHMARK
+				</div>
+				<div
+					key={current.benchmark}
+					style={{
+						fontSize: 34,
+						fontWeight: 900,
+						color: '#0f172a',
+						margin: '4px 0 12px',
+						letterSpacing: '-0.02em',
+						fontFamily: '"Plus Jakarta Sans", sans-serif',
+						transition: 'all 0.3s ease',
+					}}
+				>
+					{current.benchmark}
+				</div>
+
+				{/* Dark Pill Action Button */}
+				<div style={{ display: 'inline-flex', marginBottom: 14 }}>
+					<span
+						key={current.badge}
+						style={{
+							backgroundColor: '#090d16',
+							color: '#ffffff',
+							padding: '6px 18px',
+							borderRadius: 999,
+							fontSize: 12,
+							fontWeight: 800,
+							boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
+							transition: 'all 0.3s ease',
+						}}
+					>
+						{current.badge}
+					</span>
+				</div>
+
+				{/* Bottom Audit Row */}
+				<div
+					style={{
+						borderTop: '1px solid #f1f5f9',
+						paddingTop: 10,
+						display: 'flex',
+						alignItems: 'center',
+						justifyContent: 'space-between',
+						textAlign: 'left',
+					}}
+				>
+					<div>
+						<div style={{ fontSize: 10.5, fontWeight: 700, color: '#0f172a' }}>Mock Interview Rating</div>
+						<div style={{ fontSize: 9.5, color: '#64748b' }}>Mentor: Santhosh Kumar Ananta</div>
+					</div>
+					<div style={{ textAlign: 'right' }}>
+						<div
+							key={current.rating}
+							style={{ fontSize: 13, fontWeight: 900, color: '#2563eb', transition: 'all 0.3s ease' }}
+						>
+							{current.rating}
+						</div>
+						<div
+							key={current.verdict}
+							style={{ fontSize: 9, color: current.verdictColor, fontWeight: 700, transition: 'all 0.3s ease' }}
+						>
+							{current.verdict}
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	)
+}
+
 export default function InteractivePlacementFeatureCards() {
 	const [activeIndex, setActiveIndex] = useState(0)
 	const [isPaused, setIsPaused] = useState(false)
 	const timerRef = useRef(null)
 
-	const SLIDE_DURATION = 2500 // Snappy 2.5s auto-shift
 
 	const cardsData = [
 		{
@@ -19,7 +439,7 @@ export default function InteractivePlacementFeatureCards() {
 				</svg>
 			),
 			// Visual Window (Top Half)
-			renderVisual: () => (
+			renderVisual: (isActive) => (
 				<div
 					style={{
 						position: 'relative',
@@ -37,154 +457,155 @@ export default function InteractivePlacementFeatureCards() {
 				>
 					{/* White Base Chart Card */}
 					<div
+						className="float-subtle-1"
 						style={{
 							width: '100%',
 							maxWidth: 340,
 							backgroundColor: '#ffffff',
 							borderRadius: 24,
-							padding: '22px 18px 16px',
+							padding: '20px 22px 18px',
 							boxShadow: '0 20px 45px rgba(29, 78, 216, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05)',
+							textAlign: 'left',
 							position: 'relative',
 						}}
 					>
-						{/* Dashed Target Baseline */}
+						{/* Chart Header Pill */}
 						<div
 							style={{
-								position: 'absolute',
-								top: '46%',
-								left: 18,
-								right: 18,
-								borderTop: '1.5px dashed rgba(37, 99, 235, 0.25)',
-								zIndex: 2,
+								display: 'inline-flex',
+								alignItems: 'center',
+								gap: 6,
+								backgroundColor: '#f1f5f9',
+								padding: '4px 10px',
+								borderRadius: 999,
+								fontSize: 10,
+								fontWeight: 700,
+								color: '#475569',
+								marginBottom: 14,
 							}}
-						/>
+						>
+							<span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#38bdf8', display: 'inline-block' }} />
+							OA Prediction Velocity
+						</div>
 
-						{/* 7 Vertical Pill Bars Across Baseline with Live Wave Animation */}
+						{/* Dynamic Wave Chart SVG */}
+						<div style={{ position: 'relative', height: 105, width: '100%', marginBottom: 12 }}>
+							<svg
+								viewBox="0 0 300 110"
+								preserveAspectRatio="none"
+								style={{ width: '100%', height: '100%', overflow: 'visible' }}
+							>
+								<defs>
+									<linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
+										<stop offset="0%" stopColor="#38bdf8" stopOpacity="0.45" />
+										<stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
+									</linearGradient>
+								</defs>
+
+								{/* Area Fill */}
+								<path
+									d="M 0,85 Q 40,92 75,65 T 150,45 T 225,28 T 300,8 L 300,110 L 0,110 Z"
+									fill="url(#areaGrad)"
+								/>
+
+								{/* Vibrant Neon Blue Gradient Curve */}
+								<path
+									d="M 0,85 Q 40,92 75,65 T 150,45 T 225,28 T 300,8"
+									fill="none"
+									stroke="#2563eb"
+									strokeWidth="3.5"
+									strokeLinecap="round"
+								/>
+
+								{/* Animated Glow Dot at Peak */}
+								<circle cx="300" cy="8" r="6" fill="#0284c7" />
+								<circle cx="300" cy="8" r="10" fill="#38bdf8" opacity="0.4" className="live-glow-dot" />
+							</svg>
+
+							{/* Floating Pill on top of curve */}
+							<div
+								className="float-subtle-2"
+								style={{
+									position: 'absolute',
+									top: 4,
+									right: 0,
+									transform: 'translateY(-50%)',
+									backgroundColor: '#090d16',
+									color: '#ffffff',
+									padding: '3px 9px',
+									borderRadius: 999,
+									fontSize: 10,
+									fontWeight: 800,
+									letterSpacing: '0.02em',
+									boxShadow: '0 4px 12px rgba(0, 0, 0, 0.25)',
+								}}
+							>
+								98.4% Accuracy
+							</div>
+						</div>
+
+						{/* 5 Vertical Indicator Live Pulse Bars */}
 						<div
 							style={{
 								display: 'flex',
-								alignItems: 'center',
+								alignItems: 'flex-end',
 								justifyContent: 'space-between',
-								height: 140,
-								position: 'relative',
-								zIndex: 3,
+								gap: 6,
+								height: 38,
 								padding: '0 4px',
 							}}
 						>
 							{[
-								{ day: 'Mo', h: 62, delay: '0s' },
-								{ day: 'Tu', h: 96, delay: '0.2s' },
-								{ day: 'We', h: 74, delay: '0.4s' },
-								{ day: 'Th', h: 108, delay: '0.1s' },
-								{ day: 'Fr', h: 80, delay: '0.3s' },
-								{ day: 'Sa', h: 58, delay: '0.5s' },
-								{ day: 'Su', h: 114, delay: '0.25s' },
+								{ h: '38%', bg: '#e2e8f0', delay: '0.1s' },
+								{ h: '55%', bg: '#cbd5e1', delay: '0.3s' },
+								{ h: '72%', bg: '#93c5fd', delay: '0.2s' },
+								{ h: '86%', bg: '#60a5fa', delay: '0.4s' },
+								{ h: '100%', bg: '#2563eb', delay: '0s' },
 							].map((bar, i) => (
 								<div
 									key={i}
 									style={{
-										display: 'flex',
-										flexDirection: 'column',
-										alignItems: 'center',
-										height: '100%',
-										justifyContent: 'flex-end',
-										gap: 6,
 										flex: 1,
+										height: bar.h,
+										backgroundColor: bar.bg,
+										borderRadius: 4,
+										animation: isActive ? `barLivePulse 2.4s ease-in-out infinite alternate ${bar.delay}` : 'none',
+										transformOrigin: 'bottom',
 									}}
-								>
-									{/* Outer translucent glass sleeve */}
-									<div
-										style={{
-											width: 14,
-											height: bar.h,
-											borderRadius: 999,
-											backgroundColor: 'rgba(59, 130, 246, 0.12)',
-											padding: 2,
-											display: 'flex',
-											alignItems: 'center',
-											justifyContent: 'center',
-											position: 'relative',
-										}}
-									>
-										{/* Inner gradient glowing bar */}
-										<div
-											className="bar-live-pulse"
-											style={{
-												width: '100%',
-												height: '85%',
-												borderRadius: 999,
-												background: 'linear-gradient(180deg, #60a5fa 0%, #2563eb 60%, #1e40af 100%)',
-												boxShadow: bar.h > 90 ? '0 0 12px rgba(37, 99, 235, 0.45)' : 'none',
-												animationDelay: bar.delay,
-											}}
-										/>
-									</div>
-									<span style={{ fontSize: 10, fontWeight: 700, color: '#64748b' }}>{bar.day}</span>
-								</div>
+								/>
 							))}
-						</div>
-
-						{/* Black Floating Current Value Badge Over Sunday */}
-						<div
-							className="float-slow-chip"
-							style={{
-								position: 'absolute',
-								right: 12,
-								top: '35%',
-								backgroundColor: '#090d16',
-								color: '#ffffff',
-								padding: '5px 10px',
-								borderRadius: 12,
-								fontSize: 10.5,
-								fontWeight: 800,
-								boxShadow: '0 8px 20px rgba(0, 0, 0, 0.25)',
-								display: 'flex',
-								alignItems: 'center',
-								gap: 5,
-								zIndex: 10,
-							}}
-						>
-							<span style={{ width: 5, height: 5, borderRadius: '50%', backgroundColor: '#38bdf8' }} />
-							<span style={{ color: '#94a3b8', fontSize: 9 }}>Current</span>
-							<strong style={{ color: '#38bdf8' }}>Top 0.8%</strong>
 						</div>
 					</div>
 
-					{/* Floating Frosted Glass Card (Top-Left) Matching hi.mp4 */}
+					{/* Center Floating +64 Pill Badge Matching Screenshot Frame 1 */}
 					<div
-						className="float-hero-card"
+						className="float-subtle-3 hover-lift-scale"
 						style={{
 							position: 'absolute',
-							top: 18,
-							left: 18,
-							width: 195,
+							bottom: 22,
+							left: 20,
+							right: 20,
+							backgroundColor: '#090d16',
 							borderRadius: 20,
-							background: 'linear-gradient(135deg, rgba(37, 99, 235, 0.92) 0%, rgba(29, 78, 216, 0.98) 100%)',
-							backdropFilter: 'blur(20px)',
-							WebkitBackdropFilter: 'blur(20px)',
-							border: '1px solid rgba(255, 255, 255, 0.3)',
-							padding: '12px 14px',
-							boxShadow: '0 16px 36px rgba(29, 78, 216, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.35)',
-							zIndex: 15,
-							textAlign: 'left',
+							padding: '14px 16px',
+							boxShadow: '0 16px 36px rgba(0, 0, 0, 0.45)',
+							border: '1px solid rgba(255, 255, 255, 0.12)',
+							zIndex: 10,
 						}}
 					>
-						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between', marginBottom: 2 }}>
-							<span style={{ fontSize: 10, fontWeight: 700, color: 'rgba(255, 255, 255, 0.8)' }}>Quant &amp; Coding</span>
-							<span
-								style={{
-									fontSize: 8.5,
-									fontWeight: 800,
-									color: '#ffffff',
-									backgroundColor: 'rgba(255, 255, 255, 0.2)',
-									border: '1px solid rgba(255, 255, 255, 0.3)',
-									padding: '1.5px 6px',
-									borderRadius: 10,
-									letterSpacing: '0.04em',
-								}}
-							>
-								✦ FORECASTING
-							</span>
+						<div
+							style={{
+								display: 'flex',
+								alignItems: 'center',
+								gap: 6,
+								fontSize: 11,
+								fontWeight: 700,
+								color: '#38bdf8',
+								marginBottom: 4,
+							}}
+						>
+							<span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#38bdf8' }} />
+							Placement Predictor
 						</div>
 						<div
 							style={{
@@ -195,7 +616,7 @@ export default function InteractivePlacementFeatureCards() {
 								lineHeight: 1.1,
 							}}
 						>
-							+64%
+							<AnimatedCounter end={64} prefix="+" triggerKey={isActive ? 'active' : 'inactive'} />
 						</div>
 						<div
 							style={{
@@ -226,161 +647,7 @@ export default function InteractivePlacementFeatureCards() {
 				</svg>
 			),
 			// Visual Window (Top Half)
-			renderVisual: () => (
-				<div
-					style={{
-						position: 'relative',
-						width: '100%',
-						height: '100%',
-						borderRadius: 30,
-						background: 'linear-gradient(180deg, #dbeafe 0%, #bfdbfe 55%, #93c5fd 100%)',
-						padding: '24px 20px',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						overflow: 'hidden',
-						boxShadow: 'inset 0 2px 6px rgba(255, 255, 255, 0.7)',
-					}}
-				>
-					{/* 4 Pastel / Gradient Module Blocks Matching hi.mp4 Frame 2 */}
-					<div
-						style={{
-							display: 'grid',
-							gridTemplateColumns: '1fr 1fr',
-							gap: 12,
-							width: '100%',
-							maxWidth: 340,
-							position: 'relative',
-						}}
-					>
-						{/* Block 1: Peach / Coral */}
-						<div
-							className="float-subtle-1"
-							style={{
-								borderRadius: 20,
-								padding: '16px 14px',
-								backgroundColor: '#ffedd5',
-								border: '1.5px solid #fed7aa',
-								boxShadow: '0 10px 24px rgba(249, 115, 22, 0.1)',
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'space-between',
-								height: 110,
-								textAlign: 'left',
-							}}
-						>
-							<div style={{ fontSize: 11, fontWeight: 800, color: '#9a3412' }}>Full-Stack DSA</div>
-							<div>
-								<div style={{ fontSize: 26, fontWeight: 900, color: '#c2410c', lineHeight: 1 }}>38%</div>
-								<div style={{ fontSize: 10, color: '#9a3412', fontWeight: 600, marginTop: 4 }}>
-									Arrays · Trees · DP
-								</div>
-							</div>
-						</div>
-
-						{/* Block 2: Electric Sapphire Blue */}
-						<div
-							className="float-subtle-2"
-							style={{
-								borderRadius: 20,
-								padding: '16px 14px',
-								backgroundColor: '#dbeafe',
-								border: '1.5px solid #93c5fd',
-								boxShadow: '0 10px 24px rgba(37, 99, 235, 0.12)',
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'space-between',
-								height: 110,
-								textAlign: 'left',
-							}}
-						>
-							<div style={{ fontSize: 11, fontWeight: 800, color: '#1e3a8a' }}>System Design</div>
-							<div>
-								<div style={{ fontSize: 26, fontWeight: 900, color: '#1d4ed8', lineHeight: 1 }}>24%</div>
-								<div style={{ fontSize: 10, color: '#1e3a8a', fontWeight: 600, marginTop: 4 }}>
-									HLD · LLD · Scaling
-								</div>
-							</div>
-						</div>
-
-						{/* Block 3: Mint / Emerald */}
-						<div
-							className="float-subtle-3"
-							style={{
-								borderRadius: 20,
-								padding: '16px 14px',
-								backgroundColor: '#dcfce7',
-								border: '1.5px solid #86efac',
-								boxShadow: '0 10px 24px rgba(22, 163, 74, 0.1)',
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'space-between',
-								height: 110,
-								textAlign: 'left',
-							}}
-						>
-							<div style={{ fontSize: 11, fontWeight: 800, color: '#14532d' }}>Core CS &amp; DBMS</div>
-							<div>
-								<div style={{ fontSize: 26, fontWeight: 900, color: '#15803d', lineHeight: 1 }}>20%</div>
-								<div style={{ fontSize: 10, color: '#14532d', fontWeight: 600, marginTop: 4 }}>
-									OS · Networks · SQL
-								</div>
-							</div>
-						</div>
-
-						{/* Block 4: Cyan / Ice Blue */}
-						<div
-							className="float-subtle-4"
-							style={{
-								borderRadius: 20,
-								padding: '16px 14px',
-								backgroundColor: '#e0f2fe',
-								border: '1.5px solid #7dd3fc',
-								boxShadow: '0 10px 24px rgba(2, 132, 199, 0.1)',
-								display: 'flex',
-								flexDirection: 'column',
-								justifyContent: 'space-between',
-								height: 110,
-								textAlign: 'left',
-							}}
-						>
-							<div style={{ fontSize: 11, fontWeight: 800, color: '#0c4a6e' }}>Behavioral &amp; HR</div>
-							<div>
-								<div style={{ fontSize: 26, fontWeight: 900, color: '#0284c7', lineHeight: 1 }}>18%</div>
-								<div style={{ fontSize: 10, color: '#0c4a6e', fontWeight: 600, marginTop: 4 }}>
-									STAR · Leadership
-								</div>
-							</div>
-						</div>
-
-						{/* Center Floating Pill Badge */}
-						<div
-							style={{
-								position: 'absolute',
-								top: '50%',
-								left: '50%',
-								transform: 'translate(-50%, -50%)',
-								backgroundColor: '#090d16',
-								color: '#ffffff',
-								padding: '7px 18px',
-								borderRadius: 999,
-								fontSize: 11,
-								fontWeight: 800,
-								letterSpacing: '0.03em',
-								boxShadow: '0 10px 25px rgba(0, 0, 0, 0.35)',
-								display: 'flex',
-								alignItems: 'center',
-								gap: 6,
-								whiteSpace: 'nowrap',
-								zIndex: 10,
-							}}
-						>
-							<span style={{ width: 6, height: 6, borderRadius: '50%', backgroundColor: '#22c55e' }} />
-							<span>100% Preparedness</span>
-						</div>
-					</div>
-				</div>
-			),
+			renderVisual: (isActive) => <RebalancingVisual isActive={isActive} />,
 		},
 		{
 			id: 2,
@@ -398,154 +665,25 @@ export default function InteractivePlacementFeatureCards() {
 				</svg>
 			),
 			// Visual Window (Top Half)
-			renderVisual: () => (
-				<div
-					style={{
-						position: 'relative',
-						width: '100%',
-						height: '100%',
-						borderRadius: 30,
-						background: 'linear-gradient(180deg, #dbeafe 0%, #bfdbfe 55%, #93c5fd 100%)',
-						padding: '24px 20px',
-						display: 'flex',
-						alignItems: 'center',
-						justifyContent: 'center',
-						overflow: 'hidden',
-						boxShadow: 'inset 0 2px 6px rgba(255, 255, 255, 0.7)',
-					}}
-				>
-					{/* White Base Earnings / CTC Card Matching hi.mp4 Frame 3 */}
-					<div
-						className="float-subtle-1"
-						style={{
-							width: '100%',
-							maxWidth: 340,
-							backgroundColor: '#ffffff',
-							borderRadius: 24,
-							padding: '22px 20px 18px',
-							boxShadow: '0 20px 45px rgba(29, 78, 216, 0.15), 0 4px 12px rgba(0, 0, 0, 0.05)',
-							textAlign: 'center',
-							position: 'relative',
-						}}
-					>
-						{/* 3 Pills Row at top */}
-						<div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 6, marginBottom: 12 }}>
-							<span
-								style={{
-									fontSize: 10,
-									fontWeight: 700,
-									color: '#64748b',
-									backgroundColor: '#f1f5f9',
-									padding: '3px 9px',
-									borderRadius: 12,
-								}}
-							>
-								TCS Prime
-							</span>
-							<span
-								style={{
-									fontSize: 10,
-									fontWeight: 700,
-									color: '#2563eb',
-									backgroundColor: '#dbeafe',
-									border: '1px solid #93c5fd',
-									padding: '3px 9px',
-									borderRadius: 12,
-								}}
-							>
-								Amazon SDE-1
-							</span>
-							<span
-								style={{
-									fontSize: 10,
-									fontWeight: 700,
-									color: '#64748b',
-									backgroundColor: '#f1f5f9',
-									padding: '3px 9px',
-									borderRadius: 12,
-								}}
-							>
-								Google L4
-							</span>
-						</div>
-
-						<div style={{ fontSize: 10.5, fontWeight: 700, color: '#64748b', letterSpacing: '0.04em' }}>
-							QUALIFIED CTC BENCHMARK
-						</div>
-						<div
-							style={{
-								fontSize: 34,
-								fontWeight: 900,
-								color: '#0f172a',
-								margin: '4px 0 12px',
-								letterSpacing: '-0.02em',
-								fontFamily: '"Plus Jakarta Sans", sans-serif',
-							}}
-						>
-							₹ 28,450,00
-						</div>
-
-						{/* Dark Pill Action Button */}
-						<div style={{ display: 'inline-flex', marginBottom: 14 }}>
-							<span
-								style={{
-									backgroundColor: '#090d16',
-									color: '#ffffff',
-									padding: '6px 18px',
-									borderRadius: 999,
-									fontSize: 12,
-									fontWeight: 800,
-									boxShadow: '0 4px 12px rgba(0, 0, 0, 0.2)',
-								}}
-							>
-								Tier-1 Offer Letter
-							</span>
-						</div>
-
-						{/* Bottom Audit Row */}
-						<div
-							style={{
-								borderTop: '1px solid #f1f5f9',
-								paddingTop: 10,
-								display: 'flex',
-								alignItems: 'center',
-								justifyContent: 'space-between',
-								textAlign: 'left',
-							}}
-						>
-							<div>
-								<div style={{ fontSize: 10.5, fontWeight: 700, color: '#0f172a' }}>Mock Interview Rating</div>
-								<div style={{ fontSize: 9.5, color: '#64748b' }}>Mentor: Santhosh Kumar Ananta</div>
-							</div>
-							<div style={{ textAlign: 'right' }}>
-								<div style={{ fontSize: 13, fontWeight: 900, color: '#2563eb' }}>9.8 / 10</div>
-								<div style={{ fontSize: 9, color: '#16a34a', fontWeight: 700 }}>Recommended Hire</div>
-							</div>
-						</div>
-					</div>
-				</div>
-			),
+			renderVisual: (isActive) => <PerformanceTrackingVisual isActive={isActive} />,
 		},
 	]
 
-	// 100% Reliable Auto-Shift every 3.5 seconds
+	const SLIDE_DURATION = 4000 // 4.0 seconds uniform duration for each slide
+
+	// Uniform, leak-free auto-shift timer for every card
 	useEffect(() => {
 		if (isPaused) return
 
-		timerRef.current = setInterval(() => {
+		const timer = setTimeout(() => {
 			setActiveIndex((prev) => (prev + 1) % cardsData.length)
 		}, SLIDE_DURATION)
 
-		return () => clearInterval(timerRef.current)
-	}, [isPaused, cardsData.length])
+		return () => clearTimeout(timer)
+	}, [activeIndex, isPaused, cardsData.length])
 
 	const handleSelectCard = (index) => {
-		clearInterval(timerRef.current)
 		setActiveIndex(index)
-
-		timerRef.current = setInterval(() => {
-			setActiveIndex((prev) => (prev + 1) % cardsData.length)
-		}, SLIDE_DURATION)
 	}
 
 	// 3D Carousel Transform Calculations
@@ -792,7 +930,7 @@ export default function InteractivePlacementFeatureCards() {
 						>
 							{/* 1. TOP HALF: Tinted Visual Window */}
 							<div style={{ width: '100%', height: 350, flexShrink: 0 }}>
-								{card.renderVisual()}
+								{card.renderVisual(idx === activeIndex)}
 							</div>
 
 							{/* 2. BOTTOM HALF: Icon, Number Badge, Title, Description Matching Screenshot */}

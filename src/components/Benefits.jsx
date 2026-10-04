@@ -1,6 +1,10 @@
 import { useState } from 'react'
 
 export default function Benefits() {
+	const [hoveredCard, setHoveredCard] = useState(null)
+	const [selectedCard, setSelectedCard] = useState(null)
+	const activeStep = hoveredCard || selectedCard || 0
+
 	return (
 		<section
 			id="benefit"
@@ -94,22 +98,22 @@ export default function Benefits() {
 				</div>
 
 				{/* 2. Horizontal 4-Card Connected Roadmap */}
-				<div style={{ position: 'relative', width: '100%', marginBottom: '80px' }}>
+				<div style={{ position: 'relative', width: '100%', marginBottom: '80px', paddingTop: '40px' }}>
 					{/* Top Blue Connecting Weaving Curve (Desktop & Tablet) */}
 					<div
 						className="programs-connecting-curve-wrap"
 						style={{
 							position: 'absolute',
-							top: '-20px',
+							top: '0px',
 							left: '0',
 							width: '100%',
-							height: '60px',
+							height: '55px',
 							pointerEvents: 'none',
-							zIndex: 1,
+							zIndex: 10,
 						}}
 					>
 						<svg
-							viewBox="0 0 1200 60"
+							viewBox="0 0 1200 55"
 							fill="none"
 							xmlns="http://www.w3.org/2000/svg"
 							style={{ width: '100%', height: '100%', overflow: 'visible' }}
@@ -117,25 +121,57 @@ export default function Benefits() {
 						>
 							{/* Soft Glow Path */}
 							<path
-								d="M 140 26 C 210 -15, 330 65, 440 26 C 510 -15, 630 65, 740 26 C 810 -15, 930 65, 1060 26"
+								d="M 65 52 C 85 48, 110 40, 140 38 C 220 32, 310 10, 440 22 C 540 34, 630 46, 740 32 C 830 18, 930 6, 1060 28 C 1085 32, 1112 48, 1135 52"
 								stroke="#93c5fd"
-								strokeWidth="4"
+								strokeWidth="5"
 								strokeLinecap="round"
-								opacity="0.4"
+								opacity="0.6"
 							/>
 							{/* Crisp Core Blue Path */}
 							<path
-								d="M 140 26 C 210 -15, 330 65, 440 26 C 510 -15, 630 65, 740 26 C 810 -15, 930 65, 1060 26"
+								d="M 65 52 C 85 48, 110 40, 140 38 C 220 32, 310 10, 440 22 C 540 34, 630 46, 740 32 C 830 18, 930 6, 1060 28 C 1085 32, 1112 48, 1135 52"
 								stroke="#2563eb"
-								strokeWidth="2"
+								strokeWidth="2.5"
 								strokeLinecap="round"
-								strokeDasharray="6 4"
+								strokeDasharray="6 5"
 							/>
 							{/* Glowing Node Dots */}
-							<circle cx="140" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
-							<circle cx="440" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
-							<circle cx="740" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
-							<circle cx="1060" cy="26" r="6" fill="#2563eb" stroke="#ffffff" strokeWidth="2.5" />
+							<circle
+								cx="140"
+								cy="38"
+								r={activeStep === 1 ? 9 : 6.5}
+								fill="#2563eb"
+								stroke="#ffffff"
+								strokeWidth={activeStep === 1 ? 3.5 : 2.5}
+								style={{ transition: 'all 0.3s ease', filter: 'drop-shadow(0 2px 8px rgba(37,99,235,0.5))' }}
+							/>
+							<circle
+								cx="440"
+								cy="22"
+								r={activeStep === 2 ? 9 : 6.5}
+								fill="#2563eb"
+								stroke="#ffffff"
+								strokeWidth={activeStep === 2 ? 3.5 : 2.5}
+								style={{ transition: 'all 0.3s ease', filter: 'drop-shadow(0 2px 8px rgba(37,99,235,0.5))' }}
+							/>
+							<circle
+								cx="740"
+								cy="32"
+								r={activeStep === 3 ? 9 : 6.5}
+								fill="#38bdf8"
+								stroke="#ffffff"
+								strokeWidth={activeStep === 3 ? 3.5 : 2.5}
+								style={{ transition: 'all 0.3s ease', filter: 'drop-shadow(0 2px 8px rgba(56,189,248,0.6))' }}
+							/>
+							<circle
+								cx="1060"
+								cy="28"
+								r={activeStep === 4 ? 9 : 6.5}
+								fill="#2563eb"
+								stroke="#ffffff"
+								strokeWidth={activeStep === 4 ? 3.5 : 2.5}
+								style={{ transition: 'all 0.3s ease', filter: 'drop-shadow(0 2px 8px rgba(37,99,235,0.5))' }}
+							/>
 						</svg>
 					</div>
 
@@ -148,23 +184,33 @@ export default function Benefits() {
 							gap: '20px',
 							position: 'relative',
 							zIndex: 2,
+							marginTop: '25px',
 						}}
 					>
 						{/* CARD 1: Aptitude Mastery */}
 						<div
-							className="program-card"
-							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
+							className={`program-card ${activeStep === 1 ? 'program-card-highlighted' : ''}`}
+							onMouseEnter={() => setHoveredCard(1)}
+							onMouseLeave={() => setHoveredCard(null)}
+							onClick={() => setSelectedCard(selectedCard === 1 ? null : 1)}
 							style={{
 								background: '#ffffff',
-								border: '1px solid #e2e8f0',
+								border: activeStep === 1 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
 								borderRadius: '26px',
 								padding: '24px',
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'space-between',
-								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
-								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								boxShadow:
+									activeStep === 1
+										? '0 25px 60px -10px rgba(37, 99, 235, 0.25), 0 0 0 1px #2563eb'
+										: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
+								transform: activeStep === 1 ? 'translateY(-14px) scale(1.03)' : 'translateY(0) scale(1)',
+								zIndex: activeStep === 1 ? 20 : 2,
+								opacity: activeStep && activeStep !== 1 ? 0.75 : 1,
+								transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
 								cursor: 'pointer',
+								position: 'relative',
 							}}
 						>
 							<div>
@@ -337,7 +383,7 @@ export default function Benefits() {
 
 							{/* Bottom Action Pill */}
 							<a
-								href="https://www.phoneticedu.com/auth/login"
+								href="#" data-open-contact="true"
 								style={{
 									display: 'flex',
 									alignItems: 'center',
@@ -401,19 +447,28 @@ export default function Benefits() {
 
 						{/* CARD 2: Technical & DSA Coding */}
 						<div
-							className="program-card"
-							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
+							className={`program-card ${activeStep === 2 ? 'program-card-highlighted' : ''}`}
+							onMouseEnter={() => setHoveredCard(2)}
+							onMouseLeave={() => setHoveredCard(null)}
+							onClick={() => setSelectedCard(selectedCard === 2 ? null : 2)}
 							style={{
 								background: '#ffffff',
-								border: '1px solid #e2e8f0',
+								border: activeStep === 2 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
 								borderRadius: '26px',
 								padding: '24px',
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'space-between',
-								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
-								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								boxShadow:
+									activeStep === 2
+										? '0 25px 60px -10px rgba(37, 99, 235, 0.25), 0 0 0 1px #2563eb'
+										: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
+								transform: activeStep === 2 ? 'translateY(-14px) scale(1.03)' : 'translateY(0) scale(1)',
+								zIndex: activeStep === 2 ? 20 : 2,
+								opacity: activeStep && activeStep !== 2 ? 0.75 : 1,
+								transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
 								cursor: 'pointer',
+								position: 'relative',
 							}}
 						>
 							<div>
@@ -435,7 +490,7 @@ export default function Benefits() {
 											textTransform: 'uppercase',
 										}}
 									>
-										02 / BUILD
+										02 / PRACTICE
 									</span>
 									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2">
 										<path d="M16 18l6-6-6-6M8 6l-6 6 6 6" strokeLinecap="round" strokeLinejoin="round" />
@@ -558,7 +613,7 @@ export default function Benefits() {
 
 							{/* Bottom Action Pill */}
 							<a
-								href="https://www.phoneticedu.com/auth/login"
+								href="#" data-open-contact="true"
 								style={{
 									display: 'flex',
 									alignItems: 'center',
@@ -622,22 +677,29 @@ export default function Benefits() {
 						</div>
 
 						{/* CARD 3: Proven Placements (FEATURED DARK OBSIDIAN CARD) */}
+						{/* CARD 3: Proven Placements (WHITE HIGHLIGHTED CARD) */}
 						<div
-							className="program-card program-card-featured"
-							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
+							className={`program-card ${activeStep === 3 ? 'program-card-highlighted' : ''}`}
+							onMouseEnter={() => setHoveredCard(3)}
+							onMouseLeave={() => setHoveredCard(null)}
+							onClick={() => setSelectedCard(selectedCard === 3 ? null : 3)}
 							style={{
-								background: 'radial-gradient(ellipse at 50% 0%, #1e3a8a 0%, #090d16 100%)',
-								border: '1.5px solid rgba(59, 130, 246, 0.45)',
+								background: 'linear-gradient(165deg, #e0f2fe 0%, #f0f7ff 35%, #ffffff 100%)',
+								border: activeStep === 3 ? '2px solid #2563eb' : '1.5px solid #93c5fd',
 								borderRadius: '26px',
 								padding: '24px',
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'space-between',
 								boxShadow:
-									'0 20px 45px -10px rgba(37, 99, 235, 0.35), 0 0 0 1px rgba(255,255,255,0.08) inset',
-								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+									activeStep === 3
+										? '0 25px 60px -10px rgba(37, 99, 235, 0.25), 0 0 0 1px #2563eb'
+										: '0 10px 30px -10px rgba(37, 99, 235, 0.12), 0 4px 12px -2px rgba(37, 99, 235, 0.06)',
+								transform: activeStep === 3 ? 'translateY(-14px) scale(1.03)' : 'translateY(0) scale(1)',
+								zIndex: activeStep === 3 ? 20 : 2,
+								opacity: activeStep && activeStep !== 3 ? 0.75 : 1,
+								transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
 								position: 'relative',
-								overflow: 'hidden',
 								cursor: 'pointer',
 							}}
 						>
@@ -656,13 +718,13 @@ export default function Benefits() {
 											fontSize: '11px',
 											fontWeight: 800,
 											letterSpacing: '0.08em',
-											color: '#38bdf8',
+											color: '#2563eb',
 											textTransform: 'uppercase',
 										}}
 									>
 										03 / PROVE
 									</span>
-									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#38bdf8" strokeWidth="2">
+									<svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#2563eb" strokeWidth="2">
 										<path d="M22 12h-4l-3 9L9 3l-3 9H2" strokeLinecap="round" strokeLinejoin="round" />
 									</svg>
 								</div>
@@ -674,18 +736,18 @@ export default function Benefits() {
 										fontWeight: 900,
 										textTransform: 'uppercase',
 										letterSpacing: '-0.025em',
-										color: '#ffffff',
+										color: '#0f172a',
 										margin: '0 0 4px',
 									}}
 								>
 									Proven Placements
 								</h3>
-								<p style={{ fontSize: '13px', color: '#94a3b8', margin: '0 0 20px' }}>
+								<p style={{ fontSize: '13px', color: '#64748b', margin: '0 0 20px' }}>
 									Real outcomes. Real opportunities.
 								</p>
 
 								{/* 2 Big Metrics */}
-								<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '18px' }}>
+								<div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '16px' }}>
 									<div>
 										<div
 											style={{
@@ -693,13 +755,13 @@ export default function Benefits() {
 												fontSize: '32px',
 												fontWeight: 900,
 												letterSpacing: '-0.02em',
-												color: '#ffffff',
+												color: '#0f172a',
 												lineHeight: 1,
 											}}
 										>
 											1,000+
 										</div>
-										<div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '4px' }}>Students Placed</div>
+										<div style={{ fontSize: '11px', color: '#64748b', marginTop: '4px' }}>Students Placed</div>
 									</div>
 									<div>
 										<div
@@ -708,38 +770,38 @@ export default function Benefits() {
 												fontSize: '32px',
 												fontWeight: 900,
 												letterSpacing: '-0.02em',
-												color: '#38bdf8',
+												color: '#2563eb',
 												lineHeight: 1,
 											}}
 										>
 											94.8%
 										</div>
-										<div style={{ fontSize: '11px', color: '#94a3b8', marginTop: '4px' }}>Placement Ratio</div>
+										<div style={{ fontSize: '11px', color: '#64748b', marginTop: '4px' }}>Placement Ratio</div>
 									</div>
 								</div>
 
-								{/* Glowing Area Chart with Floating Badge */}
-								<div style={{ position: 'relative', height: '70px', marginBottom: '16px' }}>
+								{/* Refined Area Chart with Floating Growth Badge */}
+								<div style={{ position: 'relative', height: '65px', marginBottom: '16px' }}>
 									<svg
-										viewBox="0 0 240 70"
+										viewBox="0 0 240 65"
 										fill="none"
 										xmlns="http://www.w3.org/2000/svg"
 										style={{ width: '100%', height: '100%' }}
 										preserveAspectRatio="none"
 									>
 										<defs>
-											<linearGradient id="areaChartGrad" x1="0" y1="0" x2="0" y2="1">
-												<stop offset="0%" stopColor="#38bdf8" stopOpacity="0.4" />
-												<stop offset="100%" stopColor="#38bdf8" stopOpacity="0.0" />
+											<linearGradient id="cleanPlacementChartGradLight" x1="0" y1="0" x2="0" y2="1">
+												<stop offset="0%" stopColor="#2563eb" stopOpacity="0.18" />
+												<stop offset="100%" stopColor="#2563eb" stopOpacity="0.0" />
 											</linearGradient>
 										</defs>
 										<path
-											d="M0 60 Q 40 55, 70 42 T 140 28 T 190 22 T 240 10 L 240 70 L 0 70 Z"
-											fill="url(#areaChartGrad)"
+											d="M0 55 Q 40 50, 70 38 T 140 25 T 190 18 T 240 8 L 240 65 L 0 65 Z"
+											fill="url(#cleanPlacementChartGradLight)"
 										/>
 										<path
-											d="M0 60 Q 40 55, 70 42 T 140 28 T 190 22 T 240 10"
-											stroke="#38bdf8"
+											d="M0 55 Q 40 50, 70 38 T 140 25 T 190 18 T 240 8"
+											stroke="#2563eb"
 											strokeWidth="2.5"
 											strokeLinecap="round"
 										/>
@@ -749,10 +811,11 @@ export default function Benefits() {
 									<div
 										style={{
 											position: 'absolute',
-											top: '12px',
-											right: '40px',
-											background: '#1d4ed8',
-											color: '#ffffff',
+											top: '8px',
+											right: '30px',
+											background: '#eff6ff',
+											border: '1px solid #bfdbfe',
+											color: '#1d4ed8',
 											fontSize: '10px',
 											fontWeight: 700,
 											padding: '3px 8px',
@@ -760,48 +823,105 @@ export default function Benefits() {
 											display: 'inline-flex',
 											alignItems: 'center',
 											gap: '4px',
-											boxShadow: '0 4px 10px rgba(0,0,0,0.3)',
+											boxShadow: '0 2px 6px rgba(37, 99, 235, 0.1)',
 										}}
 									>
 										<span>↑ +18.4%</span>
-										<span style={{ opacity: 0.8, fontSize: '9px' }}>YoY Growth</span>
+										<span style={{ opacity: 0.85, fontSize: '9px' }}>YoY Growth</span>
 									</div>
 								</div>
 							</div>
 
-							{/* Bottom Recruiters Row */}
+							{/* Bottom Recruiters Row with Clean Unboxed Logos */}
 							<div
 								style={{
-									borderTop: '1px solid rgba(255,255,255,0.1)',
+									borderTop: '1px solid #f1f5f9',
 									paddingTop: '12px',
 								}}
 							>
 								<div
 									style={{
 										fontSize: '10px',
-										color: '#64748b',
+										color: '#94a3b8',
 										textTransform: 'uppercase',
-										letterSpacing: '0.06em',
+										letterSpacing: '0.08em',
 										fontWeight: 700,
-										marginBottom: '8px',
+										marginBottom: '10px',
 									}}
 								>
-									Top Recruiters
+									TOP RECRUITERS
 								</div>
 								<div
 									style={{
 										display: 'flex',
 										justifyContent: 'space-between',
 										alignItems: 'center',
-										opacity: 0.88,
+										padding: '2px 2px',
 									}}
 								>
-									<span style={{ color: '#ffffff', fontWeight: 800, fontSize: '13px', letterSpacing: '1px' }}>
-										tcs
-									</span>
-									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>Infosys</span>
-									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>&gt;accenture</span>
-									<span style={{ color: '#ffffff', fontWeight: 700, fontSize: '12px' }}>Capgemini</span>
+									{/* TCS Logo */}
+									<div title="Tata Consultancy Services" style={{ display: 'flex', alignItems: 'center' }}>
+										<img
+											src="/assets/recruiter-tcs.png"
+											alt="TCS"
+											style={{
+												height: '20px',
+												width: 'auto',
+												objectFit: 'contain',
+												display: 'block',
+											}}
+										/>
+									</div>
+
+									{/* Infosys Logo */}
+									<div title="Infosys" style={{ display: 'flex', alignItems: 'center' }}>
+										<svg width="54" height="20" viewBox="0 0 100 32" fill="none">
+											<text
+												x="50%"
+												y="48%"
+												dominantBaseline="middle"
+												textAnchor="middle"
+												fill="#007CC3"
+												fontFamily="'Helvetica Neue', Arial, sans-serif"
+												fontWeight="800"
+												fontSize="18"
+												letterSpacing="-0.5"
+											>
+												Infosys
+											</text>
+											<path d="M16 26 C40 29, 65 29, 84 25" stroke="#007CC3" strokeWidth="2" strokeLinecap="round" opacity="0.85" />
+										</svg>
+									</div>
+
+									{/* Accenture Logo */}
+									<div title="Accenture" style={{ display: 'flex', alignItems: 'center' }}>
+										<span
+											style={{
+												fontFamily: "'Inter', sans-serif",
+												fontWeight: 800,
+												fontSize: '12.5px',
+												color: '#0f172a',
+												display: 'inline-flex',
+												alignItems: 'center',
+											}}
+										>
+											<span style={{ color: '#a855f7', marginRight: '2px', fontWeight: 900 }}>&gt;</span>accenture
+										</span>
+									</div>
+
+									{/* PwC Logo */}
+									<div title="PricewaterhouseCoopers (PwC)" style={{ display: 'flex', alignItems: 'center' }}>
+										<img
+											src="/assets/recruiter-pwc.png"
+											alt="PwC"
+											style={{
+												height: '18px',
+												width: 'auto',
+												objectFit: 'contain',
+												display: 'block',
+											}}
+										/>
+									</div>
 								</div>
 							</div>
 
@@ -812,14 +932,15 @@ export default function Benefits() {
 									alignItems: 'center',
 									justifyContent: 'center',
 									gap: '8px',
-									marginTop: '12px',
+									marginTop: '14px',
 									padding: '9px 14px',
 									borderRadius: '12px',
-									background: 'linear-gradient(135deg, #3b82f6 0%, #1d4ed8 100%)',
+									background: '#2563eb',
 									color: '#ffffff',
 									fontSize: '12px',
 									fontWeight: 700,
-									boxShadow: '0 4px 15px rgba(59, 130, 246, 0.4)',
+									boxShadow: '0 4px 12px rgba(37, 99, 235, 0.25)',
+									transition: 'all 0.2s ease',
 								}}
 							>
 								<span>Explore Placements on LMS</span>
@@ -829,19 +950,28 @@ export default function Benefits() {
 
 						{/* CARD 4: Interview Ready */}
 						<div
-							className="program-card"
-							onClick={() => window.open('https://www.phoneticedu.com/auth/login', '_blank')}
+							className={`program-card ${activeStep === 4 ? 'program-card-highlighted' : ''}`}
+							onMouseEnter={() => setHoveredCard(4)}
+							onMouseLeave={() => setHoveredCard(null)}
+							onClick={() => setSelectedCard(selectedCard === 4 ? null : 4)}
 							style={{
 								background: '#ffffff',
-								border: '1px solid #e2e8f0',
+								border: activeStep === 4 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
 								borderRadius: '26px',
 								padding: '24px',
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'space-between',
-								boxShadow: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
-								transition: 'transform 0.3s ease, box-shadow 0.3s ease',
+								boxShadow:
+									activeStep === 4
+										? '0 25px 60px -10px rgba(37, 99, 235, 0.25), 0 0 0 1px #2563eb'
+										: '0 10px 30px -10px rgba(0,0,0,0.06), 0 4px 6px -2px rgba(0,0,0,0.02)',
+								transform: activeStep === 4 ? 'translateY(-14px) scale(1.03)' : 'translateY(0) scale(1)',
+								zIndex: activeStep === 4 ? 20 : 2,
+								opacity: activeStep && activeStep !== 4 ? 0.75 : 1,
+								transition: 'all 0.35s cubic-bezier(0.16, 1, 0.3, 1)',
 								cursor: 'pointer',
+								position: 'relative',
 							}}
 						>
 							<div>
@@ -891,7 +1021,7 @@ export default function Benefits() {
 								<div style={{ display: 'flex', flexDirection: 'column', gap: '8px', marginBottom: '18px' }}>
 									{/* Track 1: Mock Interviews */}
 									<a
-										href="https://www.phoneticedu.com/auth/login"
+										href="#" data-open-contact="true"
 										style={{
 											display: 'flex',
 											alignItems: 'center',
@@ -931,7 +1061,7 @@ export default function Benefits() {
 
 									{/* Track 2: Technical Rounds */}
 									<a
-										href="https://www.phoneticedu.com/auth/login"
+										href="#" data-open-contact="true"
 										style={{
 											display: 'flex',
 											alignItems: 'center',
@@ -971,7 +1101,7 @@ export default function Benefits() {
 
 									{/* Track 3: HR & Behavioral */}
 									<a
-										href="https://www.phoneticedu.com/auth/login"
+										href="#" data-open-contact="true"
 										style={{
 											display: 'flex',
 											alignItems: 'center',
@@ -1011,7 +1141,7 @@ export default function Benefits() {
 
 									{/* Track 4: Communication */}
 									<a
-										href="https://www.phoneticedu.com/auth/login"
+										href="#" data-open-contact="true"
 										style={{
 											display: 'flex',
 											alignItems: 'center',
@@ -1171,91 +1301,237 @@ export default function Benefits() {
 						</div>
 					</div>
 
-					{/* 4 Center Connected Steps */}
+					{/* 4 Center Connected Steps with Progression Line Between Pills */}
 					<div
 						style={{
+							position: 'relative',
+							flex: 1,
+							maxWidth: '840px',
 							display: 'flex',
 							alignItems: 'center',
-							gap: '28px',
-							flex: 1,
-							maxWidth: '820px',
-							justifyContent: 'space-around',
-							flexWrap: 'wrap',
 						}}
 					>
-						{/* Step 1 */}
-						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-							<span
+						{/* Progression Line connecting behind the pills */}
+						<div
+							style={{
+								position: 'absolute',
+								top: '50%',
+								left: '12.5%',
+								right: '12.5%',
+								height: '3px',
+								background: '#e2e8f0',
+								borderRadius: '999px',
+								transform: 'translateY(-50%)',
+								zIndex: 1,
+								pointerEvents: 'none',
+							}}
+						>
+							<div
 								style={{
-									width: '10px',
-									height: '10px',
-									borderRadius: '50%',
-									background: '#2563eb',
-									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+									height: '100%',
+									width:
+										activeStep === 1
+											? '0%'
+											: activeStep === 2
+											? '33.33%'
+											: activeStep === 3
+											? '66.66%'
+											: activeStep === 4
+											? '100%'
+											: '0%',
+									background: 'linear-gradient(90deg, #2563eb 0%, #38bdf8 100%)',
+									borderRadius: '999px',
+									transition: 'width 0.45s cubic-bezier(0.16, 1, 0.3, 1)',
+									boxShadow: '0 0 10px rgba(37, 99, 235, 0.45)',
 								}}
 							/>
-							<div>
-								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
-									PREPARE
-								</div>
-								<div style={{ fontSize: '10px', color: '#64748b' }}>Build your basics</div>
-							</div>
 						</div>
 
-						{/* Step 2 */}
-						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-							<span
+						{/* 4 Steps Grid Row */}
+						<div
+							style={{
+								display: 'grid',
+								gridTemplateColumns: 'repeat(4, 1fr)',
+								gap: '14px',
+								width: '100%',
+								position: 'relative',
+								zIndex: 2,
+							}}
+						>
+							{/* Step 1: PREPARE */}
+							<div
+								onMouseEnter={() => setHoveredCard(1)}
+								onMouseLeave={() => setHoveredCard(null)}
+								onClick={() => setSelectedCard(selectedCard === 1 ? null : 1)}
 								style={{
-									width: '10px',
-									height: '10px',
-									borderRadius: '50%',
-									background: '#2563eb',
-									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+									display: 'flex',
+									justifyContent: 'center',
+									cursor: 'pointer',
+									userSelect: 'none',
 								}}
-							/>
-							<div>
-								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
-									BUILD
+							>
+								<div
+									style={{
+										padding: '8px 16px',
+										borderRadius: '12px',
+										background: activeStep === 1 ? '#eff6ff' : '#ffffff',
+										border: activeStep === 1 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
+										transform: activeStep === 1 ? 'translateY(-2px) scale(1.03)' : 'none',
+										boxShadow:
+											activeStep === 1
+												? '0 6px 18px rgba(37, 99, 235, 0.16), 0 0 0 1px #bfdbfe'
+												: '0 2px 6px rgba(0,0,0,0.03)',
+										transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+										textAlign: 'center',
+										width: '100%',
+										maxWidth: '180px',
+									}}
+								>
+									<div
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											color: activeStep === 1 ? '#2563eb' : '#0f172a',
+											letterSpacing: '0.04em',
+											transition: 'color 0.2s ease',
+										}}
+									>
+										PREPARE
+									</div>
+									<div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px' }}>Build your basics</div>
 								</div>
-								<div style={{ fontSize: '10px', color: '#64748b' }}>Sharpen your skills</div>
 							</div>
-						</div>
 
-						{/* Step 3 */}
-						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-							<span
+							{/* Step 2: PRACTICE */}
+							<div
+								onMouseEnter={() => setHoveredCard(2)}
+								onMouseLeave={() => setHoveredCard(null)}
+								onClick={() => setSelectedCard(selectedCard === 2 ? null : 2)}
 								style={{
-									width: '10px',
-									height: '10px',
-									borderRadius: '50%',
-									background: '#2563eb',
-									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+									display: 'flex',
+									justifyContent: 'center',
+									cursor: 'pointer',
+									userSelect: 'none',
 								}}
-							/>
-							<div>
-								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
-									PROVE
+							>
+								<div
+									style={{
+										padding: '8px 16px',
+										borderRadius: '12px',
+										background: activeStep === 2 ? '#eff6ff' : '#ffffff',
+										border: activeStep === 2 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
+										transform: activeStep === 2 ? 'translateY(-2px) scale(1.03)' : 'none',
+										boxShadow:
+											activeStep === 2
+												? '0 6px 18px rgba(37, 99, 235, 0.16), 0 0 0 1px #bfdbfe'
+												: '0 2px 6px rgba(0,0,0,0.03)',
+										transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+										textAlign: 'center',
+										width: '100%',
+										maxWidth: '180px',
+									}}
+								>
+									<div
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											color: activeStep === 2 ? '#2563eb' : '#0f172a',
+											letterSpacing: '0.04em',
+											transition: 'color 0.2s ease',
+										}}
+									>
+										PRACTICE
+									</div>
+									<div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px' }}>Sharpen your skills</div>
 								</div>
-								<div style={{ fontSize: '10px', color: '#64748b' }}>Get placed</div>
 							</div>
-						</div>
 
-						{/* Step 4 */}
-						<div style={{ display: 'flex', alignItems: 'center', gap: '8px' }}>
-							<span
+							{/* Step 3: PROVE */}
+							<div
+								onMouseEnter={() => setHoveredCard(3)}
+								onMouseLeave={() => setHoveredCard(null)}
+								onClick={() => setSelectedCard(selectedCard === 3 ? null : 3)}
 								style={{
-									width: '10px',
-									height: '10px',
-									borderRadius: '50%',
-									background: '#2563eb',
-									boxShadow: '0 0 8px rgba(37,99,235,0.6)',
+									display: 'flex',
+									justifyContent: 'center',
+									cursor: 'pointer',
+									userSelect: 'none',
 								}}
-							/>
-							<div>
-								<div style={{ fontSize: '11px', fontWeight: 800, color: '#0f172a', letterSpacing: '0.04em' }}>
-									PERFORM
+							>
+								<div
+									style={{
+										padding: '8px 16px',
+										borderRadius: '12px',
+										background: activeStep === 3 ? '#eff6ff' : '#ffffff',
+										border: activeStep === 3 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
+										transform: activeStep === 3 ? 'translateY(-2px) scale(1.03)' : 'none',
+										boxShadow:
+											activeStep === 3
+												? '0 6px 18px rgba(37, 99, 235, 0.16), 0 0 0 1px #bfdbfe'
+												: '0 2px 6px rgba(0,0,0,0.03)',
+										transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+										textAlign: 'center',
+										width: '100%',
+										maxWidth: '180px',
+									}}
+								>
+									<div
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											color: activeStep === 3 ? '#2563eb' : '#0f172a',
+											letterSpacing: '0.04em',
+											transition: 'color 0.2s ease',
+										}}
+									>
+										PROVE
+									</div>
+									<div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px' }}>Get placed</div>
 								</div>
-								<div style={{ fontSize: '10px', color: '#64748b' }}>Excel in your career</div>
+							</div>
+
+							{/* Step 4: PERFORM */}
+							<div
+								onMouseEnter={() => setHoveredCard(4)}
+								onMouseLeave={() => setHoveredCard(null)}
+								onClick={() => setSelectedCard(selectedCard === 4 ? null : 4)}
+								style={{
+									display: 'flex',
+									justifyContent: 'center',
+									cursor: 'pointer',
+									userSelect: 'none',
+								}}
+							>
+								<div
+									style={{
+										padding: '8px 16px',
+										borderRadius: '12px',
+										background: activeStep === 4 ? '#eff6ff' : '#ffffff',
+										border: activeStep === 4 ? '1.5px solid #2563eb' : '1px solid #e2e8f0',
+										transform: activeStep === 4 ? 'translateY(-2px) scale(1.03)' : 'none',
+										boxShadow:
+											activeStep === 4
+												? '0 6px 18px rgba(37, 99, 235, 0.16), 0 0 0 1px #bfdbfe'
+												: '0 2px 6px rgba(0,0,0,0.03)',
+										transition: 'all 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
+										textAlign: 'center',
+										width: '100%',
+										maxWidth: '180px',
+									}}
+								>
+									<div
+										style={{
+											fontSize: '11px',
+											fontWeight: 800,
+											color: activeStep === 4 ? '#2563eb' : '#0f172a',
+											letterSpacing: '0.04em',
+											transition: 'color 0.2s ease',
+										}}
+									>
+										PERFORM
+									</div>
+									<div style={{ fontSize: '10px', color: '#64748b', marginTop: '2px' }}>Excel in your career</div>
+								</div>
 							</div>
 						</div>
 					</div>

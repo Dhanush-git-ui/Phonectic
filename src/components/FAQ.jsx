@@ -9,15 +9,15 @@ const FAQ_ITEMS = [
 		shortAnswer:
 			'We turn dry aptitude formulas and DSA patterns into high-speed arcade drills, visual logic teasers, and timed sprints that build instant mental calculation reflex.',
 		theme: {
-			bg: '#ff782d', // Vibrant Warm Orange
+			bg: '#728FCE', // 1. Light Purple Blue (Lightest shade)
 			textColor: '#ffffff',
-			subtextColor: 'rgba(255, 255, 255, 0.92)',
+			subtextColor: 'rgba(255, 255, 255, 0.95)',
 			btnBg: '#ffffff',
-			btnIconColor: '#0f172a',
+			btnIconColor: '#728FCE',
 			collapsedBtnBg: '#0f172a',
 			collapsedBtnColor: '#ffffff',
-			accentPillBg: 'rgba(255, 255, 255, 0.2)',
-			accentPillBorder: 'rgba(255, 255, 255, 0.35)',
+			accentPillBg: 'rgba(255, 255, 255, 0.25)',
+			accentPillBorder: 'rgba(255, 255, 255, 0.4)',
 		},
 		cards: [
 			{
@@ -25,10 +25,10 @@ const FAQ_ITEMS = [
 				subtitle: 'Duration: 3 Weeks Sprint',
 				type: 'pills',
 				pills: [
-					{ label: 'Vedic Math Shortcuts', color: '#ffedd5', textColor: '#9a3412' },
-					{ label: 'Modulo & Remainders', color: '#dbeafe', textColor: '#1e40af' },
-					{ label: 'Alligations & Mixtures', color: '#fef3c7', textColor: '#92400e' },
-					{ label: 'Option Elimination Tricks', color: '#dcfce7', textColor: '#166534' },
+					{ label: 'Vedic Math Shortcuts', color: '#dbeafe', textColor: '#1e40af' },
+					{ label: 'Modulo & Remainders', color: '#bfdbfe', textColor: '#1e3a8a' },
+					{ label: 'Alligations & Mixtures', color: '#e0f2fe', textColor: '#0369a1' },
+					{ label: 'Option Elimination Tricks', color: '#6495ED', textColor: '#ffffff' },
 				],
 				footerText: 'Average response: 18s vs 60s college benchmark',
 			},
@@ -37,10 +37,10 @@ const FAQ_ITEMS = [
 				subtitle: 'Duration: 2 Weeks Sprint',
 				type: 'pills',
 				pills: [
-					{ label: 'Capgemini Game Drills', color: '#e0e7ff', textColor: '#3730a3' },
-					{ label: 'Accenture Flowchart Logic', color: '#fae8ff', textColor: '#86198f' },
-					{ label: 'Spatial Matrix Rotations', color: '#ccfbf1', textColor: '#115e59' },
-					{ label: 'Deductive Syllogisms', color: '#fee2e2', textColor: '#991b1b' },
+					{ label: 'Capgemini Game Drills', color: '#dbeafe', textColor: '#1e40af' },
+					{ label: 'Accenture Flowchart Logic', color: '#bfdbfe', textColor: '#1e3a8a' },
+					{ label: 'Spatial Matrix Rotations', color: '#6495ED', textColor: '#ffffff' },
+					{ label: 'Deductive Syllogisms', color: '#2B547E', textColor: '#ffffff' },
 				],
 				footerText: 'Cognitive reasoning modules for Capgemini & Accenture OA',
 			},
@@ -49,10 +49,10 @@ const FAQ_ITEMS = [
 				subtitle: 'Duration: 4 Weeks Sprints',
 				type: 'pills',
 				pills: [
-					{ label: 'Timed Full-Length OAs', color: '#f1f5f9', textColor: '#0f172a' },
-					{ label: 'Negative Marking Simulator', color: '#fee2e2', textColor: '#991b1b' },
-					{ label: 'Daily Streak Leagues', color: '#fef3c7', textColor: '#92400e' },
-					{ label: 'National Percentile Rank', color: '#ede9fe', textColor: '#5b21b6' },
+					{ label: 'Timed Full-Length OAs', color: '#0f172a', textColor: '#ffffff' },
+					{ label: 'Negative Marking Simulator', color: '#93c5fd', textColor: '#1e3a8a' },
+					{ label: 'Daily Streak Leagues', color: '#bfdbfe', textColor: '#1e3a8a' },
+					{ label: 'National Percentile Rank', color: '#4169E1', textColor: '#ffffff' },
 				],
 				footerText: 'Real exam timers matching TCS NQT, Infosys & Cognizant',
 			},
@@ -66,15 +66,15 @@ const FAQ_ITEMS = [
 		shortAnswer:
 			'We provide authenticated syllabus coverage for mass IT drives, game-based cognitive tests, and high-CTC product engineering companies with verified repeat question banks.',
 		theme: {
-			bg: '#d4f933', // Vibrant Neon Lime
-			textColor: '#0f172a',
-			subtextColor: 'rgba(15, 23, 42, 0.85)',
-			btnBg: '#0f172a',
-			btnIconColor: '#ffffff',
+			bg: '#6495ED', // 2. Cornflower Blue (Soft Medium-Light Blue)
+			textColor: '#ffffff',
+			subtextColor: 'rgba(255, 255, 255, 0.95)',
+			btnBg: '#ffffff',
+			btnIconColor: '#6495ED',
 			collapsedBtnBg: '#0f172a',
 			collapsedBtnColor: '#ffffff',
-			accentPillBg: 'rgba(15, 23, 42, 0.08)',
-			accentPillBorder: 'rgba(15, 23, 42, 0.16)',
+			accentPillBg: 'rgba(255, 255, 255, 0.25)',
+			accentPillBorder: 'rgba(255, 255, 255, 0.4)',
 		},
 		cards: [
 			{
@@ -123,11 +123,11 @@ const FAQ_ITEMS = [
 		shortAnswer:
 			'Yes! Our curriculum starts from high school math to core algorithmic logic, ensuring students from Mechanical, Civil, ECE, EEE, BCA, and B.Sc confidently clear campus rounds.',
 		theme: {
-			bg: '#ff4638', // Vibrant Coral Red
+			bg: '#4863A0', // 3. Azure Blue (Medium Slate/Rich Blue)
 			textColor: '#ffffff',
 			subtextColor: 'rgba(255, 255, 255, 0.92)',
 			btnBg: '#ffffff',
-			btnIconColor: '#0f172a',
+			btnIconColor: '#4863A0',
 			collapsedBtnBg: '#0f172a',
 			collapsedBtnColor: '#ffffff',
 			accentPillBg: 'rgba(255, 255, 255, 0.2)',
@@ -138,7 +138,7 @@ const FAQ_ITEMS = [
 				title: 'Zero Prerequisite Foundation',
 				subtitle: 'Weeks 1–3 • 2.5 hrs/day',
 				type: 'checklist',
-				checkColor: '#818cf8',
+				checkColor: '#6495ED',
 				headline: 'Arithmetic to Core Coding',
 				description:
 					'Step-by-step arithmetic from scratch. Non-programmers learn logic building in C++/Python without overwhelming syntax jargon.',
@@ -148,17 +148,17 @@ const FAQ_ITEMS = [
 				subtitle: 'Custom Syllabi for Every Stream',
 				type: 'stickyNotes',
 				notes: [
-					{ text: 'ECE / EEE: Core logic + C++ & DSA track', bg: '#fed7aa', color: '#9a3412' },
-					{ text: 'Mech / Civil: High-scoring quants & analytics', bg: '#a7f3d0', color: '#065f46' },
-					{ text: 'B.Sc / BCA: IT drive fast-track (TCS & Wipro)', bg: '#fef08a', color: '#854d0e' },
-					{ text: 'Weekly 1-on-1 mentor guidance with Santhosh Sir', bg: '#bfdbfe', color: '#1e3a8a' },
+					{ text: 'ECE / EEE: Core logic + C++ & DSA track', bg: '#dbeafe', color: '#1e40af' },
+					{ text: 'Mech / Civil: High-scoring quants & analytics', bg: '#e0f2fe', color: '#0369a1' },
+					{ text: 'B.Sc / BCA: IT drive fast-track (TCS & Wipro)', bg: '#bae6fd', color: '#0041C2' },
+					{ text: 'Weekly 1-on-1 mentor guidance with Santhosh Sir', bg: '#93c5fd', color: '#1e3a8a' },
 				],
 			},
 			{
 				title: 'Verified Placement Track Record',
 				subtitle: 'Proven Hiring Outcomes',
 				type: 'checklist',
-				checkColor: '#10b981',
+				checkColor: '#6495ED',
 				headline: 'Over 42% Non-CS Placements',
 				description:
 					'42% of our placed students come from Non-CS branches, successfully placed in TCS Prime, Accenture, Capgemini, and Deloitte.',
@@ -173,11 +173,11 @@ const FAQ_ITEMS = [
 		shortAnswer:
 			'We simulate actual interview panel pressure with founder Santhosh Kumar Ananta and industry mentors, giving precise feedback on DSA complexity, STAR behavioral answers, and resume defense.',
 		theme: {
-			bg: '#10b981', // Vibrant Emerald Mint
+			bg: '#4169E1', // 4. Royal Blue (Vibrant Rich Blue)
 			textColor: '#ffffff',
 			subtextColor: 'rgba(255, 255, 255, 0.92)',
 			btnBg: '#ffffff',
-			btnIconColor: '#0f172a',
+			btnIconColor: '#4169E1',
 			collapsedBtnBg: '#0f172a',
 			collapsedBtnColor: '#ffffff',
 			accentPillBg: 'rgba(255, 255, 255, 0.2)',
@@ -190,10 +190,10 @@ const FAQ_ITEMS = [
 				type: 'barchart',
 				headline: 'Competency Scoring Rubric',
 				bars: [
-					{ label: 'Problem Solving', val: '9.4', h: '94%', color: '#a78bfa' },
-					{ label: 'Logic Clarity', val: '8.8', h: '88%', color: '#facc15' },
-					{ label: 'DSA Complexity', val: '8.2', h: '82%', color: '#818cf8' },
-					{ label: 'HR Confidence', val: '9.1', h: '91%', color: '#bef264' },
+					{ label: 'Problem Solving', val: '9.4', h: '94%', color: '#6495ED' },
+					{ label: 'Logic Clarity', val: '8.8', h: '88%', color: '#93c5fd' },
+					{ label: 'DSA Complexity', val: '8.2', h: '82%', color: '#bfdbfe' },
+					{ label: 'HR Confidence', val: '9.1', h: '91%', color: '#dbeafe' },
 				],
 			},
 			{
@@ -212,7 +212,7 @@ const FAQ_ITEMS = [
 				headline: 'First-Attempt Clearance',
 				statValue: '89.4%',
 				statLabel: 'Offer Rate Post 2 Mock Sessions',
-				barColor: '#ccff00',
+				barColor: '#6495ED',
 			},
 		],
 	},
@@ -224,11 +224,11 @@ const FAQ_ITEMS = [
 		shortAnswer:
 			'PhoneticEdu is headquartered in Hyderabad, India with cloud LMS access available 24/7 worldwide on laptop, tablet, or smartphone.',
 		theme: {
-			bg: '#2563eb', // Electric Royal Blue
+			bg: '#0041C2', // 5. Blueberry Blue (Deepest Dark Blue)
 			textColor: '#ffffff',
 			subtextColor: 'rgba(255, 255, 255, 0.92)',
 			btnBg: '#ffffff',
-			btnIconColor: '#0f172a',
+			btnIconColor: '#0041C2',
 			collapsedBtnBg: '#0f172a',
 			collapsedBtnColor: '#ffffff',
 			accentPillBg: 'rgba(255, 255, 255, 0.2)',
@@ -241,9 +241,9 @@ const FAQ_ITEMS = [
 				type: 'pills',
 				pills: [
 					{ label: 'Desktop & Web Portal', color: '#93c5fd', textColor: '#1e3a8a' },
-					{ label: 'Mobile-Optimized Drills', color: '#bef264', textColor: '#0f172a' },
-					{ label: 'Real-Time Leaderboards', color: '#fed7aa', textColor: '#9a3412' },
-					{ label: 'Company Test Archives', color: '#a78bfa', textColor: '#ffffff' },
+					{ label: 'Mobile-Optimized Drills', color: '#bfdbfe', textColor: '#1e40af' },
+					{ label: 'Real-Time Leaderboards', color: '#6495ED', textColor: '#ffffff' },
+					{ label: 'Company Test Archives', color: '#0041C2', textColor: '#ffffff' },
 				],
 				footerText: 'Synchronized test history, time analytics, and rankings',
 			},
@@ -252,10 +252,10 @@ const FAQ_ITEMS = [
 				subtitle: 'Madhapur, Hitech City',
 				type: 'pills',
 				pills: [
-					{ label: 'In-Person Bootcamps', color: '#fef08a', textColor: '#854d0e' },
-					{ label: 'College Partnerships', color: '#6ee7b7', textColor: '#065f46' },
-					{ label: 'Live Q&A Sessions', color: '#bfdbfe', textColor: '#1e3a8a' },
-					{ label: 'Direct Placement Drives', color: '#f43f5e', textColor: '#ffffff' },
+					{ label: 'In-Person Bootcamps', color: '#dbeafe', textColor: '#1e40af' },
+					{ label: 'College Partnerships', color: '#bae6fd', textColor: '#0041C2' },
+					{ label: 'Live Q&A Sessions', color: '#93c5fd', textColor: '#1e3a8a' },
+					{ label: 'Direct Placement Drives', color: '#6495ED', textColor: '#ffffff' },
 				],
 				footerText: 'Direct campus hiring alliances across engineering colleges',
 			},
@@ -275,7 +275,9 @@ const FAQ_ITEMS = [
 
 export default function FAQ() {
 	const [activeId, setActiveId] = useState(1) // Item 1 open by default matching screenshot
+	const [isHeaderRevealed, setIsHeaderRevealed] = useState(false)
 	const sectionRef = useRef(null)
+	const headerRef = useRef(null)
 
 	useEffect(() => {
 		const section = sectionRef.current
@@ -296,7 +298,26 @@ export default function FAQ() {
 		const items = section.querySelectorAll('.faq-accordion-item')
 		items.forEach((item) => observer.observe(item))
 
-		return () => observer.disconnect()
+		// Scroll reveal for the Heading section
+		const headerEl = headerRef.current
+		let headerObserver
+		if (headerEl) {
+			headerObserver = new IntersectionObserver(
+				(entries) => {
+					if (entries[0].isIntersecting) {
+						setIsHeaderRevealed(true)
+						headerObserver.disconnect()
+					}
+				},
+				{ threshold: 0.15, rootMargin: '0px 0px -30px 0px' },
+			)
+			headerObserver.observe(headerEl)
+		}
+
+		return () => {
+			observer.disconnect()
+			if (headerObserver) headerObserver.disconnect()
+		}
 	}, [])
 
 	const toggleItem = (id) => {
@@ -325,8 +346,14 @@ export default function FAQ() {
 					width: '100%',
 				}}
 			>
-				{/* 1. Header Section matching reference */}
-				<div style={{ textAlign: 'left', marginBottom: '56px' }}>
+				{/* 1. Header Section matching reference with Scroll Reveal */}
+				<div
+					ref={headerRef}
+					style={{
+						textAlign: 'left',
+						marginBottom: '56px',
+					}}
+				>
 					{/* Tag Badge */}
 					<div
 						style={{
@@ -334,6 +361,10 @@ export default function FAQ() {
 							alignItems: 'center',
 							gap: '6px',
 							marginBottom: '16px',
+							transform: isHeaderRevealed ? 'translateY(0) scale(1)' : 'translateY(22px) scale(0.95)',
+							opacity: isHeaderRevealed ? 1 : 0,
+							transition: 'transform 0.75s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.75s ease',
+							willChange: 'transform, opacity',
 						}}
 					>
 						<span
@@ -342,15 +373,28 @@ export default function FAQ() {
 								fontWeight: 900,
 								letterSpacing: '0.12em',
 								textTransform: 'uppercase',
-								color: '#ff6a00',
+								color: '#0041C2',
 								fontFamily: "'Plus Jakarta Sans', sans-serif",
+								display: 'inline-flex',
+								alignItems: 'center',
+								gap: '8px',
 							}}
 						>
+							<span
+								style={{
+									width: '7px',
+									height: '7px',
+									borderRadius: '50%',
+									backgroundColor: '#0041C2',
+									display: 'inline-block',
+									boxShadow: '0 0 10px rgba(0, 65, 194, 0.5)',
+								}}
+							/>
 							HOW WE PREPARE YOU
 						</span>
 					</div>
 
-					{/* Big Punchy Title */}
+					{/* Big Punchy Title with Masked Line-by-Line Scroll Reveal */}
 					<h2
 						style={{
 							fontFamily: "'Roboto Condensed', sans-serif",
@@ -363,11 +407,37 @@ export default function FAQ() {
 							margin: '0 0 16px',
 						}}
 					>
-						GOT QUESTIONS?
-						<br />
-						WE’VE GOT CLEAR ANSWERS.
+						<span style={{ display: 'block', overflow: 'hidden' }}>
+							<span
+								style={{
+									display: 'block',
+									transform: isHeaderRevealed ? 'translateY(0)' : 'translateY(115%)',
+									opacity: isHeaderRevealed ? 1 : 0,
+									transition:
+										'transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.12s, opacity 0.85s ease 0.12s',
+									willChange: 'transform, opacity',
+								}}
+							>
+								GOT QUESTIONS?
+							</span>
+						</span>
+						<span style={{ display: 'block', overflow: 'hidden', marginTop: '4px' }}>
+							<span
+								style={{
+									display: 'block',
+									transform: isHeaderRevealed ? 'translateY(0)' : 'translateY(115%)',
+									opacity: isHeaderRevealed ? 1 : 0,
+									transition:
+										'transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.24s, opacity 0.85s ease 0.24s',
+									willChange: 'transform, opacity',
+								}}
+							>
+								WE’VE GOT CLEAR ANSWERS.
+							</span>
+						</span>
 					</h2>
 
+					{/* Subtitle Paragraph with Smooth Staggered Fade Up */}
 					<p
 						style={{
 							fontFamily: '"Geist", "Inter", sans-serif',
@@ -376,6 +446,11 @@ export default function FAQ() {
 							color: '#64748b',
 							maxWidth: '720px',
 							margin: 0,
+							transform: isHeaderRevealed ? 'translateY(0)' : 'translateY(28px)',
+							opacity: isHeaderRevealed ? 1 : 0,
+							transition:
+								'transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) 0.36s, opacity 0.85s ease 0.36s',
+							willChange: 'transform, opacity',
 						}}
 					>
 						Everything you need to know about our gamified aptitude training, recruitment syllabus coverage,
@@ -1021,7 +1096,7 @@ export default function FAQ() {
 																		height: '14px',
 																		borderRadius: '999px',
 																		background:
-																			'repeating-linear-gradient(45deg, #ccff00, #ccff00 6px, #a3e635 6px, #a3e635 12px)',
+																			'repeating-linear-gradient(45deg, #4169E1, #4169E1 6px, #6495ED 6px, #6495ED 12px)',
 																		width: '100%',
 																	}}
 																/>
@@ -1200,62 +1275,6 @@ export default function FAQ() {
 					})}
 				</div>
 
-				{/* 3. Bottom Support Banner */}
-				<div
-					style={{
-						marginTop: '64px',
-						textAlign: 'center',
-						padding: '32px 24px',
-						backgroundColor: '#f8fafc',
-						borderRadius: '24px',
-						border: '1px solid #e2e8f0',
-					}}
-				>
-					<h4
-						style={{
-							fontFamily: "'Roboto Condensed', sans-serif",
-							fontSize: '19px',
-							fontWeight: 900,
-							textTransform: 'uppercase',
-							letterSpacing: '-0.02em',
-							color: '#0f172a',
-							margin: '0 0 6px',
-						}}
-					>
-						Still have questions about our placement curriculum?
-					</h4>
-					<p
-						style={{
-							fontSize: '14px',
-							color: '#64748b',
-							margin: '0 0 18px',
-						}}
-					>
-						Chat with founder Santhosh Kumar Ananta and our senior placement mentors.
-					</p>
-					<a
-						href="https://www.phoneticedu.com/contact"
-						style={{
-							display: 'inline-flex',
-							alignItems: 'center',
-							gap: '8px',
-							padding: '12px 24px',
-							backgroundColor: '#0f172a',
-							color: '#ffffff',
-							borderRadius: '999px',
-							fontWeight: 800,
-							fontSize: '13px',
-							textDecoration: 'none',
-							boxShadow: '0 4px 15px rgba(15,23,42,0.2)',
-							transition: 'transform 0.2s ease',
-						}}
-						onMouseEnter={(e) => (e.currentTarget.style.transform = 'translateY(-2px)')}
-						onMouseLeave={(e) => (e.currentTarget.style.transform = 'translateY(0)')}
-					>
-						<span>Contact Placement Desk</span>
-						<span>→</span>
-					</a>
-				</div>
 			</div>
 		</section>
 	)

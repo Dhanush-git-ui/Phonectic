@@ -5,32 +5,80 @@ import { useEffect } from 'react'
 export default function About() {
 	useEffect(() => {
 		const section = document.getElementById('about')
-		if (!section) return
+		const textContainers = section.querySelectorAll('.framer-ru1q5v')
+		if (!textContainers.length) return
 
-		const words = section.querySelectorAll('.framer-cp6dd4-container .framer-vbwbkt p')
-		if (!words.length) return
+		// Initialize all words to muted gray and bubbles to hidden above
+		textContainers.forEach(container => {
+			Array.from(container.children).forEach(child => {
+				const isBubble =
+					child.hasAttribute('data-bubble') ||
+					child.classList.contains('framer-nz2nc6') ||
+					child.classList.contains('framer-74k4u') ||
+					child.classList.contains('framer-c8enmy')
+
+				if (isBubble) {
+					const rot = child.classList.contains('framer-74k4u') ? 3 : -3
+					child.style.transform = `translate3d(0, -80px, 0) scale(0.85) rotate(${rot}deg)`
+					child.style.opacity = '0'
+				} else {
+					const p = child.querySelector('p')
+					if (p) {
+						p.style.color = 'rgb(205, 205, 210)'
+						p.style.opacity = '0.35'
+					}
+				}
+			})
+		})
 
 		const handleScroll = () => {
 			const rect = section.getBoundingClientRect()
 			const winH = window.innerHeight
-			// Calculate progress as section travels through viewport
-			const start = winH * 0.8
-			const end = winH * 0.2
+			const start = winH * 0.82
+			const end = winH * 0.18
 			const totalRange = rect.height + (start - end)
 			const current = start - rect.top
 			const progress = Math.max(0, Math.min(1, current / totalRange))
 
-			words.forEach((w, idx) => {
-				const threshold = idx / words.length
-				if (progress >= threshold) {
-					w.style.color = 'rgb(18, 18, 20)'
-					w.style.opacity = '1'
-					w.style.transition = 'color 0.2s ease, opacity 0.2s ease'
-				} else {
-					w.style.color = 'rgb(180, 180, 185)'
-					w.style.opacity = '0.35'
-					w.style.transition = 'color 0.2s ease, opacity 0.2s ease'
-				}
+			// Reveal words sequentially and drop bubbles in-sync right as the text reveal reaches them
+			textContainers.forEach(container => {
+				const items = Array.from(container.children)
+				const total = items.length
+
+				items.forEach((child, idx) => {
+					const itemThreshold = 0.04 + (idx / total) * 0.76
+					const isBubble =
+						child.hasAttribute('data-bubble') ||
+						child.classList.contains('framer-nz2nc6') ||
+						child.classList.contains('framer-74k4u') ||
+						child.classList.contains('framer-c8enmy')
+
+					if (isBubble) {
+						if (progress >= itemThreshold) {
+							child.style.transform = 'translate3d(0, 0px, 0) scale(1) rotate(0deg)'
+							child.style.opacity = '1'
+							child.style.transition = 'transform 0.55s cubic-bezier(0.22, 1.25, 0.36, 1), opacity 0.35s ease'
+						} else {
+							const rot = child.classList.contains('framer-74k4u') ? 3 : -3
+							child.style.transform = `translate3d(0, -80px, 0) scale(0.85) rotate(${rot}deg)`
+							child.style.opacity = '0'
+							child.style.transition = 'transform 0.4s ease, opacity 0.25s ease'
+						}
+					} else {
+						const p = child.querySelector('p')
+						if (p) {
+							if (progress >= itemThreshold) {
+								p.style.color = 'rgb(18, 18, 20)'
+								p.style.opacity = '1'
+								p.style.transition = 'color 0.2s ease, opacity 0.2s ease'
+							} else {
+								p.style.color = 'rgb(205, 205, 210)'
+								p.style.opacity = '0.35'
+								p.style.transition = 'color 0.2s ease, opacity 0.2s ease'
+							}
+						}
+					}
+				})
 			})
 
 			// Floating 3D badges scroll-by-movement parallax
@@ -54,9 +102,20 @@ export default function About() {
 			})
 		}
 
-		window.addEventListener('scroll', handleScroll, { passive: true })
+		let ticking = false
+		const onScroll = () => {
+			if (!ticking) {
+				window.requestAnimationFrame(() => {
+					handleScroll()
+					ticking = false
+				})
+				ticking = true
+			}
+		}
+
+		window.addEventListener('scroll', onScroll, { passive: true })
 		handleScroll()
-		return () => window.removeEventListener('scroll', handleScroll)
+		return () => window.removeEventListener('scroll', onScroll)
 	}, [])
 
 	return (
