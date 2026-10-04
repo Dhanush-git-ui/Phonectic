@@ -1146,9 +1146,21 @@ html.lenis body {
 }
 
 /* Hero Premier Institutions College Ticker */
+.hero-college-ticker-wrapper {
+	position: relative !important;
+	z-index: 10 !important;
+	margin-top: -28px !important;
+	margin-bottom: 40px !important;
+	width: 100% !important;
+	display: flex !important;
+	flex-direction: column !important;
+	align-items: center !important;
+}
+
 .hero-college-ticker-badge {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 8px;
 	padding: 6px 18px;
 	background: rgba(255, 255, 255, 0.12);
@@ -1160,29 +1172,16 @@ html.lenis body {
 	letter-spacing: 0.09em;
 	text-transform: uppercase;
 	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-	margin: 0 auto 20px;
+	margin: 0 auto 16px !important;
 	backdrop-filter: blur(16px);
 	-webkit-backdrop-filter: blur(16px);
 }
 
-.hero-college-ticker-dot {
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: #38bdf8;
-	box-shadow: 0 0 10px #38bdf8, 0 0 18px #38bdf8;
-	animation: heroDotPulse 2s infinite ease-in-out;
-}
-
-@keyframes heroDotPulse {
-	0%, 100% { opacity: 1; transform: scale(1); }
-	50% { opacity: 0.4; transform: scale(0.8); }
-}
-
 /* College Logo Cards in Hero Ticker - Clean Monochrome Floating Logos */
 .framer-spMKf .framer-xyf7ed-container {
-	height: 56px !important;
+	height: 52px !important;
 	width: 100% !important;
+	overflow: visible !important;
 }
 
 .framer-spMKf .framer-xyf7ed-container section {
@@ -1190,16 +1189,16 @@ html.lenis body {
 	height: 100% !important;
 	display: flex !important;
 	align-items: center !important;
-	overflow: hidden !important;
-	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
-	mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
+	overflow: visible !important;
+	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important;
+	mask-image: linear-gradient(to right, transparent 0%, black 10%, black 90%, transparent 100%) !important;
 }
 
 .framer-spMKf .framer-xyf7ed-container ul {
 	height: 100% !important;
 	display: flex !important;
 	align-items: center !important;
-	gap: 56px !important;
+	gap: 52px !important;
 	animation: framerTickerScroll 36s linear infinite !important;
 }
 
@@ -1217,7 +1216,7 @@ html.lenis body {
 .framer-spMKf .framer-18iagas {
 	aspect-ratio: unset !important;
 	width: 250px !important;
-	height: 52px !important;
+	height: 48px !important;
 	position: relative !important;
 	flex-shrink: 0 !important;
 	cursor: pointer !important;
@@ -1235,8 +1234,8 @@ html.lenis body {
 }
 
 .framer-spMKf .framer-18iagas img {
-	width: 260px !important;
-	height: 62px !important;
+	width: 250px !important;
+	height: 48px !important;
 	object-fit: contain !important;
 	border-radius: 14px !important;
 }
@@ -1698,24 +1697,43 @@ img[data-loaded] {
    CTA Section Typography & Parallax Reveal
    ───────────────────────────────────────────────────────────────────────────── */
 
-/* CTA Section Sticky Scroll Pin */
-@media (min-width: 810px) {
-	#cta,
-	.framer-14eznka-container#cta {
-		position: relative !important;
-		height: 220vh !important;
-		width: 100% !important;
-		flex: none !important;
-	}
+/* CTA Section Layout & Flow (Zero gap to Footer) */
+#cta,
+.framer-14eznka-container#cta {
+	position: relative !important;
+	height: auto !important;
+	min-height: 720px !important;
+	width: 100% !important;
+	flex: none !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	overflow: hidden !important;
+	margin-bottom: 0 !important;
+}
 
-	#cta section.framer-bpnHt,
-	#cta .framer-bpnHt.framer-cl5rnq {
-		position: sticky !important;
-		top: 0 !important;
-		height: 100vh !important;
-		width: 100% !important;
-		overflow: hidden !important;
-	}
+#cta section.framer-bpnHt,
+#cta .framer-bpnHt.framer-cl5rnq {
+	position: relative !important;
+	top: auto !important;
+	height: 720px !important;
+	width: 100% !important;
+	max-width: 100% !important;
+	overflow: visible !important;
+	display: flex !important;
+	justify-content: center !important;
+	align-items: center !important;
+	margin: 0 !important;
+	padding: 0 !important;
+}
+
+.framer-pyfeum {
+	display: none !important;
+	flex-grow: 0 !important;
+	height: 0 !important;
+	width: 0 !important;
+	margin: 0 !important;
+	padding: 0 !important;
 }
 
 /* Unclip inner CTA wrappers so large sliding text isn't cut off */
@@ -1836,101 +1854,7 @@ img[data-loaded] {
 	height: 100% !important;
 }
 
-/* Hero Premier Institutions College Ticker */
-.hero-college-ticker-badge {
-	display: inline-flex;
-	align-items: center;
-	gap: 8px;
-	padding: 6px 18px;
-	background: rgba(255, 255, 255, 0.12);
-	border: 1px solid rgba(255, 255, 255, 0.28);
-	border-radius: 9999px;
-	color: rgba(255, 255, 255, 0.95);
-	font-size: 11px;
-	font-weight: 700;
-	letter-spacing: 0.09em;
-	text-transform: uppercase;
-	box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08), inset 0 1px 0 rgba(255, 255, 255, 0.35);
-	margin: 0 auto 20px;
-	backdrop-filter: blur(16px);
-	-webkit-backdrop-filter: blur(16px);
-}
 
-.hero-college-ticker-dot {
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background-color: #38bdf8;
-	box-shadow: 0 0 10px #38bdf8, 0 0 18px #38bdf8;
-	animation: heroDotPulse 2s infinite ease-in-out;
-}
-
-@keyframes heroDotPulse {
-	0%, 100% { opacity: 1; transform: scale(1); }
-	50% { opacity: 0.4; transform: scale(0.8); }
-}
-
-/* College Logo Cards in Hero Ticker - Clean Monochrome Floating Logos */
-.framer-spMKf .framer-xyf7ed-container {
-	height: 56px !important;
-	width: 100% !important;
-}
-
-.framer-spMKf .framer-xyf7ed-container section {
-	padding: 0 !important;
-	height: 100% !important;
-	display: flex !important;
-	align-items: center !important;
-	overflow: hidden !important;
-	-webkit-mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
-	mask-image: linear-gradient(to right, transparent 0%, black 12%, black 88%, transparent 100%) !important;
-}
-
-.framer-spMKf .framer-xyf7ed-container ul {
-	height: 100% !important;
-	display: flex !important;
-	align-items: center !important;
-	gap: 56px !important;
-	animation: framerTickerScroll 36s linear infinite !important;
-}
-
-.framer-spMKf .framer-xyf7ed-container:hover ul {
-	animation-play-state: paused !important;
-}
-
-.framer-spMKf .framer-xyf7ed-container ul li {
-	flex-shrink: 0 !important;
-	display: flex !important;
-	align-items: center !important;
-	justify-content: center !important;
-}
-
-.framer-spMKf .framer-18iagas {
-	aspect-ratio: unset !important;
-	width: 250px !important;
-	height: 52px !important;
-	position: relative !important;
-	flex-shrink: 0 !important;
-	cursor: pointer !important;
-	background: transparent !important;
-	border: none !important;
-	box-shadow: none !important;
-	opacity: 1 !important;
-	transition: opacity 0.25s ease, transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), filter 0.25s ease !important;
-}
-
-.framer-spMKf .framer-18iagas:hover {
-	opacity: 1 !important;
-	transform: translateY(-2px) scale(1.04) !important;
-	filter: drop-shadow(0 0 14px rgba(255, 255, 255, 0.8)) !important;
-}
-
-.framer-spMKf .framer-18iagas img {
-	width: 260px !important;
-	height: 62px !important;
-	object-fit: contain !important;
-	border-radius: 14px !important;
-}
 
 /* Hero Text Prominence & Non-Fading on Scroll */
 .framer-Tesak .framer-1cae1md {

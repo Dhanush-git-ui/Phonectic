@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import PlacementWalletPreview from './PlacementWalletPreview.jsx'
 import SkillCategorizationPreview from './SkillCategorizationPreview.jsx'
 import PerformanceInsightsPreview from './PerformanceInsightsPreview.jsx'
@@ -62,6 +62,14 @@ export default function GameZoneFeature1Section() {
 	const [activeTab, setActiveTab] = useState(0)
 	const activeFeature = features[activeTab]
 	const ActivePreview = activeFeature.component
+
+	useEffect(() => {
+		const timer = setInterval(() => {
+			setActiveTab((prev) => (prev + 1) % features.length)
+		}, 2200)
+
+		return () => clearInterval(timer)
+	}, [])
 
 	return (
 		<div className="w-full relative py-8 px-4 md:px-6" style={{ overflow: 'visible' }}>

@@ -10,7 +10,7 @@ import Hero from './components/Hero.jsx'
 import Integrations from './components/Integrations.jsx'
 import MarqueeStats from './components/MarqueeStats.jsx'
 import Navbar from './components/Navbar.jsx'
-import Pricing from './components/Pricing.jsx'
+import GalleryScrollZoom from './components/GalleryScrollZoom.jsx'
 import Testimonials from './components/Testimonials.jsx'
 import { useScrollAnimations } from './utils/scrollAnimations.js'
 
@@ -96,7 +96,7 @@ export default function App() {
 				<DarkFeatures />
 				<Integrations />
 				<Testimonials />
-				<Pricing />
+				<GalleryScrollZoom />
 				<FAQ />
 			</div>
 			<CTASection />

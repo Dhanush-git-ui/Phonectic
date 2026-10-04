@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react'
 
-function AnimatedCounter({ end, duration = 1200, triggerKey, prefix = '', suffix = '%', decimals = 0 }) {
+function AnimatedCounter({ end, duration = 150, triggerKey, prefix = '', suffix = '%', decimals = 0 }) {
 	const [val, setVal] = useState(0)
 
 	useEffect(() => {
@@ -280,7 +280,7 @@ function PerformanceTrackingVisual({ isActive }) {
 	useEffect(() => {
 		const interval = setInterval(() => {
 			setCompanyIndex((prev) => (prev + 1) % companies.length)
-		}, 2500)
+		}, 900)
 
 		return () => clearInterval(interval)
 	}, [companies.length])
@@ -669,18 +669,16 @@ export default function InteractivePlacementFeatureCards() {
 		},
 	]
 
-	const SLIDE_DURATION = 4000 // 4.0 seconds uniform duration for each slide
+	const SLIDE_DURATION = 1400 // Rapid 1.4 seconds duration for each slide
 
-	// Uniform, leak-free auto-shift timer for every card
+	// Continuous auto-shift timer for every card
 	useEffect(() => {
-		if (isPaused) return
-
 		const timer = setTimeout(() => {
 			setActiveIndex((prev) => (prev + 1) % cardsData.length)
 		}, SLIDE_DURATION)
 
 		return () => clearTimeout(timer)
-	}, [activeIndex, isPaused, cardsData.length])
+	}, [activeIndex, cardsData.length])
 
 	const handleSelectCard = (index) => {
 		setActiveIndex(index)
@@ -922,7 +920,7 @@ export default function InteractivePlacementFeatureCards() {
 								display: 'flex',
 								flexDirection: 'column',
 								justifyContent: 'space-between',
-								transition: 'transform 0.75s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.75s cubic-bezier(0.22, 1, 0.36, 1), box-shadow 0.75s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.75s cubic-bezier(0.22, 1, 0.36, 1)',
+								transition: 'transform 0.25s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.25s cubic-bezier(0.16, 1, 0.3, 1), border-color 0.25s cubic-bezier(0.16, 1, 0.3, 1)',
 								willChange: 'transform, opacity',
 								userSelect: 'none',
 								...cardStyle,
