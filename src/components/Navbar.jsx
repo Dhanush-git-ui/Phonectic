@@ -328,6 +328,40 @@ export default function Navbar({ onOpenContact }) {
 									</div>
 								</a>
 							</div>
+
+							{/* Logout */}
+							<div className="framer-logout-container">
+								<a
+									className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item"
+									data-framer-name="Default"
+									href="#logout"
+									style={{
+										backgroundColor: 'rgba(0, 0, 0, 0)',
+										height: '100%',
+										borderRadius: '16px',
+										display: 'flex',
+										alignItems: 'center',
+										padding: '8px 16px',
+										textDecoration: 'none',
+									}}
+								>
+									<div className="framer-17agl2j" data-framer-component-type="RichTextContainer">
+										<p
+											className="framer-text framer-styles-preset-yctu3a"
+											data-styles-preset="dLJsxXALZ"
+											style={{
+												margin: 0,
+												color: '#ef4444',
+												fontSize: 14,
+												fontWeight: isScrolled ? 600 : 500,
+												transition: 'color 0.25s ease',
+											}}
+										>
+											Logout
+										</p>
+									</div>
+								</a>
+							</div>
 						</div>
 
 						{/* Contact Us CTA Button */}
@@ -598,6 +632,21 @@ export default function Navbar({ onOpenContact }) {
 								onClick={() => setMobileOpen(false)}
 							>
 								Careers
+							</a>
+							<a
+								href="#logout"
+								style={{
+									color: '#ef4444',
+									padding: '10px 16px',
+									textDecoration: 'none',
+									fontWeight: 600,
+								}}
+								onClick={() => {
+									setMobileOpen(false)
+									// Add logout logic here
+								}}
+							>
+								Logout
 							</a>
 							<button
 								type="button"
