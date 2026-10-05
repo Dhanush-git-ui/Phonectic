@@ -380,16 +380,6 @@ export default function FAQ() {
 								gap: '8px',
 							}}
 						>
-							<span
-								style={{
-									width: '7px',
-									height: '7px',
-									borderRadius: '50%',
-									backgroundColor: '#0041C2',
-									display: 'inline-block',
-									boxShadow: '0 0 10px rgba(0, 65, 194, 0.5)',
-								}}
-							/>
 							HOW WE PREPARE YOU
 						</span>
 					</div>

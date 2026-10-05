@@ -2165,3 +2165,58 @@ h3, h4,
 	z-index: 20;
 }
 
+/* ==========================================================================
+   ALIGN TESTIMONIALS BADGE (04 + SUCCESS STORIES) STRAIGHT AND CLEAN
+   ========================================================================== */
+.framer-1iifx99 {
+	display: flex !important;
+	flex-direction: row !important;
+	align-items: center !important;
+	justify-content: center !important;
+	gap: 8px !important;
+	width: auto !important;
+	height: auto !important;
+	padding: 0 !important;
+	margin: 0 auto 20px !important;
+	position: relative !important;
+	transform: none !important;
+	overflow: visible !important;
+}
+
+.framer-g52f2c,
+.framer-g52f2c[data-framer-name="Number"] {
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	bottom: auto !important;
+	right: auto !important;
+	transform: none !important;
+	margin: 0 !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	height: 24px !important;
+	padding: 2px 8px !important;
+	border-radius: 8px !important;
+	background-color: var(--token-cd46d6d0-58b3-4cc8-986f-40ef440cb24c, rgb(239, 239, 239)) !important;
+}
+
+.framer-1izjazw,
+.framer-1izjazw[data-framer-name="Title"] {
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	bottom: auto !important;
+	right: auto !important;
+	transform: none !important;
+	margin: 0 !important;
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	height: 24px !important;
+	padding: 2px 10px !important;
+	border-radius: 8px !important;
+	background-color: var(--token-cd0e4b39-d412-4786-8464-f96703fa50b9, rgb(82, 82, 82)) !important;
+}
+
+

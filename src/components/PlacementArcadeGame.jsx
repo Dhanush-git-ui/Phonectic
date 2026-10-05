@@ -457,16 +457,6 @@ export default function PlacementArcadeGame() {
 				<div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
 					<span
 						style={{
-							width: 7,
-							height: 7,
-							borderRadius: '50%',
-							backgroundColor: gameState === 'PLAYING' ? '#10b981' : '#3b82f6',
-							boxShadow: gameState === 'PLAYING' ? '0 0 8px #10b981' : '0 0 8px #3b82f6',
-							display: 'inline-block',
-						}}
-					/>
-					<span
-						style={{
 							fontSize: 12.5,
 							fontWeight: 700,
 							letterSpacing: '0.06em',

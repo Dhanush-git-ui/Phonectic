@@ -197,7 +197,7 @@ export default function Navbar({ onOpenContact }) {
 								<a
 									className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item"
 									data-framer-name="Default"
-									href="#benefit"
+									href="#about"
 									style={{
 										backgroundColor: 'rgba(0, 0, 0, 0)',
 										height: '100%',
@@ -231,7 +231,7 @@ export default function Navbar({ onOpenContact }) {
 								<a
 									className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item"
 									data-framer-name="Default"
-									href="#about"
+									href="#features"
 									style={{
 										backgroundColor: 'rgba(0, 0, 0, 0)',
 										height: '100%',
@@ -300,7 +300,8 @@ export default function Navbar({ onOpenContact }) {
 								<a
 									className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item"
 									data-framer-name="Default"
-									href="#faq"
+									href="#careers"
+									data-open-utility="careers"
 									style={{
 										backgroundColor: 'rgba(0, 0, 0, 0)',
 										height: '100%',
@@ -329,39 +330,7 @@ export default function Navbar({ onOpenContact }) {
 								</a>
 							</div>
 
-							{/* Logout */}
-							<div className="framer-logout-container">
-								<a
-									className="framer-D6Lzg framer-iDV62 framer-1p1rzua framer-v-1p1rzua framer-19g2h9s nav-link-item"
-									data-framer-name="Default"
-									href="#logout"
-									style={{
-										backgroundColor: 'rgba(0, 0, 0, 0)',
-										height: '100%',
-										borderRadius: '16px',
-										display: 'flex',
-										alignItems: 'center',
-										padding: '8px 16px',
-										textDecoration: 'none',
-									}}
-								>
-									<div className="framer-17agl2j" data-framer-component-type="RichTextContainer">
-										<p
-											className="framer-text framer-styles-preset-yctu3a"
-											data-styles-preset="dLJsxXALZ"
-											style={{
-												margin: 0,
-												color: '#ef4444',
-												fontSize: 14,
-												fontWeight: isScrolled ? 600 : 500,
-												transition: 'color 0.25s ease',
-											}}
-										>
-											Logout
-										</p>
-									</div>
-								</a>
-							</div>
+
 						</div>
 
 						{/* Contact Us CTA Button */}
@@ -589,7 +558,7 @@ export default function Navbar({ onOpenContact }) {
 								Home
 							</a>
 							<a
-								href="#benefit"
+								href="#about"
 								style={{
 									color: isScrolled ? '#334155' : 'rgba(255, 255, 255, 0.85)',
 									padding: '10px 16px',
@@ -600,7 +569,7 @@ export default function Navbar({ onOpenContact }) {
 								About
 							</a>
 							<a
-								href="#about"
+								href="#features"
 								style={{
 									color: isScrolled ? '#334155' : 'rgba(255, 255, 255, 0.85)',
 									padding: '10px 16px',
@@ -623,31 +592,21 @@ export default function Navbar({ onOpenContact }) {
 							</a>
 
 							<a
-								href="#faq"
+								href="#careers"
+								data-open-utility="careers"
 								style={{
 									color: isScrolled ? '#334155' : 'rgba(255, 255, 255, 0.85)',
 									padding: '10px 16px',
 									textDecoration: 'none',
 								}}
-								onClick={() => setMobileOpen(false)}
+								onClick={() => {
+									setMobileOpen(false)
+									window.dispatchEvent(new CustomEvent('open-utility-modal', { detail: 'careers' }))
+								}}
 							>
 								Careers
 							</a>
-							<a
-								href="#logout"
-								style={{
-									color: '#ef4444',
-									padding: '10px 16px',
-									textDecoration: 'none',
-									fontWeight: 600,
-								}}
-								onClick={() => {
-									setMobileOpen(false)
-									// Add logout logic here
-								}}
-							>
-								Logout
-							</a>
+
 							<button
 								type="button"
 								onClick={() => {
