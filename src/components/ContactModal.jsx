@@ -140,9 +140,9 @@ export default function ContactModal({ isOpen, onClose }) {
 					text-align: center;
 					transition: all 0.15s ease;
 					font-family: inherit;
-					white-space: nowrap;
-					overflow: hidden;
-					text-overflow: ellipsis;
+					white-space: normal;
+					word-break: break-word;
+					line-height: 1.3;
 				}
 				.cm-submit-btn {
 					margin-top: 6px;
@@ -266,7 +266,7 @@ export default function ContactModal({ isOpen, onClose }) {
 				<div
 					style={{
 						display: 'grid',
-						gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
+						gridTemplateColumns: 'repeat(auto-fit, minmax(min(300px, 100%), 1fr))',
 						gap: '28px',
 						alignItems: 'start',
 					}}

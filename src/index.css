@@ -2220,3 +2220,25 @@ h3, h4,
 }
 
 
+/* ==========================================================================
+   CONTACT MODAL: Mobile Responsive Overrides
+   ========================================================================== */
+@media (max-width: 600px) {
+	/* Tighter modal padding on phones */
+	[role="dialog"] > div[data-modal="true"] {
+		padding: 20px 16px 18px !important;
+		border-radius: 16px !important;
+	}
+	/* Stack the two-column grid to single column */
+	[role="dialog"] > div[data-modal="true"] > div:last-child {
+		gap: 20px !important;
+	}
+	/* Smaller heading inside modal */
+	[role="dialog"] h3 {
+		font-size: 20px !important;
+	}
+	/* Reduce track grid to 1 column on very small screens */
+	[role="dialog"] .cm-track-btn {
+		font-size: 12px !important;
+	}
+}
