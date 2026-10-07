@@ -23,47 +23,61 @@ export default function Benefits() {
 					margin: '0 auto',
 				}}
 			>
-				{/* 1. Header with Angled Badge */}
-				<div style={{ textAlign: 'center', marginBottom: '60px' }}>
+				{/* 1. Header with Clean Badge */}
+				<div style={{ textAlign: 'center', marginBottom: '48px' }}>
 					<div
+						className="section-badge-group"
 						style={{
 							display: 'inline-flex',
 							alignItems: 'center',
+							justifyContent: 'center',
 							gap: '6px',
 							marginBottom: '20px',
 						}}
 					>
 						<span
+							className="section-badge-number"
 							style={{
-								display: 'inline-block',
-								padding: '4px 10px',
-								background: '#f1f5f9',
-								color: '#64748b',
-								fontSize: '12px',
-								fontWeight: 700,
-								borderRadius: '8px',
-								transform: 'rotate(-14deg)',
-								border: '1px solid #e2e8f0',
-								boxShadow: '0 2px 4px rgba(0,0,0,0.04)',
+								display: 'inline-flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								padding: '0 12px',
+								minWidth: '42px',
+								height: '38px',
+								background: '#ececee',
+								color: '#1e293b',
+								fontSize: '15px',
+								fontWeight: 800,
+								fontFamily: "'Roboto Condensed', 'Inter', -apple-system, sans-serif",
+								borderRadius: '12px',
+								border: '1px solid rgba(0, 0, 0, 0.08)',
+								boxShadow: '0 1px 3px rgba(0,0,0,0.05)',
+								lineHeight: 1,
 							}}
 						>
 							01
 						</span>
 						<span
+							className="section-badge-name"
 							style={{
-								display: 'inline-block',
-								padding: '4px 12px',
-								background: '#1e293b',
+								display: 'inline-flex',
+								alignItems: 'center',
+								justifyContent: 'center',
+								padding: '0 18px',
+								height: '38px',
+								background: '#262626',
 								color: '#ffffff',
-								fontSize: '11px',
+								fontSize: '14px',
 								fontWeight: 800,
-								letterSpacing: '0.08em',
-								borderRadius: '9999px',
-								transform: 'rotate(8deg)',
-								boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+								fontFamily: "'Roboto Condensed', 'Inter', -apple-system, sans-serif",
+								letterSpacing: '0.04em',
+								textTransform: 'uppercase',
+								borderRadius: '14px',
+								boxShadow: '0 2px 6px rgba(0,0,0,0.14)',
+								lineHeight: 1,
 							}}
 						>
-							PROGRAMS
+							BENEFITS
 						</span>
 					</div>
 

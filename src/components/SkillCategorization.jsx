@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { Code2, Sparkles, BookOpen } from 'lucide-react'
 
 const LIBRARY_DATA = {
-	header: 'PHONECTIC LIBRARY',
+	header: 'PHONETIC LIBRARY',
 	cards: [
 		{
 			id: 'dp',

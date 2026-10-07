@@ -42,7 +42,7 @@ export default function PlacementWalletPreview({ className = '' }) {
 							className="text-[11px] font-black tracking-widest text-white/50 uppercase"
 							style={{ fontFamily: "'Roboto Condensed', sans-serif" }}
 						>
-							PHONECTIC WALLET
+							PHONETIC WALLET
 						</span>
 					</div>
 					<div className="flex items-center gap-1.5 opacity-40">

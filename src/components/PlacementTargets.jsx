@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { Target, Clock, Bell } from 'lucide-react'
 
 const TARGETS_DATA = {
-	header: 'PHONECTIC TARGETS',
+	header: 'PHONETIC TARGETS',
 	backCard: {
 		pill: 'TCS NQT CLOSES IN 2D',
 		rightText: 'Daily goal 200',

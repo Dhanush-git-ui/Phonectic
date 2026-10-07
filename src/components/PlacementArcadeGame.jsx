@@ -169,7 +169,7 @@ export default function PlacementArcadeGame() {
 	// Load high score from localStorage
 	useEffect(() => {
 		try {
-			const saved = localStorage.getItem('phonectic_arcade_high_score')
+			const saved = localStorage.getItem('phonetic_arcade_high_score') || localStorage.getItem('phonectic_arcade_high_score')
 			if (saved) setHighScore(Number.parseInt(saved, 10))
 		} catch {
 			// ignore storage errors
@@ -288,7 +288,7 @@ export default function PlacementArcadeGame() {
 			setHighScore((prevHigh) => {
 				const best = Math.max(prevHigh, finalScore)
 				try {
-					localStorage.setItem('phonectic_arcade_high_score', best.toString())
+					localStorage.setItem('phonetic_arcade_high_score', best.toString())
 				} catch {
 					// ignore
 				}
@@ -464,7 +464,7 @@ export default function PlacementArcadeGame() {
 							textTransform: 'uppercase',
 						}}
 					>
-						Phonectic Arena
+						Phonetic Arena
 					</span>
 					<span
 						style={{

@@ -3,7 +3,7 @@ import gsap from 'gsap'
 import { Zap, TrendingUp } from 'lucide-react'
 
 const INSIGHTS_DATA = {
-	header: 'PHONECTIC INSIGHTS',
+	header: 'PHONETIC INSIGHTS',
 	toasts: [
 		{
 			id: 1,

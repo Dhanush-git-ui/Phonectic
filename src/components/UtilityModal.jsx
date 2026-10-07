@@ -27,7 +27,7 @@ export default function UtilityModal({ isOpen, modalType, onClose, onOpenContact
 				return {
 					badge: 'Legal & Usage Guidelines',
 					title: 'Terms of Service',
-					subtitle: 'Effective Academic Year 2026 • Phonectic EduTech Platform',
+					subtitle: 'Effective Academic Year 2026 • Phonetic EduTech Platform',
 					body: (
 						<div style={{ display: 'flex', flexDirection: 'column', gap: '20px', color: '#cbd5e1', fontSize: '14px', lineHeight: 1.7 }}>
 							<div>
@@ -35,7 +35,7 @@ export default function UtilityModal({ isOpen, modalType, onClose, onOpenContact
 									1. Acceptance of Educational Terms
 								</h4>
 								<p style={{ margin: 0 }}>
-									By accessing Phonectic’s placement diagnostic suite, online assessments, speed math drills, and mock company simulators, you agree to adhere to our student honor code and platform fair-usage policies.
+									By accessing Phonetic’s placement diagnostic suite, online assessments, speed math drills, and mock company simulators, you agree to adhere to our student honor code and platform fair-usage policies.
 								</p>
 							</div>
 							<div>
@@ -78,7 +78,7 @@ export default function UtilityModal({ isOpen, modalType, onClose, onOpenContact
 									1. Zero Practice Score Leakage
 								</h4>
 								<p style={{ margin: 0 }}>
-									Your preparation drills, mock test mistakes, and individual scores are visible only to you. Phonectic never shares raw diagnostic scores or learning telemetry with unauthorized recruiters or external third parties.
+									Your preparation drills, mock test mistakes, and individual scores are visible only to you. Phonetic never shares raw diagnostic scores or learning telemetry with unauthorized recruiters or external third parties.
 								</p>
 							</div>
 							<div>
@@ -208,7 +208,7 @@ export default function UtilityModal({ isOpen, modalType, onClose, onOpenContact
 			default:
 				return {
 					badge: "We're Hiring!",
-					title: 'Careers at Phonectic',
+					title: 'Careers at Phonetic',
 					subtitle: 'Help millions of college students achieve their dream campus placements.',
 					body: (
 						<div style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>

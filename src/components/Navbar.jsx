@@ -93,7 +93,7 @@ export default function Navbar({ onOpenContact }) {
 								>
 									<img
 										src="/assets/phonectic-logo-transparent.png"
-										alt="Phonectic Logo"
+										alt="Phonetic Logo"
 										style={{
 											height: isScrolled ? '28px' : '32px',
 											width: 'auto',
@@ -114,7 +114,7 @@ export default function Navbar({ onOpenContact }) {
 											transition: 'color 0.25s ease, font-size 0.25s ease',
 										}}
 									>
-										Phonectic
+										Phonetic
 									</span>
 								</div>
 							</a>
@@ -155,22 +155,11 @@ export default function Navbar({ onOpenContact }) {
 										borderRadius: '16px',
 										display: 'flex',
 										alignItems: 'center',
-										gap: 6,
 										padding: '8px 16px',
 										textDecoration: 'none',
 										transition: 'all 0.25s ease',
 									}}
 								>
-									<div
-										className="framer-zb3h4b nav-dot-pulse"
-										data-framer-name="dot"
-										style={{
-											backgroundColor: isScrolled ? '#38bdf8' : 'rgb(255, 255, 255)',
-											borderRadius: '999px',
-											width: 6,
-											height: 6,
-										}}
-									/>
 									<div
 										className="framer-17agl2j"
 										data-framer-component-type="RichTextContainer"
@@ -442,7 +431,7 @@ export default function Navbar({ onOpenContact }) {
 							>
 								<img
 									src="/assets/phonectic-logo-transparent.png"
-									alt="Phonectic"
+									alt="Phonetic"
 									style={{
 										height: '24px',
 										width: 'auto',
@@ -462,7 +451,7 @@ export default function Navbar({ onOpenContact }) {
 										transition: 'color 0.25s ease',
 									}}
 								>
-									Phonectic
+									Phonetic
 								</span>
 							</a>
 						</div>

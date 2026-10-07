@@ -2166,57 +2166,169 @@ h3, h4,
 }
 
 /* ==========================================================================
-   ALIGN TESTIMONIALS BADGE (04 + SUCCESS STORIES) STRAIGHT AND CLEAN
+   SECTION HEADER BADGES (01 BENEFITS, 02 KEY FEATURES, etc.) EXACT MATCH TO REFERENCE
    ========================================================================== */
-.framer-1iifx99 {
-	display: flex !important;
+.framer-Tesak .framer-1ij0dh0,
+.framer-Tesak .framer-6le564,
+.framer-Tesak .framer-1iifx99,
+.framer-Tesak .framer-1pksgt1,
+.framer-1ij0dh0,
+.framer-6le564,
+.framer-1iifx99,
+.framer-1pksgt1,
+[data-framer-name="Heading & Title"] > [data-framer-name="Title"],
+[data-framer-name="Header"] > [data-framer-name="Title"],
+.section-badge-group {
+	display: inline-flex !important;
 	flex-direction: row !important;
 	align-items: center !important;
 	justify-content: center !important;
-	gap: 8px !important;
+	gap: 6px !important;
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	right: auto !important;
+	bottom: auto !important;
+	transform: none !important;
+	transform-origin: center center !important;
+	margin: 0 auto 22px !important;
 	width: auto !important;
 	height: auto !important;
-	padding: 0 !important;
-	margin: 0 auto 20px !important;
-	position: relative !important;
-	transform: none !important;
+	max-width: max-content !important;
 	overflow: visible !important;
+	z-index: 10 !important;
 }
 
+/* Number squircle (Left box: 01, 02, 03, 04, 05) */
+.framer-Tesak .framer-61kz3b,
+.framer-Tesak .framer-1ep8lgj,
+.framer-Tesak .framer-g52f2c,
+.framer-Tesak .framer-18z8l5z,
+.framer-61kz3b,
+.framer-1ep8lgj,
 .framer-g52f2c,
-.framer-g52f2c[data-framer-name="Number"] {
-	position: relative !important;
-	top: auto !important;
-	left: auto !important;
-	bottom: auto !important;
-	right: auto !important;
-	transform: none !important;
-	margin: 0 !important;
+.framer-18z8l5z,
+.framer-1ij0dh0 [data-framer-name="Number"],
+.framer-6le564 [data-framer-name="Number"],
+.framer-1iifx99 [data-framer-name="Number"],
+.framer-1pksgt1 [data-framer-name="Number"],
+[data-framer-name="Heading & Title"] [data-framer-name="Number"],
+.section-badge-number {
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	height: 24px !important;
-	padding: 2px 8px !important;
-	border-radius: 8px !important;
-	background-color: var(--token-cd46d6d0-58b3-4cc8-986f-40ef440cb24c, rgb(239, 239, 239)) !important;
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	right: auto !important;
+	bottom: auto !important;
+	transform: none !important;
+	margin: 0 !important;
+	padding: 0 12px !important;
+	min-width: 44px !important;
+	height: 40px !important;
+	border-radius: 14px !important;
+	background-color: #ececee !important;
+	border: 1px solid rgba(0, 0, 0, 0.06) !important;
+	box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05) !important;
+	flex-shrink: 0 !important;
 }
 
-.framer-1izjazw,
-.framer-1izjazw[data-framer-name="Title"] {
-	position: relative !important;
-	top: auto !important;
-	left: auto !important;
-	bottom: auto !important;
-	right: auto !important;
-	transform: none !important;
+.framer-Tesak .framer-61kz3b p,
+.framer-Tesak .framer-1ep8lgj p,
+.framer-Tesak .framer-g52f2c p,
+.framer-Tesak .framer-18z8l5z p,
+.framer-61kz3b p,
+.framer-1ep8lgj p,
+.framer-g52f2c p,
+.framer-18z8l5z p,
+[data-framer-name="Number"] p,
+.section-badge-number p {
+	color: #333333 !important;
+	--framer-text-color: #333333 !important;
+	font-family: 'Roboto Condensed', 'Inter', -apple-system, sans-serif !important;
+	font-size: 15.5px !important;
+	font-weight: 900 !important;
+	line-height: 1 !important;
 	margin: 0 !important;
+	padding: 0 !important;
+	transform: none !important;
+}
+
+/* Name pill (Right box: BENEFITS, KEY FEATURES, PLACEMENT ENGINES, SUCCESS STORIES, PRICING) */
+.framer-Tesak .framer-1xek3h4,
+.framer-Tesak .framer-1gr2q21,
+.framer-Tesak .framer-1izjazw,
+.framer-Tesak .framer-if47ad,
+.framer-1xek3h4,
+.framer-1gr2q21,
+.framer-1izjazw,
+.framer-if47ad,
+.framer-1ij0dh0 [data-framer-name="Name"],
+.framer-6le564 [data-framer-name="Name"],
+.framer-1iifx99 [data-framer-name="Title"],
+.framer-1pksgt1 [data-framer-name="Name"],
+[data-framer-name="Heading & Title"] [data-framer-name="Name"],
+[data-framer-name="Heading & Title"] > [data-framer-name="Title"] > [data-framer-name="Title"],
+.section-badge-name {
 	display: inline-flex !important;
 	align-items: center !important;
 	justify-content: center !important;
-	height: 24px !important;
-	padding: 2px 10px !important;
-	border-radius: 8px !important;
-	background-color: var(--token-cd0e4b39-d412-4786-8464-f96703fa50b9, rgb(82, 82, 82)) !important;
+	position: relative !important;
+	top: auto !important;
+	left: auto !important;
+	right: auto !important;
+	bottom: auto !important;
+	transform: none !important;
+	margin: 0 !important;
+	padding: 0 20px !important;
+	height: 40px !important;
+	border-radius: 15px !important;
+	background-color: #404040 !important;
+	border: 1px solid rgba(255, 255, 255, 0.08) !important;
+	box-shadow: 0 3px 8px rgba(0, 0, 0, 0.16) !important;
+	flex-shrink: 0 !important;
+}
+
+.framer-Tesak .framer-1xek3h4 p,
+.framer-Tesak .framer-1gr2q21 p,
+.framer-Tesak .framer-1izjazw p,
+.framer-Tesak .framer-if47ad p,
+.framer-1xek3h4 p,
+.framer-1gr2q21 p,
+.framer-1izjazw p,
+.framer-if47ad p,
+[data-framer-name="Heading & Title"] [data-framer-name="Name"] p,
+[data-framer-name="Heading & Title"] > [data-framer-name="Title"] > [data-framer-name="Title"] p,
+.section-badge-name p {
+	color: #ffffff !important;
+	--framer-text-color: #ffffff !important;
+	font-family: 'Roboto Condensed', 'Inter', -apple-system, sans-serif !important;
+	font-size: 14.5px !important;
+	font-weight: 900 !important;
+	letter-spacing: 0.04em !important;
+	text-transform: uppercase !important;
+	line-height: 1 !important;
+	margin: 0 !important;
+	padding: 0 !important;
+	transform: none !important;
+}
+
+/* Reset inner nested text containers */
+.framer-1e915dv,
+.framer-an8ew8,
+.framer-gdq8mo,
+.framer-y75c3x,
+.framer-gpgoj2,
+.framer-luqv2v,
+.framer-1frnje4,
+.framer-1i3yjx4 {
+	display: inline-flex !important;
+	align-items: center !important;
+	justify-content: center !important;
+	transform: none !important;
+	width: auto !important;
+	height: auto !important;
 }
 
 
